@@ -1,0 +1,1 @@
+import{_ as e,w as n,x as r}from"./index.debaa88d.js";const o={};function s(c,m){return n(),r("div",null,"\u5747\u53EF\u8BBF\u95EE\u6743\u9650\u9875\u9762")}var _=e(o,[["render",s],["__file","/home/runner/work/vue-plus-admin/vue-plus-admin/src/views/permission/CommonIndex.vue"]]);export{_ as default};
