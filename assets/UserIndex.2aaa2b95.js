@@ -1,0 +1,1 @@
+import{_ as e,v as r,w as s}from"./index.3de10a52.js";const n={};function c(o,a){return r(),s("div",null,"\u666E\u901A\u7528\u6237\u6743\u9650\u9875\u9762")}var i=e(n,[["render",c],["__file","/home/runner/work/vue-admire-plus/vue-admire-plus/src/views/permission/UserIndex.vue"]]);export{i as default};
