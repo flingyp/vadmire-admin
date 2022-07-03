@@ -1,1 +1,0 @@
-import{_ as e,w as r,x as n}from"./index.a3706552.js";const s={};function c(o,a){return r(),n("div",null,"\u666E\u901A\u7528\u6237\u6743\u9650\u9875\u9762")}var i=e(s,[["render",c],["__file","/home/runner/work/vue-plus-admin/vue-plus-admin/src/views/permission/UserIndex.vue"]]);export{i as default};
