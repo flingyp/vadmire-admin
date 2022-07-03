@@ -1,1 +1,0 @@
-import{_ as e,v as n,w as r}from"./index.d0953f99.js";const o={};function s(c,a){return n(),r("div",null,"\u8D85\u7EA7\u7BA1\u7406\u5458\u6743\u9650\u9875\u9762")}var _=e(o,[["render",s],["__file","/home/runner/work/vue-plus-admin/vue-plus-admin/src/views/permission/RoleIndex.vue"]]);export{_ as default};
