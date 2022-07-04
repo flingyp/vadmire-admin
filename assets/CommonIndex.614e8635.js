@@ -1,1 +1,0 @@
-import{_ as e,v as r,w as n}from"./index.3de10a52.js";const o={};function s(c,m){return r(),n("div",null,"\u5747\u53EF\u8BBF\u95EE\u6743\u9650\u9875\u9762")}var _=e(o,[["render",s],["__file","/home/runner/work/vue-admire-plus/vue-admire-plus/src/views/permission/CommonIndex.vue"]]);export{_ as default};
