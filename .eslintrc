@@ -1,0 +1,6 @@
+{
+    "extends": "@flypeng",
+    "rules": {
+        "no-undef": "off"
+    }
+}
