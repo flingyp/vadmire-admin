@@ -1,0 +1,4 @@
+@import './tailwind.css';
+@import './theme.css';
+@import './reset.css';
+@import 'nprogress/nprogress.css';

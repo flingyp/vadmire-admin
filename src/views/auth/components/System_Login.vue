@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Sytem_Platform_Auth from './Sytem_Platform_Auth.vue'
 import System_Logo from '~/assets/img/admire-logo.png'
+import { useVAdmireStore } from '~/store'
+
+const vadmireStore = useVAdmireStore()
 
 interface SignUpModelData {
   username: string
   password: string
 }
-
 const signUpModel = ref<SignUpModelData>()
 
 // eslint-disable-next-line no-unused-vars
@@ -30,7 +32,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             href="#"
             class="font-medium text-indigo-600 hover:text-indigo-500"
           >
-            Welcome to VAdmire Admin
+            Welcome to {{ vadmireStore.name }}
           </a>
         </p>
       </div>
