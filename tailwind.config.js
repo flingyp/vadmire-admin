@@ -6,7 +6,11 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,vue}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'auth-pattern': "url('~/assets/svg/auth-pattern.svg')",
+      },
+    },
   },
   plugins: [],
 }

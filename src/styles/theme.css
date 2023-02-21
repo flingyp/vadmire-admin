@@ -1,5 +1,4 @@
 html {
-  transition: background 0.3s linear;
   background: #ffffff;
   color: #000000;
 }
@@ -8,3 +7,4 @@ html.dark {
   background: #2c2c2c;
   color: #ffffff;
 }
+

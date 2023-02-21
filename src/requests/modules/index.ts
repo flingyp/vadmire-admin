@@ -1,1 +1,1 @@
-export * from './github-api'
+export default {}

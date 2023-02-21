@@ -17,7 +17,8 @@
       "~/*": ["src/*"]
     },
     "types": [
-      "unplugin-icons/types/vue"
+      "unplugin-icons/types/vue",
+      "naive-ui/volar"
     ]
   },
   "include": ["src/**/*", "auto-imports.d.ts", "components.d.ts"],
