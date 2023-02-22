@@ -9,6 +9,7 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
 
 export default ({ command }: ConfigEnv): UserConfigExport => ({
+  base: './',
   // Development server config
   server: {
     host: true,
@@ -20,7 +21,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
   resolve: {
     // Alias config
     alias: {
-      '~/': `${resolve(__dirname, 'src')}/`,
+      '~': resolve(__dirname, 'src/'),
     },
   },
   // Plugins config

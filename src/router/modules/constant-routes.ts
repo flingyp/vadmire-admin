@@ -20,11 +20,21 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
   {
     path: '/demo',
     name: 'System_Demo',
-    component: '~/views/Demo.vue',
+    component: 'Layout',
     meta: {
       text: 'Demo页面',
       isShow: true,
     },
+    children: [
+      {
+        path: '',
+        name: 'System_Demo_Main',
+        component: '~/views/Demo.vue',
+        meta: {
+          text: 'Demo',
+        },
+      },
+    ],
   },
   {
     path: '/layout',

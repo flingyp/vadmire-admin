@@ -6,7 +6,7 @@ export interface VAdmireConfig {
   layoutMode: LayoutMode
   primaryColor: string
   isScaleDrawer: boolean
-  isScaleMenu: boolean
+  isScaleSider: boolean
   headerHeight: number
   footerHeight: number
   siderWidth: number
@@ -17,10 +17,10 @@ export function defindVAdmireConfig(): VAdmireConfig {
   return {
     name: 'VAdmire Admin',
     themeMode: 'LIGHT',
-    layoutMode: 'SIDER_MIX_MENU',
+    layoutMode: 'SIDER_MENU',
     primaryColor: '#0071bc',
     isScaleDrawer: true,
-    isScaleMenu: true,
+    isScaleSider: false,
     headerHeight: 64,
     footerHeight: 64,
     siderWidth: 240,

@@ -15,7 +15,7 @@ export const generateSystemMenu = (routes: RouteRecordRaw[]): MenuOption[] => {
       let handleRoute = useDeepClone(route) as RouteRecordRaw
 
       // 处理子菜单
-      if (handleRoute.children) {
+      if (handleRoute.children && handleRoute.children.length !== 0) {
         // 处理单一路由
         if (handleRoute.children.length === 1 && handleRoute.children[0].meta?.single) {
           // eslint-disable-next-line prefer-destructuring
