@@ -5,36 +5,33 @@ import Sytem_Platform_Auth from './Sytem_Platform_Auth.vue'
 import System_Logo from '~/assets/img/admire-logo.png'
 import { useVAdmireStore } from '~/store'
 import { authTokenKey } from '~/vadmire.config'
+import { SignInModelData, getSignInAuthToken } from '~/requests'
 
 const message = useMessage()
 const router = useRouter()
 const vadmireStore = useVAdmireStore()
 
 // bundle sign in model data
-interface SignInModelData {
-  username: string
-  password: string
-}
+
 const signInModelData = ref<SignInModelData>({ username: '', password: '' })
 const isSignInLoading = ref(false)
 // click sign in button
 const getSignInAuth = async () => {
   isSignInLoading.value = true
-  const { statusCode, statusText, data } = await useRequest<{accessToken: string}>({
-    url: '/auth/login',
-    method: 'POST',
-    data: signInModelData.value,
-  })
+
+  const { statusCode, statusText, data } = await getSignInAuthToken(signInModelData.value)
+
   if (statusCode !== 200) {
     message.error(statusText)
     return
   }
+
   message.success(statusText)
   useSetLocalKey(authTokenKey, data.accessToken)
   isSignInLoading.value = false
 
   setTimeout(() => {
-    router.push({ name: 'System_Home' })
+    router.push({ name: 'Layout_Home' })
   }, 1000)
 }
 

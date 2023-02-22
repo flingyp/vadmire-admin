@@ -1,28 +1,13 @@
 import nprogress from 'nprogress'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
 import globalRouteGuardProcess from './global-route-guard'
+import { vadmireRouteToRouteRecordRaw } from './utils'
+import { CONSTANT_ROUTES } from './modules'
 
-const routes: RouteRecordRaw[] = [
-  {
-    path: '',
-    name: 'System_Home',
-    redirect: '/layout',
-  },
-  {
-    path: '/login',
-    name: 'System_Auth',
-    component: () => import('~/views/auth/System_Auth.vue'),
-  },
-  {
-    path: '/layout',
-    name: 'Layout_Home',
-    component: () => import('~/layout/Layout_Home.vue'),
-  },
-]
+console.log(vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES))
 
 export const router = createRouter({
-  routes,
+  routes: vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES),
   strict: true,
   history: createWebHashHistory(),
 })
@@ -38,4 +23,4 @@ router.afterEach(async () => {
   nprogress.done()
 })
 
-export * from './types/vadmire-route'
+export * from './types'

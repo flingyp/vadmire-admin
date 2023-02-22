@@ -42,7 +42,7 @@ function systemAuthLogin(username: string, password: string): MockResponse<{acce
   }
 }
 
-interface SystemUserInfo {
+interface SystemAccountInfo {
   id: string
   username: string
   nickname: string
@@ -51,7 +51,7 @@ interface SystemUserInfo {
   permissions: string[]
 }
 
-function systemUserInfo(token: string): MockResponse<SystemUserInfo | null> {
+function systemAccountInfo(token: string): MockResponse<SystemAccountInfo | null> {
   if (token.match('admin_')) {
     return {
       statusCode: 200,
@@ -96,6 +96,6 @@ export default [
   {
     url: '/api/auth/info',
     method: 'post',
-    response: ({ headers }: {headers: {authorization: string}}) => systemUserInfo(headers.authorization),
+    response: ({ headers }: {headers: {authorization: string}}) => systemAccountInfo(headers.authorization),
   },
 ] as MockMethod[]

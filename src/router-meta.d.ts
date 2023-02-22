@@ -2,7 +2,7 @@ import 'vue-router'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    text: string // menu name
+    text?: string // menu name
     icon?: string // icon name
     isShow?: boolean // show in menu
     permissions?: string[] // menu permissions
