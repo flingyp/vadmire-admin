@@ -28,8 +28,11 @@ export function defindVAdmireConfig(): VAdmireConfig {
 }
 
 // system white routes list
-export const whiteRouteList: string[] = []
+export const whiteRouteList: string[] = ['System_Auth']
 
 // system handle route form
 export type HandleRouteForm = 'WEB' | 'SERVER'
 export const handleRouteForm: HandleRouteForm = 'WEB'
+
+// local storage key list
+export const authTokenKey = 'auth-token'

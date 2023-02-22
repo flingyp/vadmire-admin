@@ -1,8 +1,10 @@
-import type { CreateAxiosDefaults, Method, ResponseType } from 'axios'
+import type {
+  AxiosHeaders, CreateAxiosDefaults, Method, RawAxiosRequestHeaders, ResponseType,
+} from 'axios'
 import axios from 'axios'
 
 const axiosConfig: CreateAxiosDefaults = {
-  baseURL: 'https://api.github.com',
+  baseURL: '/api',
   timeout: 5000,
 }
 
@@ -16,7 +18,7 @@ requestInstance.interceptors.request.use(
 
 // Response interceptor
 requestInstance.interceptors.response.use(
-  (response) => response,
+  (response) => response.data,
   (error) => error.response,
 )
 
@@ -24,19 +26,20 @@ interface RequestOptions {
   url: string
   method: Method,
   params?: Record<string, unknown>
+  headers?: (RawAxiosRequestHeaders) | AxiosHeaders,
   data?: Record<string, unknown>
   responseType?: ResponseType
 }
 
 interface ResponseOptions<K = unknown> {
-  status: number
+  statusCode: number
   statusText: string
   data: K
 }
 
 export const useRequest = async <T = unknown> (options: RequestOptions) => {
   const {
-    url, method, params, data, responseType,
+    url, method, params, data, responseType, headers,
   } = options
 
   const requestResult = await requestInstance.request<unknown, ResponseOptions<T>>({
@@ -44,11 +47,12 @@ export const useRequest = async <T = unknown> (options: RequestOptions) => {
     method,
     params,
     data,
+    headers,
     responseType: responseType || 'json',
   })
 
   return {
-    status: requestResult.status,
+    statusCode: requestResult.statusCode,
     statusText: requestResult.statusText,
     data: requestResult.data,
   }

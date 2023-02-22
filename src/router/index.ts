@@ -1,6 +1,7 @@
 import nprogress from 'nprogress'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import globalRouteGuardProcess from './global-route-guard'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -30,7 +31,7 @@ nprogress.configure({ easing: 'ease', speed: 500, trickle: false })
 
 router.beforeEach(async (to, from, next) => {
   nprogress.start()
-  next()
+  await globalRouteGuardProcess(to, from, next, router)
 })
 
 router.afterEach(async () => {

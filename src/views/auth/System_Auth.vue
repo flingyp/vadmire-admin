@@ -18,7 +18,6 @@ const rotateYComputed = computed(() => {
 const switchSign = (value: boolean) => { isAuthLoin.value = value }
 
 provide('switchSign', switchSign)
-
 </script>
 
 <template>

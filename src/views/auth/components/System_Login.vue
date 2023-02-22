@@ -1,15 +1,42 @@
 <script setup lang="ts">
+import { useMessage } from 'naive-ui'
+import { useSetLocalKey } from '@flypeng/tool/browser'
 import Sytem_Platform_Auth from './Sytem_Platform_Auth.vue'
 import System_Logo from '~/assets/img/admire-logo.png'
 import { useVAdmireStore } from '~/store'
+import { authTokenKey } from '~/vadmire.config'
 
+const message = useMessage()
+const router = useRouter()
 const vadmireStore = useVAdmireStore()
 
-interface SignUpModelData {
+// bundle sign in model data
+interface SignInModelData {
   username: string
   password: string
 }
-const signUpModel = ref<SignUpModelData>()
+const signInModelData = ref<SignInModelData>({ username: '', password: '' })
+const isSignInLoading = ref(false)
+// click sign in button
+const getSignInAuth = async () => {
+  isSignInLoading.value = true
+  const { statusCode, statusText, data } = await useRequest<{accessToken: string}>({
+    url: '/auth/login',
+    method: 'POST',
+    data: signInModelData.value,
+  })
+  if (statusCode !== 200) {
+    message.error(statusText)
+    return
+  }
+  message.success(statusText)
+  useSetLocalKey(authTokenKey, data.accessToken)
+  isSignInLoading.value = false
+
+  setTimeout(() => {
+    router.push({ name: 'System_Home' })
+  }, 1000)
+}
 
 // eslint-disable-next-line no-unused-vars
 const switchSign = inject('switchSign') as (value: boolean) => void
@@ -42,14 +69,20 @@ const switchSign = inject('switchSign') as (value: boolean) => void
           ref="signUpRef"
           size="medium"
           label-width="auto"
-          :model="signUpModel"
+          :model="signInModelData"
         >
           <NFormItem label="Username">
-            <NInput placeholder="Please input your username" />
+            <NInput
+              v-model:value="signInModelData.username"
+              placeholder="Please input your username"
+            />
           </NFormItem>
 
           <NFormItem label="Password">
-            <NInput placeholder="Please input your password" />
+            <NInput
+              v-model:value="signInModelData.password"
+              placeholder="Please input your password"
+            />
           </NFormItem>
 
           <div class="text-right cursor-pointer text-indigo-500 hover:text-indigo-700 mb-2">
@@ -60,6 +93,8 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             <NButton
               block
               type="primary"
+              :loading="isSignInLoading"
+              @click="getSignInAuth"
             >
               <template #icon>
                 <icon-mdi:shield-lock-outline />
