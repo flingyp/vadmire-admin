@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import Logo from '~/assets/img/admire-logo.png'
 
-const vadmireStore = useVAdmireStore()
+const vadmireConfigStore = useVAdmireConfigStore()
 </script>
 
 <template>
   <div
     class="flex items-center justify-center border-b"
-    :style="{height: `${vadmireStore.headerHeight}px`}"
+    :style="{height: `${vadmireConfigStore.headerHeight}px`}"
   >
     <img
       :src="Logo"
       alt="logo"
       class="h-full"
     >
-    <span class="text-gradient font-bold text-xl mt-1 select-none cursor-pointer">
-      {{ vadmireStore.name }}
+    <span
+      v-show="!vadmireConfigStore.isCollapsedSider"
+      class="text-gradient font-bold text-xl mt-1 select-none cursor-pointer"
+    >
+      {{ vadmireConfigStore.name }}
     </span>
   </div>
 </template>

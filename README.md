@@ -15,6 +15,7 @@
 - 🛠 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - Auto import api
 - 🛠 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) - Auto import component
 - 🛠 [unplugin-icons](https://github.com/antfu/unplugin-icons) - Auto use Iconify icon
+- 🛠 [Iconify](https://icon-sets.iconify.design/) - 150k+ icons
 
 ## Coding Style 
 
@@ -29,6 +30,8 @@
 - [Vitesse Theme](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse)
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 
 ## VSCode Code Sinppets
 

@@ -9,22 +9,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    IconEpFold: typeof import('~icons/ep/fold')['default']
     'IconFa:weixin': typeof import('~icons/fa/weixin')['default']
-    'IconIc:baseline10k': typeof import('~icons/ic/baseline10k')['default']
     'IconLineMd:menuFoldLeft': typeof import('~icons/line-md/menu-fold-left')['default']
     'IconLineMd:menuFoldRight': typeof import('~icons/line-md/menu-fold-right')['default']
-    'IconLineMd:sunnyOutlineLoop': typeof import('~icons/line-md/sunny-outline-loop')['default']
-    'IconLineMd:sunnyOutlineToMoonAltLoopTransition': typeof import('~icons/line-md/sunny-outline-to-moon-alt-loop-transition')['default']
-    IconMaterialSymbols10k: typeof import('~icons/material-symbols/10k')['default']
-    'IconMdi:aboutCircleOutline': typeof import('~icons/mdi/about-circle-outline')['default']
     'IconMdi:github': typeof import('~icons/mdi/github')['default']
     'IconMdi:shieldLockOutline': typeof import('~icons/mdi/shield-lock-outline')['default']
     'IconMdi:signIn': typeof import('~icons/mdi/sign-in')['default']
     'IconMdi:twitter': typeof import('~icons/mdi/twitter')['default']
-    'IconRi:24HoursFill': typeof import('~icons/ri/24-hours-fill')['default']
-    'IconTabler:homeCheck': typeof import('~icons/tabler/home-check')['default']
-    'IconVscodeIcons:fileTypeWxss': typeof import('~icons/vscode-icons/file-type-wxss')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
@@ -41,6 +32,6 @@ declare module '@vue/runtime-core' {
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Single_App: typeof import('./src/components/common/Single_App.vue')['default']
+    SingleApp: typeof import('./src/components/common/SingleApp.vue')['default']
   }
 }

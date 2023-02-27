@@ -36,6 +36,7 @@
     "@iconify-json/ri": "^1.1.5",
     "@iconify-json/tabler": "^1.1.61",
     "@iconify-json/vscode-icons": "^1.1.22",
+    "@iconify/vue": "^4.1.0",
     "@types/mockjs": "^1.0.7",
     "@types/node": "^18.14.0",
     "@types/nprogress": "^0.2.0",

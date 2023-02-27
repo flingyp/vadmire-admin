@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import System_Login from './components/System_Login.vue'
-import System_Register from './components/System_Register.vue'
+import SystemLogin from './components/SystemLogin.vue'
+import SystemRegister from './components/SystemRegister.vue'
 
 const isAuthLoin = ref(false)
 const rotateYComputed = computed(() => {
@@ -30,10 +30,10 @@ provide('switchSign', switchSign)
       class="inner-container rounded-md w-full h-full flex items-center justify-center"
     >
       <section LOGIN_IN>
-        <System_Login />
+        <SystemLogin />
       </section>
       <section SIGN_UP>
-        <System_Register />
+        <SystemRegister />
       </section>
     </div>
   </div>

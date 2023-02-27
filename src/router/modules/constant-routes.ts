@@ -4,7 +4,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
   {
     path: '/login',
     name: 'System_Auth',
-    component: '~/views/auth/System_Auth.vue',
+    component: '~/views/auth/SystemAuth.vue',
     meta: {
       isShow: false,
     },
@@ -24,14 +24,16 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     meta: {
       text: 'Demo页面',
       isShow: true,
+      icon: 'arcticons:democracy',
     },
     children: [
       {
         path: '',
-        name: 'System_Demo_Main',
+        name: 'SystemDemoMain',
         component: '~/views/Demo.vue',
         meta: {
           text: 'Demo',
+          icon: 'material-symbols:workspace-premium-outline',
         },
       },
     ],

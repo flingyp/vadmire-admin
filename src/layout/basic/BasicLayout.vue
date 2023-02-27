@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { useVAdmireStore } from '~/store'
+import { useVAdmireConfigStore } from '~/store'
 
-const vadmireStore = useVAdmireStore()
+const vadmireConfigStore = useVAdmireConfigStore()
 
 // different layout mode
-const isTopMenuMode = computed(() => vadmireStore.layoutMode === 'TOP_MENU')
-const isSiderMenuMode = computed(() => vadmireStore.layoutMode === 'SIDER_MENU')
-const isSiderMixMenuMode = computed(() => vadmireStore.layoutMode === 'SIDER_MIX_MENU')
+const isTopMenuMode = computed(() => vadmireConfigStore.layoutMode === 'TOP_MENU')
+const isSiderMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MENU')
+const isSiderMixMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU')
 
 // width and height of layout component
-const headerHeight = computed(() => vadmireStore.headerHeight)
-const footerHeight = computed(() => vadmireStore.footerHeight)
-const siderWidth = computed(() => vadmireStore.siderWidth)
+const headerHeight = computed(() => vadmireConfigStore.headerHeight)
+const footerHeight = computed(() => vadmireConfigStore.footerHeight)
+const siderWidth = computed(() => vadmireConfigStore.siderWidth)
 const siderHeight = computed(() => {
   if (isSiderMixMenuMode.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
   if (isSiderMenuMode.value) return '100vh'
@@ -36,6 +36,9 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
       v-if="isSiderMenuMode"
       bordered
       collapse-mode="width"
+      :collapsed-width="vadmireConfigStore.isCollapsedSiderWidth"
+      :native-scrollbar="false"
+      :collapsed="vadmireConfigStore.isCollapsedSider"
     >
       <slot name="sider">
         Default sider
@@ -45,6 +48,7 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
     <NLayoutContent
       v-if="isTopMenuMode"
       bordered
+      :native-scrollbar="false"
     >
       <slot name="content">
         Default content
@@ -68,6 +72,9 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
         v-if="isSiderMixMenuMode"
         bordered
         collapse-mode="width"
+        :collapsed-width="vadmireConfigStore.isCollapsedSiderWidth"
+        :native-scrollbar="false"
+        :collapsed="vadmireConfigStore.isCollapsedSider"
       >
         <slot name="sider">
           Default sider
@@ -77,6 +84,7 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
       <NLayoutContent
         v-if="isSiderMenuMode || isSiderMixMenuMode"
         bordered
+        :native-scrollbar="false"
       >
         <slot name="content">
           Default content

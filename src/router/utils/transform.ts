@@ -1,7 +1,7 @@
 import { useDeepClone } from '@flypeng/tool/browser'
 import { RouteRecordRaw, RouteRecordRedirectOption } from 'vue-router'
 import { VAdmireRoute } from '..'
-import Container_Layout from '~/layout/basic/Container_Layout.vue'
+import ContainerLayout from '~/layout/basic/ContainerLayout.vue'
 import Not_Found from '~/views/404.vue'
 
 const systemViews = import.meta.glob('../../views/**/*.vue')
@@ -52,7 +52,7 @@ export const transform = (route: VAdmireRoute): RouteRecordRaw => {
   }
 
   if (route.component === 'Layout') {
-    vroute.component = Container_Layout
+    vroute.component = ContainerLayout
   }
 
   return vroute

@@ -1,2 +1,2 @@
-export * from './vadmire'
+export * from './vadmire-config'
 export * from './route-menu'

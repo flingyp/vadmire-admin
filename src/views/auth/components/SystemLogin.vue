@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useMessage } from 'naive-ui'
 import { useSetLocalKey } from '@flypeng/tool/browser'
-import Sytem_Platform_Auth from './Sytem_Platform_Auth.vue'
-import System_Logo from '~/assets/img/admire-logo.png'
-import { useVAdmireStore } from '~/store'
+import SystemLogo from '~/assets/img/admire-logo.png'
+import { useVAdmireConfigStore } from '~/store'
 import { authTokenKey } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
+import SytemPlatformAuth from './SytemPlatformAuth.vue'
 
 const message = useMessage()
 const router = useRouter()
-const vadmireStore = useVAdmireStore()
+const vadmireConfigStore = useVAdmireConfigStore()
 
 // bundle sign in model data
 
@@ -44,9 +44,9 @@ const switchSign = inject('switchSign') as (value: boolean) => void
     <div class="max-w-md w-full space-y-4">
       <div>
         <img
-          :src="System_Logo"
+          :src="SystemLogo"
           class="mx-auto h-20 w-auto"
-          alt="System_Logo"
+          alt="System Logo"
         >
         <h2 class="text-center text-2xl font-bold">
           Sign in
@@ -56,7 +56,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             href="#"
             class="font-medium text-indigo-600 hover:text-indigo-500"
           >
-            Welcome to {{ vadmireStore.name }}
+            Welcome to {{ vadmireConfigStore.name }}
           </a>
         </p>
       </div>
@@ -112,7 +112,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             </NButton>
 
             <!-- 第三方平台的认证登录入口 -->
-            <Sytem_Platform_Auth />
+            <SytemPlatformAuth />
           </div>
         </NForm>
       </div>

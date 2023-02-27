@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { darkTheme } from 'naive-ui'
-import { useVAdmireStore } from '~/store'
+import { useVAdmireConfigStore } from '~/store'
 
-const vadmireStore = useVAdmireStore()
+const vadmireConfigStore = useVAdmireConfigStore()
 
 const themeMode = computed(() => {
-  if (vadmireStore.themeMode === 'LIGHT') return null
+  if (vadmireConfigStore.themeMode === 'LIGHT') return null
   return darkTheme
 })
 </script>

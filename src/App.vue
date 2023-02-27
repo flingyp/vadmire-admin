@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Single_App from '~/components/common/Single_App.vue'
+import SingleApp from '~/components/common/SingleApp.vue'
 </script>
 
 <template>
-  <Single_App>
+  <SingleApp>
     <div class="font-mono text-sm font-medium overflow-hidden w-screen box-border scroll-smooth transition-all">
       <RouterView />
     </div>
-  </Single_App>
+  </SingleApp>
 </template>
