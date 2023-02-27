@@ -3,6 +3,7 @@ import { MenuOption } from 'naive-ui'
 
 const route = useRoute()
 const router = useRouter()
+const routeMenuStore = useRouteMenuStore()
 const vadmireConfigStore = useVAdmireConfigStore()
 
 interface GlobalMenuProps {
@@ -15,12 +16,52 @@ withDefaults(defineProps<GlobalMenuProps>(), {
   menuOptions: () => [],
 })
 
+// route key whether include from menu
+const isIncludeMenuByKey = (key: string, menu: MenuOption): boolean => {
+  if (key === menu.key) return true
+  if (menu.children) return menu.children.some((item) => isIncludeMenuByKey(key, item))
+  return false
+}
+
+// get breadcrumb menu
+const getBreadCrumbMenu = (key: string, menu: MenuOption) => {
+  const breadCrumbMenu: MenuOption[] = []
+  breadCrumbMenu.push(menu)
+  const getMenuByKey = (item: MenuOption) => {
+    if (item.children) {
+      item.children.forEach((child) => {
+        if (isIncludeMenuByKey(key, child)) {
+          breadCrumbMenu.push(child)
+          getMenuByKey(child)
+        }
+      })
+    }
+  }
+  getMenuByKey(menu)
+  return breadCrumbMenu
+}
+
+// generate breadcrumb menu
+const createBreadCrumbMenu = (key: string, menus: MenuOption[]) => {
+  let parentMenu: MenuOption = {}
+  for (let i = 0; i < menus.length; i++) {
+    const isIncludeRouteKey = isIncludeMenuByKey(key, menus[i])
+    if (isIncludeRouteKey) parentMenu = menus[i]
+  }
+  return getBreadCrumbMenu(key, parentMenu)
+}
+
 // watch the route and change current checked menu
 const routeKey = ref(route.name as string)
 watchEffect(() => {
+  // set title content
   const title = `${route.meta.text} | ${vadmireConfigStore.name}`
   document.querySelector('title')!.innerHTML = title
   routeKey.value = route.name as string
+
+  // generate breadcrumb menu
+  // @ts-ignore
+  routeMenuStore.breadCrumbMenus = createBreadCrumbMenu(routeKey.value, routeMenuStore.vadmireMenu)
 })
 
 // click menu

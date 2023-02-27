@@ -20,6 +20,8 @@ declare module '@vue/runtime-core' {
     'IconMdi:signIn': typeof import('~icons/mdi/sign-in')['default']
     'IconMdi:twitter': typeof import('~icons/mdi/twitter')['default']
     'IconMdiLight:settings': typeof import('~icons/mdi-light/settings')['default']
+    NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']
+    NBreadcrumbItem: typeof import('naive-ui')['NBreadcrumbItem']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']

@@ -14,6 +14,7 @@ export interface RouteMenuStore {
   vadmireMenu: MenuOption[]
   vrouterConstantRoutes: RouteRecordRaw[]
   vrouterAsyncRoutes: RouteRecordRaw[]
+  breadCrumbMenus: MenuOption[]
 }
 
 export const useRouteMenuStore = defineStore('routeMenuStore', {
@@ -34,5 +35,6 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
     vadmireMenu: [],
     vrouterConstantRoutes: [],
     vrouterAsyncRoutes: [],
+    breadCrumbMenus: [],
   }),
 })
