@@ -3,7 +3,7 @@ import { VAdmireRoute } from '..'
 export const CONSTANT_ROUTES: VAdmireRoute[] = [
   {
     path: '/login',
-    name: 'System_Auth',
+    name: 'SystemAuth',
     component: '~/views/auth/SystemAuth.vue',
     meta: {
       isShow: false,
@@ -11,7 +11,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
   },
   {
     path: '/404',
-    name: 'System_NotFound',
+    name: 'SystemNotFound',
     component: '~/views/404.vue',
     meta: {
       isShow: false,
@@ -19,7 +19,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
   },
   {
     path: '/demo',
-    name: 'System_Demo',
+    name: 'SystemDemo',
     component: 'Layout',
     meta: {
       text: 'Demo页面',
@@ -40,7 +40,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
   },
   {
     path: '/layout',
-    name: 'Layout_Home',
+    name: 'LayoutHome',
     component: 'Layout',
     meta: {
       isShow: false,

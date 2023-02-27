@@ -16,27 +16,15 @@ import TopMenuSider from '../mode/top-menu-mode/TopMenuSider.vue'
 const vadmireConfigStore = useVAdmireConfigStore()
 
 const Global_Header = computed(() => {
-  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') {
-    return SiderMenuHeader
-  }
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') {
-    return SiderMixMenuHeader
-  }
-  if (vadmireConfigStore.layoutMode === 'TOP_MENU') {
-    return TopMenuHeader
-  }
+  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') return SiderMenuHeader
+  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return SiderMixMenuHeader
+  if (vadmireConfigStore.layoutMode === 'TOP_MENU') return TopMenuHeader
 })
 
 const Global_Sider = computed(() => {
-  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') {
-    return SiderMenuSider
-  }
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') {
-    return SiderMixMenuSider
-  }
-  if (vadmireConfigStore.layoutMode === 'TOP_MENU') {
-    return TopMenuSider
-  }
+  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') return SiderMenuSider
+  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return SiderMixMenuSider
+  if (vadmireConfigStore.layoutMode === 'TOP_MENU') return TopMenuSider
 })
 
 </script>

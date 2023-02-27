@@ -31,7 +31,7 @@ export function defindVAdmireConfig(): VAdmireConfig {
 }
 
 // system white routes list
-export const whiteRouteList: string[] = ['System_Auth']
+export const whiteRouteList: string[] = ['SystemAuth']
 
 // system handle route form
 export const handleRouteForm: HandleRouteForm = 'WEB'

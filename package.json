@@ -34,6 +34,7 @@
     "@iconify-json/line-md": "^1.1.23",
     "@iconify-json/material-symbols": "^1.1.32",
     "@iconify-json/mdi": "^1.1.47",
+    "@iconify-json/mdi-light": "^1.1.6",
     "@iconify-json/ri": "^1.1.5",
     "@iconify-json/tabler": "^1.1.61",
     "@iconify-json/vscode-icons": "^1.1.22",

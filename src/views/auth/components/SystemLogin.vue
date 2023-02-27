@@ -31,7 +31,7 @@ const getSignInAuth = async () => {
   isSignInLoading.value = false
 
   setTimeout(() => {
-    router.push({ name: 'Layout_Home' })
+    router.push({ name: 'LayoutHome' })
   }, 1000)
 }
 

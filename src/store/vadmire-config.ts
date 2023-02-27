@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import { VAdmireConfig, defindVAdmireConfig } from '~/vadmire.config'
+import { useRemoveLocalKey } from '@flypeng/tool/browser'
+import { VAdmireConfig, defindVAdmireConfig, authTokenKey } from '~/vadmire.config'
 
 const defaultVAdmireConfig = defindVAdmireConfig()
 
@@ -10,6 +11,9 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
     handleIsCollapsedSider() {
       this.isCollapsedSider = !this.isCollapsedSider
     },
-
+    // exit system logic
+    async handleExitSystem() {
+      useRemoveLocalKey(authTokenKey)
+    },
   },
 })

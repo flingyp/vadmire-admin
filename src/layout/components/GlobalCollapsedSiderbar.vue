@@ -9,7 +9,7 @@ const vadmireConfigStore = useVAdmireConfigStore()
     class="text-base cursor-pointer"
     @click="vadmireConfigStore.handleIsCollapsedSider"
   >
-    <icon-line-md:menu-fold-left v-show="!vadmireConfigStore.isCollapsedSider" />
-    <icon-line-md:menu-fold-right v-show="vadmireConfigStore.isCollapsedSider" />
+    <icon-line-md:menu-fold-left v-if="!vadmireConfigStore.isCollapsedSider" />
+    <icon-line-md:menu-fold-right v-else />
   </GlobalHeaderItem>
 </template>

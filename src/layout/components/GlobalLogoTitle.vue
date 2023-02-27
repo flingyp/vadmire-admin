@@ -2,6 +2,14 @@
 import Logo from '~/assets/img/admire-logo.png'
 
 const vadmireConfigStore = useVAdmireConfigStore()
+
+const isShowTitle = computed(() => {
+  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') {
+    if (!vadmireConfigStore.isCollapsedSider) return true
+    return false
+  }
+  return true
+})
 </script>
 
 <template>
@@ -15,7 +23,7 @@ const vadmireConfigStore = useVAdmireConfigStore()
       class="h-full"
     >
     <span
-      v-show="!vadmireConfigStore.isCollapsedSider"
+      v-show="isShowTitle"
       class="text-gradient font-bold text-xl mt-1 select-none cursor-pointer"
     >
       {{ vadmireConfigStore.name }}

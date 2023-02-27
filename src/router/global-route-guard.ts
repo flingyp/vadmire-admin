@@ -67,23 +67,23 @@ export default async (
 
   // local have auth token case
   if (!useCommonType.isNull(localAuthToken)) {
-    if (from.name === 'System_Auth' && to.name !== 'System_Auth') {
+    if (from.name === 'SystemAuth' && to.name !== 'SystemAuth') {
       // 1. go to route from login page and the route is not login page
       if (!routeMenuStore.isMountedRoute) {
         await routeGenerateMenuProcess(routeInstance, routeMenuStore)
         routeMenuStore.isMountedRoute = true
         next({ path: to.fullPath, replace: true })
       }
-    } else if (useCommonType.isUndefined(from.name) && to.name !== 'System_Auth') {
+    } else if (useCommonType.isUndefined(from.name) && to.name !== 'SystemAuth') {
       // 2. it isn't from login page and isn't go to login page (refresh page case)
       if (!routeMenuStore.isMountedRoute) {
         await routeGenerateMenuProcess(routeInstance, routeMenuStore)
         routeMenuStore.isMountedRoute = true
         next({ path: to.fullPath, replace: true })
       }
-    } else if (to.name === 'System_Auth') {
+    } else if (to.name === 'SystemAuth') {
       // 3. want to jump to the login page manually
-      next({ name: 'Layout_Home' })
+      next({ name: 'LayoutHome' })
     }
 
     // mount not found common route
@@ -97,6 +97,6 @@ export default async (
     // check whether white list is configured
     const isAccess = whiteRouteList.includes(to.name as string)
     // release if configured, otherwise it will go to the login page
-    isAccess ? next() : next({ name: 'System_Auth' })
+    isAccess ? next() : next({ name: 'SystemAuth' })
   }
 }

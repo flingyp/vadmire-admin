@@ -1,5 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouteMenuStore } from '~/store'
+
+import GlobalMenu from '~/layout/components/GlobalMenu.vue'
+
+const routeMenuStore = useRouteMenuStore()
+</script>
 
 <template>
-  <div>Sider_Mix_Menu_Sider.vue</div>
+  <div>
+    <GlobalMenu :menu-options="routeMenuStore.vadmireMenu" />
+  </div>
 </template>

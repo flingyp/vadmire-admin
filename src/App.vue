@@ -4,7 +4,7 @@ import SingleApp from '~/components/common/SingleApp.vue'
 
 <template>
   <SingleApp>
-    <div class="font-mono text-sm font-medium overflow-hidden w-screen box-border scroll-smooth transition-all">
+    <div class="font-sans text-sm font-medium overflow-hidden w-screen box-border scroll-smooth transition">
       <RouterView />
     </div>
   </SingleApp>

@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue'
+import GlobalSetting from '~/layout/components/GlobalSetting.vue'
 import GlobalFullScreen from '~/layout/components/GlobalFullScreen.vue'
+import GlobalPersonalCenter from '~/layout/components/GlobalPersonalCenter.vue'
+import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue'
 </script>
 
 <template>
@@ -8,8 +10,10 @@ import GlobalFullScreen from '~/layout/components/GlobalFullScreen.vue'
     <div class="h-full">
       <GlobalSiderCollapse />
     </div>
-    <div class="h-full">
+    <div class="h-full flex items-center">
       <GlobalFullScreen />
+      <GlobalSetting />
+      <GlobalPersonalCenter />
     </div>
   </div>
 </template>

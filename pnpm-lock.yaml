@@ -12,6 +12,7 @@ specifiers:
   '@iconify-json/line-md': ^1.1.23
   '@iconify-json/material-symbols': ^1.1.32
   '@iconify-json/mdi': ^1.1.47
+  '@iconify-json/mdi-light': ^1.1.6
   '@iconify-json/ri': ^1.1.5
   '@iconify-json/tabler': ^1.1.61
   '@iconify-json/vscode-icons': ^1.1.22
@@ -67,6 +68,7 @@ devDependencies:
   '@iconify-json/line-md': 1.1.23
   '@iconify-json/material-symbols': 1.1.32
   '@iconify-json/mdi': 1.1.47
+  '@iconify-json/mdi-light': 1.1.6
   '@iconify-json/ri': 1.1.5
   '@iconify-json/tabler': 1.1.61
   '@iconify-json/vscode-icons': 1.1.22
@@ -898,6 +900,12 @@ packages:
 
   /@iconify-json/material-symbols/1.1.32:
     resolution: {integrity: sha512-gC05Wcs/rv3IFWyJ1ugFXR7ENQIZ8dVX1tBruV0/jJc7bpUCvNBY8/dEKO5oq/XkTi8Q4bazCgN3NeKcFPlnMg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/mdi-light/1.1.6:
+    resolution: {integrity: sha512-rEw60ImpDd1AWZso5EnRu0WtJnwp4ZkVLt56tpSKfXH+VH0Tb/fl766nZnbFOBrhyowPhEJEEIle9u4VklBnZg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
