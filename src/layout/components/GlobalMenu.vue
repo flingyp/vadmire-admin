@@ -41,3 +41,10 @@ const clickMenu = (key: string, menu: MenuOption) => {
     @update:value="clickMenu"
   />
 </template>
+
+<style lang="scss">
+/* menu icon center */
+div.n-menu-item-content--collapsed {
+  padding-left: 17px !important;
+}
+</style>

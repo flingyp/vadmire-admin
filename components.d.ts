@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    'IconAntDesign:fullscreenExitOutlined': typeof import('~icons/ant-design/fullscreen-exit-outlined')['default']
+    'IconAntDesign:fullscreenOutlined': typeof import('~icons/ant-design/fullscreen-outlined')['default']
     'IconFa:weixin': typeof import('~icons/fa/weixin')['default']
     'IconLineMd:menuFoldLeft': typeof import('~icons/line-md/menu-fold-left')['default']
     'IconLineMd:menuFoldRight': typeof import('~icons/line-md/menu-fold-right')['default']

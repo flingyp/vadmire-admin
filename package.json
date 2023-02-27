@@ -27,6 +27,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@flypeng/eslint-config": "^0.0.9",
+    "@iconify-json/ant-design": "^1.1.5",
     "@iconify-json/ep": "^1.1.9",
     "@iconify-json/fa": "^1.1.4",
     "@iconify-json/ic": "^1.1.13",

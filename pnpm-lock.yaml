@@ -5,6 +5,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.4.4
   '@flypeng/eslint-config': ^0.0.9
   '@flypeng/tool': ^5.1.0
+  '@iconify-json/ant-design': ^1.1.5
   '@iconify-json/ep': ^1.1.9
   '@iconify-json/fa': ^1.1.4
   '@iconify-json/ic': ^1.1.13
@@ -59,6 +60,7 @@ devDependencies:
   '@commitlint/cli': 17.4.4
   '@commitlint/config-conventional': 17.4.4
   '@flypeng/eslint-config': 0.0.9_7kw3g6rralp5ps6mg3uyzz6azm
+  '@iconify-json/ant-design': 1.1.5
   '@iconify-json/ep': 1.1.9
   '@iconify-json/fa': 1.1.4
   '@iconify-json/ic': 1.1.13
@@ -862,6 +864,12 @@ packages:
   /@hutson/parse-repository-url/3.0.2:
     resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
     engines: {node: '>=6.9.0'}
+    dev: true
+
+  /@iconify-json/ant-design/1.1.5:
+    resolution: {integrity: sha512-lNEC95u9QdmS3GfMLnbAjLZCfQ9i4xURyn7P4UVHa6ejjLjs5FVyi/J+itrmnBpwb36YZo4CT0GDIn2AgvkNng==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify-json/ep/1.1.9:

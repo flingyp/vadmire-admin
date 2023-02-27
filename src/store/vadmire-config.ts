@@ -10,5 +10,6 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
     handleIsCollapsedSider() {
       this.isCollapsedSider = !this.isCollapsedSider
     },
+
   },
 })

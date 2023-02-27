@@ -5,14 +5,11 @@ const vadmireConfigStore = useVAdmireConfigStore()
 </script>
 
 <template>
-  <GlobalHeaderItem @click="vadmireConfigStore.handleIsCollapsedSider">
-    <icon-line-md:menu-fold-left
-      v-if="!vadmireConfigStore.isCollapsedSider"
-      class="text-base cursor-pointer"
-    />
-    <icon-line-md:menu-fold-right
-      v-else
-      class="text-base cursor-pointer"
-    />
+  <GlobalHeaderItem
+    class="text-base cursor-pointer"
+    @click="vadmireConfigStore.handleIsCollapsedSider"
+  >
+    <icon-line-md:menu-fold-left v-show="!vadmireConfigStore.isCollapsedSider" />
+    <icon-line-md:menu-fold-right v-show="vadmireConfigStore.isCollapsedSider" />
   </GlobalHeaderItem>
 </template>

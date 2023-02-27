@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue'
+import GlobalFullScreen from '~/layout/components/GlobalFullScreen.vue'
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue
       <GlobalSiderCollapse />
     </div>
     <div class="h-full">
-      右
+      <GlobalFullScreen />
     </div>
   </div>
 </template>
