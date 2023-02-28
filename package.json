@@ -8,9 +8,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "release": "standard-version",
     "prepare": "husky install",
-    "commit": "git-cz",
-    "release": "standard-version"
+    "commit": "git-cz"
   },
   "dependencies": {
     "@flypeng/tool": "^5.1.0",
@@ -20,6 +20,7 @@
     "naive-ui": "^2.34.3",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.31",
+    "swiper": "^9.0.5",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
@@ -37,6 +38,7 @@
     "@iconify-json/mdi-light": "^1.1.6",
     "@iconify-json/ri": "^1.1.5",
     "@iconify-json/tabler": "^1.1.61",
+    "@iconify-json/uil": "^1.1.4",
     "@iconify-json/vscode-icons": "^1.1.22",
     "@iconify/vue": "^4.1.0",
     "@types/mockjs": "^1.0.7",

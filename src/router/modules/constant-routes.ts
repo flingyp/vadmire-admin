@@ -39,9 +39,25 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     ],
   },
   {
+    path: '/',
+    name: 'Home',
+    redirect: '/layout',
+    meta: {
+      isShow: false,
+    },
+  },
+  {
     path: '/layout',
     name: 'LayoutHome',
     component: 'Layout',
+    meta: {
+      isShow: false,
+    },
+  },
+  {
+    path: '/block/demo1',
+    name: 'BlockDemo-1',
+    component: '~/views/block/demo1.vue',
     meta: {
       isShow: false,
     },

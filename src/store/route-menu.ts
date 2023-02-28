@@ -1,8 +1,10 @@
 import { MenuOption } from 'naive-ui'
 import { defineStore } from 'pinia'
 import { RouteRecordRaw } from 'vue-router'
+import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
 import { SystemAccountInfo } from '~/requests'
 import { VAdmireRoute } from '~/router'
+import { LOCAL_KEY } from '~/vadmire.config'
 
 export interface RouteMenuStore {
   account: SystemAccountInfo
@@ -15,6 +17,7 @@ export interface RouteMenuStore {
   vrouterConstantRoutes: RouteRecordRaw[]
   vrouterAsyncRoutes: RouteRecordRaw[]
   breadCrumbMenus: MenuOption[]
+  tabMenuKeys: string[]
 }
 
 export const useRouteMenuStore = defineStore('routeMenuStore', {
@@ -36,5 +39,43 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
     vrouterConstantRoutes: [],
     vrouterAsyncRoutes: [],
     breadCrumbMenus: [],
+    tabMenuKeys: JSON.parse(useGetLocalKey(LOCAL_KEY) || '[]') as string[],
   }),
+  getters: {
+    vadmireMenuByFlat(state) {
+      const { vadmireMenu } = state
+      const vadmireMenuByFlat: MenuOption[] = []
+      const flat = (menu: MenuOption[]) => {
+        menu.forEach((item) => {
+          vadmireMenuByFlat.push(item)
+          if (item.children) flat(item.children)
+        })
+      }
+      // @ts-ignore
+      flat(vadmireMenu)
+      return vadmireMenuByFlat
+    },
+    vadmireTabMenu(state) {
+      const { tabMenuKeys } = state
+      const menuByFlat = this.vadmireMenuByFlat
+      const menuList: MenuOption[] = []
+      // eslint-disable-next-line no-restricted-syntax
+      for (const item of tabMenuKeys) {
+        const tabMenu = menuByFlat.find((menu) => menu.key === item)
+        if (tabMenu) menuList.push(tabMenu)
+      }
+
+      return menuList
+    },
+  },
+  actions: {
+    // create tab menu key
+    createTabMenuKey(key: string) {
+      const localKeyList = this.tabMenuKeys
+      if (!localKeyList.includes(key)) {
+        this.tabMenuKeys = [...localKeyList, key]
+        useSetLocalKey(LOCAL_KEY, JSON.stringify(this.tabMenuKeys))
+      }
+    },
+  },
 })

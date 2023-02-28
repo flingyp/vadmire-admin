@@ -12,3 +12,4 @@ declare module 'vue-router' {
     single?: boolean // single route
   }
 }
+

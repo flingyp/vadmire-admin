@@ -29,10 +29,9 @@ export const generateSystemMenu = (routes: RouteRecordRaw[]): MenuOption[] => {
       menu.key = handleRoute.name as string
 
       // 设置图标
-
+      menu.iconLabel = handleRoute.meta?.icon
       if (handleRoute.meta?.icon) {
         menu.icon = useRenderIcon(handleRoute.meta.icon)
-        console.log(menu.icon)
       }
 
       // 外链地址

@@ -38,3 +38,6 @@ export const handleRouteForm: HandleRouteForm = 'WEB'
 
 // local storage key list
 export const authTokenKey = 'auth-token'
+
+// local storage tab menu key list
+export const LOCAL_KEY = 'TAB_MENU_KEY'

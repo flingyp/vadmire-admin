@@ -62,6 +62,9 @@ watchEffect(() => {
   // generate breadcrumb menu
   // @ts-ignore
   routeMenuStore.breadCrumbMenus = createBreadCrumbMenu(routeKey.value, routeMenuStore.vadmireMenu)
+
+  // create tab menu key
+  routeMenuStore.createTabMenuKey(routeKey.value)
 })
 
 // click menu
