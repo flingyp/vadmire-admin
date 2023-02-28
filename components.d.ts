@@ -15,6 +15,8 @@ declare module '@vue/runtime-core' {
     'IconFa:weixin': typeof import('~icons/fa/weixin')['default']
     'IconLineMd:menuFoldLeft': typeof import('~icons/line-md/menu-fold-left')['default']
     'IconLineMd:menuFoldRight': typeof import('~icons/line-md/menu-fold-right')['default']
+    'IconMaterialSymbols:keyboardDoubleArrowLeftRounded': typeof import('~icons/material-symbols/keyboard-double-arrow-left-rounded')['default']
+    'IconMaterialSymbols:keyboardDoubleArrowRightRounded': typeof import('~icons/material-symbols/keyboard-double-arrow-right-rounded')['default']
     'IconMdi:github': typeof import('~icons/mdi/github')['default']
     'IconMdi:shieldLockOutline': typeof import('~icons/mdi/shield-lock-outline')['default']
     'IconMdi:signIn': typeof import('~icons/mdi/sign-in')['default']
