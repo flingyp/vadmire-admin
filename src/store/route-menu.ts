@@ -71,13 +71,8 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
   actions: {
     // create tab menu key
     createTabMenuKey(key: string) {
-      console.log('key->', key)
       if (!this.tabMenuKeys.includes(key)) {
-        console.log('添加了吗?')
-
         this.tabMenuKeys = [...this.tabMenuKeys, key]
-        console.log('this.tabMenuKeys->', this.tabMenuKeys)
-
         useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
       }
     },

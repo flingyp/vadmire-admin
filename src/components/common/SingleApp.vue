@@ -14,6 +14,7 @@ const themeMode = computed(() => {
   <Suspense>
     <NConfigProvider
       :theme="themeMode"
+      :theme-overrides="vadmireConfigStore.naiveThemeOverrides"
       class="w-screen h-screen"
     >
       <NNotificationProvider>

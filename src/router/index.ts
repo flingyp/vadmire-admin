@@ -4,8 +4,6 @@ import globalRouteGuardProcess from './global-route-guard'
 import { vadmireRouteToRouteRecordRaw } from './utils'
 import { CONSTANT_ROUTES } from './modules'
 
-console.log(vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES))
-
 export const router = createRouter({
   routes: vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES),
   strict: true,

@@ -1,6 +1,18 @@
+import { ColorType } from './utils'
+
 export type ThemeMode = 'LIGHT' | 'DARK'
 export type LayoutMode = 'TOP_MENU' | 'SIDER_MENU' | 'SIDER_MIX_MENU'
 export type HandleRouteForm = 'WEB' | 'SERVER'
+
+// different scene color
+export const sceneColorMap: Record<ColorType, string> = {
+  primary: '#0071bc',
+  info: '#687FFF',
+  success: '#61D132',
+  warning: '#FFA500',
+  error: '#FF4838',
+}
+
 export interface VAdmireConfig {
   name: string
   themeMode: ThemeMode
@@ -20,7 +32,7 @@ export function defindVAdmireConfig(): VAdmireConfig {
     name: 'VAdmire Admin',
     themeMode: 'LIGHT',
     layoutMode: 'SIDER_MENU',
-    primaryColor: '#0071bc',
+    primaryColor: sceneColorMap.primary,
     isScaleDrawer: false,
     isCollapsedSider: false,
     headerHeight: 64,
@@ -44,3 +56,6 @@ export const TAB_MENU_KEY = 'TAB_MENU_KEY'
 
 // local theme mode key
 export const THEME_MODE_KEY = 'vueuse-color-scheme'
+
+// local primary color key
+export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY'

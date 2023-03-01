@@ -6,6 +6,7 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const addThemeCssVariousToHtml: typeof import('./src/utils/colord')['addThemeCssVariousToHtml']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -33,12 +34,17 @@ declare global {
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getActivePinia: typeof import('pinia')['getActivePinia']
+  const getColorInstance: typeof import('./src/utils/colord')['getColorInstance']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getDifSceneColor: typeof import('./src/utils/colord')['getDifSceneColor']
+  const getToHex: typeof import('./src/utils/colord')['getToHex']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
+  const isDarkColor: typeof import('./src/utils/colord')['isDarkColor']
   const isDefined: typeof import('@vueuse/core')['isDefined']
+  const isLightColor: typeof import('./src/utils/colord')['isLightColor']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -99,8 +105,12 @@ declare global {
   const templateRef: typeof import('@vueuse/core')['templateRef']
   const throttledRef: typeof import('@vueuse/core')['throttledRef']
   const throttledWatch: typeof import('@vueuse/core')['throttledWatch']
+  const toDark: typeof import('./src/utils/colord')['toDark']
+  const toIncreaseSaturate: typeof import('./src/utils/colord')['toIncreaseSaturate']
+  const toLight: typeof import('./src/utils/colord')['toLight']
   const toRaw: typeof import('vue')['toRaw']
   const toReactive: typeof import('@vueuse/core')['toReactive']
+  const toReduceSaturate: typeof import('./src/utils/colord')['toReduceSaturate']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
   const triggerRef: typeof import('vue')['triggerRef']
@@ -299,6 +309,7 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly addThemeCssVariousToHtml: UnwrapRef<typeof import('./src/utils/colord')['addThemeCssVariousToHtml']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -326,12 +337,17 @@ declare module 'vue' {
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
+    readonly getColorInstance: UnwrapRef<typeof import('./src/utils/colord')['getColorInstance']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getDifSceneColor: UnwrapRef<typeof import('./src/utils/colord')['getDifSceneColor']>
+    readonly getToHex: UnwrapRef<typeof import('./src/utils/colord')['getToHex']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isDarkColor: UnwrapRef<typeof import('./src/utils/colord')['isDarkColor']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
+    readonly isLightColor: UnwrapRef<typeof import('./src/utils/colord')['isLightColor']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
@@ -392,8 +408,12 @@ declare module 'vue' {
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>
     readonly throttledRef: UnwrapRef<typeof import('@vueuse/core')['throttledRef']>
     readonly throttledWatch: UnwrapRef<typeof import('@vueuse/core')['throttledWatch']>
+    readonly toDark: UnwrapRef<typeof import('./src/utils/colord')['toDark']>
+    readonly toIncreaseSaturate: UnwrapRef<typeof import('./src/utils/colord')['toIncreaseSaturate']>
+    readonly toLight: UnwrapRef<typeof import('./src/utils/colord')['toLight']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toReactive: UnwrapRef<typeof import('@vueuse/core')['toReactive']>
+    readonly toReduceSaturate: UnwrapRef<typeof import('./src/utils/colord')['toReduceSaturate']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
