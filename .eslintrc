@@ -3,6 +3,7 @@
     "rules": {
         "no-undef": "off",
         "camelcase": "off",
-        "vue/require-component-is": "off"
+        "vue/require-component-is": "off",
+        "vue/multi-word-component-names": "off"
     }
 }

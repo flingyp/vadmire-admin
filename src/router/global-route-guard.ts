@@ -1,7 +1,7 @@
 import { useCommonType, useDeepClone, useGetLocalKey } from '@flypeng/tool/browser'
 import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
 import { Store } from 'pinia'
-import { authTokenKey, whiteRouteList, handleRouteForm } from '~/vadmire.config'
+import { AUTH_TOKEN, whiteRouteList, handleRouteForm } from '~/vadmire.config'
 import { getSystemAccountInfo } from '~/requests'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
 import {
@@ -63,7 +63,7 @@ export default async (
 ) => {
   const routeMenuStore = useRouteMenuStore()
 
-  const localAuthToken = useGetLocalKey(authTokenKey)
+  const localAuthToken = useGetLocalKey(AUTH_TOKEN)
 
   // local have auth token case
   if (!useCommonType.isNull(localAuthToken)) {
@@ -83,7 +83,7 @@ export default async (
       }
     } else if (to.name === 'SystemAuth') {
       // 3. want to jump to the login page manually
-      next({ name: 'LayoutHome' })
+      next({ name: 'BlockDemo-1' })
     }
 
     // mount not found common route

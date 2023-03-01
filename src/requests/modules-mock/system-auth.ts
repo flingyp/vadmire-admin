@@ -1,5 +1,5 @@
 import { useGetLocalKey } from '@flypeng/tool/browser'
-import { authTokenKey } from '~/vadmire.config'
+import { AUTH_TOKEN } from '~/vadmire.config'
 
 /**
  * 用户登录
@@ -36,5 +36,5 @@ export interface SystemAccountInfo {
 export const getSystemAccountInfo = async () => useRequest<SystemAccountInfo>({
   url: '/auth/info',
   method: 'POST',
-  headers: { Authorization: useGetLocalKey(authTokenKey) },
+  headers: { Authorization: useGetLocalKey(AUTH_TOKEN) },
 })

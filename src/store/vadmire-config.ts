@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { useRemoveLocalKey } from '@flypeng/tool/browser'
-import { VAdmireConfig, defindVAdmireConfig, authTokenKey } from '~/vadmire.config'
+import { VAdmireConfig, defindVAdmireConfig, AUTH_TOKEN } from '~/vadmire.config'
 
 const defaultVAdmireConfig = defindVAdmireConfig()
 
@@ -13,7 +13,7 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
     },
     // exit system logic
     async handleExitSystem() {
-      useRemoveLocalKey(authTokenKey)
+      useRemoveLocalKey(AUTH_TOKEN)
     },
   },
 })

@@ -4,7 +4,7 @@ import { RouteRecordRaw } from 'vue-router'
 import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
 import { SystemAccountInfo } from '~/requests'
 import { VAdmireRoute } from '~/router'
-import { LOCAL_KEY } from '~/vadmire.config'
+import { TAB_MENU_KEY } from '~/vadmire.config'
 
 export interface RouteMenuStore {
   account: SystemAccountInfo
@@ -39,7 +39,7 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
     vrouterConstantRoutes: [],
     vrouterAsyncRoutes: [],
     breadCrumbMenus: [],
-    tabMenuKeys: JSON.parse(useGetLocalKey(LOCAL_KEY) || '[]') as string[],
+    tabMenuKeys: JSON.parse(useGetLocalKey(TAB_MENU_KEY) || '[]') as string[],
   }),
   getters: {
     vadmireMenuByFlat(state) {
@@ -71,10 +71,21 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
   actions: {
     // create tab menu key
     createTabMenuKey(key: string) {
-      const localKeyList = this.tabMenuKeys
-      if (!localKeyList.includes(key)) {
-        this.tabMenuKeys = [...localKeyList, key]
-        useSetLocalKey(LOCAL_KEY, JSON.stringify(this.tabMenuKeys))
+      console.log('key->', key)
+      if (!this.tabMenuKeys.includes(key)) {
+        console.log('添加了吗?')
+
+        this.tabMenuKeys = [...this.tabMenuKeys, key]
+        console.log('this.tabMenuKeys->', this.tabMenuKeys)
+
+        useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
+      }
+    },
+    removeTabMenuKey(key: string) {
+      const deleteIndex = this.tabMenuKeys.indexOf(key)
+      if (deleteIndex !== -1) {
+        this.tabMenuKeys.splice(deleteIndex, 1)
+        useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
       }
     },
   },

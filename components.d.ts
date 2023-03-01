@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     'IconMdi:shieldLockOutline': typeof import('~icons/mdi/shield-lock-outline')['default']
     'IconMdi:signIn': typeof import('~icons/mdi/sign-in')['default']
     'IconMdi:twitter': typeof import('~icons/mdi/twitter')['default']
+    'IconMdi:windowClose': typeof import('~icons/mdi/window-close')['default']
     'IconMdiLight:settings': typeof import('~icons/mdi-light/settings')['default']
     'IconUil:alignJustify': typeof import('~icons/uil/align-justify')['default']
     NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']

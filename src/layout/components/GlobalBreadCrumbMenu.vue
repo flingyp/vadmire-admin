@@ -21,7 +21,10 @@ const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
 
 // click breadcrumb menu
-const clickBreadCrumbItem = (RouteKey: string) => {
-  router.push({ name: RouteKey })
+const clickBreadCrumbItem = (key: string) => {
+  // create tab menu key
+  routeMenuStore.createTabMenuKey(key)
+
+  router.push({ name: key })
 }
 </script>

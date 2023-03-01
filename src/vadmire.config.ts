@@ -37,7 +37,7 @@ export const whiteRouteList: string[] = ['SystemAuth']
 export const handleRouteForm: HandleRouteForm = 'WEB'
 
 // local storage key list
-export const authTokenKey = 'auth-token'
+export const AUTH_TOKEN = 'AUTH_TOKEN'
 
 // local storage tab menu key list
-export const LOCAL_KEY = 'TAB_MENU_KEY'
+export const TAB_MENU_KEY = 'TAB_MENU_KEY'

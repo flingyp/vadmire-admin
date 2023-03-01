@@ -3,7 +3,7 @@ import { useMessage } from 'naive-ui'
 import { useSetLocalKey } from '@flypeng/tool/browser'
 import SystemLogo from '~/assets/img/admire-logo.png'
 import { useVAdmireConfigStore } from '~/store'
-import { authTokenKey } from '~/vadmire.config'
+import { AUTH_TOKEN } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
 import SytemPlatformAuth from './SytemPlatformAuth.vue'
 
@@ -27,7 +27,7 @@ const getSignInAuth = async () => {
   }
 
   message.success(statusText)
-  useSetLocalKey(authTokenKey, data.accessToken)
+  useSetLocalKey(AUTH_TOKEN, data.accessToken)
   isSignInLoading.value = false
 
   setTimeout(() => {

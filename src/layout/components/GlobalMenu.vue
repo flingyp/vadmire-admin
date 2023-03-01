@@ -62,9 +62,6 @@ watchEffect(() => {
   // generate breadcrumb menu
   // @ts-ignore
   routeMenuStore.breadCrumbMenus = createBreadCrumbMenu(routeKey.value, routeMenuStore.vadmireMenu)
-
-  // create tab menu key
-  routeMenuStore.createTabMenuKey(routeKey.value)
 })
 
 // click menu
@@ -72,9 +69,17 @@ const clickMenu = (key: string, menu: MenuOption) => {
   if (menu.link === 'EXTERNAL_LINK' && menu.url) {
     window.open(menu.url as string)
   } else {
+    // create tab menu key
+    routeMenuStore.createTabMenuKey(key as string)
+
     router.push({ name: key })
   }
 }
+
+onMounted(() => {
+  // create tab menu key
+  routeMenuStore.createTabMenuKey(route.name as string)
+})
 </script>
 
 <template>
