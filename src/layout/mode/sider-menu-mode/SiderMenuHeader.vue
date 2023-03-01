@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import GlobalSetting from '~/layout/components/GlobalSetting.vue'
-import GlobalFullScreen from '~/layout/components/GlobalFullScreen.vue'
-import GlobalPersonalCenter from '~/layout/components/GlobalPersonalCenter.vue'
+import BaseFullScreen from '~/layout/components/layout/BaseFullScreen.vue'
+import BaseSettingIcon from '~/layout/components/layout/BaseSettingIcon.vue'
+import BasePersonalCenter from '~/layout/components/layout/BasePersonalCenter.vue'
 import GlobalBreadCrumbMenu from '~/layout/components/GlobalBreadCrumbMenu.vue'
-import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue'
+import BaseCollapsedSiderbar from '~/layout/components/layout/BaseCollapsedSiderbar.vue'
 </script>
 
 <template>
   <div class="flex items-center justify-between h-full">
     <div class="h-full flex items-center space-x-1">
-      <GlobalSiderCollapse />
+      <BaseCollapsedSiderbar />
       <GlobalBreadCrumbMenu />
     </div>
     <div class="h-full flex items-center">
-      <GlobalFullScreen />
-      <GlobalSetting />
-      <GlobalPersonalCenter />
+      <BaseFullScreen />
+      <BaseSettingIcon />
+      <BasePersonalCenter />
     </div>
   </div>
 </template>

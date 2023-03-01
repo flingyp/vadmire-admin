@@ -21,7 +21,7 @@ export function defindVAdmireConfig(): VAdmireConfig {
     themeMode: 'LIGHT',
     layoutMode: 'SIDER_MENU',
     primaryColor: '#0071bc',
-    isScaleDrawer: true,
+    isScaleDrawer: false,
     isCollapsedSider: false,
     headerHeight: 64,
     footerHeight: 64,
@@ -41,3 +41,6 @@ export const AUTH_TOKEN = 'AUTH_TOKEN'
 
 // local storage tab menu key list
 export const TAB_MENU_KEY = 'TAB_MENU_KEY'
+
+// local theme mode key
+export const THEME_MODE_KEY = 'vueuse-color-scheme'

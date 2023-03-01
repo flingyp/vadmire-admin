@@ -14,7 +14,7 @@ const isShowTitle = computed(() => {
 
 <template>
   <div
-    class="flex items-center justify-center border-b"
+    class="flex items-center justify-center border-b border-b-vBorderLight dark:border-b-vBorderDark"
     :style="{height: `${vadmireConfigStore.headerHeight}px`}"
   >
     <img

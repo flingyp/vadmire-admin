@@ -13,6 +13,8 @@ import SiderMixMenuSider from '../mode/sider-mix-menu-mode/SiderMixMenuSider.vue
 import TopMenuHeader from '../mode/top-menu-mode/TopMenuHeader.vue'
 import TopMenuSider from '../mode/top-menu-mode/TopMenuSider.vue'
 
+import GlobalSetting from '~/layout/components/GlobalSetting.vue'
+
 const vadmireConfigStore = useVAdmireConfigStore()
 
 const Global_Header = computed(() => {
@@ -47,4 +49,6 @@ const Global_Sider = computed(() => {
       <component :is="GlobalFooter" />
     </template>
   </BasicLayout>
+
+  <GlobalSetting />
 </template>

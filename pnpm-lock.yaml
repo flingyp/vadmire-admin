@@ -13,6 +13,8 @@ specifiers:
   '@iconify-json/material-symbols': ^1.1.32
   '@iconify-json/mdi': ^1.1.47
   '@iconify-json/mdi-light': ^1.1.6
+  '@iconify-json/noto': ^1.1.11
+  '@iconify-json/openmoji': ^1.1.22
   '@iconify-json/ri': ^1.1.5
   '@iconify-json/tabler': ^1.1.61
   '@iconify-json/uil': ^1.1.4
@@ -72,6 +74,8 @@ devDependencies:
   '@iconify-json/material-symbols': 1.1.32
   '@iconify-json/mdi': 1.1.47
   '@iconify-json/mdi-light': 1.1.6
+  '@iconify-json/noto': 1.1.11
+  '@iconify-json/openmoji': 1.1.22
   '@iconify-json/ri': 1.1.5
   '@iconify-json/tabler': 1.1.61
   '@iconify-json/uil': 1.1.4
@@ -916,6 +920,18 @@ packages:
 
   /@iconify-json/mdi/1.1.47:
     resolution: {integrity: sha512-5E5mazdQaMNl3gmLL7whteh61weJBRfW2R9Rq0/pgAe9B0j22mViyADm/ooHZx07Vkc0ZqnkgUrpT6OsS9Qhzg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/noto/1.1.11:
+    resolution: {integrity: sha512-XRQa8al8GKiDm8j/wqR7kU5IQ7SNCB9h3qhqSZ7uZ8YSOZfOdNuYTlyakhEKUHAiXKjfRldoBkhtl+sVNyqSPQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/openmoji/1.1.22:
+    resolution: {integrity: sha512-2dTER7N333p4/K3Qu5kBqp61tqBA/8/jiIcT+n5+kYoxoAaFi5vCvtMz8QHYxMpb3kq7GOUi7vumcX2CmIAKiQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

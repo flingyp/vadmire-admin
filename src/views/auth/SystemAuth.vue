@@ -23,7 +23,7 @@ provide('switchSign', switchSign)
 <template>
   <div
     ref="systemAuthRoot"
-    class="auth-container w-screen h-screen bg-auth-pattern overflow-hidden"
+    class="auth-container w-screen h-screen bg-vAuthBgImage overflow-hidden"
   >
     <div
       :style="[rotateYComputed]"

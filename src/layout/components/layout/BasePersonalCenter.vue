@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { DropdownOption } from 'naive-ui'
 import AvatarLogo from '~/assets/img/avatar-logo.png'
-import GlobalHeaderItem from './GlobalHeaderItem.vue'
+import BaseHeaderItem from './BaseHeaderItem.vue'
 
 const router = useRouter()
 const vadmireConfigStore = useVAdmireConfigStore()
@@ -24,7 +24,7 @@ const handleClickOption = async (key: OptionKeys) => {
 </script>
 
 <template>
-  <GlobalHeaderItem class="text-sm">
+  <BaseHeaderItem class="text-sm">
     <NDropdown
       trigger="hover"
       :options="options"
@@ -39,5 +39,5 @@ const handleClickOption = async (key: OptionKeys) => {
         <span>超级管理员</span>
       </div>
     </NDropdown>
-  </GlobalHeaderItem>
+  </BaseHeaderItem>
 </template>

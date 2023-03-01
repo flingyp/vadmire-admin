@@ -2,14 +2,14 @@
 import { useRouteMenuStore } from '~/store'
 
 import GlobalMenu from '~/layout/components/GlobalMenu.vue'
-import GlobalLogoTitle from '~/layout/components/GlobalLogoTitle.vue'
+import BaseLogoTitle from '~/layout/components/layout/BaseLogoTitle.vue'
 
 const routeMenuStore = useRouteMenuStore()
 </script>
 
 <template>
   <div>
-    <GlobalLogoTitle />
+    <BaseLogoTitle />
     <GlobalMenu :menu-options="routeMenuStore.vadmireMenu" />
   </div>
 </template>

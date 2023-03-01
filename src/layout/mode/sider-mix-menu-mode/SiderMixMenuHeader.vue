@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import GlobalSetting from '~/layout/components/GlobalSetting.vue'
-import GlobalLogoTitle from '~/layout/components/GlobalLogoTitle.vue'
-import GlobalFullScreen from '~/layout/components/GlobalFullScreen.vue'
-import GlobalPersonalCenter from '~/layout/components/GlobalPersonalCenter.vue'
+import BaseLogoTitle from '~/layout/components/layout/BaseLogoTitle.vue'
+import BaseFullScreen from '~/layout/components/layout/BaseFullScreen.vue'
+import BaseSettingIcon from '~/layout/components/layout/BaseSettingIcon.vue'
+import BasePersonalCenter from '~/layout/components/layout/BasePersonalCenter.vue'
 import GlobalBreadCrumbMenu from '~/layout/components/GlobalBreadCrumbMenu.vue'
-import GlobalSiderCollapse from '~/layout/components/GlobalCollapsedSiderbar.vue'
+import BaseCollapsedSiderbar from '~/layout/components/layout/BaseCollapsedSiderbar.vue'
 </script>
 
 <template>
   <div class="flex justify-between px-4">
     <div class="flex items-center space-x-10">
-      <GlobalLogoTitle />
+      <BaseLogoTitle />
       <GlobalBreadCrumbMenu />
     </div>
     <div class="flex">
-      <GlobalFullScreen />
-      <GlobalSiderCollapse />
-      <GlobalSetting />
-      <GlobalPersonalCenter />
+      <BaseFullScreen />
+      <BaseCollapsedSiderbar />
+      <BaseSettingIcon />
+      <BasePersonalCenter />
     </div>
   </div>
 </template>

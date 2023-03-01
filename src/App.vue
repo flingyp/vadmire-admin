@@ -2,20 +2,30 @@
 import SingleApp from '~/components/common/SingleApp.vue'
 
 const vadmireConfigStore = useVAdmireConfigStore()
-// initial configuration
-onMounted(() => {
-  /**
-   * SM: 640
-   * MD: 768
-   * LG: 1024
-   * XL: 1280
-   * 2XL: 1536
-   */
-  const documentWidth = window.innerWidth || document.documentElement.clientWidth
-  if (documentWidth <= 640) {
+
+// listener window size change
+useMonitorWindow(([width]: [number, number]) => {
+  if (width <= 640) {
     vadmireConfigStore.isCollapsedSider = true
+  } else {
+    vadmireConfigStore.isCollapsedSider = false
   }
 })
+
+// initial configuration
+// onMounted(() => {
+//   /**
+//    * SM: 640
+//    * MD: 768
+//    * LG: 1024
+//    * XL: 1280
+//    * 2XL: 1536
+//    */
+//   const documentWidth = window.innerWidth || document.documentElement.clientWidth
+//   if (documentWidth <= 640) {
+//     vadmireConfigStore.isCollapsedSider = true
+//   }
+// })
 </script>
 
 <template>
