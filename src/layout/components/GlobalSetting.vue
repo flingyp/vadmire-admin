@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSetLocalKey } from '@flypeng/tool/browser'
-import { PRIMARY_COLOR_KEY } from '~/vadmire.config'
+import { LayoutMode, PRIMARY_COLOR_KEY } from '~/vadmire.config'
 import BaseSettingContainer from './setting/BaseSettingContainer.vue'
 
 const { toggleDark } = useTheme()
@@ -44,6 +44,29 @@ const updateSystemPrimaryColor = (color: string) => {
   useSetLocalKey(PRIMARY_COLOR_KEY, color)
 }
 
+// layout list
+interface LayoutItem {
+  key: LayoutMode,
+  value: string
+}
+const systemLayoutOption: LayoutItem[] = [
+  {
+    key: 'SIDER_MENU',
+    value: '左侧菜单',
+  },
+  {
+    key: 'TOP_MENU',
+    value: '顶部菜单',
+  },
+  {
+    key: 'SIDER_MIX_MENU',
+    value: '顶部混合菜单',
+  },
+]
+const changeLayoutMode = (mode: LayoutMode) => {
+  vadmireConfigStore.layoutMode = mode
+}
+
 // page switch transition options
 const pageSwitchTransitionOption = [{
   label: '消退',
@@ -79,7 +102,7 @@ const pageSwitchTransitionOption = [{
 <template>
   <NDrawer
     v-model:show="vadmireConfigStore.isScaleDrawer"
-    :width="360"
+    :width="380"
     native-scrollbar
     placement="right"
   >
@@ -87,6 +110,15 @@ const pageSwitchTransitionOption = [{
       title="系统设置"
       closable
     >
+      <BaseSettingContainer title="系统名称">
+        <NInput
+          v-model:value="vadmireConfigStore.name"
+          type="text"
+          placeholder="系统名称"
+          class="w-32 text-center"
+        />
+      </BaseSettingContainer>
+
       <BaseSettingContainer title="暗黑模式">
         <NSwitch
           v-model:value="themeModeActive"
@@ -99,6 +131,19 @@ const pageSwitchTransitionOption = [{
             <icon-line-md:sunny-outline-loop />
           </template>
         </NSwitch>
+      </BaseSettingContainer>
+
+      <BaseSettingContainer title="布局模式">
+        <div class="grid grid-cols-3 space-x-1">
+          <NButton
+            v-for="item in systemLayoutOption"
+            :key="item.key"
+            :type="vadmireConfigStore.layoutMode === item.key ? 'primary' : 'default'"
+            @click="changeLayoutMode(item.key)"
+          >
+            {{ item.value }}
+          </NButton>
+        </div>
       </BaseSettingContainer>
 
       <BaseSettingContainer title="系统主题色">

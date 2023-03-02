@@ -34,6 +34,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         meta: {
           text: 'Demo',
           icon: 'material-symbols:workspace-premium-outline',
+          single: true,
         },
       },
     ],
