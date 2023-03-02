@@ -50,7 +50,7 @@ const deleteTabMenu = (key: string) => {
     >
       <div
         class="flex items-center px-2 py-1 rounded-sm border border-none cursor-pointer group"
-        :class="[route.name === menu.key ? 'bg-indigo-500 text-white border-indigo-500': '']"
+        :class="[route.name === menu.key ? 'bg-primary border-primary text-white': '']"
         @click="clickTabMenu(menu.key as string)"
       >
         <Icon

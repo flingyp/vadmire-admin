@@ -24,6 +24,7 @@ export interface VAdmireConfig {
   footerHeight: number
   siderWidth: number
   isCollapsedSiderWidth: number
+  pageTransition: string
 }
 
 // default vadmireConfigStore initial config
@@ -39,6 +40,7 @@ export function defindVAdmireConfig(): VAdmireConfig {
     footerHeight: 64,
     siderWidth: 272,
     isCollapsedSiderWidth: 60,
+    pageTransition: 'fade',
   }
 }
 

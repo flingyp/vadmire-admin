@@ -5,6 +5,6 @@ import { Icon } from '@iconify/vue'
  * from @iconify/vue to realize async import of icon
  * issue: https://github.com/antfu/unplugin-icons/issues/5
  */
-export function useRenderIcon(icon: string) {
-  return () => h(Icon, { icon })
+export function useRenderIcon(icon: string, width?: number, height?: number) {
+  return () => h(Icon, { icon, width, height })
 }

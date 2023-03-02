@@ -17,6 +17,7 @@ const updateThemeMode = (mode: boolean) => {
   }
 }
 
+// primary color list
 const primaryColorList = [
   '#f44336',
   '#e91e63',
@@ -38,11 +39,41 @@ const primaryColorList = [
   '#9e9e9e',
   '#607d8b',
 ]
-
 const updateSystemPrimaryColor = (color: string) => {
   vadmireConfigStore.primaryColor = color
   useSetLocalKey(PRIMARY_COLOR_KEY, color)
 }
+
+// page switch transition options
+const pageSwitchTransitionOption = [{
+  label: '消退',
+  value: 'fade',
+},
+{
+  label: '滑动消退',
+  value: 'fade-slide',
+},
+{
+  label: '向下滑动消退',
+  value: 'fade-bottom',
+},
+{
+  label: '向上滑动消退',
+  value: 'fade-top',
+},
+{
+  label: '放大消退',
+  value: 'fade-scale',
+},
+{
+  label: '缩放消退',
+  value: 'zoom-fade',
+},
+{
+  label: '缩放弹出',
+  value: 'zoom-out',
+}]
+
 </script>
 
 <template>
@@ -90,6 +121,13 @@ const updateSystemPrimaryColor = (color: string) => {
           />
         </div>
       </BaseSettingContainer>
+
+      <BaseSettingContainer title="切换过渡">
+        <NSelect
+          v-model:value="vadmireConfigStore.pageTransition"
+          :options="pageSwitchTransitionOption"
+        />
+      </BaseSettingContainer>
     </NDrawerContent>
   </NDrawer>
 </template>
@@ -107,5 +145,4 @@ const updateSystemPrimaryColor = (color: string) => {
     color: #ffffff;
   }
 }
-
 </style>
