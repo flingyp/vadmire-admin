@@ -3,5 +3,3 @@
 <template>
   <div>Demo</div>
 </template>
-
-<style scoped></style>

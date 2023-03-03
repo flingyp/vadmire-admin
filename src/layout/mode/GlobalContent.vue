@@ -1,12 +1,19 @@
 <script setup lang="ts">
+import { IS_RELOAD_CONTENT } from '~/vadmire.config'
 import GlobalTabBar from '~/layout/components/GlobalTabBar.vue'
 
 const vadmireConfigStore = useVAdmireConfigStore()
+
+const isReloadContent = ref<boolean>(false)
+provide(IS_RELOAD_CONTENT, isReloadContent)
 </script>
 
 <template>
   <GlobalTabBar />
-  <div class="p-2">
+  <div
+    v-if="!isReloadContent"
+    class="p-2"
+  >
     <RouterView v-slot="{Component, route}">
       <Transition
         :name="vadmireConfigStore.pageTransition"
@@ -22,5 +29,16 @@ const vadmireConfigStore = useVAdmireConfigStore()
         <!-- TODO: 不使用KeepAlive缓存 -->
       </Transition>
     </RouterView>
+  </div>
+  <div
+    v-else
+    class="w-full flex items-center justify-center"
+    :style="{height: vadmireConfigStore.contentContainerHeight}"
+  >
+    <NSpin size="medium">
+      <template #description>
+        重新加载中...
+      </template>
+    </NSpin>
   </div>
 </template>

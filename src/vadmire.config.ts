@@ -66,3 +66,6 @@ export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY'
 
 // local system config key
 export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY'
+
+// reload content key
+export const IS_RELOAD_CONTENT = 'IS_RELOAD_CONTENT'

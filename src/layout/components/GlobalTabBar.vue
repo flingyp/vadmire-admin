@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BaseButtonTabBar from './layout/BaseButtonTabBar.vue'
+import BaseTabBarIcon from './layout/BaseTabBarIcon.vue'
 
 const vadmireConfigStore = useVAdmireConfigStore()
 
@@ -15,7 +16,7 @@ const tabBarHeight = computed(() => ({ height: `${vadmireConfigStore.tabBarHeigh
       <BaseButtonTabBar />
     </div>
     <div class="text-base flex justify-end items-center h-full">
-      <icon-uil:align-justify />
+      <BaseTabBarIcon />
     </div>
   </div>
 </template>

@@ -41,6 +41,9 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
         },
       }
     },
+    contentContainerHeight(state): string {
+      return `calc(100vh - ${state.headerHeight}px - ${state.footerHeight}px - ${state.tabBarHeight}px)`
+    },
   },
   actions: {
     // controls whether the sidebar is collapsed
