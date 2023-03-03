@@ -1,22 +1,28 @@
 import { defineStore } from 'pinia'
-import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser'
 import { GlobalThemeOverrides } from 'naive-ui'
-import {
-  VAdmireConfig, defindVAdmireConfig, AUTH_TOKEN, THEME_MODE_KEY, sceneColorMap, PRIMARY_COLOR_KEY,
-} from '~/vadmire.config'
+import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser'
 import { getDifSceneColor } from '~/utils'
+import {
+  VAdmireConfig, defaultVAdmireConfig, AUTH_TOKEN,
+  THEME_MODE_KEY, sceneColorMap, PRIMARY_COLOR_KEY, LOCAL_SYSTEM_KEY,
+} from '~/vadmire.config'
 
-const defaultVAdmireConfig = defindVAdmireConfig()
+const localConfig = JSON.parse(
+  useGetLocalKey(LOCAL_SYSTEM_KEY)
+  || JSON.stringify(defaultVAdmireConfig()),
+) as VAdmireConfig
+
+const localVAdmireConfig = localConfig
 
 export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
   state: (): VAdmireConfig => {
-    defaultVAdmireConfig.primaryColor = useGetLocalKey(PRIMARY_COLOR_KEY) || sceneColorMap.primary
+    localVAdmireConfig.primaryColor = useGetLocalKey(PRIMARY_COLOR_KEY) || sceneColorMap.primary
     if (useGetLocalKey(THEME_MODE_KEY) !== 'dark') {
-      defaultVAdmireConfig.themeMode = 'LIGHT'
+      localVAdmireConfig.themeMode = 'LIGHT'
     } else {
-      defaultVAdmireConfig.themeMode = 'DARK'
+      localVAdmireConfig.themeMode = 'DARK'
     }
-    return defaultVAdmireConfig
+    return localVAdmireConfig
   },
   getters: {
     naiveThemeOverrides(state): GlobalThemeOverrides {

@@ -10,6 +10,7 @@ specifiers:
   '@iconify-json/fa': ^1.1.4
   '@iconify-json/ic': ^1.1.13
   '@iconify-json/line-md': ^1.1.23
+  '@iconify-json/logos': ^1.1.23
   '@iconify-json/material-symbols': ^1.1.32
   '@iconify-json/mdi': ^1.1.47
   '@iconify-json/mdi-light': ^1.1.6
@@ -75,6 +76,7 @@ devDependencies:
   '@iconify-json/fa': 1.1.4
   '@iconify-json/ic': 1.1.13
   '@iconify-json/line-md': 1.1.23
+  '@iconify-json/logos': 1.1.23
   '@iconify-json/material-symbols': 1.1.32
   '@iconify-json/mdi': 1.1.47
   '@iconify-json/mdi-light': 1.1.6
@@ -906,6 +908,12 @@ packages:
 
   /@iconify-json/line-md/1.1.23:
     resolution: {integrity: sha512-gaA4OPpHa4SuHXtCDH2LUqMN/zUL4uVvTPFnHc+Ki3mGOZg1q2yZ0+vrwnWK0iMKf7tlffprZmQ5lIZZc/Irrg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/logos/1.1.23:
+    resolution: {integrity: sha512-bV1w4OQaHy6YZH/RhpxRc/BrzgF+7mW8HZ+ZltHbeokriwCf7gAKx6HWVOcLT0gZbO7MMM8HxnzvS7vlzhwNyw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

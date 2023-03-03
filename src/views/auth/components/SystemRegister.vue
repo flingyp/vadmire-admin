@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SytemPlatformAuth from './SytemPlatformAuth.vue'
-import SystemLogo from '~/assets/img/admire-logo.png'
+import Logo from '~/assets/svg/admire-logo.svg'
 import { useVAdmireConfigStore } from '~/store'
 
 const vadmireConfigStore = useVAdmireConfigStore()
@@ -20,20 +20,15 @@ const switchSign = inject('switchSign') as (value: boolean) => void
     <div class="max-w-md w-full space-y-4">
       <div>
         <img
-          :src="SystemLogo"
-          class="mx-auto h-20 w-auto"
+          :src="Logo"
+          class="mx-auto h-10 w-auto"
           alt="System Logo"
         >
         <h2 class="text-center text-2xl font-bold">
           Sign up
         </h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-          <a
-            href="#"
-            class="font-medium text-indigo-600 hover:text-indigo-500"
-          >
-            Welcome to {{ vadmireConfigStore.name }}
-          </a>
+        <p class="mt-2 text-center text-sm text-primary">
+          Welcome to {{ vadmireConfigStore.name }}
         </p>
       </div>
 
@@ -52,7 +47,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             <NInput placeholder="Please input your password" />
           </NFormItem>
 
-          <div class="text-right cursor-pointer text-indigo-500 hover:text-indigo-700 mb-2">
+          <div class="text-right cursor-pointer text-primary hover:text-primaryHover mb-2">
             <span class="cursor-pointer">Forgot your password</span>
           </div>
 

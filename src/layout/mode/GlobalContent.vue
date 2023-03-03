@@ -19,6 +19,7 @@ const vadmireConfigStore = useVAdmireConfigStore()
             :key="route.path"
           />
         </KeepAlive>
+        <!-- TODO: 不使用KeepAlive缓存 -->
       </Transition>
     </RouterView>
   </div>

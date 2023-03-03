@@ -23,12 +23,13 @@ export interface VAdmireConfig {
   headerHeight: number
   footerHeight: number
   siderWidth: number
+  tabBarHeight: number
   isCollapsedSiderWidth: number
   pageTransition: string
 }
 
 // default vadmireConfigStore initial config
-export function defindVAdmireConfig(): VAdmireConfig {
+export function defaultVAdmireConfig(): VAdmireConfig {
   return {
     name: 'VAdmire Admin',
     themeMode: 'LIGHT',
@@ -39,6 +40,7 @@ export function defindVAdmireConfig(): VAdmireConfig {
     headerHeight: 64,
     footerHeight: 64,
     siderWidth: 272,
+    tabBarHeight: 45,
     isCollapsedSiderWidth: 60,
     pageTransition: 'fade',
   }
@@ -61,3 +63,6 @@ export const THEME_MODE_KEY = 'vueuse-color-scheme'
 
 // local primary color key
 export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY'
+
+// local system config key
+export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY'

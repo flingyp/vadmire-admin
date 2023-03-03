@@ -2,7 +2,7 @@
 import { Tab, Vue3TabsChrome } from 'vue3-tabs-chrome'
 import 'vue3-tabs-chrome/dist/vue3-tabs-chrome.css'
 
-const tab = ref('google')
+const tab = ref('facebook')
 const tabs = reactive<Tab[]>([
   {
     label: 'google',

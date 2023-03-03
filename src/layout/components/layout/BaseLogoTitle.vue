@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from '~/assets/svg/logo.svg'
+import Logo from '~/assets/svg/admire-logo.svg'
 
 const vadmireConfigStore = useVAdmireConfigStore()
 
@@ -10,12 +10,21 @@ const isShowTitle = computed(() => {
   }
   return true
 })
+
+const baseLogoTitleStyle = computed(() => {
+  const baseLogoTitleWidth = vadmireConfigStore.isCollapsedSider ? 64 : vadmireConfigStore.siderWidth
+  const baseLogoTitleHeight = vadmireConfigStore.headerHeight
+  return {
+    width: `${baseLogoTitleWidth}px`,
+    height: `${baseLogoTitleHeight}px`,
+  }
+})
 </script>
 
 <template>
   <div
     class="flex items-center justify-center"
-    :style="{height: `${vadmireConfigStore.headerHeight}px`}"
+    :style="baseLogoTitleStyle"
   >
     <img
       :src="Logo"
