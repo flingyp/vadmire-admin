@@ -11,5 +11,5 @@ const { width, height } = useWindowSize()
  * 2XL: 1536
  */
 export function useMonitorWindow(callback: Function) {
-  watch([width, height], useThrottle(callback, 500))
+  watch([width, height], useThrottle(callback, 200))
 }

@@ -36,7 +36,7 @@ const handleClickOption = async (key: OptionKeys) => {
           :src="AvatarLogo"
           alt="Avatar Logo"
         >
-        <span>超级管理员</span>
+        <span class="truncate">超级管理员</span>
       </div>
     </NDropdown>
   </BaseHeaderItem>

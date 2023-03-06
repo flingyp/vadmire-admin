@@ -36,7 +36,8 @@ const baseLogoTitleStyle = computed(() => {
       style="-webkit-text-fill-color: transparent;"
       class="
       text-gradient font-bold text-xl mt-1 select-none cursor-pointer
-      bg-gradient-to-r from-primaryHover via-primary to-primarySuppl bg-clip-text"
+      bg-gradient-to-r from-primaryHover via-primary to-primarySuppl bg-clip-text
+      hidden md:block"
     >
       {{ vadmireConfigStore.name }}
     </span>

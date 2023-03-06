@@ -12,7 +12,7 @@ const routeMenuStore = useRouteMenuStore()
 </script>
 
 <template>
-  <div class="flex items-center justify-between px-4 h-full">
+  <div class="flex items-center justify-between h-full">
     <div>
       <BaseLogoTitle />
     </div>
