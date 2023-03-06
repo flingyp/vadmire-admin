@@ -2,6 +2,27 @@ import { VAdmireRoute } from '..'
 
 export const CONSTANT_ROUTES: VAdmireRoute[] = [
   {
+    path: '/about',
+    name: 'SystemAbout',
+    component: 'Layout',
+    meta: {
+      text: '关于页面',
+      icon: 'mdi:about-variant',
+    },
+    children: [
+      {
+        path: '',
+        name: 'SystemAboutIndex',
+        component: '~/views/SystemAbout.vue',
+        meta: {
+          text: '关于',
+          icon: 'mdi:about-variant',
+          single: true,
+        },
+      },
+    ],
+  },
+  {
     path: '/login',
     name: 'SystemAuth',
     component: '~/views/auth/SystemAuth.vue',

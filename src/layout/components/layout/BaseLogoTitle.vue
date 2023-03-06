@@ -1,30 +1,34 @@
 <script setup lang="ts">
 import Logo from '~/assets/svg/admire-logo.svg'
 
+const { width } = useWindowSize()
 const vadmireConfigStore = useVAdmireConfigStore()
 
-const isShowTitle = computed(() => {
-  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') {
-    if (!vadmireConfigStore.isCollapsedSider) return true
-    return false
+const baseLogoTitleWidth = computed(() => {
+  if (width.value <= 768) {
+    if (vadmireConfigStore.isCollapsedSider) return { width: '64px' }
+    return { width: `${vadmireConfigStore.siderWidth}px` }
   }
-  return true
+  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return { width: `${vadmireConfigStore.siderWidth}px` }
+  if (vadmireConfigStore.isCollapsedSider) return { width: '64px' }
+  return { width: `${vadmireConfigStore.siderWidth}px` }
 })
-
-const baseLogoTitleStyle = computed(() => {
-  const baseLogoTitleWidth = vadmireConfigStore.isCollapsedSider ? 64 : vadmireConfigStore.siderWidth
-  const baseLogoTitleHeight = vadmireConfigStore.headerHeight
-  return {
-    width: `${baseLogoTitleWidth}px`,
-    height: `${baseLogoTitleHeight}px`,
+const baseLogoTitleHeight = computed(() => ({ height: `${vadmireConfigStore.headerHeight}px` }))
+const isShowTitle = computed(() => {
+  if (width.value <= 768) {
+    if (vadmireConfigStore.isCollapsedSider) return false
+    return true
   }
+  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return true
+  if (vadmireConfigStore.isCollapsedSider) return false
+  return true
 })
 </script>
 
 <template>
   <div
     class="flex items-center justify-center"
-    :style="baseLogoTitleStyle"
+    :style="{...baseLogoTitleHeight, ...baseLogoTitleWidth}"
   >
     <img
       :src="Logo"
@@ -36,8 +40,7 @@ const baseLogoTitleStyle = computed(() => {
       style="-webkit-text-fill-color: transparent;"
       class="
       text-gradient font-bold text-xl mt-1 select-none cursor-pointer
-      bg-gradient-to-r from-primaryHover via-primary to-primarySuppl bg-clip-text
-      hidden md:block"
+      bg-gradient-to-r from-primaryHover via-primary to-primarySuppl bg-clip-text"
     >
       {{ vadmireConfigStore.name }}
     </span>
