@@ -36,8 +36,10 @@ module.exports = {
         vAuthBgImage: "url('~/assets/svg/auth-image.svg')",
       },
       backgroundColor: {
-        vBgColor: '#F3F4F6',
-        vBgDarkColor: '#1F2937',
+        vPageBgColor: '#fff',
+        vPageBgDarkColor: 'rgb(24, 24, 28)',
+        vHeaderBgColor: '#F3F4F6',
+        vHeaderBgDarkColor: '#1F2937',
       },
       borderColor: {
         vBorderLight: 'rgb(239, 239, 245)',

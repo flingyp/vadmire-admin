@@ -9,7 +9,9 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
 </script>
 
 <template>
-  <GlobalTabBar />
+  <GlobalTabBar
+    :class="[vadmireConfigStore.fixedTabBar ? 'sticky z-50 top-0 bg-vPageBgColor dark:bg-vPageBgDarkColor': 'static']"
+  />
   <div
     v-if="!isReloadContent"
     class="p-2"

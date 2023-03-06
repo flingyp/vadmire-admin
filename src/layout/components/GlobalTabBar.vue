@@ -9,7 +9,9 @@ const tabBarHeight = computed(() => ({ height: `${vadmireConfigStore.tabBarHeigh
 
 <template>
   <div
-    class="flex items-center justify-between p-2 border-b border-b-vBorderLight dark:border-b-vBorderDark"
+    class="
+    flex items-center justify-between transition
+    duration-300 delay-50 p-2 border-b border-b-vBorderLight dark:border-b-vBorderDark"
     :style="tabBarHeight"
   >
     <div class="flex-1 flex items-center mr-2">

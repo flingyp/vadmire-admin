@@ -10,6 +10,7 @@ const message = useMessage()
 const { toggleDark } = useTheme()
 const vadmireConfigStore = useVAdmireConfigStore()
 
+// theme mode
 const themeModeActive = computed(() => vadmireConfigStore.themeMode === 'DARK')
 const updateThemeMode = (mode: boolean) => {
   if (mode) {
@@ -118,6 +119,11 @@ const resetConfig = () => {
   message.success('系统配置已重置为默认配置！')
 }
 
+// fixed tab bar
+const updateFixedTabBar = (value: boolean) => {
+  vadmireConfigStore.fixedTabBar = value
+}
+
 // watch vadmireConfigStore.$state config change
 watchEffect(() => {
   const vadmireConfig = vadmireConfigStore.$state
@@ -196,7 +202,14 @@ watchEffect(() => {
       <BaseSettingContainer title="系统配置">
         <div class="w-full grid grid-cols-1 gap-y-2">
           <div class="w-full flex justify-between items-center">
-            <span class="w-20 text-start mr-1 truncate">顶部栏高度</span>
+            <span class="w-32 text-start mr-1 truncate">固定标签栏</span>
+            <NSwitch
+              v-model:value="vadmireConfigStore.fixedTabBar"
+              @update:value="updateFixedTabBar"
+            />
+          </div>
+          <div class="w-full flex justify-between items-center">
+            <span class="w-32 text-start mr-1 truncate">顶部栏高度</span>
             <NInputNumber
               v-model:value="vadmireConfigStore.headerHeight"
               class="flex-1"
@@ -206,7 +219,7 @@ watchEffect(() => {
             />
           </div>
           <div class="w-full flex justify-between items-center">
-            <span class="w-20 text-start mr-1 truncate">侧边栏宽度</span>
+            <span class="w-32 text-start mr-1 truncate">侧边栏宽度</span>
             <NInputNumber
               v-model:value="vadmireConfigStore.siderWidth"
               class="flex-1"
@@ -216,7 +229,7 @@ watchEffect(() => {
             />
           </div>
           <div class="w-full flex justify-between items-center">
-            <span class="w-20 text-start mr-1 truncate">底部栏高度</span>
+            <span class="w-32 text-start mr-1 truncate">底部栏高度</span>
             <NInputNumber
               v-model:value="vadmireConfigStore.footerHeight"
               class="flex-1"
@@ -226,7 +239,7 @@ watchEffect(() => {
             />
           </div>
           <div class="w-full flex justify-between items-center">
-            <span class="w-20 text-start mr-1 truncate">标签栏高度</span>
+            <span class="w-32 text-start mr-1 truncate">标签栏高度</span>
             <NInputNumber
               v-model:value="vadmireConfigStore.tabBarHeight"
               class="flex-1"
@@ -236,7 +249,7 @@ watchEffect(() => {
             />
           </div>
           <div class="w-full flex justify-between items-center">
-            <span class="w-20 text-start mr-1 truncate">过渡切换</span>
+            <span class="w-32 text-start mr-1 truncate">过渡切换</span>
             <NSelect
               v-model:value="vadmireConfigStore.pageTransition"
               class="flex-1"

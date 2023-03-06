@@ -26,6 +26,7 @@ export interface VAdmireConfig {
   tabBarHeight: number
   isCollapsedSiderWidth: number
   pageTransition: string
+  fixedTabBar: boolean
 }
 
 // default vadmireConfigStore initial config
@@ -43,6 +44,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     tabBarHeight: 45,
     isCollapsedSiderWidth: 60,
     pageTransition: 'fade',
+    fixedTabBar: false,
   }
 }
 
