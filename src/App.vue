@@ -1,16 +1,7 @@
 <script setup lang="ts">
 import SingleApp from '~/components/common/SingleApp.vue'
 
-const vadmireConfigStore = useVAdmireConfigStore()
-
-// listener window size change
-useMonitorWindow(([width]: [number, number]) => {
-  if (width <= 768) {
-    vadmireConfigStore.isCollapsedSider = true
-  } else {
-    vadmireConfigStore.isCollapsedSider = false
-  }
-})
+useApp()
 </script>
 
 <template>

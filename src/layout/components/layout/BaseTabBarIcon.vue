@@ -3,8 +3,6 @@ import { IS_RELOAD_CONTENT } from '~/vadmire.config'
 
 const isReloadContent = inject<Ref<boolean>>(IS_RELOAD_CONTENT)
 
-console.log('isReloadContent->', isReloadContent?.value)
-
 const routeMenuStore = useRouteMenuStore()
 
 const isDisabled = computed(() => {
