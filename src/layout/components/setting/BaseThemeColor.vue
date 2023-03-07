@@ -52,3 +52,18 @@ const updateSystemPrimaryColor = (color: string) => {
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+.primary-item-active {
+  position: relative;
+
+  &::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+  }
+}
+</style>

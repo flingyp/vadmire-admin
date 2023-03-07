@@ -4,6 +4,7 @@ import AvatarLogo from '~/assets/img/avatar-logo.png'
 import BaseHeaderItem from './BaseHeaderItem.vue'
 
 const router = useRouter()
+const routeMenuStore = useRouteMenuStore()
 const vadmireConfigStore = useVAdmireConfigStore()
 
 const options: DropdownOption[] = [
@@ -36,7 +37,7 @@ const handleClickOption = async (key: OptionKeys) => {
           :src="AvatarLogo"
           alt="Avatar Logo"
         >
-        <span class="truncate">超级管理员</span>
+        <span class="truncate">{{ routeMenuStore.account.nickname || '管理员' }}</span>
       </div>
     </NDropdown>
   </BaseHeaderItem>

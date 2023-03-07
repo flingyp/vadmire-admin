@@ -1,8 +1,9 @@
 import { useGetLocalKey } from '@flypeng/tool/browser'
 import { AUTH_TOKEN } from '~/vadmire.config'
+import { VAdmireRoute } from '~/router'
 
 /**
- * 用户登录
+ * System auth login
  * @param signInModeldata
  * @returns
  */
@@ -23,7 +24,7 @@ export const getSignInAuthToken = async (signInModeldata: SignInModelData) => {
 }
 
 /**
- * 获取用户信息
+ * System account info
  */
 export interface SystemAccountInfo {
   id: string
@@ -35,6 +36,16 @@ export interface SystemAccountInfo {
 }
 export const getSystemAccountInfo = async () => useRequest<SystemAccountInfo>({
   url: '/auth/info',
+  method: 'POST',
+  headers: { Authorization: useGetLocalKey(AUTH_TOKEN) },
+})
+
+/**
+ * Get async routes of system account
+ * @returns
+ */
+export const getSystemAccountAsyncRoutes = async () => useRequest<VAdmireRoute[]>({
+  url: '/auth/getAsyncRoutes',
   method: 'POST',
   headers: { Authorization: useGetLocalKey(AUTH_TOKEN) },
 })

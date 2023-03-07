@@ -52,7 +52,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
 export const whiteRouteList: string[] = ['SystemAuth']
 
 // system handle route form
-export const handleRouteForm: HandleRouteForm = 'WEB'
+export const handleRouteForm: HandleRouteForm = 'SERVER'
 
 // local storage key list
 export const AUTH_TOKEN = 'AUTH_TOKEN'

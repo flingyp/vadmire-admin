@@ -2,6 +2,9 @@ import { MockResponse } from 'mock'
 import Mock from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 import { useRandomString } from '@flypeng/tool/browser'
+import { VAdmireRoute } from '~/router'
+import { ASYNC_ROUTES } from '~/router/modules'
+import { adminAsyncRoutes, userAsyncRoutes } from './async-routes'
 
 const mockRandom = Mock.Random
 
@@ -11,7 +14,7 @@ interface AuthLoginBody {
 }
 
 /**
- * System Auth Login
+ * System auth login
  * @param username
  * @param password
  * @returns
@@ -51,6 +54,11 @@ interface SystemAccountInfo {
   permissions: string[]
 }
 
+/**
+ * System account info
+ * @param token
+ * @returns
+ */
 function systemAccountInfo(token: string): MockResponse<SystemAccountInfo | null> {
   if (token.match('admin_')) {
     return {
@@ -87,6 +95,33 @@ function systemAccountInfo(token: string): MockResponse<SystemAccountInfo | null
   }
 }
 
+/**
+ * Get async routes of system account
+ * @param token
+ * @returns
+ */
+function getAsyncRoutes(token: string): MockResponse<VAdmireRoute[] | null> {
+  if (token.match('admin_')) {
+    return {
+      statusCode: 200,
+      statusText: '获取超级管理员账号路由',
+      data: adminAsyncRoutes,
+    }
+  }
+  if (token.match('user_')) {
+    return {
+      statusCode: 200,
+      statusText: '获取普通管理员账号路由',
+      data: userAsyncRoutes,
+    }
+  }
+  return {
+    statusCode: 500,
+    statusText: '用户不存在',
+    data: null,
+  }
+}
+
 export default [
   {
     url: '/api/auth/login',
@@ -97,5 +132,10 @@ export default [
     url: '/api/auth/info',
     method: 'post',
     response: ({ headers }: {headers: {authorization: string}}) => systemAccountInfo(headers.authorization),
+  },
+  {
+    url: '/api/auth/getAsyncRoutes',
+    method: 'post',
+    response: ({ headers }: {headers: {authorization: string}}) => getAsyncRoutes(headers.authorization),
   },
 ] as MockMethod[]

@@ -2,7 +2,7 @@ import { useCommonType, useDeepClone, useGetLocalKey } from '@flypeng/tool/brows
 import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
 import { Store } from 'pinia'
 import { AUTH_TOKEN, whiteRouteList, handleRouteForm } from '~/vadmire.config'
-import { getSystemAccountInfo } from '~/requests'
+import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
 import {
   filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform,
@@ -19,25 +19,20 @@ const routeGenerateMenuProcess = async (
   const permissions: string[] = systemAccountInfo.permissions || []
 
   // 2. filter VAdmireRoute async route
-  const asyncRoutes = useDeepClone(ASYNC_ROUTES)
   let filterAsyncRoutes: VAdmireRoute[] = []
   if (handleRouteForm === 'WEB') {
+    const asyncRoutes = useDeepClone(ASYNC_ROUTES)
     filterAsyncRoutes = filterRoutes(asyncRoutes, permissions)
-    console.log('filterAsyncRoutes->', filterAsyncRoutes)
   } else if (handleRouteForm === 'SERVER') {
-    console.log('SERVER')
+    filterAsyncRoutes = await (await getSystemAccountAsyncRoutes()).data
   }
 
   // 3. transform route list of VAdmireRoute[] to route of RouteRecordRaw[]
   const vrouterAsyncRoutes = vadmireRouteToRouteRecordRaw(filterAsyncRoutes)
   const vrouterConstantRoutes = vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES)
 
-  console.log('vrouterAsyncRoutes->', vrouterAsyncRoutes)
-  console.log('vrouterConstantRoutes->', vrouterConstantRoutes)
-
   // 4. generate meun
   const vadmireMenu = generateSystemMenu([...vrouterConstantRoutes, ...vrouterAsyncRoutes])
-  console.log('vadmireMenu->', vadmireMenu)
 
   // 5. mount async route
   vrouterAsyncRoutes.forEach((route) => {

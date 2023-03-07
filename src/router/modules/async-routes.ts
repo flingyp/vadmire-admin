@@ -40,6 +40,5 @@ export const ASYNC_ROUTES: VAdmireRoute[] = [
         },
       },
     ],
-
   },
 ]

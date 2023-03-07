@@ -52,6 +52,10 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
     },
     // exit system logic
     async handleExitSystem() {
+      const routeMenuStore = useRouteMenuStore()
+      // reset variants of handling to get route and to generate route logic
+      routeMenuStore.isMountedRoute = false
+      routeMenuStore.isMountedNotFoundRoute = false
       useRemoveLocalKey(AUTH_TOKEN)
     },
   },
