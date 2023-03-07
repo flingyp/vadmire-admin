@@ -35,6 +35,11 @@ const pageSwitchTransitionOption = [{
 const updateFixedTabBar = (value: boolean) => {
   vadmireConfigStore.fixedTabBar = value
 }
+
+// is visibility footer
+const updateVisibilityFooter = (value: boolean) => {
+  vadmireConfigStore.isVisibleFotter = value
+}
 </script>
 
 <template>
@@ -44,6 +49,13 @@ const updateFixedTabBar = (value: boolean) => {
       <NSwitch
         v-model:value="vadmireConfigStore.fixedTabBar"
         @update:value="updateFixedTabBar"
+      />
+    </div>
+    <div class="w-full flex justify-between items-center">
+      <span class="w-32 text-start mr-1 truncate">显示底部栏</span>
+      <NSwitch
+        v-model:value="vadmireConfigStore.isVisibleFotter"
+        @update:value="updateVisibilityFooter"
       />
     </div>
     <div class="w-full flex justify-between items-center">

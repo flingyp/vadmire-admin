@@ -8,17 +8,25 @@ const isTopMenuMode = computed(() => vadmireConfigStore.layoutMode === 'TOP_MENU
 const isSiderMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MENU')
 const isSiderMixMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU')
 
+// handle visibility footer
+const isVisibleFotter = computed(() => vadmireConfigStore.isVisibleFotter)
+
 // width and height of layout component
 const headerHeight = computed(() => vadmireConfigStore.headerHeight)
 const footerHeight = computed(() => vadmireConfigStore.footerHeight)
 const siderWidth = computed(() => vadmireConfigStore.siderWidth)
 const siderHeight = computed(() => {
-  if (isSiderMixMenuMode.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
+  if (isSiderMixMenuMode.value) {
+    if (isVisibleFotter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
+    return `calc(100vh - ${headerHeight.value}px`
+  }
   if (isSiderMenuMode.value) return '100vh'
   return '0px'
 })
-const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`)
-
+const contentHeight = computed(() => {
+  if (isVisibleFotter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
+  return `calc(100vh - ${headerHeight.value}px`
+})
 </script>
 
 <template>
@@ -92,7 +100,7 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
       </NLayoutContent>
 
       <NLayoutFooter
-        v-if="isSiderMenuMode"
+        v-if="isVisibleFotter && isSiderMenuMode"
         bordered
       >
         <slot name="footer">
@@ -102,7 +110,7 @@ const contentHeight = computed(() => `calc(100vh - ${headerHeight.value}px - ${f
     </NLayout>
 
     <NLayoutFooter
-      v-if="isTopMenuMode || isSiderMixMenuMode"
+      v-if="isVisibleFotter && (isTopMenuMode || isSiderMixMenuMode)"
       bordered
     >
       <slot name="footer">

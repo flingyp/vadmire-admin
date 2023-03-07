@@ -56,6 +56,7 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
       // reset variants of handling to get route and to generate route logic
       routeMenuStore.isMountedRoute = false
       routeMenuStore.isMountedNotFoundRoute = false
+      useRemoveLocalKey(LOCAL_SYSTEM_KEY)
       useRemoveLocalKey(AUTH_TOKEN)
     },
   },
