@@ -4,7 +4,7 @@ import type {
 import axios from 'axios'
 
 const axiosConfig: CreateAxiosDefaults = {
-  baseURL: '/api',
+  baseURL: `${import.meta.env.VITE_HTTP_BASE_URL}`,
   timeout: 5000,
 }
 

@@ -1,4 +1,4 @@
-import { ConfigEnv, defineConfig, UserConfigExport } from 'vite'
+import { ConfigEnv, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -8,7 +8,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
 
-export default ({ command }: ConfigEnv): UserConfigExport => ({
+export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
   base: './',
   // Development server config
   server: {
@@ -31,13 +31,13 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
     ViteMockServe({
       mockPath: 'mock',
       localEnabled: command === 'serve',
-      prodEnabled: command !== 'serve',
-      watchFiles: true,
+      prodEnabled: command !== 'serve' && mode === 'development',
+      watchFiles: command === 'serve',
       logger: true,
       injectCode: `
-        import { setupProdMockServer } from './mock-prod-server';
-        setupProdMockServer();
-      `,
+          import { setupProdMockServer } from './mock-prod-server';
+          setupProdMockServer();
+        `,
     }),
     // Auto import api
     AutoImport({
@@ -81,6 +81,5 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
       defaultClass: 'unplugin-icon',
       jsx: 'react',
     }),
-
   ],
 })
