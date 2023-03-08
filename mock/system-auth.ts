@@ -3,7 +3,6 @@ import Mock from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 import { useRandomString } from '@flypeng/tool/browser'
 import { VAdmireRoute } from '~/router'
-import { ASYNC_ROUTES } from '~/router/modules'
 import { adminAsyncRoutes, userAsyncRoutes } from './async-routes'
 
 const mockRandom = Mock.Random
@@ -69,8 +68,8 @@ function systemAccountInfo(token: string): MockResponse<SystemAccountInfo | null
         username: 'admin',
         nickname: '超级管理员',
         birthday: mockRandom.date(),
-        roles: ['root'],
-        permissions: ['sys:root:*'],
+        roles: ['admin'],
+        permissions: ['sys:admin:*'],
       },
     }
   }

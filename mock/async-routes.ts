@@ -4,18 +4,18 @@ export const adminAsyncRoutes = [
     name: 'Permission',
     component: 'Layout',
     meta: {
-      text: '权限测试',
+      text: '权限管理',
       icon: 'arcticons:permission-pilot',
     },
     children: [
       {
-        path: 'role',
-        name: 'PermissionRole',
-        component: '~/views/permission/PermissionRoot.vue',
+        path: 'admin',
+        name: 'Permission_Admin',
+        component: '~/views/permission/PermissionAdmin.vue',
         meta: {
           text: '超级管理员',
           permissions: ['sys:root:*'],
-          icon: 'fluent-mdl2:permissions',
+          icon: 'icon-park-outline:permissions',
         },
       },
       {
@@ -23,7 +23,7 @@ export const adminAsyncRoutes = [
         name: 'PermissionButton',
         component: '~/views/permission/PermissionButton.vue',
         meta: {
-          text: '按钮权限指令',
+          text: '按钮权限管理',
           icon: 'arcticons:permissionchecker',
         },
       },
@@ -37,13 +37,13 @@ export const userAsyncRoutes = [
     name: 'Permission',
     component: 'Layout',
     meta: {
-      text: '权限测试',
+      text: '权限管理',
       icon: 'arcticons:permission-pilot',
     },
     children: [
       {
         path: 'user',
-        name: 'PermissionUser',
+        name: 'Permission_User',
         component: '~/views/permission/PermissionUser.vue',
         meta: {
           text: '普通管理员',
@@ -56,7 +56,7 @@ export const userAsyncRoutes = [
         name: 'PermissionButton',
         component: '~/views/permission/PermissionButton.vue',
         meta: {
-          text: '按钮权限指令',
+          text: '按钮权限管理',
           icon: 'arcticons:permissionchecker',
         },
       },
