@@ -76,10 +76,19 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
         useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
       }
     },
+    // remove tab menu key
     removeTabMenuKey(key: string) {
       const deleteIndex = this.tabMenuKeys.indexOf(key)
       if (deleteIndex !== -1) {
         this.tabMenuKeys.splice(deleteIndex, 1)
+        useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
+      }
+    },
+    // remove tab menu keys list
+    removeTabMenuKeyList(existKey: string) {
+      const existKeyIndex = this.tabMenuKeys.indexOf(existKey)
+      if (existKeyIndex !== -1) {
+        this.tabMenuKeys = [this.tabMenuKeys[existKeyIndex]]
         useSetLocalKey(TAB_MENU_KEY, JSON.stringify(this.tabMenuKeys))
       }
     },

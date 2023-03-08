@@ -4,6 +4,8 @@ import globalRouteGuardProcess from './global-route-guard'
 import { vadmireRouteToRouteRecordRaw } from './utils'
 import { CONSTANT_ROUTES } from './modules'
 
+export * from './types'
+
 export const router = createRouter({
   routes: vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES),
   strict: true,
@@ -20,5 +22,3 @@ router.beforeEach(async (to, from, next) => {
 router.afterEach(async () => {
   nprogress.done()
 })
-
-export * from './types'
