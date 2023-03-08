@@ -57,7 +57,7 @@ const deleteTabMenu = (key: string) => {
           :icon="menu.iconLabel"
           class="text-base mr-1"
         />
-        <span>{{ menu.label }}</span>
+        <span class="mr-1">{{ menu.label }}</span>
         <icon-mdi:window-close
           v-show="routeMenuStore.tabMenuKeys.length > 1"
           class="w-0 group-hover:w-4 duration-500 transition-[width]"

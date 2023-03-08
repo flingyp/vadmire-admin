@@ -56,10 +56,13 @@ export const whiteRouteList: string[] = ['SystemAuth']
 // system handle route form
 export const handleRouteForm: HandleRouteForm = 'SERVER'
 
-// local storage key list
+// 404 page redirect to the page config
+export const redirect404RouteName = 'SystemAboutIndex'
+
+// local storage auth token key
 export const AUTH_TOKEN = 'AUTH_TOKEN'
 
-// local storage tab menu key list
+// local storage tab menu key
 export const TAB_MENU_KEY = 'TAB_MENU_KEY'
 
 // local theme mode key
@@ -71,5 +74,5 @@ export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY'
 // local system config key
 export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY'
 
-// reload content key
+// local reload content key
 export const IS_RELOAD_CONTENT = 'IS_RELOAD_CONTENT'
