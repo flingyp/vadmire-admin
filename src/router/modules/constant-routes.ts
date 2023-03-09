@@ -48,6 +48,26 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     ],
   },
   {
+    path: '/feature',
+    name: 'Feature',
+    component: 'Layout',
+    meta: {
+      text: '常用功能',
+      icon: 'mdi:feature-highlight',
+    },
+    children: [
+      {
+        path: 'icon',
+        name: 'Feature_Icon',
+        component: '~/views/features/Icons.vue',
+        meta: {
+          text: '图标',
+          icon: 'line-md:iconify1',
+        },
+      },
+    ],
+  },
+  {
     path: '/',
     name: 'Home',
     redirect: '/about',
