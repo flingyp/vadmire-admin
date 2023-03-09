@@ -54,9 +54,6 @@ const createBreadCrumbMenu = (key: string, menus: MenuOption[]) => {
 // watch the route and change current checked menu
 const routeKey = ref(route.name as string)
 watchEffect(() => {
-  // set title content
-  const title = `${route.meta.text} | ${vadmireConfigStore.name}`
-  document.querySelector('title')!.innerHTML = title
   routeKey.value = route.name as string
 
   // generate breadcrumb menu

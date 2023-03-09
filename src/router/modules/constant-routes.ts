@@ -89,6 +89,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'SystemAuth',
     component: '~/views/auth/SystemAuth.vue',
     meta: {
+      text: 'SystemAuth',
       isShow: false,
     },
   },
@@ -97,6 +98,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'SystemNotFound',
     component: '~/views/common/NotFound.vue',
     meta: {
+      text: '404',
       isShow: false,
     },
   },
