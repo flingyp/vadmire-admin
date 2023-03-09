@@ -1,0 +1,1 @@
+import{_ as o}from"./SystemRegister.vue_vue_type_script_setup_true_lang-672bca0e.js";import"./shield-lock-outline-e21f818d.js";import"./index-6c076a88.js";import"./SytemPlatformAuth-fc446854.js";export{o as default};
