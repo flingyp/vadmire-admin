@@ -65,6 +65,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'line-md:iconify1',
         },
       },
+      {
+        path: 'permission',
+        name: 'Feature_Permission',
+        component: '~/views/features/Permissions.vue',
+        meta: {
+          text: '权限',
+          icon: 'arcticons:permissionchecker',
+        },
+      },
     ],
   },
   {
