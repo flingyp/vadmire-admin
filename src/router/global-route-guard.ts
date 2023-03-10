@@ -32,7 +32,7 @@ const routeGenerateMenuProcess = async (
   const vrouterConstantRoutes = vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES)
 
   // 4. generate meun
-  const vadmireMenu = generateSystemMenu([...vrouterConstantRoutes, ...vrouterAsyncRoutes])
+  const vadmireMenu = generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes])
 
   // 5. mount async route
   vrouterAsyncRoutes.forEach((route) => {
