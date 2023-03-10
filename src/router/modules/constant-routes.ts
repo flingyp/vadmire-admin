@@ -91,7 +91,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         component: '~/views/level/Level-2-1.vue',
         meta: {
           text: 'Level-2-1',
-          icon: 'line-md:iconify1',
         },
       },
       {
@@ -99,7 +98,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Level-1_Level-2-2',
         meta: {
           text: 'Level-2-2',
-          icon: 'line-md:iconify1',
         },
         children: [
           {
@@ -108,7 +106,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
             component: '~/views/level/Level-3-1.vue',
             meta: {
               text: 'Level-3-1',
-              icon: 'line-md:iconify1',
             },
           },
           {
@@ -117,7 +114,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
             component: '~/views/level/Level-3-2.vue',
             meta: {
               text: 'Level-3-2',
-              icon: 'line-md:iconify1',
             },
           },
           {
@@ -125,7 +121,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
             name: 'Level-1_Level-2-2_Level-3-3',
             meta: {
               text: 'Level-3-3',
-              icon: 'line-md:iconify1',
             },
             children: [
               {
@@ -134,7 +129,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
                 component: '~/views/level/Level-4-1.vue',
                 meta: {
                   text: 'Level-4-1',
-                  icon: 'line-md:iconify1',
                 },
               },
             ],
