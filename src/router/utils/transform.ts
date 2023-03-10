@@ -163,9 +163,8 @@ export const transform = (route: VAdmireRoute): RouteRecordRaw => {
    *  1.1 如果是则按照多级菜单的形式处理路由（将所有子路由全部抽离出来变成二级路由，多级菜单的父路由全部重定向到自己的第一个子路由上）
    *  1.2 如果不是则按照二级菜单的形式处理路由
    */
-
   if (!isMultilevelRoute(route)) {
-    route.children && vadmireRouteToRouteRecordRaw(route.children)
+    vroute.children = vadmireRouteToRouteRecordRaw(route.children || [])
   } else {
     /**
      * children route declare to two level route
