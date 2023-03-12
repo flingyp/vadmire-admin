@@ -68,5 +68,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SingleApp: typeof import('./src/components/common/SingleApp.vue')['default']
+    WangEditor: typeof import('./src/components/common/WangEditor.vue')['default']
   }
 }

@@ -47,5 +47,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ['@tailwindcss/typography'],
 }

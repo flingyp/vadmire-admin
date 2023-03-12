@@ -74,6 +74,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'arcticons:permissionchecker',
         },
       },
+      {
+        path: 'wangEditor',
+        name: 'Feature_WangEditor',
+        component: '~/views/features/WangEditor.vue',
+        meta: {
+          text: 'WangEditor',
+          icon: 'icon-park-outline:editor',
+        },
+      },
     ],
   },
   {
