@@ -79,8 +79,17 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_WangEditor',
         component: '~/views/features/WangEditor.vue',
         meta: {
-          text: 'WangEditor',
+          text: '富文本编辑器',
           icon: 'icon-park-outline:editor',
+        },
+      },
+      {
+        path: 'vditor',
+        name: 'Feature_Vditor',
+        component: '~/views/features/Vditor.vue',
+        meta: {
+          text: 'Markdown编辑器',
+          icon: 'bi:markdown',
         },
       },
     ],
