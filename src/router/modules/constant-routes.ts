@@ -84,14 +84,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
-        path: 'Demo',
-        name: 'Feature_Demo',
-        component: '~/views/Demo.vue',
-        meta: {
-          text: 'Demo',
-        },
-      },
-      {
         path: 'docs',
         name: 'Feature_Docs',
         meta: {
