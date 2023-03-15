@@ -28,6 +28,7 @@
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify)
 - [Vitesse Theme](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse)
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally)
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)

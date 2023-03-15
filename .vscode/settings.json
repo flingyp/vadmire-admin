@@ -5,7 +5,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "cSpell.words": [
-    "wangeditor"
-  ]
+  "i18n-ally.localesPaths": [
+    "src/locales",
+    "src/i18n",
+    "src/languages"
+  ],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.displayLanguage": "en"
 }
