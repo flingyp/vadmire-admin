@@ -1,1 +1,7 @@
-export { default as permissionDirective } from './permission-button'
+import { App } from 'vue'
+
+import permissionDirective from './permission-button'
+
+export default async (app: App) => {
+  permissionDirective(app)
+}

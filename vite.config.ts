@@ -44,6 +44,7 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
       imports: [
         'vue',
         'vue-router',
+        'vue-i18n',
         'pinia',
         '@vueuse/core',
       ],

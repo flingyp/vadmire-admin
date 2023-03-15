@@ -1,16 +1,12 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import App from './App.vue'
-import { router } from '~/router'
-import { permissionDirective } from '~/directives'
+import useModules from '~/modules'
+import useDirectives from '~/directives'
 import '~/styles/index.css'
 
 const app = createApp(App)
 
-// register permission directive
-permissionDirective(app)
-
-app.use(router)
-app.use(createPinia())
+useDirectives(app) // register directives
+useModules(app) // register package modules
 
 app.mount('#app')

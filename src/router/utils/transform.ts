@@ -3,6 +3,7 @@ import { RouteRecordRaw, RouteRecordRedirectOption } from 'vue-router'
 import { VAdmireRoute } from '..'
 import NotFound from '~/views/common/NotFound.vue'
 import ContainerLayout from '~/layout/basic/ContainerLayout.vue'
+import SingleIframe from '~/components/common/SingleIframe.vue'
 
 const systemViews = import.meta.glob('../../views/**/*.vue')
 
@@ -179,6 +180,11 @@ export const transform = (route: VAdmireRoute): RouteRecordRaw => {
 
   if (route.component === 'Layout') {
     vroute.component = ContainerLayout
+  }
+
+  // inner link to use iframe
+  if (route.meta?.link && route.meta.link === 'INTERNAL_LINK') {
+    vroute.component = SingleIframe
   }
 
   return vroute
