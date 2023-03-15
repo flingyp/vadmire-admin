@@ -275,6 +275,7 @@ declare global {
   const useVAdmireConfigStore: typeof import('./src/store/vadmire-config')['useVAdmireConfigStore']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
+  const useVditor: typeof import('./src/composables/useVditor/index')['useVditor']
   const useVibrate: typeof import('@vueuse/core')['useVibrate']
   const useVirtualList: typeof import('@vueuse/core')['useVirtualList']
   const useWakeLock: typeof import('@vueuse/core')['useWakeLock']
@@ -581,6 +582,7 @@ declare module 'vue' {
     readonly useVAdmireConfigStore: UnwrapRef<typeof import('./src/store/vadmire-config')['useVAdmireConfigStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
+    readonly useVditor: UnwrapRef<typeof import('./src/composables/useVditor/index')['useVditor']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>

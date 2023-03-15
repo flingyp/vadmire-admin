@@ -84,6 +84,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'vditor',
+        name: 'Feature_Vditor',
+        component: '~/views/features/Vditor.vue',
+        meta: {
+          text: 'Markdown编辑器',
+          icon: 'bi:markdown',
+        },
+      },
+      {
         path: 'docs',
         name: 'Feature_Docs',
         meta: {

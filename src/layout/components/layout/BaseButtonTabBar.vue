@@ -54,6 +54,7 @@ const deleteTabMenu = (key: string) => {
         @click="clickTabMenu(menu.key as string)"
       >
         <Icon
+          v-if="menu.iconLabel"
           :icon="menu.iconLabel"
           class="text-base mr-1"
         />

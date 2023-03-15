@@ -8,7 +8,7 @@ const iframeHeight = computed(() => vadmireConfigStore.contentContainerHeight)
 
 <template>
   <iframe
-    class="p-0"
+    class="!p-0"
     :style="{height: iframeHeight}"
     :src="iframeLink"
     allowpaymentrequest
