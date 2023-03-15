@@ -68,7 +68,6 @@ const clickMenu = (key: string, menu: MenuOption) => {
   } else {
     // create tab menu key
     routeMenuStore.createTabMenuKey(key as string)
-
     router.push({ name: key })
   }
 }

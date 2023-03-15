@@ -12,10 +12,7 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
   <GlobalTabBar
     :class="[vadmireConfigStore.fixedTabBar ? 'sticky z-50 top-0 bg-vPageBgColor dark:bg-vPageBgDarkColor': 'static']"
   />
-  <div
-    v-if="!isReloadContent"
-    class="p-2"
-  >
+  <div v-if="!isReloadContent">
     <RouterView v-slot="{Component, route}">
       <Transition
         :name="vadmireConfigStore.pageTransition"
@@ -26,6 +23,7 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
           <Component
             :is="Component"
             :key="route.path"
+            class="p-2"
           />
         </KeepAlive>
         <!-- TODO: 不使用KeepAlive缓存 -->

@@ -83,6 +83,56 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'icon-park-outline:editor',
         },
       },
+      {
+        path: 'docs',
+        name: 'Feature_Docs',
+        meta: {
+          text: '文档',
+          icon: 'iconoir:google-docs',
+        },
+        children: [
+          {
+            path: 'vue',
+            name: 'Feature_Docs_Vue',
+            meta: {
+              text: 'Vue',
+              icon: 'vscode-icons:file-type-vue',
+              url: 'https://cn.vuejs.org',
+              link: 'INTERNAL_LINK',
+            },
+          },
+          {
+            path: 'tailwindcss',
+            name: 'Feature_TailwindCSS',
+            meta: {
+              text: 'TailwindCSS',
+              icon: 'logos:tailwindcss-icon',
+              url: 'https://www.tailwindcss.cn',
+              link: 'INTERNAL_LINK',
+            },
+          },
+          {
+            path: 'naive-ui',
+            name: 'Feature_Docs_NaiveUI',
+            meta: {
+              text: 'NaiveUI',
+              icon: 'logos:naiveui',
+              url: 'https://www.naiveui.com',
+              link: 'INTERNAL_LINK',
+            },
+          },
+          {
+            path: 'vite',
+            name: 'Feature_Docs_Vite',
+            meta: {
+              text: 'Vite',
+              icon: 'vscode-icons:file-type-vite',
+              url: 'https://cn.vitejs.dev',
+              link: 'EXTERNAL_LINK',
+            },
+          },
+        ],
+      },
     ],
   },
   {

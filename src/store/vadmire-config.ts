@@ -42,7 +42,10 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
       }
     },
     contentContainerHeight(state): string {
-      return `calc(100vh - ${state.headerHeight}px - ${state.footerHeight}px - ${state.tabBarHeight}px)`
+      if (state.isVisibleFotter) {
+        return `calc(100vh - ${state.headerHeight}px - ${state.footerHeight}px - ${state.tabBarHeight}px)`
+      }
+      return `calc(100vh - ${state.headerHeight}px  - ${state.tabBarHeight}px)`
     },
   },
   actions: {
