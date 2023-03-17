@@ -11,5 +11,23 @@
     "src/languages"
   ],
   "i18n-ally.sourceLanguage": "en",
-  "i18n-ally.displayLanguage": "en"
+  "i18n-ally.displayLanguage": "en",
+  "cSpell.words": [
+    "colord",
+    "commitlint",
+    "flypeng",
+    "iconify",
+    "mockjs",
+    "noto",
+    "nprogress",
+    "openmoji",
+    "pinia",
+    "swiper",
+    "tabler",
+    "tailwindcss",
+    "unplugin",
+    "vditor",
+    "vueuse",
+    "wangeditor"
+  ]
 }
