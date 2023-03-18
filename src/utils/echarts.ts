@@ -12,6 +12,8 @@ import {
   PictorialBarSeriesOption,
   ScatterChart,
   ScatterSeriesOption,
+  RadarChart,
+  RadarSeriesOption,
 } from 'echarts/charts'
 
 // 组件类型的定义后缀都为 ComponentOption
@@ -49,6 +51,7 @@ export type ECOption = echarts.ComposeOption<
   | PieSeriesOption
   | PictorialBarSeriesOption
   | ScatterSeriesOption
+  | RadarSeriesOption
 >
 
 // 注册必须的组件
@@ -60,14 +63,15 @@ echarts.use([
   GridComponent,
   DatasetComponent,
   TransformComponent,
-  BarChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer,
+  BarChart,
   LineChart,
   PieChart,
   PictorialBarChart,
   ScatterChart,
+  RadarChart,
 ])
 
 export {
