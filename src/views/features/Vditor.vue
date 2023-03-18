@@ -5,5 +5,7 @@ const markdownContent = ref('# 🎉️ VAdmire Admin🎉️\n\n')
 </script>
 
 <template>
-  <Vditor v-model:content="markdownContent" />
+  <div>
+    <Vditor v-model:content="markdownContent" />
+  </div>
 </template>

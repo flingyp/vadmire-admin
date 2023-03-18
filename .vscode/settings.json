@@ -15,6 +15,7 @@
   "cSpell.words": [
     "colord",
     "commitlint",
+    "Echarts",
     "flypeng",
     "iconify",
     "mockjs",
@@ -26,7 +27,9 @@
     "tabler",
     "tailwindcss",
     "unplugin",
+    "vadmire",
     "vditor",
+    "vrouter",
     "vueuse",
     "wangeditor"
   ]

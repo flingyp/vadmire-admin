@@ -4,7 +4,6 @@ import { MenuOption } from 'naive-ui'
 const route = useRoute()
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
-const vadmireConfigStore = useVAdmireConfigStore()
 
 interface GlobalMenuProps {
   mode?: 'vertical' | 'horizontal'

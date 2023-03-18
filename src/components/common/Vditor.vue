@@ -60,7 +60,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    id="vditor"
-  />
+  <div id="vditor" />
 </template>

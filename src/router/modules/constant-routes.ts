@@ -61,7 +61,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Icon',
         component: '~/views/features/Icons.vue',
         meta: {
-          text: '图标',
+          text: 'Iconify图标',
           icon: 'line-md:iconify1',
         },
       },
@@ -70,7 +70,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Permission',
         component: '~/views/features/Permissions.vue',
         meta: {
-          text: '权限',
+          text: '系统权限控制',
           icon: 'arcticons:permissionchecker',
         },
       },
@@ -93,54 +93,64 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
-        path: 'docs',
-        name: 'Feature_Docs',
+        path: 'echarts',
+        name: 'Feature_Echarts',
+        component: '~/views/features/Echarts.vue',
         meta: {
-          text: '文档',
-          icon: 'iconoir:google-docs',
+          text: 'Echarts图表',
+          icon: 'et:piechart',
         },
-        children: [
-          {
-            path: 'vue',
-            name: 'Feature_Docs_Vue',
-            meta: {
-              text: 'Vue',
-              icon: 'vscode-icons:file-type-vue',
-              url: 'https://cn.vuejs.org',
-              link: 'INTERNAL_LINK',
-            },
-          },
-          {
-            path: 'tailwindcss',
-            name: 'Feature_TailwindCSS',
-            meta: {
-              text: 'TailwindCSS',
-              icon: 'logos:tailwindcss-icon',
-              url: 'https://www.tailwindcss.cn',
-              link: 'INTERNAL_LINK',
-            },
-          },
-          {
-            path: 'naive-ui',
-            name: 'Feature_Docs_NaiveUI',
-            meta: {
-              text: 'NaiveUI',
-              icon: 'logos:naiveui',
-              url: 'https://www.naiveui.com',
-              link: 'INTERNAL_LINK',
-            },
-          },
-          {
-            path: 'vite',
-            name: 'Feature_Docs_Vite',
-            meta: {
-              text: 'Vite',
-              icon: 'vscode-icons:file-type-vite',
-              url: 'https://cn.vitejs.dev',
-              link: 'EXTERNAL_LINK',
-            },
-          },
-        ],
+      },
+    ],
+  },
+  {
+    path: '/docs',
+    name: 'Feature_Docs',
+    component: 'Layout',
+    meta: {
+      text: '文档',
+      icon: 'iconoir:google-docs',
+    },
+    children: [
+      {
+        path: 'vue',
+        name: 'Feature_Docs_Vue',
+        meta: {
+          text: 'Vue',
+          icon: 'vscode-icons:file-type-vue',
+          url: 'https://cn.vuejs.org',
+          link: 'INTERNAL_LINK',
+        },
+      },
+      {
+        path: 'tailwindcss',
+        name: 'Feature_TailwindCSS',
+        meta: {
+          text: 'TailwindCSS',
+          icon: 'logos:tailwindcss-icon',
+          url: 'https://www.tailwindcss.cn',
+          link: 'INTERNAL_LINK',
+        },
+      },
+      {
+        path: 'naive-ui',
+        name: 'Feature_Docs_NaiveUI',
+        meta: {
+          text: 'NaiveUI',
+          icon: 'logos:naiveui',
+          url: 'https://www.naiveui.com',
+          link: 'INTERNAL_LINK',
+        },
+      },
+      {
+        path: 'vite',
+        name: 'Feature_Docs_Vite',
+        meta: {
+          text: 'Vite',
+          icon: 'vscode-icons:file-type-vite',
+          url: 'https://cn.vitejs.dev',
+          link: 'EXTERNAL_LINK',
+        },
       },
     ],
   },
@@ -174,14 +184,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
             component: '~/views/level/Level-3-1.vue',
             meta: {
               text: 'Level-3-1',
-            },
-          },
-          {
-            path: 'level-3-2',
-            name: 'Level-1_Level-2-2_Level-3-2',
-            component: '~/views/level/Level-3-2.vue',
-            meta: {
-              text: 'Level-3-2',
             },
           },
           {
