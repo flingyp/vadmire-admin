@@ -29,7 +29,8 @@
     "swiper": "^9.0.5",
     "vditor": "^3.9.0",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "xgplayer": "^2.32.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",

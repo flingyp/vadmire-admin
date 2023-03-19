@@ -101,6 +101,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'et:piechart',
         },
       },
+      {
+        path: 'xgPlayer',
+        name: 'Feature_XGPlayer',
+        component: '~/views/features/XGPlayer.vue',
+        meta: {
+          text: '西瓜播放器',
+          icon: 'carbon:data-player',
+        },
+      },
     ],
   },
   {

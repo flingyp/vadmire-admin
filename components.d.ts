@@ -72,5 +72,6 @@ declare module '@vue/runtime-core' {
     SingleIframe: typeof import('./src/components/common/SingleIframe.vue')['default']
     Vditor: typeof import('./src/components/common/Vditor.vue')['default']
     WangEditor: typeof import('./src/components/common/WangEditor.vue')['default']
+    XGPlayer: typeof import('./src/components/common/XGPlayer.vue')['default']
   }
 }
