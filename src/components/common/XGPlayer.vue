@@ -19,10 +19,11 @@ const props = withDefaults(defineProps<XGPlayerProps>(), {
   pip: true,
 })
 
+const player = ref<XGPlayer>()
 const randomId = ref(`${useRandomString(6)}_XGPlayer_${useRandomString(6)}`)
 
 onMounted(() => {
-  const player = new XGPlayer({
+  player.value = new XGPlayer({
     id: randomId.value,
     url: props.url,
     lang: 'zh-cn',
@@ -35,8 +36,6 @@ onMounted(() => {
     download: true,
     pip: props.pip,
   })
-
-  console.log('player->>>', player)
 })
 
 </script>

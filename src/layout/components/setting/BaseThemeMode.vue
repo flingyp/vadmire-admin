@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { toggleDark } = useTheme()
-const vadmireConfigStore = useVAdmireConfigStore()
-const themeModeActive = computed(() => vadmireConfigStore.themeMode === 'DARK')
+const { themeMode } = storeToRefs(useVAdmireConfigStore())
+const themeModeActive = computed(() => themeMode.value === 'DARK')
 const updateThemeMode = (mode: boolean) => {
   if (mode) {
     toggleDark(true)

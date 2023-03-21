@@ -2,20 +2,15 @@
 import { darkTheme } from 'naive-ui'
 import { useVAdmireConfigStore } from '~/store'
 
-const vadmireConfigStore = useVAdmireConfigStore()
-
-const themeMode = computed(() => {
-  if (vadmireConfigStore.themeMode === 'LIGHT') return null
-  return darkTheme
-})
+const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
 </script>
 
 <template>
   <Suspense>
     <NConfigProvider
-      :theme="themeMode"
-      :theme-overrides="vadmireConfigStore.naiveThemeOverrides"
-      class="w-screen h-screen"
+      :theme="themeMode === 'LIGHT' ? null : darkTheme"
+      :theme-overrides="naiveThemeOverrides"
+      class="w-screen h-screen overflow-hidden"
     >
       <NNotificationProvider>
         <NDialogProvider>

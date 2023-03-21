@@ -2,7 +2,7 @@
   <div class="h-full flex items-center">
     <NBreadcrumb>
       <NBreadcrumbItem
-        v-for="item in routeMenuStore.breadCrumbMenus"
+        v-for="item in breadCrumbMenus"
         :key="item.key"
       >
         <NDropdown
@@ -19,6 +19,7 @@
 <script setup lang="ts">
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
+const { breadCrumbMenus } = storeToRefs(routeMenuStore)
 
 // click breadcrumb menu
 const clickBreadCrumbItem = (key: string) => {

@@ -1,20 +1,15 @@
 <script setup lang="ts">
 import { useVAdmireConfigStore } from '~/store'
 
-const vadmireConfigStore = useVAdmireConfigStore()
+const {
+  layoutMode, isVisibleFotter, headerHeight, footerHeight, siderWidth, isCollapsedSider, isCollapsedSiderWidth,
+} = storeToRefs(useVAdmireConfigStore())
 
 // different layout mode
-const isTopMenuMode = computed(() => vadmireConfigStore.layoutMode === 'TOP_MENU')
-const isSiderMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MENU')
-const isSiderMixMenuMode = computed(() => vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU')
+const isTopMenuMode = computed(() => layoutMode.value === 'TOP_MENU')
+const isSiderMenuMode = computed(() => layoutMode.value === 'SIDER_MENU')
+const isSiderMixMenuMode = computed(() => layoutMode.value === 'SIDER_MIX_MENU')
 
-// handle visibility footer
-const isVisibleFotter = computed(() => vadmireConfigStore.isVisibleFotter)
-
-// width and height of layout component
-const headerHeight = computed(() => vadmireConfigStore.headerHeight)
-const footerHeight = computed(() => vadmireConfigStore.footerHeight)
-const siderWidth = computed(() => vadmireConfigStore.siderWidth)
 const siderHeight = computed(() => {
   if (isSiderMixMenuMode.value) {
     if (isVisibleFotter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
@@ -44,9 +39,9 @@ const contentHeight = computed(() => {
       v-if="isSiderMenuMode"
       bordered
       collapse-mode="width"
-      :collapsed-width="vadmireConfigStore.isCollapsedSiderWidth"
+      :collapsed-width="isCollapsedSiderWidth"
       :native-scrollbar="false"
-      :collapsed="vadmireConfigStore.isCollapsedSider"
+      :collapsed="isCollapsedSider"
     >
       <slot name="sider">
         Default sider
@@ -80,9 +75,9 @@ const contentHeight = computed(() => {
         v-if="isSiderMixMenuMode"
         bordered
         collapse-mode="width"
-        :collapsed-width="vadmireConfigStore.isCollapsedSiderWidth"
+        :collapsed-width="isCollapsedSiderWidth"
         :native-scrollbar="false"
-        :collapsed="vadmireConfigStore.isCollapsedSider"
+        :collapsed="isCollapsedSider"
       >
         <slot name="sider">
           Default sider

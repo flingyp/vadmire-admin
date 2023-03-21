@@ -6,6 +6,7 @@ import 'swiper/css'
 const route = useRoute()
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
+const { tabMenuKeys, vadmireTabMenu } = storeToRefs(routeMenuStore)
 
 // useSwiper don't to use and it have problem
 // refence the https://github.com/nolimits4web/swiper/issues/5505 can realize function
@@ -20,12 +21,12 @@ const clickTabMenu = (key: string) => {
 // click to delete tab menu
 const deleteTabMenu = (key: string) => {
   // don't remove tab menu if tab menus have only one
-  if (routeMenuStore.tabMenuKeys.length === 1) return
+  if (tabMenuKeys.value.length === 1) return
   // remove tab menu is current active menu and should do that navigator other route
   if (key === route.name) {
-    const deleteIndex = routeMenuStore.tabMenuKeys.indexOf(key)
+    const deleteIndex = tabMenuKeys.value.indexOf(key)
     const navigatorIndex = deleteIndex === 0 ? 1 : deleteIndex - 1
-    const navigatorMenu = routeMenuStore.vadmireTabMenu[navigatorIndex]
+    const navigatorMenu = vadmireTabMenu.value[navigatorIndex]
     router.push({ name: navigatorMenu.key as string })
   }
   routeMenuStore.removeTabMenuKey(key)
@@ -44,7 +45,7 @@ const deleteTabMenu = (key: string) => {
     class="w-[10vw] flex-1 h-full flex items-center space-x-2 mx-2"
   >
     <SwiperSlide
-      v-for="menu in routeMenuStore.vadmireTabMenu"
+      v-for="menu in vadmireTabMenu"
       :key="menu.key"
       class="!w-auto mr-2"
     >
@@ -60,7 +61,7 @@ const deleteTabMenu = (key: string) => {
         />
         <span class="mr-1">{{ menu.label }}</span>
         <icon-mdi:window-close
-          v-show="routeMenuStore.tabMenuKeys.length > 1"
+          v-show="tabMenuKeys.length > 1"
           class="w-0 group-hover:w-4 duration-500 transition-[width]"
           @click.stop="deleteTabMenu(menu.key as string)"
         />

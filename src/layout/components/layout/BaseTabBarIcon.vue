@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { log } from 'console'
 import { IS_RELOAD_CONTENT } from '~/vadmire.config'
 
 const isReloadContent = inject<Ref<boolean>>(IS_RELOAD_CONTENT)
@@ -7,6 +6,7 @@ const isReloadContent = inject<Ref<boolean>>(IS_RELOAD_CONTENT)
 const route = useRoute()
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
+const { tabMenuKeys, vadmireTabMenu } = storeToRefs(routeMenuStore)
 
 const isDisabled = computed(() => {
   if (routeMenuStore.tabMenuKeys.length <= 1) return true
@@ -40,11 +40,11 @@ const clickTabBarSetting = (key: TabBarSettingKey) => {
   } else if (key === 'CLOSE_CURRENT_TABMENU') {
     // click to delete tab menu
     // don't remove tab menu if tab menus have only one
-    if (routeMenuStore.tabMenuKeys.length === 1) return
+    if (tabMenuKeys.value.length === 1) return
     // remove tab menu is current active menu and should do that navigator other route
-    const deleteIndex = routeMenuStore.tabMenuKeys.indexOf(routerName)
+    const deleteIndex = tabMenuKeys.value.indexOf(routerName)
     const navigatorIndex = deleteIndex === 0 ? 1 : deleteIndex - 1
-    const navigatorMenu = routeMenuStore.vadmireTabMenu[navigatorIndex]
+    const navigatorMenu = vadmireTabMenu.value[navigatorIndex]
     router.push({ name: navigatorMenu.key as string })
     routeMenuStore.removeTabMenuKey(routerName)
   } else if (key === 'CLOSE_OTHER_TABMENU') {
