@@ -56,3 +56,33 @@ pnpm run build:mock # mock mode
 ```
 
 ## Directory description
+
+```sh
+├─.github
+├─.husky
+├─.vscode
+├─mock
+├─public
+├─src
+   ├─assets
+   │  ├─img
+   │  └─svg
+   ├─components
+   ├─composables
+   ├─directives
+   ├─layout
+   ├─modules
+   ├─requests
+   ├─router  
+   ├─store
+   ├─styles
+   ├─utils
+   └─views
+├─.editorconfig
+├─.env.development
+├─.env.production
+├─.eslintrc
+├─index.html
+├─tailwind.config.js
+└─vite.config.ts
+```
