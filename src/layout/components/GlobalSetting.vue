@@ -11,6 +11,7 @@ import BaseSystemConfig from './setting/BaseSystemConfig.vue'
 import BaseSettingContainer from './setting/BaseSettingContainer.vue'
 
 const vadmireConfigStore = useVAdmireConfigStore()
+const { isScaleDrawer } = storeToRefs(vadmireConfigStore)
 
 // watch vadmireConfigStore.$state config change
 watchEffect(() => {
@@ -21,7 +22,7 @@ watchEffect(() => {
 
 <template>
   <NDrawer
-    v-model:show="vadmireConfigStore.isScaleDrawer"
+    v-model:show="isScaleDrawer"
     :width="380"
     native-scrollbar
     placement="right"

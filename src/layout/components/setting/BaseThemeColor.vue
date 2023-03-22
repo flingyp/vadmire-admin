@@ -2,7 +2,7 @@
 import { useSetLocalKey } from '@flypeng/tool/browser'
 import { PRIMARY_COLOR_KEY } from '~/vadmire.config'
 
-const vadmireConfigStore = useVAdmireConfigStore()
+const { primaryColor } = storeToRefs(useVAdmireConfigStore())
 
 // primary color list
 const primaryColorList = [
@@ -27,7 +27,7 @@ const primaryColorList = [
   '#607d8b',
 ]
 const updateSystemPrimaryColor = (color: string) => {
-  vadmireConfigStore.primaryColor = color
+  primaryColor.value = color
   useSetLocalKey(PRIMARY_COLOR_KEY, color)
 }
 </script>
@@ -39,14 +39,14 @@ const updateSystemPrimaryColor = (color: string) => {
         v-for="item in primaryColorList"
         :key="item"
         class="w-6 h-6 rounded-sm cursor-pointer"
-        :class="[vadmireConfigStore.primaryColor === item ? 'primary-item-active' : '' ]"
+        :class="[primaryColor === item ? 'primary-item-active' : '' ]"
         :style="{backgroundColor: item}"
         @click="updateSystemPrimaryColor(item)"
       />
     </div>
     <NColorPicker
       class="mt-4"
-      :value="vadmireConfigStore.primaryColor"
+      :value="primaryColor"
       size="small"
       @update:value="updateSystemPrimaryColor"
     />

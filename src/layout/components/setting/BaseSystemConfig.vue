@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const vadmireConfigStore = useVAdmireConfigStore()
+const {
+  fixedTabBar, isVisibleFotter, headerHeight, siderWidth, footerHeight, tabBarHeight, pageTransition,
+} = storeToRefs(useVAdmireConfigStore())
 
 // page switch transition options
 const pageSwitchTransitionOption = [{
@@ -33,12 +35,12 @@ const pageSwitchTransitionOption = [{
 
 // fixed tab bar
 const updateFixedTabBar = (value: boolean) => {
-  vadmireConfigStore.fixedTabBar = value
+  fixedTabBar.value = value
 }
 
 // is visibility footer
 const updateVisibilityFooter = (value: boolean) => {
-  vadmireConfigStore.isVisibleFotter = value
+  isVisibleFotter.value = value
 }
 </script>
 
@@ -47,21 +49,21 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">固定标签栏</span>
       <NSwitch
-        v-model:value="vadmireConfigStore.fixedTabBar"
+        v-model:value="fixedTabBar"
         @update:value="updateFixedTabBar"
       />
     </div>
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">显示底部栏</span>
       <NSwitch
-        v-model:value="vadmireConfigStore.isVisibleFotter"
+        v-model:value="isVisibleFotter"
         @update:value="updateVisibilityFooter"
       />
     </div>
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">顶部栏高度</span>
       <NInputNumber
-        v-model:value="vadmireConfigStore.headerHeight"
+        v-model:value="headerHeight"
         class="flex-1"
         placeholder="Min 44, Max 84"
         :min="44"
@@ -71,7 +73,7 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">侧边栏宽度</span>
       <NInputNumber
-        v-model:value="vadmireConfigStore.siderWidth"
+        v-model:value="siderWidth"
         class="flex-1"
         placeholder="Min 220, Max 272"
         :min="220"
@@ -81,7 +83,7 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">底部栏高度</span>
       <NInputNumber
-        v-model:value="vadmireConfigStore.footerHeight"
+        v-model:value="footerHeight"
         class="flex-1"
         placeholder="Min 44, Max 84"
         :min="44"
@@ -91,7 +93,7 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">标签栏高度</span>
       <NInputNumber
-        v-model:value="vadmireConfigStore.tabBarHeight"
+        v-model:value="tabBarHeight"
         class="flex-1"
         placeholder="Min 40, Max 60"
         :min="40"
@@ -101,7 +103,7 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">过渡切换</span>
       <NSelect
-        v-model:value="vadmireConfigStore.pageTransition"
+        v-model:value="pageTransition"
         class="flex-1"
         :options="pageSwitchTransitionOption"
       />

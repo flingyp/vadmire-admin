@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const vadmireConfigStore = useVAdmireConfigStore()
+const { name } = storeToRefs(useVAdmireConfigStore())
 </script>
 
 <template>
   <NInput
-    v-model:value="vadmireConfigStore.name"
+    v-model:value="name"
     type="text"
     placeholder="系统名称"
     class="w-32 text-center"

@@ -1,5 +1,4 @@
 <script setup lang="ts"></script>
-<!-- hover:bg-gray-50 -->
 <template>
   <div
     class="px-3 py-2 h-full flex items-center justify-center

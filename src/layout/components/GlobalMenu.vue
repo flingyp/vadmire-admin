@@ -4,6 +4,7 @@ import { MenuOption } from 'naive-ui'
 const route = useRoute()
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
+const { breadCrumbMenus, vadmireMenu } = storeToRefs(routeMenuStore)
 
 interface GlobalMenuProps {
   mode?: 'vertical' | 'horizontal'
@@ -57,7 +58,7 @@ watchEffect(() => {
 
   // generate breadcrumb menu
   // @ts-ignore
-  routeMenuStore.breadCrumbMenus = createBreadCrumbMenu(routeKey.value, routeMenuStore.vadmireMenu)
+  breadCrumbMenus.value = createBreadCrumbMenu(routeKey.value, vadmireMenu.value)
 })
 
 // click menu

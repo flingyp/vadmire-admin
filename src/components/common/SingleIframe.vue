@@ -1,15 +1,13 @@
 <script setup lang="ts">
 const route = useRoute()
-const vadmireConfigStore = useVAdmireConfigStore()
-
-const iframeLink = ref(route.meta.url)
-const iframeHeight = computed(() => vadmireConfigStore.contentContainerHeight)
+const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())
+const iframeLink = ref(route.meta.url || '')
 </script>
 
 <template>
   <iframe
     class="!p-0"
-    :style="{height: iframeHeight}"
+    :style="{height: contentContainerHeight}"
     :src="iframeLink"
     allowpaymentrequest
     allowfullscreen

@@ -3,24 +3,27 @@ import Logo from '~/assets/svg/admire-logo.svg'
 
 const { width } = useWindowSize()
 const vadmireConfigStore = useVAdmireConfigStore()
+const {
+  isCollapsedSider, siderWidth, headerHeight, layoutMode, name: systemName,
+} = storeToRefs(vadmireConfigStore)
 
 const baseLogoTitleWidth = computed(() => {
   if (width.value <= 768) {
-    if (vadmireConfigStore.isCollapsedSider) return { width: '64px' }
-    return { width: `${vadmireConfigStore.siderWidth}px` }
+    if (isCollapsedSider.value) return { width: '64px' }
+    return { width: `${siderWidth.value}px` }
   }
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return { width: `${vadmireConfigStore.siderWidth}px` }
-  if (vadmireConfigStore.isCollapsedSider) return { width: '64px' }
-  return { width: `${vadmireConfigStore.siderWidth}px` }
+  if (layoutMode.value === 'SIDER_MIX_MENU') return { width: `${siderWidth.value}px` }
+  if (isCollapsedSider.value) return { width: '64px' }
+  return { width: `${siderWidth.value}px` }
 })
-const baseLogoTitleHeight = computed(() => ({ height: `${vadmireConfigStore.headerHeight}px` }))
+const baseLogoTitleHeight = computed(() => ({ height: `${headerHeight.value}px` }))
 const isShowTitle = computed(() => {
   if (width.value <= 768) {
-    if (vadmireConfigStore.isCollapsedSider) return false
+    if (isCollapsedSider.value) return false
     return true
   }
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return true
-  if (vadmireConfigStore.isCollapsedSider) return false
+  if (layoutMode.value === 'SIDER_MIX_MENU') return true
+  if (isCollapsedSider.value) return false
   return true
 })
 </script>
@@ -42,7 +45,7 @@ const isShowTitle = computed(() => {
       text-gradient font-bold text-xl mt-1 select-none cursor-pointer
       bg-gradient-to-r from-primaryHover via-primary to-primarySuppl bg-clip-text"
     >
-      {{ vadmireConfigStore.name }}
+      {{ systemName }}
     </span>
   </div>
 </template>

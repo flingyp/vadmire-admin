@@ -2,8 +2,8 @@ import { App, DirectiveBinding } from 'vue'
 
 export default (app: App) => {
   app.directive('permission', (el: HTMLElement, binding: DirectiveBinding<string | string[]>) => {
-    const routeMenuStore = useRouteMenuStore()
-    const accountPermissionList = routeMenuStore.account.permissions
+    const { account } = storeToRefs(useRouteMenuStore())
+    const accountPermissionList = account.value.permissions
     const buttonPermissionList = typeof binding.value === 'string' ? [binding.value] : binding.value
     const isHavePermission = buttonPermissionList.every((permission) => {
       if (accountPermissionList.includes(permission)) return true

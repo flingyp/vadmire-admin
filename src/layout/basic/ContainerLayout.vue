@@ -11,24 +11,21 @@ import SiderMixMenuHeader from '../mode/sider-mix-menu-mode/SiderMixMenuHeader.v
 import SiderMixMenuSider from '../mode/sider-mix-menu-mode/SiderMixMenuSider.vue'
 
 import TopMenuHeader from '../mode/top-menu-mode/TopMenuHeader.vue'
-import TopMenuSider from '../mode/top-menu-mode/TopMenuSider.vue'
 
 import GlobalSetting from '~/layout/components/GlobalSetting.vue'
 
-const vadmireConfigStore = useVAdmireConfigStore()
+const { layoutMode } = storeToRefs(useVAdmireConfigStore())
 
 const Global_Header = computed(() => {
-  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') return SiderMenuHeader
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return SiderMixMenuHeader
-  if (vadmireConfigStore.layoutMode === 'TOP_MENU') return TopMenuHeader
+  if (layoutMode.value === 'SIDER_MENU') return SiderMenuHeader
+  if (layoutMode.value === 'SIDER_MIX_MENU') return SiderMixMenuHeader
+  if (layoutMode.value === 'TOP_MENU') return TopMenuHeader
 })
 
 const Global_Sider = computed(() => {
-  if (vadmireConfigStore.layoutMode === 'SIDER_MENU') return SiderMenuSider
-  if (vadmireConfigStore.layoutMode === 'SIDER_MIX_MENU') return SiderMixMenuSider
-  if (vadmireConfigStore.layoutMode === 'TOP_MENU') return TopMenuSider
+  if (layoutMode.value === 'SIDER_MENU') return SiderMenuSider
+  if (layoutMode.value === 'SIDER_MIX_MENU') return SiderMixMenuSider
 })
-
 </script>
 
 <template>
