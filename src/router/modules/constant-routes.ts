@@ -45,6 +45,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'la:500px',
         },
       },
+      {
+        path: 'naiveUIComponent',
+        name: 'Common_NaiveUIComponent',
+        component: '~/views/common/NaiveUIComponent.vue',
+        meta: {
+          text: '组件',
+          icon: 'bxs:component',
+        },
+      },
     ],
   },
   {
