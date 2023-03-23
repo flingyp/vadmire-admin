@@ -20,6 +20,10 @@ const loading = () => {
   message.loading('If I were you, I will realize that I love you more than any other guy')
 }
 
+const checkedValue = ref<string | null>(null)
+const handleChange = (e: Event) => {
+  checkedValue.value = (e.target as HTMLInputElement).value
+}
 const autoCompleteValue = ref('')
 const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', '@163.com', '@qq.com'].map((suffix) => {
   const prefix = autoCompleteValue.value.split('@')[0]
@@ -33,11 +37,11 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
 <template>
   <div class="space-y-4">
     <div class="border border-vBorderLight dark:border-vBorderDark p-4 rounded space-y-4">
-      <p class="text-primary text-base font-bold mb-4">
+      <p class="text-primary text-base mb-4">
         通用组件
       </p>
 
-      <NSpace>
+      <NSpace justify="space-around">
         <NButton>Default</NButton>
         <NButton type="tertiary">
           Tertiary
@@ -109,7 +113,7 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
         </NButton>
       </NSpace>
 
-      <NSpace>
+      <NSpace justify="space-around">
         <NTag> 爱在西元前 </NTag>
         <NTag type="success">
           不该
@@ -183,32 +187,42 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
     </div>
 
     <div class="border border-vBorderLight dark:border-vBorderDark p-4 rounded space-y-4">
-      <p class="text-primary text-base font-bold mb-4">
+      <p class="text-primary text-base mb-4">
         数据录入组件
       </p>
-      <NSpace>
+      <div class="space-y-2">
         <NCheckbox>
           复选框 One
         </NCheckbox>
-
         <NCheckbox>
           复选框 Two
         </NCheckbox>
         <NRadio
+          :checked="checkedValue === 'Definitely Maybe'"
+          value="Definitely Maybe"
+          name="basic-demo"
+          @change="handleChange"
+        >
+          Definitely Maybe
+        </NRadio>
+        <NRadio
+          :checked="checkedValue === 'Be Here Now'"
           value="Be Here Now"
           name="basic-demo"
+          @change="handleChange"
         >
-          单选框 One
+          Be Here Now
         </NRadio>
+
+        <NInput
+          type="text"
+          placeholder="基本的 Input"
+        />
         <NAutoComplete
           v-model:value="autoCompleteValue"
           :input-props="{autocomplete: 'disabled'}"
           :options="autoCompleteOptions"
           placeholder="邮箱"
-        />
-        <NInput
-          type="text"
-          placeholder="基本的 Input"
         />
         <NDatePicker type="date" />
         <NDatePicker
@@ -219,14 +233,14 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
           type="datetimerange"
           clearable
         />
-      </NSpace>
+      </div>
     </div>
 
     <div class="border border-vBorderLight dark:border-vBorderDark p-4 rounded space-y-4">
-      <p class="text-primary text-base font-bold mb-4">
+      <p class="text-primary text-base mb-4">
         反馈组件
       </p>
-      <NSpace>
+      <div class="space-y-2">
         <NButton @click="info">
           信息（Hover不消失）
         </NButton>
@@ -284,7 +298,6 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
         >
           I'm back in the U.S.S.R.
         </NAlert>
-
         <NProgress
           type="circle"
           :percentage="20"
@@ -309,7 +322,7 @@ const autoCompleteOptions = computed<AutoCompleteOption[]>(() => ['@gmail.com', 
           status="error"
           :percentage="42"
         />
-      </NSpace>
+      </div>
     </div>
   </div>
 </template>
