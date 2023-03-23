@@ -1,3 +1,12 @@
 .n-button {
   background-color: var(--n-color);
 }
+
+#nprogress .bar {
+  background: var(--primaryColor);
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--primaryColor);
+  border-left-color: var(--primaryColor);
+}

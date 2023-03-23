@@ -164,7 +164,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         path: 'vite',
         name: 'Feature_Docs_Vite',
         meta: {
-          text: 'Vite',
+          text: 'Vite (外链)',
           icon: 'vscode-icons:file-type-vite',
           url: 'https://cn.vitejs.dev',
           link: 'EXTERNAL_LINK',

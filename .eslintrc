@@ -5,6 +5,7 @@
         "camelcase": "off",
         "vue/require-component-is": "off",
         "vue/multi-word-component-names": "off",
-        "vue/v-on-event-hyphenation": "off"
+        "vue/v-on-event-hyphenation": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 }

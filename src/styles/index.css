@@ -1,5 +1,6 @@
 @import './tailwind.css';
 @import './theme.css';
 @import './transition.css';
-@import './reset.css';
 @import 'nprogress/nprogress.css';
+@import './reset.css';
+

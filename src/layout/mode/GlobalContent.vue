@@ -19,14 +19,19 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
         mode="out-in"
         appear
       >
-        <KeepAlive>
+        <KeepAlive v-if="(route.meta.cache ?? true) || (route.meta.cache)">
           <Component
             :is="Component"
             :key="route.path"
             class="p-2"
           />
         </KeepAlive>
-        <!-- TODO: 不使用KeepAlive缓存 -->
+        <component
+          :is="Component"
+          v-else
+          :key="route.path"
+          class="p-2"
+        />
       </Transition>
     </RouterView>
   </div>

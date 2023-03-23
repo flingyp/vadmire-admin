@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { GlobalThemeOverrides } from 'naive-ui'
 import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser'
+
 import { getDifSceneColor } from '~/utils'
 import {
   VAdmireConfig, defaultVAdmireConfig, AUTH_TOKEN,

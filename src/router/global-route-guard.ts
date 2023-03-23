@@ -1,14 +1,15 @@
-import { useCommonType, useDeepClone, useGetLocalKey } from '@flypeng/tool/browser'
-import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
 import { Store } from 'pinia'
-import { AUTH_TOKEN, whiteRouteList, handleRouteForm } from '~/vadmire.config'
-import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'
+import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
+import { useCommonType, useDeepClone, useGetLocalKey } from '@flypeng/tool/browser'
+
+import { VAdmireRoute } from './types'
+import { RouteMenuStore, useRouteMenuStore } from '~/store'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
+import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'
+import { AUTH_TOKEN, whiteRouteList, handleRouteForm } from '~/vadmire.config'
 import {
   filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform,
 } from './utils'
-import { VAdmireRoute } from './types'
-import { RouteMenuStore, useRouteMenuStore } from '~/store'
 
 const routeGenerateMenuProcess = async (
   routerInstance: Router,
@@ -31,7 +32,7 @@ const routeGenerateMenuProcess = async (
   const vrouterAsyncRoutes = vadmireRouteToRouteRecordRaw(filterAsyncRoutes)
   const vrouterConstantRoutes = vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES)
 
-  // 4. generate meun
+  // 4. generate menu
   const vadmireMenu = generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes])
 
   // 5. mount async route
