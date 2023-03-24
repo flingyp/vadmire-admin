@@ -16,13 +16,13 @@ import GlobalSetting from '~/layout/components/GlobalSetting.vue'
 
 const { layoutMode } = storeToRefs(useVAdmireConfigStore())
 
-const Global_Header = computed(() => {
+const GlobalHeader = computed(() => {
   if (layoutMode.value === 'SIDER_MENU') return SiderMenuHeader
   if (layoutMode.value === 'SIDER_MIX_MENU') return SiderMixMenuHeader
   if (layoutMode.value === 'TOP_MENU') return TopMenuHeader
 })
 
-const Global_Sider = computed(() => {
+const GlobalSider = computed(() => {
   if (layoutMode.value === 'SIDER_MENU') return SiderMenuSider
   if (layoutMode.value === 'SIDER_MIX_MENU') return SiderMixMenuSider
 })
@@ -31,11 +31,11 @@ const Global_Sider = computed(() => {
 <template>
   <BasicLayout>
     <template #header>
-      <component :is="Global_Header" />
+      <component :is="GlobalHeader" />
     </template>
 
     <template #sider>
-      <component :is="Global_Sider" />
+      <component :is="GlobalSider" />
     </template>
 
     <template #content>
