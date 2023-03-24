@@ -1,12 +1,13 @@
 import { ConfigEnv, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
+import { spaLoading } from 'vite-plugin-spa-loading'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
 
 export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
   base: './',
@@ -81,6 +82,34 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
       defaultStyle: '',
       defaultClass: 'unplugin-icon',
       jsx: 'react',
+    }),
+
+    spaLoading('svg', {
+      path: './public/spa-loading.svg',
+      css: `
+        .loading-text {
+          display: none;
+        }
+        .loading {
+          font-family:arial;
+          font-size:7px;
+          animation:blink .9s ease-in-out infinite;
+        }
+        .spa-loading-svg {
+          stroke-dasharray:17;
+          animation:dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+        }
+        @keyframes dash {
+          to{
+            stroke-dashoffset:136;
+          }
+        }
+        @keyframes blink {
+          50%{
+            opacity:0;
+          }
+        }
+      `,
     }),
   ],
 })
