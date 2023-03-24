@@ -3,11 +3,14 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
 import { spaLoading } from 'vite-plugin-spa-loading'
+import clearConsole from 'vite-plugin-clear-console'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+
+import { name, version } from './package.json'
 
 export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
   base: './',
@@ -83,7 +86,6 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
       defaultClass: 'unplugin-icon',
       jsx: 'react',
     }),
-
     spaLoading('svg', {
       path: './public/spa-loading.svg',
       css: `
@@ -110,6 +112,18 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
           }
         }
       `,
+    }),
+    clearConsole({
+      inject: {
+        path: './src/main.ts',
+        template: [
+          ` console.log('%c${name}%cV${version}',
+            'padding: 2px 5px; border-radius: 3px 0 0 3px; color: #fff; background: #606060; font-weight: bold;',
+            'padding: 2px 5px; border-radius: 0 3px 3px 0; color: #fff; background: #42c02e; font-weight: bold;')
+          `,
+          'console.log(\'%cGithub repository: https://github.com/flingyp/vadmire-admin\', \'color: #1c6ce3;\')',
+        ],
+      },
     }),
   ],
 })

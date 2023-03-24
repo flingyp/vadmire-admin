@@ -52,6 +52,7 @@ specifiers:
   unplugin-vue-components: ^0.24.0
   vditor: ^3.9.0
   vite: ^4.1.3
+  vite-plugin-clear-console: ^0.2.2
   vite-plugin-mock: ^2.9.6
   vite-plugin-spa-loading: ^1.0.5
   vue: ^3.2.47
@@ -116,6 +117,7 @@ devDependencies:
   unplugin-icons: 0.15.3
   unplugin-vue-components: 0.24.0_vue@3.2.47
   vite: 4.1.3_hlkwzk2izwsolfmdrejei4vrty
+  vite-plugin-clear-console: 0.2.2
   vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@4.1.3
   vite-plugin-spa-loading: 1.0.5_vite@4.1.3
   vue-tsc: 1.1.5_typescript@4.9.5
@@ -6775,6 +6777,10 @@ packages:
     dependencies:
       diff-match-patch: 1.0.5
     dev: false
+
+  /vite-plugin-clear-console/0.2.2:
+    resolution: {integrity: sha512-2CjpF2hod0DOVSgeUtmGv8kljp3PBx/Tyec85qi8rjrLLopjvJ8Lvvb0FbcwguD3cyjVK2QYZRjh5ZtjXKzROQ==}
+    dev: true
 
   /vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@4.1.3:
     resolution: {integrity: sha512-/Rm59oPppe/ncbkSrUuAxIQihlI2YcBmnbR4ST1RA2VzM1C0tEQc1KlbQvnUGhXECAGTaQN2JyasiwXP6EtKgg==}
