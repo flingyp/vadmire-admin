@@ -73,7 +73,7 @@
     "vite": "^4.2.1",
     "vite-plugin-clear-console": "^0.2.2",
     "vite-plugin-mock": "^2.9.6",
-    "vite-plugin-spa-loading": "^1.0.5",
+    "vite-plugin-spa-loading": "^1.0.6",
     "vue-tsc": "^1.2.0"
   },
   "lint-staged": {

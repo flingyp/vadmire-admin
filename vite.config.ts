@@ -88,30 +88,7 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
     }),
     spaLoading('svg', {
       path: './public/spa-loading.svg',
-      css: `
-        .loading-text {
-          display: none;
-        }
-        .loading {
-          font-family:arial;
-          font-size:7px;
-          animation:blink .9s ease-in-out infinite;
-        }
-        .spa-loading-svg {
-          stroke-dasharray:17;
-          animation:dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
-        }
-        @keyframes dash {
-          to{
-            stroke-dashoffset:136;
-          }
-        }
-        @keyframes blink {
-          50%{
-            opacity:0;
-          }
-        }
-      `,
+      cssPath: './public/spa-loading.css',
     }),
     clearConsole({
       inject: {
