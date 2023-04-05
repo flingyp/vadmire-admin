@@ -3,7 +3,6 @@ import Mock from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 import { useRandomString } from '@flypeng/tool/browser'
 import { VAdmireRoute } from '~/router'
-import { adminAsyncRoutes, userAsyncRoutes } from './async-routes'
 
 const mockRandom = Mock.Random
 
@@ -93,6 +92,72 @@ function systemAccountInfo(token: string): MockResponse<SystemAccountInfo | null
     data: null,
   }
 }
+
+const adminAsyncRoutes = [
+  {
+    path: '/permission',
+    name: 'Permission',
+    component: 'Layout',
+    meta: {
+      text: '权限管理',
+      icon: 'arcticons:permission-pilot',
+    },
+    children: [
+      {
+        path: 'admin',
+        name: 'Permission_Admin',
+        component: '~/views/permission/PermissionAdmin.vue',
+        meta: {
+          text: '超级管理员',
+          permissions: ['sys:root:*'],
+          icon: 'icon-park-outline:permissions',
+        },
+      },
+      {
+        path: 'button',
+        name: 'PermissionButton',
+        component: '~/views/permission/PermissionButton.vue',
+        meta: {
+          text: '按钮权限管理',
+          icon: 'arcticons:permissionchecker',
+        },
+      },
+    ],
+  },
+]
+
+const userAsyncRoutes = [
+  {
+    path: '/permission',
+    name: 'Permission',
+    component: 'Layout',
+    meta: {
+      text: '权限管理',
+      icon: 'arcticons:permission-pilot',
+    },
+    children: [
+      {
+        path: 'user',
+        name: 'Permission_User',
+        component: '~/views/permission/PermissionUser.vue',
+        meta: {
+          text: '普通管理员',
+          permissions: ['sys:user:*'],
+          icon: 'icon-park-outline:permissions',
+        },
+      },
+      {
+        path: 'button',
+        name: 'PermissionButton',
+        component: '~/views/permission/PermissionButton.vue',
+        meta: {
+          text: '按钮权限管理',
+          icon: 'arcticons:permissionchecker',
+        },
+      },
+    ],
+  },
+]
 
 /**
  * Get async routes of system account

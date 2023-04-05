@@ -119,6 +119,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'carbon:data-player',
         },
       },
+      {
+        path: 'table',
+        name: 'Feature_Table',
+        component: '~/views/features/Table.vue',
+        meta: {
+          text: '基础表格',
+          icon: 'ic:outline-table-view',
+        },
+      },
     ],
   },
   {

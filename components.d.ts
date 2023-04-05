@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BaseTable: typeof import('./src/components/common/BaseTable.vue')['default']
     Echarts: typeof import('./src/components/common/Echarts.vue')['default']
     'IconAntDesign:fullscreenExitOutlined': typeof import('~icons/ant-design/fullscreen-exit-outlined')['default']
     'IconAntDesign:fullscreenOutlined': typeof import('~icons/ant-design/fullscreen-outlined')['default']
@@ -47,6 +48,7 @@ declare module '@vue/runtime-core' {
     NCheckbox: typeof import('naive-ui')['NCheckbox']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDataTable: typeof import('naive-ui')['NDataTable']
     NDatePicker: typeof import('naive-ui')['NDatePicker']
     NDescriptions: typeof import('naive-ui')['NDescriptions']
     NDescriptionsItem: typeof import('naive-ui')['NDescriptionsItem']
@@ -79,6 +81,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SingleApp: typeof import('./src/components/common/SingleApp.vue')['default']
     SingleIframe: typeof import('./src/components/common/SingleIframe.vue')['default']
+    Table: typeof import('./src/components/common/Table.vue')['default']
     Vditor: typeof import('./src/components/common/Vditor.vue')['default']
     WangEditor: typeof import('./src/components/common/WangEditor.vue')['default']
     XGPlayer: typeof import('./src/components/common/XGPlayer.vue')['default']
