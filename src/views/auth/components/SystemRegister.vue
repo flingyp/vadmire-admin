@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SytemPlatformAuth from './SytemPlatformAuth.vue'
+import SystemPlatformAuth from './SystemPlatformAuth.vue'
 import Logo from '~/assets/svg/admire-logo.svg'
 import { useVAdmireConfigStore } from '~/store'
 
@@ -77,7 +77,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
         </NForm>
 
         <!-- 第三方平台的认证登录入口 -->
-        <SytemPlatformAuth />
+        <SystemPlatformAuth />
       </div>
     </div>
   </div>

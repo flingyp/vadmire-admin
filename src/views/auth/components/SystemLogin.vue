@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useMessage } from 'naive-ui'
 import { useSetLocalKey } from '@flypeng/tool/browser'
-import Logo from '~/assets/svg/admire-logo.svg'
+import SystemPlatformAuth from './SystemPlatformAuth.vue'
 import { useVAdmireConfigStore } from '~/store'
 import { AUTH_TOKEN } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
-import SytemPlatformAuth from './SytemPlatformAuth.vue'
+import Logo from '~/assets/svg/admire-logo.svg'
 
 const message = useMessage()
 const router = useRouter()
@@ -58,7 +58,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
 
       <div class="shadow px-8 py-6 rounded-md">
         <NForm
-          ref="signUpRef"
+          ref="signInRef"
           size="medium"
           label-width="auto"
           :model="signInModelData"
@@ -66,14 +66,14 @@ const switchSign = inject('switchSign') as (value: boolean) => void
           <NFormItem label="Username">
             <NInput
               v-model:value="signInModelData.username"
-              placeholder="Please input your username"
+              placeholder="Default account: admin | user"
             />
           </NFormItem>
 
           <NFormItem label="Password">
             <NInput
               v-model:value="signInModelData.password"
-              placeholder="Please input your password"
+              placeholder="Default account admin | user"
             />
           </NFormItem>
 
@@ -107,7 +107,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
             </NButton>
 
             <!-- 第三方平台的认证登录入口 -->
-            <SytemPlatformAuth />
+            <SystemPlatformAuth />
           </div>
         </NForm>
       </div>
