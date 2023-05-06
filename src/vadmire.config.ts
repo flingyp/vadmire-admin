@@ -54,7 +54,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
 export const whiteRouteList: string[] = ['SystemAuth']
 
 // system handle route form
-export const handleRouteForm: HandleRouteForm = 'WEB'
+export const handleRouteForm: HandleRouteForm = 'SERVER'
 
 // 404 page redirect to the page config
 export const redirect404RouteName = 'SystemAboutIndex'
