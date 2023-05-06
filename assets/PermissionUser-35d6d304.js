@@ -1,1 +1,0 @@
-import{D as e,q as t,r as s}from"./index-9011da3c.js";const r={},c={class:"w-full h-40 bg-primary rounded-sm flex items-center justify-center text-base text-white"};function n(o,a){return t(),s("div",c," 普通管理员可见页面 ")}const _=e(r,[["render",n]]);export{_ as default};
