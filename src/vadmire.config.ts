@@ -27,7 +27,7 @@ export interface VAdmireConfig {
   isCollapsedSiderWidth: number
   pageTransition: string
   fixedTabBar: boolean
-  isVisibleFotter: boolean
+  isVisibleFooter: boolean
 }
 
 // default vadmireConfigStore initial config
@@ -46,7 +46,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     isCollapsedSiderWidth: 60,
     pageTransition: 'fade',
     fixedTabBar: false,
-    isVisibleFotter: true,
+    isVisibleFooter: true,
   }
 }
 

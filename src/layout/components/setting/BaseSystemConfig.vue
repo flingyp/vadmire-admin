@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const {
-  fixedTabBar, isVisibleFotter, headerHeight, siderWidth, footerHeight, tabBarHeight, pageTransition,
+  fixedTabBar, isVisibleFooter, headerHeight, siderWidth, footerHeight, tabBarHeight, pageTransition,
 } = storeToRefs(useVAdmireConfigStore())
 
 // page switch transition options
@@ -40,7 +40,7 @@ const updateFixedTabBar = (value: boolean) => {
 
 // is visibility footer
 const updateVisibilityFooter = (value: boolean) => {
-  isVisibleFotter.value = value
+  isVisibleFooter.value = value
 }
 </script>
 
@@ -56,7 +56,7 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">显示底部栏</span>
       <NSwitch
-        v-model:value="isVisibleFotter"
+        v-model:value="isVisibleFooter"
         @update:value="updateVisibilityFooter"
       />
     </div>

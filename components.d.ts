@@ -81,7 +81,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SingleApp: typeof import('./src/components/common/SingleApp.vue')['default']
     SingleIframe: typeof import('./src/components/common/SingleIframe.vue')['default']
-    Table: typeof import('./src/components/common/Table.vue')['default']
     Vditor: typeof import('./src/components/common/Vditor.vue')['default']
     WangEditor: typeof import('./src/components/common/WangEditor.vue')['default']
     XGPlayer: typeof import('./src/components/common/XGPlayer.vue')['default']

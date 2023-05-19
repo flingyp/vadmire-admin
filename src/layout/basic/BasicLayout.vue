@@ -2,7 +2,7 @@
 import { useVAdmireConfigStore } from '~/store'
 
 const {
-  layoutMode, isVisibleFotter, headerHeight, footerHeight, siderWidth, isCollapsedSider, isCollapsedSiderWidth,
+  layoutMode, isVisibleFooter, headerHeight, footerHeight, siderWidth, isCollapsedSider, isCollapsedSiderWidth,
 } = storeToRefs(useVAdmireConfigStore())
 
 // different layout mode
@@ -12,14 +12,14 @@ const isSiderMixMenuMode = computed(() => layoutMode.value === 'SIDER_MIX_MENU')
 
 const siderHeight = computed(() => {
   if (isSiderMixMenuMode.value) {
-    if (isVisibleFotter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
+    if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
     return `calc(100vh - ${headerHeight.value}px`
   }
   if (isSiderMenuMode.value) return '100vh'
   return '0px'
 })
 const contentHeight = computed(() => {
-  if (isVisibleFotter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
+  if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
   return `calc(100vh - ${headerHeight.value}px`
 })
 </script>
@@ -95,7 +95,7 @@ const contentHeight = computed(() => {
       </NLayoutContent>
 
       <NLayoutFooter
-        v-if="isVisibleFotter && isSiderMenuMode"
+        v-if="isVisibleFooter && isSiderMenuMode"
         bordered
       >
         <slot name="footer">
@@ -105,7 +105,7 @@ const contentHeight = computed(() => {
     </NLayout>
 
     <NLayoutFooter
-      v-if="isVisibleFotter && (isTopMenuMode || isSiderMixMenuMode)"
+      v-if="isVisibleFooter && (isTopMenuMode || isSiderMixMenuMode)"
       bordered
     >
       <slot name="footer">
