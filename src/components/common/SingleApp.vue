@@ -2,6 +2,10 @@
 import { darkTheme } from 'naive-ui'
 import { useVAdmireConfigStore } from '~/store'
 
+defineOptions({
+  name: 'SingleApp',
+})
+
 const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
 </script>
 

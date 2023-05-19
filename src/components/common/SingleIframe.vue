@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'SingleIframe',
+})
+
 const route = useRoute()
 const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())
 const iframeLink = ref(route.meta.url || '')

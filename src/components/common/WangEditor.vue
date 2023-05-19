@@ -7,6 +7,10 @@ interface WangEditorProps {
   content: string
 }
 
+defineOptions({
+  name: 'WangEditor',
+})
+
 const props = defineProps<WangEditorProps>()
 const emit = defineEmits(['update:content'])
 

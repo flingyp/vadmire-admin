@@ -18,6 +18,10 @@ interface VditorProps {
   content: string
 }
 
+defineOptions({
+  name: 'Vditor',
+})
+
 const props = withDefaults(defineProps<VditorProps>(), {
   contentTheme: 'ant-design',
   codeTheme: 'github',

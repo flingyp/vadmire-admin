@@ -11,6 +11,10 @@ interface XGPlayerProps {
   pip?: boolean // 画中画模式
 }
 
+defineOptions({
+  name: 'XGPlayer',
+})
+
 const props = withDefaults(defineProps<XGPlayerProps>(), {
   volume: 0.6,
   autoplay: false,

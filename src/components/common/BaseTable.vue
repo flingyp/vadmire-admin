@@ -6,7 +6,6 @@ type TableSize = 'small' | 'medium' | 'large'
 interface BaseTableProps {
   headers: DataTableColumns<any>
   data: Array<any>
-
   border?: boolean // 表格有无边框
   singleColumn?: boolean // 表格有无行分割线
   singleLine?: boolean // 表格有无列分割线
@@ -14,6 +13,10 @@ interface BaseTableProps {
   striped?: boolean // 表格条纹渲染
   maxHeight?: number // 表格最大高度
 }
+
+defineOptions({
+  name: 'BaseTable',
+})
 
 withDefaults(defineProps<BaseTableProps>(), {
   border: true,
