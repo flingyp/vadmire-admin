@@ -5,7 +5,10 @@ const vadmireConfigStore = useVAdmireConfigStore()
 </script>
 
 <template>
-  <BaseHeaderItem @click="vadmireConfigStore.isScaleDrawer = true">
-    <icon-ant-design:setting-outlined />
+  <BaseHeaderItem
+
+    @click="vadmireConfigStore.isScaleDrawer = true"
+  >
+    <icon-ant-design:setting-outlined id="driver-step-2" />
   </BaseHeaderItem>
 </template>

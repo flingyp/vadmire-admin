@@ -80,6 +80,7 @@ onMounted(() => {
 
 <template>
   <NMenu
+    id="driver-step-1"
     :value="routeKey"
     :mode="mode"
     :options="menuOptions"

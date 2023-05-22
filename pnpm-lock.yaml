@@ -19,6 +19,9 @@ dependencies:
   colord:
     specifier: ^2.9.3
     version: 2.9.3
+  driver.js:
+    specifier: ^0.9.8
+    version: 0.9.8
   echarts:
     specifier: ^5.4.2
     version: 5.4.2
@@ -2980,6 +2983,10 @@ packages:
     dependencies:
       get-size: 2.0.3
       unidragger: 2.4.0
+    dev: false
+
+  /driver.js@0.9.8:
+    resolution: {integrity: sha512-bczjyKdX6XmFyCDkwtRmlaORDwfBk1xXmRO0CAe5VwNQTM98aWaG2LAIiIdTe53iV/B7W5lXlIy2xYtf0JRb7Q==}
     dev: false
 
   /eastasianwidth@0.2.0:

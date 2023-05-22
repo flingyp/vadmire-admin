@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Driver from 'driver.js'
+import 'driver.js/dist/driver.min.css'
+import { useDriver } from '~/composables/useDriver'
 import packageJson from '../../package.json'
 
 interface PackageJson {
@@ -8,14 +11,15 @@ interface PackageJson {
   dependencies: Record<string, string>
   devDependencies: Record<string, string>
 }
-const {
-  name, version, description, dependencies, devDependencies,
-} = packageJson as PackageJson
 
 interface PackageItem {
   name: string
   version: string
 }
+
+const {
+  name, description, dependencies, devDependencies,
+} = packageJson as PackageJson
 
 const dependenciesList: PackageItem[] = []
 const devDependenciesList: PackageItem[] = []
@@ -33,6 +37,42 @@ Object.keys(devDependencies).forEach((key) => {
   devDependenciesItem.version = devDependencies[key]
   devDependenciesList.push(devDependenciesItem)
 })
+
+const { isDriver, start } = useDriver(
+  [
+    {
+      element: '#driver-step-1',
+      popover: {
+        title: '系统菜单',
+        description: '菜单需要在 router/modules 中配置路由',
+        position: 'right',
+        offset: 80,
+        closeBtnText: '关闭',
+        nextBtnText: '下一步',
+        prevBtnText: '上一步',
+      },
+    },
+    {
+      element: '#driver-step-2',
+      popover: {
+        title: '系统配置',
+        description: '系统个性化配置',
+        position: 'bottom-center',
+        offset: 20,
+        closeBtnText: '关闭',
+        nextBtnText: '下一步',
+        prevBtnText: '上一步',
+      },
+    },
+  ],
+)
+
+onMounted(() => {
+  // Start the introduction
+
+  isDriver.value && start()
+})
+
 </script>
 
 <template>

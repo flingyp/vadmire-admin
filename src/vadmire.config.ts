@@ -76,3 +76,6 @@ export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY'
 
 // local reload content key
 export const IS_RELOAD_CONTENT = 'IS_RELOAD_CONTENT'
+
+// driver.js plugin config key
+export const DRIVER_CONFIG_KEY = 'IS_DRIVER_CONFIG'
