@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useMessage } from 'naive-ui'
 import { useSetLocalKey } from '@flypeng/tool/browser'
 import SystemPlatformAuth from './SystemPlatformAuth.vue'
 import { useVAdmireConfigStore } from '~/store'
@@ -7,7 +6,7 @@ import { AUTH_TOKEN } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
 import Logo from '~/assets/svg/admire-logo.svg'
 
-const message = useMessage()
+const { success, error } = useNaiveMessage()
 const router = useRouter()
 const vadmireConfigStore = useVAdmireConfigStore()
 
@@ -22,11 +21,11 @@ const getSignInAuth = async () => {
   const { statusCode, statusText, data } = await getSignInAuthToken(signInModelData.value)
 
   if (statusCode !== 200) {
-    message.error(statusText)
+    error(statusText)
     return
   }
 
-  message.success(statusText)
+  success(statusText)
   useSetLocalKey(AUTH_TOKEN, data.accessToken)
   isSignInLoading.value = false
 

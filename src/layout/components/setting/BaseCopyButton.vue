@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useMessage } from 'naive-ui'
 import { useCopyContent, useDeepClone } from '@flypeng/tool/browser'
 import { defaultVAdmireConfig, VAdmireConfig } from '~/vadmire.config'
 
-const message = useMessage()
+const { success } = useNaiveMessage()
 const { toggleDark } = useTheme()
 const vadmireConfigStore = useVAdmireConfigStore()
 
@@ -12,7 +11,7 @@ const copyConfig = () => {
   const systemConfig: VAdmireConfig = useDeepClone(vadmireConfigStore.$state)
   systemConfig.isScaleDrawer = false
   useCopyContent(JSON.stringify(systemConfig))
-  message.success('系统配置已复制到剪贴板中，可替换vadmire.config.ts中的默认配置！')
+  success('系统配置已复制到剪贴板中，可替换vadmire.config.ts中的默认配置！')
 }
 
 const resetConfig = () => {
@@ -21,7 +20,7 @@ const resetConfig = () => {
   vadmireConfigStore.$state = defaultConfig
   // change local theme mode
   toggleDark(defaultConfig.themeMode !== 'LIGHT')
-  message.success('系统配置已重置为默认配置！')
+  success('系统配置已重置为默认配置！')
 }
 </script>
 

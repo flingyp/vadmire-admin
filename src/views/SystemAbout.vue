@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Driver from 'driver.js'
 import 'driver.js/dist/driver.min.css'
-import { useDriver } from '~/composables/useDriver'
 import packageJson from '../../package.json'
 
 interface PackageJson {

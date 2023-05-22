@@ -7,6 +7,7 @@ defineOptions({
 })
 
 const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
+
 </script>
 
 <template>

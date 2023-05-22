@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DataTableColumn, NButton, useMessage } from 'naive-ui'
+import { DataTableColumn, NButton } from 'naive-ui'
 import BaseTable from '~/components/common/BaseTable.vue'
 import { getBaseTableData } from '~/requests'
 
@@ -11,7 +11,7 @@ interface PersonInfo {
   sex: string
 }
 
-const message = useMessage()
+const { success, error } = useNaiveMessage()
 const {
   isLoading, tableData, pagination, getTableData,
 } = useTable<PersonInfo[]>()
@@ -61,7 +61,7 @@ const baseTableColumns: Array<DataTableColumn> = [
               marginRight: '8px',
             },
             onClick: () => {
-              message.success(`点击更新： ${row.name}`)
+              success(`点击更新： ${row.name}`)
             },
           },
           {
@@ -75,7 +75,7 @@ const baseTableColumns: Array<DataTableColumn> = [
             tertiary: true,
             size: 'small',
             onClick: () => {
-              message.error(`点击删除： ${row.name}`)
+              error(`点击删除： ${row.name}`)
             },
           },
           {
