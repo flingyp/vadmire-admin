@@ -2,11 +2,18 @@ import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
 import Driver, { Step } from 'driver.js'
 import { DRIVER_CONFIG_KEY } from '~/vadmire.config'
 
-const driver = new Driver()
+// More details reference https://github.com/kamranahmedse/driver.js
+const driver = new Driver({
+  closeBtnText: '关闭',
+  prevBtnText: '上一步',
+  nextBtnText: '下一步',
+  doneBtnText: '完成',
+  allowClose: false,
+})
 
 export const useDriver = (step: Step[]) => {
   // whether to use driver
-  const isDriver = ref(!useGetLocalKey(DRIVER_CONFIG_KEY))
+  const isDriver = ref(Number(useGetLocalKey(DRIVER_CONFIG_KEY)) !== 1)
 
   const start = () => {
     driver.defineSteps(step)
