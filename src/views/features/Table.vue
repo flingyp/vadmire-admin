@@ -12,9 +12,16 @@ interface PersonInfo {
 }
 
 const message = useMessage()
+const {
+  isLoading, tableData, pagination, getTableData,
+} = useTable<PersonInfo[]>()
 
 // basic table columns list
 const baseTableColumns: Array<DataTableColumn> = [
+  {
+    title: '序号',
+    key: 'id',
+  },
   {
     title: '名称',
     key: 'name',
@@ -80,24 +87,27 @@ const baseTableColumns: Array<DataTableColumn> = [
   },
 ]
 
-// basic table pagination
-const baseTablePagination = ref({
-  page: 1,
-  pageSize: 15,
-  pageSizes: [5, 10, 15, 20, 30],
-  showSizePicker: true,
-  showQuickJumper: true,
-  onChange: (page: number) => {
-    baseTablePagination.value.page = page
-  },
-  onUpdatePageSize: (pageSize: number) => {
-    baseTablePagination.value.pageSize = pageSize
-    baseTablePagination.value.page = 1
-  },
-})
+const getData = async () => getTableData(() => getBaseTableData({
+  page: pagination.value.page ?? 1,
+  size: pagination.value.pageSize ?? 15,
+}))
 
-const { isLoading, tableData, getTableData } = useTable<PersonInfo[]>()
-await getTableData(getBaseTableData)
+// onChange method
+pagination.value.onChange = async (page: number) => {
+  pagination.value.page = page
+  await getData()
+}
+
+// onUpdatePageSize method
+pagination.value.onUpdatePageSize = async (pageSize: number) => {
+  pagination.value.pageSize = pageSize
+  await getData()
+}
+
+onMounted(async () => {
+  const { total } = await getData()
+  pagination.value.pageCount = total
+})
 </script>
 
 <template>
@@ -107,7 +117,7 @@ await getTableData(getBaseTableData)
       :loading="isLoading"
       :headers="baseTableColumns"
       :data="tableData"
-      :pagination="baseTablePagination"
+      :pagination="pagination"
     />
   </div>
 </template>

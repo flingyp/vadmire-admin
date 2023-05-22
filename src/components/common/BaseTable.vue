@@ -45,6 +45,8 @@ withDefaults(defineProps<BaseTableProps>(), {
       :max-height="maxHeight"
       :loading="loading"
       :pagination="pagination"
+      :remote="true"
+      :paginate-single-page="true"
     />
   </div>
 </template>
