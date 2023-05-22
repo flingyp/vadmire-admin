@@ -6,7 +6,7 @@ export type HandleRouteForm = 'WEB' | 'SERVER'
 
 // different scene color
 export const sceneColorMap: Record<ColorType, string> = {
-  primary: '#0071bc',
+  primary: '#03a9f4',
   info: '#687FFF',
   success: '#61D132',
   warning: '#FFA500',
