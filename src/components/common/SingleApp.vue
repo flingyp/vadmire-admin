@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { darkTheme } from 'naive-ui'
+import { darkTheme, zhCN, dateZhCN } from 'naive-ui'
 import { useVAdmireConfigStore } from '~/store'
 
 defineOptions({
@@ -14,6 +14,8 @@ const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
     <NConfigProvider
       :theme="themeMode === 'LIGHT' ? null : darkTheme"
       :theme-overrides="naiveThemeOverrides"
+      :locale="zhCN"
+      :date-locale="dateZhCN"
       class="w-screen h-screen overflow-hidden"
     >
       <NNotificationProvider>

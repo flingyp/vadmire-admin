@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DataTableColumn } from 'naive-ui'
+import { DataTableColumn, PaginationProps } from 'naive-ui'
 
 type TableSize = 'small' | 'medium' | 'large'
 
@@ -12,6 +12,8 @@ interface BaseTableProps {
   size?: TableSize // 表格尺寸大小
   striped?: boolean // 表格条纹渲染
   maxHeight?: number // 表格最大高度
+  loading?: boolean // 表格加载状态
+  pagination?: PaginationProps // 表格分页
 }
 
 defineOptions({
@@ -25,6 +27,8 @@ withDefaults(defineProps<BaseTableProps>(), {
   size: 'medium',
   striped: true,
   maxHeight: undefined,
+  loading: false,
+  pagination: undefined,
 })
 </script>
 
@@ -39,6 +43,8 @@ withDefaults(defineProps<BaseTableProps>(), {
       :size="size"
       :striped="striped"
       :max-height="maxHeight"
+      :loading="loading"
+      :pagination="pagination"
     />
   </div>
 </template>

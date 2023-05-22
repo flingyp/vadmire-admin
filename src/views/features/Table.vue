@@ -80,7 +80,23 @@ const baseTableColumns: Array<DataTableColumn> = [
   },
 ]
 
-const { tableData, getTableData } = useTable<PersonInfo[]>()
+// basic table pagination
+const baseTablePagination = ref({
+  page: 1,
+  pageSize: 15,
+  pageSizes: [5, 10, 15, 20, 30],
+  showSizePicker: true,
+  showQuickJumper: true,
+  onChange: (page: number) => {
+    baseTablePagination.value.page = page
+  },
+  onUpdatePageSize: (pageSize: number) => {
+    baseTablePagination.value.pageSize = pageSize
+    baseTablePagination.value.page = 1
+  },
+})
+
+const { isLoading, tableData, getTableData } = useTable<PersonInfo[]>()
 await getTableData(getBaseTableData)
 </script>
 
@@ -88,8 +104,10 @@ await getTableData(getBaseTableData)
   <div>
     <BaseTable
       size="small"
+      :loading="isLoading"
       :headers="baseTableColumns"
       :data="tableData"
+      :pagination="baseTablePagination"
     />
   </div>
 </template>
