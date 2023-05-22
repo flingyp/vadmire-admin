@@ -1,9 +1,16 @@
-import { DataTableColumns } from 'naive-ui'
+export const useTable = <T>() => {
+  const tableData = ref<T>()
 
-export const useTable = <T>(tableColumns: DataTableColumns<T>) => {
-  const headers = ref(tableColumns)
+  // get table data method
+  const getTableData = async (callback: Function) => {
+    const { data } = await callback() as { data: T }
+    tableData.value = data
+    return data
+  }
 
   return {
-    headers,
+    tableData,
+
+    getTableData,
   }
 }

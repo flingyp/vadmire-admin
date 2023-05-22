@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { DataTableColumns } from 'naive-ui'
+import { DataTableColumn } from 'naive-ui'
 
 type TableSize = 'small' | 'medium' | 'large'
 
 interface BaseTableProps {
-  headers: DataTableColumns<any>
-  data: Array<any>
+  headers: Array<DataTableColumn>
+  data: any
   border?: boolean // 表格有无边框
   singleColumn?: boolean // 表格有无行分割线
   singleLine?: boolean // 表格有无列分割线
