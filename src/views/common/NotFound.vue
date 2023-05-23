@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NotFoundIcon from '~/assets/svg/not-found.svg'
-import { redirect404RouteName } from '~/vadmire.config'
+import { REDIRECT_404_ROUTE_NAME } from '~/vadmire.config'
 
 const router = useRouter()
 const vadmireConfigStore = useVAdmireConfigStore()
@@ -20,7 +20,7 @@ const containerHeight = computed(() => vadmireConfigStore.contentContainerHeight
     <NButton
       type="primary"
       class="w-60 mt-8"
-      @click="router.push({name: redirect404RouteName, replace: true})"
+      @click="router.push({name: REDIRECT_404_ROUTE_NAME, replace: true})"
     >
       Go Home
     </NButton>

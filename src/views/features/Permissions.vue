@@ -7,7 +7,7 @@
         VAdmire Admin 提供两种控制系统菜单路由的方式
       </div>
       <p class="mt-4 text-xs text-gray-400">
-        注：可以再 vadmire.config.ts 文件中修改 handleRouteForm 变量的值来决定控制方式。
+        注：可以再 vadmire.config.ts 文件中修改 HANDLE_ROUTE_FORM 变量的值来决定控制方式。
       </p>
     </div>
 

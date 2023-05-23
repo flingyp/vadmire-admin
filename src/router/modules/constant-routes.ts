@@ -1,6 +1,33 @@
+import { LOGIN_ROUTE_NAME, NOT_FOUND_404_ROUTE_NAME } from '~/vadmire.config'
 import { VAdmireRoute } from '..'
 
 export const CONSTANT_ROUTES: VAdmireRoute[] = [
+  {
+    path: '/',
+    name: 'Home',
+    redirect: '/about',
+    meta: {
+      isShow: false,
+    },
+  },
+  {
+    path: '/login',
+    name: LOGIN_ROUTE_NAME,
+    component: '~/views/auth/SystemAuth.vue',
+    meta: {
+      text: 'SystemAuth',
+      isShow: false,
+    },
+  },
+  {
+    path: '/404',
+    name: NOT_FOUND_404_ROUTE_NAME,
+    component: '~/views/common/NotFound.vue',
+    meta: {
+      text: '404',
+      isShow: false,
+    },
+  },
   {
     path: '/about',
     name: 'SystemAbout',
@@ -233,32 +260,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         ],
       },
     ],
-  },
-  {
-    path: '/',
-    name: 'Home',
-    redirect: '/about',
-    meta: {
-      isShow: false,
-    },
-  },
-  {
-    path: '/login',
-    name: 'SystemAuth',
-    component: '~/views/auth/SystemAuth.vue',
-    meta: {
-      text: 'SystemAuth',
-      isShow: false,
-    },
-  },
-  {
-    path: '/404',
-    name: 'SystemNotFound',
-    component: '~/views/common/NotFound.vue',
-    meta: {
-      text: '404',
-      isShow: false,
-    },
   },
 ]
 

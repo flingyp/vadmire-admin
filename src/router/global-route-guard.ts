@@ -6,7 +6,9 @@ import { VAdmireRoute } from './types'
 import { RouteMenuStore, useRouteMenuStore } from '~/store'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
 import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'
-import { AUTH_TOKEN, whiteRouteList, handleRouteForm } from '~/vadmire.config'
+import {
+  AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME,
+} from '~/vadmire.config'
 import {
   filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform,
 } from './utils'
@@ -21,10 +23,10 @@ const routeGenerateMenuProcess = async (
 
   // 2. filter VAdmireRoute async route
   let filterAsyncRoutes: VAdmireRoute[] = []
-  if (handleRouteForm === 'WEB') {
+  if (HANDLE_ROUTE_FORM === 'WEB') {
     const asyncRoutes = useDeepClone(ASYNC_ROUTES)
     filterAsyncRoutes = filterRoutes(asyncRoutes, permissions)
-  } else if (handleRouteForm === 'SERVER') {
+  } else if (HANDLE_ROUTE_FORM === 'SERVER') {
     filterAsyncRoutes = await (await getSystemAccountAsyncRoutes()).data
   }
 
@@ -63,21 +65,21 @@ export default async (
 
   // local have auth token case
   if (!useCommonType.isNull(localAuthToken)) {
-    if (from.name === 'SystemAuth' && to.name !== 'SystemAuth') {
+    if (from.name === LOGIN_ROUTE_NAME && to.name !== LOGIN_ROUTE_NAME) {
       // 1. go to route from login page and the route is not login page
       if (!routeMenuStore.isMountedRoute) {
         await routeGenerateMenuProcess(routeInstance, routeMenuStore)
         routeMenuStore.isMountedRoute = true
         next({ path: to.fullPath, replace: true })
       }
-    } else if (useCommonType.isUndefined(from.name) && to.name !== 'SystemAuth') {
+    } else if (useCommonType.isUndefined(from.name) && to.name !== LOGIN_ROUTE_NAME) {
       // 2. it isn't from login page and isn't go to login page (refresh page case)
       if (!routeMenuStore.isMountedRoute) {
         await routeGenerateMenuProcess(routeInstance, routeMenuStore)
         routeMenuStore.isMountedRoute = true
         next({ path: to.fullPath, replace: true })
       }
-    } else if (to.name === 'SystemAuth') {
+    } else if (to.name === LOGIN_ROUTE_NAME) {
       // 3. want to jump to the login page manually
       next({ name: 'BlockDemo-1' })
     }
@@ -91,8 +93,8 @@ export default async (
     next()
   } else {
     // check whether white list is configured
-    const isAccess = whiteRouteList.includes(to.name as string)
+    const isAccess = WHITE_ROUTE_LIST.includes(to.name as string)
     // release if configured, otherwise it will go to the login page
-    isAccess ? next() : next({ name: 'SystemAuth' })
+    isAccess ? next() : next({ name: LOGIN_ROUTE_NAME })
   }
 }

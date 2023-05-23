@@ -2,6 +2,7 @@
 import { DropdownOption } from 'naive-ui'
 import AvatarLogo from '~/assets/img/avatar-logo.png'
 import BaseHeaderItem from './BaseHeaderItem.vue'
+import { LOGIN_ROUTE_NAME } from '~/vadmire.config'
 
 const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
@@ -19,7 +20,7 @@ const handleClickOption = async (key: OptionKeys) => {
   if (key === 'EXIT_SYSTEM') {
     // layout system custom logic
     await vadmireConfigStore.handleExitSystem()
-    router.push({ name: 'SystemAuth' })
+    router.push({ name: LOGIN_ROUTE_NAME })
   }
 }
 </script>

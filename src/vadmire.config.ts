@@ -50,14 +50,19 @@ export function defaultVAdmireConfig(): VAdmireConfig {
   }
 }
 
-// system white routes list
-export const whiteRouteList: string[] = ['SystemAuth']
+// system login route name
+export const LOGIN_ROUTE_NAME = 'SystemAuth'
 
-// system handle route form
-export const handleRouteForm: HandleRouteForm = 'SERVER'
+export const NOT_FOUND_404_ROUTE_NAME = 'SystemNotFound'
 
 // 404 page redirect to the page config
-export const redirect404RouteName = 'SystemAboutIndex'
+export const REDIRECT_404_ROUTE_NAME = 'SystemAboutIndex'
+
+// system white routes list
+export const WHITE_ROUTE_LIST: string[] = [LOGIN_ROUTE_NAME]
+
+// system handle route form
+export const HANDLE_ROUTE_FORM: HandleRouteForm = 'SERVER'
 
 // local storage auth token key
 export const AUTH_TOKEN = 'AUTH_TOKEN'
