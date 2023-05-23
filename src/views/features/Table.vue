@@ -142,7 +142,6 @@ onMounted(async () => {
         @add="addTableData"
         @export="exportFile"
       />
-      {{ searchValue }}
     </div>
     <BaseTable
       size="small"
