@@ -2,7 +2,7 @@ import { PaginationProps } from 'naive-ui'
 import XLSX from 'xlsx'
 
 export const useTable = <T>() => {
-  const isLoading = ref(false)
+  const { isLoading, fetchLoading } = useLoading()
   const tableData = ref<T[]>()
 
   // :pagination="pagination" on Table page of src\views\feature\base-table.vue and show type error
@@ -18,22 +18,23 @@ export const useTable = <T>() => {
   })
 
   // get table data method
+  interface ResponseTableData {
+    list: T[]
+    total: number
+  }
+
   const getTableData = async (callback: Function) => {
-    isLoading.value = true
+    const response = await fetchLoading(async () => {
+      const { data } = await callback() as {data: ResponseTableData}
+      tableData.value = data.list
+      return data
+    })
 
-    const { data } = await callback() as { data: any }
-
-    tableData.value = data.list
-
-    isLoading.value = false
-
-    return data
+    return response
   }
 
   // export table data to excel file
   const exportExcel = (sheetName: string, fileName: string, headerName?: string[], sourceData?: unknown[]) => {
-    isLoading.value = true
-
     let worksheet: XLSX.WorkSheet
 
     sourceData ? (worksheet = XLSX.utils.json_to_sheet(sourceData))
@@ -46,8 +47,6 @@ export const useTable = <T>() => {
     XLSX.utils.book_append_sheet(workbook, worksheet, sheetName ?? 'Sheet1')
 
     XLSX.writeFile(workbook, `${fileName}.xlsx`, { compression: true })
-
-    isLoading.value = false
   }
 
   return {

@@ -93,6 +93,7 @@ const baseTableColumns: Array<DataTableColumn> = [
   },
 ]
 
+// get table data
 const getData = async () => getTableData(() => getBaseTableData({
   page: pagination.value.page ?? 1,
   size: pagination.value.pageSize ?? 15,
