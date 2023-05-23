@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DataTableColumn, NButton } from 'naive-ui'
 import BaseTable from '~/components/common/BaseTable.vue'
+import BaseTableHandle from '~/components/common/BaseTableHandle.vue'
 import { getBaseTableData } from '~/requests'
 
 interface PersonInfo {
@@ -11,9 +12,14 @@ interface PersonInfo {
   sex: string
 }
 
-const { success, error } = useNaiveMessage()
+const { success, error, info } = useNaiveMessage()
+
+// search input bind value
+const searchValue = ref('')
+
 const {
-  isLoading, tableData, pagination, getTableData, exportExcel,
+  isLoading, tableData, pagination,
+  getTableData, exportExcel,
 } = useTable<PersonInfo>()
 
 // basic table columns list
@@ -117,6 +123,11 @@ const exportFile = () => {
   exportExcel('Sheet1', '基础表格文件', ['名称', '出生日期', '家庭住址', '邮政编码', '性别'], sourceData)
 }
 
+// add table data
+const addTableData = () => {
+  info('点击新增')
+}
+
 onMounted(async () => {
   const { total } = await getData()
   pagination.value.pageCount = total
@@ -125,16 +136,13 @@ onMounted(async () => {
 
 <template>
   <div>
-    <div class="mb-2 text-right space-x-1">
-      <NButton
-        type="info"
-        size="small"
-        ghost
-        class="px-4"
-        @click="exportFile"
-      >
-        导出
-      </NButton>
+    <div class="mb-4 flex items-center space-x-1">
+      <BaseTableHandle
+        v-model:search-value="searchValue"
+        @add="addTableData"
+        @export="exportFile"
+      />
+      {{ searchValue }}
     </div>
     <BaseTable
       size="small"
