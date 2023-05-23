@@ -52,6 +52,9 @@ dependencies:
   xgplayer:
     specifier: ^2.32.2
     version: 2.32.2
+  xlsx:
+    specifier: https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz
+    version: '@cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz'
 
 devDependencies:
   '@commitlint/cli':
@@ -7299,4 +7302,12 @@ packages:
     resolution: {integrity: sha512-DRUM4ZLnoaT0PBVvGBDO9oWIDBKFdAVieNWxWwK0niYzJCMwGchRk21/hsE+RKkIveH3XHCyvXcJDkgLVvfizQ==}
     dependencies:
       tslib: 2.3.0
+    dev: false
+
+  '@cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz':
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz}
+    name: xlsx
+    version: 0.19.3
+    engines: {node: '>=0.8'}
+    hasBin: true
     dev: false

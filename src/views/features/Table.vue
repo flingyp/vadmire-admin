@@ -13,8 +13,8 @@ interface PersonInfo {
 
 const { success, error } = useNaiveMessage()
 const {
-  isLoading, tableData, pagination, getTableData,
-} = useTable<PersonInfo[]>()
+  isLoading, tableData, pagination, getTableData, exportExcel,
+} = useTable<PersonInfo>()
 
 // basic table columns list
 const baseTableColumns: Array<DataTableColumn> = [
@@ -104,6 +104,19 @@ pagination.value.onUpdatePageSize = async (pageSize: number) => {
   await getData()
 }
 
+// export table data to excel file
+const exportFile = () => {
+  const sourceData = tableData.value?.map((item) => ({
+    name: item.name,
+    birthday: item.birthday,
+    address: item.address,
+    postalCode: item.postalCode,
+    sex: item.sex,
+  }))
+
+  exportExcel('Sheet1', '基础表格文件', ['名称', '出生日期', '家庭住址', '邮政编码', '性别'], sourceData)
+}
+
 onMounted(async () => {
   const { total } = await getData()
   pagination.value.pageCount = total
@@ -112,6 +125,17 @@ onMounted(async () => {
 
 <template>
   <div>
+    <div class="mb-2 text-right space-x-1">
+      <NButton
+        type="info"
+        size="small"
+        ghost
+        class="px-4"
+        @click="exportFile"
+      >
+        导出
+      </NButton>
+    </div>
     <BaseTable
       size="small"
       :loading="isLoading"
