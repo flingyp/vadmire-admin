@@ -6,30 +6,31 @@ import { AUTH_TOKEN } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
 import Logo from '~/assets/svg/admire-logo.svg'
 
-const { success, error } = useNaiveMessage()
 const router = useRouter()
+const { success, error } = useNaiveMessage()
+const { isLoading: isSignInLoading, setLoading } = useLoading()
 const vadmireConfigStore = useVAdmireConfigStore()
 
 // bundle sign in model data
 
 const signInModelData = ref<SignInModelData>({ username: '', password: '' })
-const isSignInLoading = ref(false)
+
 // click sign in button
 const getSignInAuth = async () => {
-  isSignInLoading.value = true
+  setLoading(true)
 
   const { statusCode, statusText, data } = await getSignInAuthToken(signInModelData.value)
 
   if (statusCode !== 200) {
     error(statusText)
+    setLoading(false)
     return
   }
-
   success(statusText)
-  useSetLocalKey(AUTH_TOKEN, data.accessToken)
-  isSignInLoading.value = false
+  setLoading(false)
 
   setTimeout(() => {
+    useSetLocalKey(AUTH_TOKEN, data.accessToken)
     router.push({ name: 'SystemAboutIndex' })
   }, 1000)
 }
