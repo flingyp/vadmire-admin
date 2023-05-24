@@ -7,13 +7,13 @@ import { RouteMenuStore, useRouteMenuStore } from '~/store'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
 import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'
 import {
-  AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME,
+  AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME, SYSTEM_HOME_ROUTE_NAME,
 } from '~/vadmire.config'
 import {
   filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform,
 } from './utils'
 
-const routeGenerateMenuProcess = async (
+export const routeGenerateMenuProcess = async (
   routerInstance: Router,
   routeMenuStore: Store<'routeMenuStore', RouteMenuStore, {}, {}>,
 ) => {
@@ -81,7 +81,7 @@ export default async (
       }
     } else if (to.name === LOGIN_ROUTE_NAME) {
       // 3. want to jump to the login page manually
-      next({ name: 'BlockDemo-1' })
+      next({ name: SYSTEM_HOME_ROUTE_NAME })
     }
 
     // mount not found common route

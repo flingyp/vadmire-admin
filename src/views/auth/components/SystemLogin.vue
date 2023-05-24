@@ -2,17 +2,19 @@
 import { useSetLocalKey } from '@flypeng/tool/browser'
 import SystemPlatformAuth from './SystemPlatformAuth.vue'
 import { useVAdmireConfigStore } from '~/store'
-import { AUTH_TOKEN } from '~/vadmire.config'
+import { AUTH_TOKEN, SYSTEM_HOME_ROUTE_NAME } from '~/vadmire.config'
 import { SignInModelData, getSignInAuthToken } from '~/requests'
 import Logo from '~/assets/svg/admire-logo.svg'
+import { routeGenerateMenuProcess } from '~/router/global-route-guard'
 
 const router = useRouter()
-const { success, error } = useNaiveMessage()
-const { isLoading: isSignInLoading, setLoading } = useLoading()
+const routeMenuStore = useRouteMenuStore()
 const vadmireConfigStore = useVAdmireConfigStore()
 
-// bundle sign in model data
+const { success, error } = useNaiveMessage()
+const { isLoading: isSignInLoading, setLoading } = useLoading()
 
+// bundle sign in model data
 const signInModelData = ref<SignInModelData>({ username: '', password: '' })
 
 // click sign in button
@@ -27,11 +29,17 @@ const getSignInAuth = async () => {
     return
   }
   success(statusText)
-  setLoading(false)
 
-  setTimeout(() => {
+  setTimeout(async () => {
     useSetLocalKey(AUTH_TOKEN, data.accessToken)
-    router.push({ name: 'SystemAboutIndex' })
+
+    // get user info and async routes to mount vue-router
+    await routeGenerateMenuProcess(router, routeMenuStore)
+    routeMenuStore.isMountedRoute = true
+
+    router.push({ name: SYSTEM_HOME_ROUTE_NAME })
+
+    setLoading(false)
   }, 1000)
 }
 

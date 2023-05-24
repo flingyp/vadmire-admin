@@ -53,10 +53,11 @@ export function defaultVAdmireConfig(): VAdmireConfig {
 // system login route name
 export const LOGIN_ROUTE_NAME = 'SystemAuth'
 
+// not found 404 route name
 export const NOT_FOUND_404_ROUTE_NAME = 'SystemNotFound'
 
-// 404 page redirect to the page config
-export const REDIRECT_404_ROUTE_NAME = 'SystemAboutIndex'
+// system home route name
+export const SYSTEM_HOME_ROUTE_NAME = 'SystemAboutIndex'
 
 // system white routes list
 export const WHITE_ROUTE_LIST: string[] = [LOGIN_ROUTE_NAME]
