@@ -9,6 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import viteCDNPlugin from 'vite-plugin-cdn-import'
 
 import { name, version } from './package.json'
 
@@ -102,5 +103,33 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
         ],
       },
     }),
+    viteCDNPlugin({
+      modules: [
+        {
+          name: 'xlsx',
+          var: 'XLSX',
+          path: 'https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js',
+        },
+        {
+          name: 'vditor',
+          var: 'Vditor',
+          path: 'https://cdn.jsdelivr.net/npm/vditor/dist/index.min.js',
+        },
+      ],
+    }),
   ],
+  // Build config
+  build: {
+    rollupOptions: {
+      output: {
+        // https://www.rollupjs.com/guide/big-list-of-options#outputmanualchunks
+        // 将 node_modules 中的模块打包到自定义 vendor chunk 中，利用浏览器缓存机制，加快页面加载速度
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
 })

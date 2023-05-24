@@ -150,6 +150,9 @@ devDependencies:
   postcss:
     specifier: ^8.4.21
     version: 8.4.21
+  rollup-plugin-external-globals:
+    specifier: ^0.8.0
+    version: 0.8.0(rollup@2.79.1)
   sass:
     specifier: ^1.60.0
     version: 1.60.0
@@ -174,6 +177,9 @@ devDependencies:
   vite:
     specifier: ^4.2.1
     version: 4.2.1(@types/node@18.15.11)(sass@1.60.0)
+  vite-plugin-cdn-import:
+    specifier: ^0.3.5
+    version: 0.3.5(rollup@2.79.1)
   vite-plugin-clear-console:
     specifier: ^0.2.2
     version: 0.2.2
@@ -1236,6 +1242,14 @@ packages:
       estree-walker: 1.0.1
       picomatch: 2.3.1
       rollup: 2.79.1
+    dev: true
+
+  /@rollup/pluginutils@4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
     dev: true
 
   /@rollup/pluginutils@5.0.2(rollup@2.79.1):
@@ -4529,6 +4543,18 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /is-reference@1.2.1:
+    resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
+    dependencies:
+      '@types/estree': 1.0.0
+    dev: true
+
+  /is-reference@3.0.1:
+    resolution: {integrity: sha512-baJJdQLiYaJdvFbJqXrcGv3WU3QCzBlUcI5QhbesIm6/xPsvmO+2CDoi/GMOFBQEQm+PXkwOPrp9KK5ozZsp2w==}
+    dependencies:
+      '@types/estree': 1.0.0
+    dev: true
+
   /is-regex@1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
@@ -4974,6 +5000,12 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /magic-string@0.25.9:
+    resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
+    dependencies:
+      sourcemap-codec: 1.4.8
     dev: true
 
   /magic-string@0.27.0:
@@ -6008,6 +6040,30 @@ packages:
       glob: 7.2.3
     dev: true
 
+  /rollup-plugin-external-globals@0.6.1(rollup@2.79.1):
+    resolution: {integrity: sha512-mlp3KNa5sE4Sp9UUR2rjBrxjG79OyZAh/QC18RHIjM+iYkbBwNXSo8DHRMZWtzJTrH8GxQ+SJvCTN3i14uMXIA==}
+    peerDependencies:
+      rollup: ^2.25.0
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      estree-walker: 2.0.2
+      is-reference: 1.2.1
+      magic-string: 0.25.9
+      rollup: 2.79.1
+    dev: true
+
+  /rollup-plugin-external-globals@0.8.0(rollup@2.79.1):
+    resolution: {integrity: sha512-c65c7hPMCE//cLzC4dLVE25XkuHsBqSkZp+/5pvtZ1MFwqgQLRRkIfuCvI3PnI7Yj8HoXqYtdsRN9gYF5a4tVQ==}
+    peerDependencies:
+      rollup: ^2.25.0 || ^3.3.0
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@2.79.1)
+      estree-walker: 3.0.3
+      is-reference: 3.0.1
+      magic-string: 0.30.0
+      rollup: 2.79.1
+    dev: true
+
   /rollup@2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
@@ -6213,6 +6269,11 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /sourcemap-codec@1.4.8:
+    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
   /spdx-correct@3.2.0:
@@ -6941,6 +7002,14 @@ packages:
     dependencies:
       diff-match-patch: 1.0.5
     dev: false
+
+  /vite-plugin-cdn-import@0.3.5(rollup@2.79.1):
+    resolution: {integrity: sha512-e1raoalfBiIhv+hnMeSp1UNjloDDBhHpeFxkwRRdPBmTdDRqdEEn8owUmT5u8UBSVCs4xN3n/od4a91vXEhXPQ==}
+    dependencies:
+      rollup-plugin-external-globals: 0.6.1(rollup@2.79.1)
+    transitivePeerDependencies:
+      - rollup
+    dev: true
 
   /vite-plugin-clear-console@0.2.2:
     resolution: {integrity: sha512-2CjpF2hod0DOVSgeUtmGv8kljp3PBx/Tyec85qi8rjrLLopjvJ8Lvvb0FbcwguD3cyjVK2QYZRjh5ZtjXKzROQ==}
