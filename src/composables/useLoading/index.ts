@@ -5,14 +5,17 @@ export const useLoading = () => {
     isLoading.value = value
   }
 
-  const withLoading = async (callback: Function) => {
+  // eslint-disable-next-line no-unused-vars
+  const withLoading = async <T>(callback: (...args: unknown[]) => Promise<T>) => {
     if (isLoading.value) return
 
     isLoading.value = true
 
-    await callback()
+    const response = await callback()
 
     isLoading.value = false
+
+    return response
   }
 
   return {

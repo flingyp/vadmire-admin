@@ -24,13 +24,17 @@ export const useTable = <T>() => {
   }
 
   const getTableData = async (callback: Function) => {
+    let result: ResponseTableData = {
+      list: [],
+      total: 0,
+    }
     const response = await withLoading(async () => {
       const { data } = await callback() as {data: ResponseTableData}
       tableData.value = data.list
       return data
     })
-
-    return response
+    response && (result = response)
+    return result
   }
 
   // export table data to excel file
