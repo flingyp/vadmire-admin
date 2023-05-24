@@ -5,20 +5,20 @@ export const useLoading = () => {
     isLoading.value = value
   }
 
-  const fetchLoading = async <T>(callback: (...args: unknown[]) => T) => {
-    await setLoading(true)
+  const withLoading = async (callback: Function) => {
+    if (isLoading.value) return
 
-    const response = await callback() as T
+    isLoading.value = true
 
-    await setLoading(false)
+    await callback()
 
-    return response
+    isLoading.value = false
   }
 
   return {
-    isLoading,
+    isLoading: readonly(isLoading),
 
     setLoading,
-    fetchLoading,
+    withLoading,
   }
 }

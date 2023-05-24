@@ -2,7 +2,7 @@ import { PaginationProps } from 'naive-ui'
 import XLSX from 'xlsx'
 
 export const useTable = <T>() => {
-  const { isLoading, fetchLoading } = useLoading()
+  const { isLoading, withLoading } = useLoading()
   const tableData = ref<T[]>()
 
   // :pagination="pagination" on Table page of src\views\feature\base-table.vue and show type error
@@ -24,7 +24,7 @@ export const useTable = <T>() => {
   }
 
   const getTableData = async (callback: Function) => {
-    const response = await fetchLoading(async () => {
+    const response = await withLoading(async () => {
       const { data } = await callback() as {data: ResponseTableData}
       tableData.value = data.list
       return data
