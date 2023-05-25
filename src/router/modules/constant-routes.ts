@@ -270,6 +270,23 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
       },
     ],
   },
+  {
+    path: '/guide',
+    name: 'Guide',
+    component: 'Layout',
+    children: [
+      {
+        path: '',
+        name: 'GuideIndex',
+        component: '~/views/Guide.vue',
+        meta: {
+          text: '引导页',
+          icon: 'mdi:home',
+          single: true,
+        },
+      },
+    ],
+  },
 ]
 
 export const MATCH_404_ROUTES: VAdmireRoute = {

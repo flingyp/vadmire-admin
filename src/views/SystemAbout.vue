@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import 'driver.js/dist/driver.min.css'
 import packageJson from '../../package.json'
 
 interface PackageJson {
@@ -34,35 +33,6 @@ Object.keys(devDependencies).forEach((key) => {
   devDependenciesItem.name = key
   devDependenciesItem.version = devDependencies[key]
   devDependenciesList.push(devDependenciesItem)
-})
-
-const { isDriver, start } = useDriver(
-  [
-    {
-      element: '#driver-step-1',
-      popover: {
-        title: '系统菜单',
-        description: '菜单需要在 router/modules 中配置路由',
-        position: 'right',
-        offset: 80,
-      },
-    },
-    {
-      element: '#driver-step-2',
-      popover: {
-        title: '系统配置',
-        description: '系统个性化配置',
-        position: 'bottom-center',
-        offset: 20,
-      },
-    },
-  ],
-)
-
-onMounted(() => {
-  // Start the introduction
-
-  isDriver.value && start()
 })
 
 </script>

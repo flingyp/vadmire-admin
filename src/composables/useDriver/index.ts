@@ -13,7 +13,8 @@ const driver = new Driver({
 
 export const useDriver = (step: Step[]) => {
   // whether to use driver
-  const isDriver = ref(Number(useGetLocalKey(DRIVER_CONFIG_KEY)) !== 1)
+  // const isDriver = ref(Number(useGetLocalKey(DRIVER_CONFIG_KEY)) !== 1)
+  const isDriver = ref(true)
 
   const start = () => {
     driver.defineSteps(step)
