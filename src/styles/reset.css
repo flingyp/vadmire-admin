@@ -10,3 +10,7 @@
   border-top-color: var(--primaryColor);
   border-left-color: var(--primaryColor);
 }
+
+html.dark #driver-highlighted-element-stage {
+  background: #000 !important;
+}
