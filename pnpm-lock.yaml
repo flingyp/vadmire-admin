@@ -52,6 +52,9 @@ dependencies:
   vue-router:
     specifier: ^4.1.6
     version: 4.1.6(vue@3.3.4)
+  vue3-photo-preview:
+    specifier: ^0.3.0
+    version: 0.3.0(vue@3.3.4)
   xgplayer:
     specifier: ^2.32.2
     version: 2.32.2
@@ -7148,6 +7151,16 @@ packages:
       '@volar/vue-typescript': 1.2.0
       typescript: 4.9.5
     dev: true
+
+  /vue3-photo-preview@0.3.0(vue@3.3.4):
+    resolution: {integrity: sha512-DeZ076yN85RcfWdhcgSYVEj5Y721mi6rmDoShDb4Bt7z7Q5Rfs4Y8PlP66OIrsyE0x4KVLdE0auJGxrxXRJXjA==}
+    engines: {node: '>=14', npm: '>=7'}
+    peerDependencies:
+      vue: '>=3.2.0'
+    dependencies:
+      lodash-es: 4.17.21
+      vue: 3.3.4
+    dev: false
 
   /vue@3.3.4:
     resolution: {integrity: sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==}

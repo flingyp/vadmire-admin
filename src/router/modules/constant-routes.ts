@@ -155,6 +155,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'ic:outline-table-view',
         },
       },
+      {
+        path: 'imagePreview',
+        name: 'Feature_ImagePreview',
+        component: '~/views/features/ImagePreview.vue',
+        meta: {
+          text: '图片预览',
+          icon: 'bx:bx-image',
+        },
+      },
     ],
   },
   {

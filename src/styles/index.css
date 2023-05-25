@@ -3,5 +3,5 @@
 @import './transition.css';
 @import 'nprogress/nprogress.css';
 @import './reset.css';
-@import 'driver.js/dist/driver.min.css'
-
+@import 'driver.js/dist/driver.min.css';
+@import 'vue3-photo-preview/dist/index.css';
