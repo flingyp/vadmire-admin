@@ -27,6 +27,7 @@ export interface VAdmireConfig {
   isCollapsedSiderWidth: number
   pageTransition: string
   fixedTabBar: boolean
+  isVisibleTabBar: boolean
   isVisibleFooter: boolean
 }
 
@@ -46,6 +47,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     isCollapsedSiderWidth: 60,
     pageTransition: 'fade',
     fixedTabBar: false,
+    isVisibleTabBar: true,
     isVisibleFooter: true,
   }
 }
