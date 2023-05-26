@@ -1,6 +1,6 @@
 {
   "name": "vadmire-admin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "VAdmire Admin 是一款基于 Vue3 + TypeScript + NaiveUI 等技术栈搭建的后台系统",
   "scripts": {

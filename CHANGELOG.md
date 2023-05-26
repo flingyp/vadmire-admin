@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/flingyp/vadmire-admin/compare/v1.0.0...v1.1.0) (2023-05-26)
+
+
+### Features
+
+* add global BaseTableHandle component ([9b84f4a](https://github.com/flingyp/vadmire-admin/commit/9b84f4a16d2a7a2a3c12d95e19815008e94cf245))
+* add guide page ([6001ea6](https://github.com/flingyp/vadmire-admin/commit/6001ea681795ba82826802e6b5e6f6cb404b1a50))
+* add SYSTEM_HOME_ROUTE_NAME and config push route after login ([43a0260](https://github.com/flingyp/vadmire-admin/commit/43a0260a27587fb379825cf73a119b94017b8d3b))
+* add useLoading composable ([f9654b2](https://github.com/flingyp/vadmire-admin/commit/f9654b21a732ee49f10b38525722ad15ab0d89f7))
+* add useMitt composable ([4811e54](https://github.com/flingyp/vadmire-admin/commit/4811e549bcff7b57c51b3ab9f8c8dc85235b93ec))
+* control whether tab bar is displayed ([d9b68dd](https://github.com/flingyp/vadmire-admin/commit/d9b68dd64f62f4935ac928d483903d60c3bb95db))
+* integrate images preview plugin ([793d4f5](https://github.com/flingyp/vadmire-admin/commit/793d4f5b06fbb3691ceda6c0e2c0bf8a2bae7d16))
+* table data export excel file ([49ad425](https://github.com/flingyp/vadmire-admin/commit/49ad4258fd80a4a8791d6030215f2cda8cacefa8))
+
 ## 1.0.0 (2023-05-23)
 
 
