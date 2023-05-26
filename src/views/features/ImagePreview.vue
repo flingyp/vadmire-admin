@@ -2,13 +2,9 @@
 import { PhotoProvider, PhotoConsumer } from 'vue3-photo-preview'
 
 const imageList = ref([
-  'http://img.netbian.com/file/2023/0519/235052lgdqO.jpg',
-  'http://img.netbian.com/file/2023/0519/234648CFCso.jpg',
-  'http://img.netbian.com/file/2023/0524/000923ho8Ai.jpg',
-  'http://img.netbian.com/file/2023/0519/234158pBGos.jpg',
-  'http://img.netbian.com/file/2023/0521/192916KVvhR.jpg',
-  'http://img.netbian.com/file/2023/0519/1511239QVOY.gif',
-  'http://img.netbian.com/file/2023/0424/211557lkb3P.jpg',
+  'https://images5.alphacoders.com/131/thumbbig-1316260.webp',
+  'https://images6.alphacoders.com/131/1314156.jpg',
+  'https://images.alphacoders.com/131/1313793.jpg',
 ])
 </script>
 
