@@ -10,7 +10,7 @@ import {
   AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME, SYSTEM_HOME_ROUTE_NAME,
 } from '~/vadmire.config'
 import {
-  filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform,
+  filterRoutes, vadmireRouteToRouteRecordRaw, generateSystemMenu, mountRoute, transform, sortSystemMenu,
 } from './utils'
 
 export const routeGenerateMenuProcess = async (
@@ -35,7 +35,7 @@ export const routeGenerateMenuProcess = async (
   const vrouterConstantRoutes = vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES)
 
   // 4. generate menu
-  const vadmireMenu = generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes])
+  const vadmireMenu = sortSystemMenu(generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes]))
 
   // 5. mount async route
   vrouterAsyncRoutes.forEach((route) => {

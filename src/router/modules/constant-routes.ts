@@ -224,6 +224,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     meta: {
       text: '多级菜单',
       icon: 'mdi:feature-highlight',
+      sort: 1,
     },
     children: [
       {
@@ -283,6 +284,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           text: '引导页',
           icon: 'mdi:home',
           single: true,
+          sort: Infinity,
         },
       },
     ],

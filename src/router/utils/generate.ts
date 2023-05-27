@@ -3,7 +3,7 @@ import { MenuOption } from 'naive-ui'
 import { VAdmireRoute } from '../types'
 
 /**
- * generate system menu
+ * Generate system menu
  * @param routes
  * @returns
  */
@@ -26,8 +26,8 @@ export const generateSystemMenu = (routes: VAdmireRoute[]): MenuOption[] => {
           menu.children = generateSystemMenu(handleRoute.children)
         }
       }
-
       menu.label = handleRoute.meta?.text || '默认标题'
+      menu.sort = handleRoute.meta?.sort || 0
       menu.key = handleRoute.name
       if (handleRoute.meta?.icon) {
         menu.iconLabel = handleRoute.meta.icon
@@ -43,4 +43,19 @@ export const generateSystemMenu = (routes: VAdmireRoute[]): MenuOption[] => {
     }
   }
   return menus
+}
+
+/**
+ * Sort system menu
+ * @param menus
+ * @returns
+ */
+export const sortSystemMenu = (menus: MenuOption[]): MenuOption[] => {
+  const sortMenus = useDeepClone(menus) as MenuOption[]
+  sortMenus.forEach((menu) => {
+    if (menu.children && menu.children.length > 0) {
+      menu.children = sortSystemMenu(menu.children)
+    }
+  })
+  return sortMenus.sort((a, b) => ((a.sort as number) - (b.sort as number)))
 }

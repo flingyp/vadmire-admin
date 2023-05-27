@@ -10,6 +10,7 @@ declare module 'vue-router' {
     url?: string // link url
     cache?: boolean // cache menu
     single?: boolean // single route
+    sort?: number // menu sort
   }
 }
 
