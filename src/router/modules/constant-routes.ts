@@ -164,6 +164,16 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           icon: 'bx:bx-image',
         },
       },
+      {
+        path: '',
+        name: 'GuideIndex',
+        component: '~/views/features/Guide.vue',
+        meta: {
+          text: '引导页',
+          icon: 'mdi:home',
+          sort: Infinity,
+        },
+      },
     ],
   },
   {
@@ -268,24 +278,6 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
             ],
           },
         ],
-      },
-    ],
-  },
-  {
-    path: '/guide',
-    name: 'Guide',
-    component: 'Layout',
-    children: [
-      {
-        path: '',
-        name: 'GuideIndex',
-        component: '~/views/Guide.vue',
-        meta: {
-          text: '引导页',
-          icon: 'mdi:home',
-          single: true,
-          sort: Infinity,
-        },
       },
     ],
   },
