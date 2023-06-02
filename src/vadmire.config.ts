@@ -67,7 +67,7 @@ export const WHITE_ROUTE_LIST: string[] = [LOGIN_ROUTE_NAME]
 // system handle route form
 export const HANDLE_ROUTE_FORM: HandleRouteForm = 'SERVER'
 
-// local storage auth token key
+// session storage auth token key
 export const AUTH_TOKEN = 'AUTH_TOKEN'
 
 // local storage tab menu key

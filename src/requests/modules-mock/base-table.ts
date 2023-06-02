@@ -1,4 +1,3 @@
-import { useGetLocalKey } from '@flypeng/tool/browser'
 import { AUTH_TOKEN } from '~/vadmire.config'
 
 interface TableParams {
@@ -15,6 +14,6 @@ export const getBaseTableData = async (params: TableParams) => {
       page,
       size,
     },
-    headers: { Authorization: useGetLocalKey(AUTH_TOKEN) },
+    headers: { Authorization: sessionStorage.getItem(AUTH_TOKEN) },
   })
 }

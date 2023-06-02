@@ -1,6 +1,6 @@
 import { Store } from 'pinia'
 import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
-import { useCommonType, useDeepClone, useGetLocalKey } from '@flypeng/tool/browser'
+import { useCommonType, useDeepClone } from '@flypeng/tool/browser'
 
 import { VAdmireRoute } from './types'
 import { RouteMenuStore, useRouteMenuStore } from '~/store'
@@ -61,7 +61,7 @@ export default async (
 ) => {
   const routeMenuStore = useRouteMenuStore()
 
-  const localAuthToken = useGetLocalKey(AUTH_TOKEN)
+  const localAuthToken = sessionStorage.getItem(AUTH_TOKEN)
 
   // local have auth token case
   if (!useCommonType.isNull(localAuthToken)) {

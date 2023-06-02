@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useSetLocalKey } from '@flypeng/tool/browser'
 import SystemPlatformAuth from './SystemPlatformAuth.vue'
 import { useVAdmireConfigStore } from '~/store'
 import { AUTH_TOKEN, SYSTEM_HOME_ROUTE_NAME } from '~/vadmire.config'
@@ -31,7 +30,7 @@ const getSignInAuth = async () => {
   success(statusText)
 
   setTimeout(async () => {
-    useSetLocalKey(AUTH_TOKEN, data.accessToken)
+    sessionStorage.setItem(AUTH_TOKEN, data.accessToken)
 
     // get user info and async routes to mount vue-router
     await routeGenerateMenuProcess(router, routeMenuStore)

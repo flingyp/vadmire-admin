@@ -61,8 +61,8 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
       routeMenuStore.isMountedRoute = false
       routeMenuStore.isMountedNotFoundRoute = false
       useRemoveLocalKey(LOCAL_SYSTEM_KEY)
-      useRemoveLocalKey(AUTH_TOKEN)
       useRemoveLocalKey(DRIVER_CONFIG_KEY)
+      sessionStorage.removeItem(AUTH_TOKEN)
     },
   },
 })
