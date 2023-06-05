@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DataTableColumn, PaginationProps } from 'naive-ui'
+import { RowData } from 'naive-ui/es/data-table/src/interface'
 
 type TableSize = 'small' | 'medium' | 'large'
 
@@ -14,11 +15,10 @@ interface BaseTableProps {
   maxHeight?: number // 表格最大高度
   loading?: boolean // 表格加载状态
   pagination?: PaginationProps // 表格分页
+  rowKey?: string // 表格行选中所绑定的Key
 }
 
-defineOptions({
-  name: 'BaseTable',
-})
+defineOptions({ name: 'BaseTable' })
 
 withDefaults(defineProps<BaseTableProps>(), {
   border: true,
@@ -29,7 +29,12 @@ withDefaults(defineProps<BaseTableProps>(), {
   maxHeight: undefined,
   loading: false,
   pagination: undefined,
+  rowKey: 'id',
 })
+
+defineEmits(['checkedRowKeys'])
+
+const selectedRowKeys = (row: RowData) => row.id
 </script>
 
 <template>
@@ -47,6 +52,8 @@ withDefaults(defineProps<BaseTableProps>(), {
       :pagination="pagination"
       :remote="true"
       :paginate-single-page="true"
+      :row-key="selectedRowKeys"
+      @update-checked-row-keys="$emit('checkedRowKeys', $event)"
     />
   </div>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DataTableColumn, NButton } from 'naive-ui'
+import { RowData } from 'naive-ui/es/data-table/src/interface'
 import BaseTable from '~/components/common/BaseTable.vue'
 import BaseTableHandle from '~/components/common/BaseTableHandle.vue'
 import { getBaseTableData } from '~/requests'
@@ -24,6 +25,9 @@ const {
 
 // basic table columns list
 const baseTableColumns: Array<DataTableColumn> = [
+  {
+    type: 'selection',
+  },
   {
     title: '序号',
     key: 'id',
@@ -113,6 +117,7 @@ pagination.value.onUpdatePageSize = async (pageSize: number) => {
 
 // export table data to excel file
 const exportFile = () => {
+  // need to filter the data to be exported
   const sourceData = tableData.value?.map((item) => ({
     name: item.name,
     birthday: item.birthday,
@@ -127,6 +132,10 @@ const exportFile = () => {
 // add table data
 const addTableData = () => {
   info('点击新增')
+}
+
+const checkedRowKeys = (id: string) => {
+  console.log('选中行所绑定的ID值->>>', id)
 }
 
 onMounted(async () => {
@@ -150,6 +159,7 @@ onMounted(async () => {
       :headers="baseTableColumns"
       :data="tableData"
       :pagination="pagination"
+      @checked-row-keys="checkedRowKeys"
     />
   </div>
 </template>
