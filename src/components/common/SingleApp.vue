@@ -19,7 +19,7 @@ const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
       :date-locale="dateZhCN"
       class="w-screen h-screen overflow-hidden"
     >
-      <NNotificationProvider>
+      <NNotificationProvider placement="bottom-right">
         <NDialogProvider>
           <NMessageProvider>
             <slot />
