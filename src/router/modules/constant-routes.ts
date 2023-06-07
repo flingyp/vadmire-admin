@@ -38,7 +38,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'SystemAboutIndex',
         component: '~/views/SystemAbout.vue',
         meta: {
-          text: '关于',
+          text: '$t("route.about")',
           icon: 'mdi:about-variant',
           single: true,
         },
@@ -50,7 +50,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'CommonPage',
     component: 'Layout',
     meta: {
-      text: '常用页面',
+      text: '$t("route.commonPage")',
       icon: 'cib:creative-commons-share',
     },
     children: [
@@ -59,7 +59,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Common_NotFound',
         component: '~/views/common/NotFound.vue',
         meta: {
-          text: '404',
+          text: '$t("route.commonNotFound")',
           icon: 'tabler:error-404',
         },
       },
@@ -68,7 +68,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Common_ServerDown',
         component: '~/views/common/ServerDown.vue',
         meta: {
-          text: '500',
+          text: '$t("route.commonServerError")',
           icon: 'la:500px',
         },
       },
@@ -79,7 +79,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'Feature',
     component: 'Layout',
     meta: {
-      text: '常用功能',
+      text: '$t("route.commonFeature")',
       icon: 'mdi:feature-highlight',
     },
     children: [
@@ -88,7 +88,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Icon',
         component: '~/views/features/Icons.vue',
         meta: {
-          text: 'Iconify图标',
+          text: '$t("route.commonIconifyIcon")',
           icon: 'line-md:iconify1',
         },
       },
@@ -97,7 +97,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Permission',
         component: '~/views/features/Permissions.vue',
         meta: {
-          text: '系统权限控制',
+          text: '$t("route.commonPermission")',
           icon: 'arcticons:permissionchecker',
         },
       },
@@ -106,7 +106,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_WangEditor',
         component: '~/views/features/WangEditor.vue',
         meta: {
-          text: '富文本编辑器',
+          text: '$t("route.commonWangEditor")',
           icon: 'icon-park-outline:editor',
         },
       },
@@ -115,7 +115,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Vditor',
         component: '~/views/features/Vditor.vue',
         meta: {
-          text: 'Markdown编辑器',
+          text: '$t("route.commonMarkdown")',
           icon: 'bi:markdown',
         },
       },
@@ -124,7 +124,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Echarts',
         component: '~/views/features/Echarts.vue',
         meta: {
-          text: 'Echarts图表',
+          text: '$t("route.commonEcharts")',
           icon: 'et:piechart',
         },
       },
@@ -133,7 +133,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_XGPlayer',
         component: '~/views/features/XGPlayer.vue',
         meta: {
-          text: '西瓜播放器',
+          text: '$t("route.commonXGPlayer")',
           icon: 'carbon:data-player',
         },
       },
@@ -142,7 +142,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_Table',
         component: '~/views/features/Table.vue',
         meta: {
-          text: '基础表格',
+          text: '$t("route.commonTable")',
           icon: 'ic:outline-table-view',
         },
       },
@@ -151,7 +151,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'Feature_ImagePreview',
         component: '~/views/features/ImagePreview.vue',
         meta: {
-          text: '图片预览',
+          text: '$t("route.commonImagePreview")',
           icon: 'bx:bx-image',
         },
       },
@@ -160,7 +160,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',
         meta: {
-          text: '引导页',
+          text: '$t("route.commonGuide")',
           icon: 'mdi:home',
           sort: Infinity,
         },
@@ -172,7 +172,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'Feature_Docs',
     component: 'Layout',
     meta: {
-      text: '文档',
+      text: '$t("route.commonDocs")',
       icon: 'iconoir:google-docs',
     },
     children: [
@@ -210,7 +210,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         path: 'vite',
         name: 'Feature_Docs_Vite',
         meta: {
-          text: 'Vite (外链)',
+          text: 'Vite',
           icon: 'vscode-icons:file-type-vite',
           url: 'https://cn.vitejs.dev',
           link: 'EXTERNAL_LINK',
@@ -223,7 +223,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
     name: 'Level-1',
     component: 'Layout',
     meta: {
-      text: '多级菜单',
+      text: '$t("route.commonMultilevelMenu")',
       icon: 'mdi:feature-highlight',
       sort: 1,
     },

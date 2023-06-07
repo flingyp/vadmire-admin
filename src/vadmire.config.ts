@@ -3,7 +3,7 @@ import { ColorType } from './utils'
 export type ThemeMode = 'LIGHT' | 'DARK'
 export type LayoutMode = 'TOP_MENU' | 'SIDER_MENU' | 'SIDER_MIX_MENU'
 export type HandleRouteForm = 'WEB' | 'SERVER'
-export type Locales = 'zh_CN' | 'en_US' | 'ja_JP'
+export type Locales = 'zh_CN' | 'en_US' | 'ko_KR'
 
 // different scene color
 export const sceneColorMap: Record<ColorType, string> = {

@@ -99,7 +99,7 @@ const adminAsyncRoutes = [
     name: 'Permission',
     component: 'Layout',
     meta: {
-      text: '权限管理',
+      text: '$t("route.commonAuthorityManagement")',
       icon: 'arcticons:permission-pilot',
     },
     children: [
@@ -108,7 +108,7 @@ const adminAsyncRoutes = [
         name: 'Permission_Admin',
         component: '~/views/permission/PermissionAdmin.vue',
         meta: {
-          text: '超级管理员',
+          text: '$t("route.commonSuperAdministrator")',
           permissions: ['sys:root:*'],
           icon: 'icon-park-outline:permissions',
         },
@@ -118,7 +118,7 @@ const adminAsyncRoutes = [
         name: 'PermissionButton',
         component: '~/views/permission/PermissionButton.vue',
         meta: {
-          text: '按钮权限管理',
+          text: '$t("route.commonButtonPermissionManagement")',
           icon: 'arcticons:permissionchecker',
         },
       },
@@ -132,7 +132,7 @@ const userAsyncRoutes = [
     name: 'Permission',
     component: 'Layout',
     meta: {
-      text: '权限管理',
+      text: '$t("route.commonAuthorityManagement")',
       icon: 'arcticons:permission-pilot',
     },
     children: [
@@ -141,7 +141,7 @@ const userAsyncRoutes = [
         name: 'Permission_User',
         component: '~/views/permission/PermissionUser.vue',
         meta: {
-          text: '普通管理员',
+          text: '$t("route.commonGeneralAdministrator")',
           permissions: ['sys:user:*'],
           icon: 'icon-park-outline:permissions',
         },
@@ -151,7 +151,7 @@ const userAsyncRoutes = [
         name: 'PermissionButton',
         component: '~/views/permission/PermissionButton.vue',
         meta: {
-          text: '按钮权限管理',
+          text: '$t("route.commonButtonPermissionManagement")',
           icon: 'arcticons:permissionchecker',
         },
       },

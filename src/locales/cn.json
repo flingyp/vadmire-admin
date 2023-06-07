@@ -1,5 +1,24 @@
 {
-  "message": {
-    "hello": "你好，世界"
+  "route": {
+    "about": "关于",
+    "commonPage": "常用页面",
+    "commonNotFound": "缺省页",
+    "commonServerError": "错误页",
+    "commonFeature": "常用功能",
+    "commonIconifyIcon": "Iconify 图标",
+    "commonPermission": "权限控制",
+    "commonWangEditor": "富文本编辑器",
+    "commonMarkdown": "Markdown 编辑器",
+    "commonEcharts": "Echarts 图表",
+    "commonXGPlayer": "西瓜播放器",
+    "commonTable": "基础表格",
+    "commonImagePreview": "图片预览",
+    "commonGuide": "引导页",
+    "commonDocs": "文档",
+    "commonMultilevelMenu": "多级菜单",
+    "commonAuthorityManagement": "权限管理",
+    "commonSuperAdministrator": "超级管理员",
+    "commonGeneralAdministrator": "普通管理员",
+    "commonButtonPermissionManagement": "按钮权限管理"
   }
 }

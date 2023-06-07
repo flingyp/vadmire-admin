@@ -1,5 +1,24 @@
 {
-  "message": {
-    "hello": "こんにちは、世界"
+  "route": {
+    "about": "aboutです",
+    "commonPage": "よく使うページです",
+    "commonNotFound": "Not Foundです",
+    "commonServerError": "サーバ誤差",
+    "commonFeature": "よく使う機能です",
+    "commonIconifyIcon": "Iconify アイコンについて",
+    "commonPermission": "パーミッション・コントロール",
+    "commonWangEditor": "リッチテキストエディタ",
+    "commonMarkdown": "マークダウンエディタ",
+    "commonEcharts": "Echarts チャート",
+    "commonXGPlayer": "スイカプレーヤー",
+    "commonTable": "基本フォーム",
+    "commonImagePreview": "画像プレビュー",
+    "commonGuide": "紹介ページ",
+    "commonDocs": "資料集",
+    "commonMultilevelMenu": "マルチレベルメニュー",
+    "commonAuthorityManagement": "パーミッションの管理",
+    "commonSuperAdministrator": "スーパーアドミニストレーター",
+    "commonGeneralAdministrator": "ゼネラル・アドミニストレーター",
+    "commonButtonPermissionManagement": "ボタンのパーミッション管理"
   }
 }

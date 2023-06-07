@@ -16,8 +16,8 @@ const localeOption = computed(() => [
     key: 'en_US',
   },
   {
-    label: '日本語',
-    key: 'ja_JP',
+    label: '한국어',
+    key: 'ko_KR',
   },
 ])
 

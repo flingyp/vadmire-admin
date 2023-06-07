@@ -1,5 +1,24 @@
 {
-  "message": {
-    "hello": "Hello World"
+  "route": {
+    "about": "About",
+    "commonPage": "Common Page",
+    "commonNotFound": "Not Found",
+    "commonServerError": "Server Error",
+    "commonFeature": "Common Feature",
+    "commonIconifyIcon": "Iconify Icon",
+    "commonPermission": "Permission Control",
+    "commonWangEditor": "Rich Text Editor",
+    "commonMarkdown": "Markdown Editor",
+    "commonEcharts": "Echarts Chart",
+    "commonXGPlayer": "Watermelon Player",
+    "commonTable": "Basic Table",
+    "commonImagePreview": "Image Preview",
+    "commonGuide": "Introductory Page",
+    "commonDocs": "Docs",
+    "commonMultilevelMenu": "Multilevel Menu",
+    "commonAuthorityManagement": "Authority Management",
+    "commonSuperAdministrator": "Super Administrator",
+    "commonGeneralAdministrator": "General Administrator",
+    "commonButtonPermissionManagement": "Button Permission Management"
   }
 }

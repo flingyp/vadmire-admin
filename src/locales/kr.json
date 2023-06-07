@@ -1,0 +1,24 @@
+{
+  "route": {
+    "about": "정보",
+    "commonPage": "공통 페이지",
+    "commonNotFound": "찾을 수 없음",
+    "commonServerError": "서버 오류",
+    "commonFeature": "공통 기능",
+    "commonIconifyIcon": "Iconify 아이콘",
+    "commonPermission": "권한 제어",
+    "commonWangEditor": "서식 있는 텍스트 편집기",
+    "commonMarkdown": "마크다운 편집기",
+    "commonEcharts": "차트 차트",
+    "commonXGPlayer": "수박 플레이어",
+    "commonTable": "기본 테이블",
+    "commonImagePreview": "이미지 미리보기",
+    "commonGuide": "소개 페이지",
+    "commonDocs": "문서",
+    "commonMultilevelMenu": "다단계 메뉴",
+    "commonAuthorityManagement": "권한 관리",
+    "commonSuperAdministrator": "슈퍼 관리자",
+    "commonGeneralAdministrator": "일반 관리자",
+    "commonButtonPermissionManagement": "버튼 권한 관리"
+  }
+}
