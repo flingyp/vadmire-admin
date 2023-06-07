@@ -10,6 +10,7 @@
     "src/i18n",
     "src/languages"
   ],
+  "i18n-ally.enabledParsers": ["ts", "json"],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.displayLanguage": "en",
   "cSpell.words": [
@@ -33,5 +34,6 @@
     "vrouter",
     "vueuse",
     "wangeditor"
-  ]
+  ],
+  "i18n-ally.keystyle": "nested"
 }

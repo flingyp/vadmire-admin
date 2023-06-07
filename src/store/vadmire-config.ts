@@ -8,12 +8,7 @@ import {
   THEME_MODE_KEY, sceneColorMap, PRIMARY_COLOR_KEY, LOCAL_SYSTEM_KEY, DRIVER_CONFIG_KEY,
 } from '~/vadmire.config'
 
-const localConfig = JSON.parse(
-  useGetLocalKey(LOCAL_SYSTEM_KEY)
-  || JSON.stringify(defaultVAdmireConfig()),
-) as VAdmireConfig
-
-const localVAdmireConfig = localConfig
+const localVAdmireConfig = { ...defaultVAdmireConfig(), ...JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}') }
 
 export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
   state: (): VAdmireConfig => {

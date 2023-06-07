@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import packageJson from '../../package.json'
 
+const i18n = useI18n()
+
 interface PackageJson {
   name: string
   version: string
@@ -44,6 +46,10 @@ Object.keys(devDependencies).forEach((key) => {
       hoverable
     >
       {{ description }}
+
+      -
+
+      {{ $t('message.hello') }}
     </NCard>
 
     <NCard

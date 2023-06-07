@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     'IconAntDesign:fullscreenOutlined': typeof import('~icons/ant-design/fullscreen-outlined')['default']
     'IconAntDesign:githubFilled': typeof import('~icons/ant-design/github-filled')['default']
     'IconAntDesign:settingOutlined': typeof import('~icons/ant-design/setting-outlined')['default']
+    'IconCarbon:ibmWatsonLanguageTranslator': typeof import('~icons/carbon/ibm-watson-language-translator')['default']
     'IconFa:weixin': typeof import('~icons/fa/weixin')['default']
     'IconLineMd:menuFoldLeft': typeof import('~icons/line-md/menu-fold-left')['default']
     'IconLineMd:menuFoldRight': typeof import('~icons/line-md/menu-fold-right')['default']
