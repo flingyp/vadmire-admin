@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/flingyp/vadmire-admin/compare/v1.1.0...v1.2.0) (2023-06-08)
+
+
+### Features
+
+* add a sort variable and sort the system menu ([7ebca9d](https://github.com/flingyp/vadmire-admin/commit/7ebca9d35ae246117772ba5d955cb963dd12e5cc))
+* add system tip ([999a601](https://github.com/flingyp/vadmire-admin/commit/999a6018811ce0b14847e91ecc5ba752e1750cfd))
+* integrate i18n ([c08b782](https://github.com/flingyp/vadmire-admin/commit/c08b78212bec9d3af3b744e612aa4af5aeefd317))
+* perfect GlobalSetting international text ([27f59df](https://github.com/flingyp/vadmire-admin/commit/27f59df46e90bb645bb201e0df374c92185c767e))
+* perfect menu text internationalization ([d10c9d6](https://github.com/flingyp/vadmire-admin/commit/d10c9d6792bae56da7c0fc44ca7dee21e6e1e224))
+* using SessionStorage to manage token ([7bc428f](https://github.com/flingyp/vadmire-admin/commit/7bc428f72d3e13a3b12ca139381dd5825b0aa44b))
+
+
+### Bug Fixes
+
+* fixed an issue with online images not loading ([235f7d4](https://github.com/flingyp/vadmire-admin/commit/235f7d4a1e4f21fb059fb268c6ef242b5adafdce))
+
 ## [1.1.0](https://github.com/flingyp/vadmire-admin/compare/v1.0.0...v1.1.0) (2023-05-26)
 
 
