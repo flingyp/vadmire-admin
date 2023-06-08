@@ -20,5 +20,23 @@
     "commonSuperAdministrator": "超级管理员",
     "commonGeneralAdministrator": "普通管理员",
     "commonButtonPermissionManagement": "按钮权限管理"
+  },
+  "setting": {
+    "systemSetting": "系统设置",
+    "systemName": "系统名称",
+    "darkMode": "暗黑模式",
+    "layoutMode": "布局模式",
+    "systemPrimaryColor": "系统主题色",
+    "systemConfig": "系统配置",
+    "fixedTabBar": "固定标签栏",
+    "showTabBar": "显示标签栏",
+    "showFooter": "显示底部栏",
+    "tabBarHeight": "标签栏高度",
+    "headerHeight": "顶部栏高度",
+    "siderWidth": "侧边栏宽度",
+    "footerHeight": "底部栏高度",
+    "transitionSwitch": "过渡切换",
+    "copySystemConfig": "拷贝系统配置",
+    "resetSystemConfig": "重置系统配置"
   }
 }

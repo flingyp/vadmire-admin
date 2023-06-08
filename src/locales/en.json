@@ -20,5 +20,23 @@
     "commonSuperAdministrator": "Super Administrator",
     "commonGeneralAdministrator": "General Administrator",
     "commonButtonPermissionManagement": "Button Permission Management"
+  },
+  "setting": {
+    "systemSetting": "System Setting",
+    "systemName": "System Name",
+    "darkMode": "Dark Mode",
+    "layoutMode": "Layout Mode",
+    "systemPrimaryColor": "System Primary Color",
+    "systemConfig": "System Config",
+    "fixedTabBar": "Fixed TabBar",
+    "showTabBar": "Show TabBar",
+    "showFooter": "Show Footer",
+    "tabBarHeight": "TabBar Height",
+    "headerHeight": "Header Height",
+    "siderWidth": "Sider Width",
+    "footerHeight": "Footer Height",
+    "transitionSwitch": "Transition Switch",
+    "copySystemConfig": "Copy System Config",
+    "resetSystemConfig": "Reset System Config"
   }
 }

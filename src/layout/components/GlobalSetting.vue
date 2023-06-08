@@ -28,30 +28,30 @@ watchEffect(() => {
     placement="right"
   >
     <NDrawerContent
-      title="系统设置"
+      :title="$t('setting.systemSetting')"
       closable
     >
-      <BaseSettingContainer title="系统名称">
+      <BaseSettingContainer :title="$t('setting.systemName')">
         <BaseSystemName />
       </BaseSettingContainer>
 
-      <BaseSettingContainer title="暗黑模式">
+      <BaseSettingContainer :title="$t('setting.darkMode')">
         <BaseThemeMode />
       </BaseSettingContainer>
 
-      <BaseSettingContainer title="布局模式">
+      <BaseSettingContainer :title="$t('setting.layoutMode')">
         <BaseLayoutMode />
       </BaseSettingContainer>
 
-      <BaseSettingContainer title="系统主题色">
+      <BaseSettingContainer :title="$t('setting.systemPrimaryColor')">
         <BaseThemeColor />
       </BaseSettingContainer>
 
-      <BaseSettingContainer title="系统配置">
+      <BaseSettingContainer :title="$t('setting.systemConfig')">
         <BaseSystemConfig />
       </BaseSettingContainer>
 
-      <BaseSettingContainer title="拷贝系统配置">
+      <BaseSettingContainer :title="$t('setting.copySystemConfig')">
         <BaseCopyButton />
       </BaseSettingContainer>
     </NDrawerContent>

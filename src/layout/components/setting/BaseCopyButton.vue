@@ -31,14 +31,14 @@ const resetConfig = () => {
       type="primary"
       @click="copyConfig"
     >
-      拷贝系统配置
+      {{ $t('setting.copySystemConfig') }}
     </NButton>
     <NButton
       block
       type="info"
       @click="resetConfig"
     >
-      重置系统配置
+      {{ $t('setting.resetSystemConfig') }}
     </NButton>
   </div>
 </template>

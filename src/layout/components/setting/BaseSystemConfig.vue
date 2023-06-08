@@ -52,28 +52,28 @@ const updateVisibilityFooter = (value: boolean) => {
 <template>
   <div class="w-full grid grid-cols-1 gap-y-2">
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">固定标签栏</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.fixedTabBar') }}</span>
       <NSwitch
         v-model:value="fixedTabBar"
         @update:value="updateFixedTabBar"
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">显示标签栏</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.showTabBar') }}</span>
       <NSwitch
         v-model:value="isVisibleTabBar"
         @update:value="updateVisibilityTabBar"
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">显示底部栏</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.showFooter') }}</span>
       <NSwitch
         v-model:value="isVisibleFooter"
         @update:value="updateVisibilityFooter"
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">顶部栏高度</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.headerHeight') }}</span>
       <NInputNumber
         v-model:value="headerHeight"
         class="flex-1"
@@ -83,7 +83,7 @@ const updateVisibilityFooter = (value: boolean) => {
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">侧边栏宽度</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.siderWidth') }}</span>
       <NInputNumber
         v-model:value="siderWidth"
         class="flex-1"
@@ -93,7 +93,7 @@ const updateVisibilityFooter = (value: boolean) => {
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">底部栏高度</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.footerHeight') }}</span>
       <NInputNumber
         v-model:value="footerHeight"
         class="flex-1"
@@ -103,7 +103,7 @@ const updateVisibilityFooter = (value: boolean) => {
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">标签栏高度</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.tabBarHeight') }}</span>
       <NInputNumber
         v-model:value="tabBarHeight"
         class="flex-1"
@@ -113,7 +113,7 @@ const updateVisibilityFooter = (value: boolean) => {
       />
     </div>
     <div class="w-full flex justify-between items-center">
-      <span class="w-32 text-start mr-1 truncate">过渡切换</span>
+      <span class="w-32 text-start mr-1 truncate">{{ $t('setting.transitionSwitch') }}</span>
       <NSelect
         v-model:value="pageTransition"
         class="flex-1"

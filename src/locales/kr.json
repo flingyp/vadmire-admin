@@ -20,5 +20,23 @@
     "commonSuperAdministrator": "슈퍼 관리자",
     "commonGeneralAdministrator": "일반 관리자",
     "commonButtonPermissionManagement": "버튼 권한 관리"
+  },
+  "setting": {
+    "systemSetting": "시스템 설정",
+    "systemName": "시스템 이름",
+    "darkMode": "어두운 모드",
+    "layoutMode": "레이아웃 모드",
+    "systemPrimaryColor": "시스템 테마 색상",
+    "systemConfig": "시스템 설정",
+    "fixedTabBar": "고정 탭 바",
+    "showTabBar": "탭 바 표시",
+    "showFooter": "아래 표시줄 보이기",
+    "tabBarHeight": "탭 바 높이",
+    "headerHeight": "상단 표시줄 높이",
+    "siderWidth": "사이드 바 너비",
+    "footerHeight": "아래 표시줄 높이",
+    "transitionSwitch": "전환 효과",
+    "copySystemConfig": "시스템 설정을 복사합니다",
+    "resetSystemConfig": "시스템 설정을 재설정합니다"
   }
 }
