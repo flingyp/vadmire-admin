@@ -1,1 +1,0 @@
-import{f as o}from"./index-228ae075.js";import{t as r,bb as t}from"./vendor-8f0bbe3c.js";const a=r({name:"RenderIconify",props:{icon:{type:String,default:"",required:!0}},setup(e){const n=t(e,"icon");return o(n.value)}});export{a as _};

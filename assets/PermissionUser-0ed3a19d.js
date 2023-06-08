@@ -1,0 +1,1 @@
+import{_ as e}from"./index-c907f1f2.js";import{B as t,Y as r}from"./vendor-feadfd43.js";const s={},c={class:"w-full h-40 bg-primary rounded-sm flex items-center justify-center text-base text-white"};function o(n,i){return t(),r("div",c," 普通管理员可见页面 ")}const f=e(s,[["render",o]]);export{f as default};
