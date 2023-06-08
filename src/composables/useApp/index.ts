@@ -1,4 +1,5 @@
 import { useGetLocalKey } from '@flypeng/tool/browser'
+import { internationalReg } from '~/utils'
 import { THEME_MODE_KEY } from '~/vadmire.config'
 
 // To do things when init application
@@ -21,9 +22,8 @@ export function useApp() {
     }
   })
 
-  // TODO: 国际化文本代码抽离优化
+  // set title tag content
   const setHtmlTitle = () => {
-    const internationalReg = /^\$t\(['"]([^']+)['"]\)$/
     let menuText = route.meta.text || ''
     if (internationalReg.test(menuText)) {
       const key = menuText.match(internationalReg)?.[1]
@@ -33,8 +33,6 @@ export function useApp() {
     document.querySelector('title')!.innerHTML = menuText
       ? `${menuText} | ${name.value}` : name.value
   }
-
-  // set title tag content
   watch(defaultLocales, setHtmlTitle)
   watch(() => route.name, setHtmlTitle)
 }

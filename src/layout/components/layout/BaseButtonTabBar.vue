@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Icon } from '@iconify/vue'
 import { useDeepClone } from '@flypeng/tool/browser'
 import { MenuOption } from 'naive-ui'
+import { transformMenu } from '~/utils'
 import 'swiper/css'
 
 const { t } = useI18n()
@@ -11,25 +12,9 @@ const router = useRouter()
 const routeMenuStore = useRouteMenuStore()
 const { tabMenuKeys, vadmireTabMenu } = storeToRefs(routeMenuStore)
 
-// TODO: 国际化文本代码抽离优化
-const transformMenu = (menu: MenuOption) => {
-  const newMenu = useDeepClone(menu) as MenuOption
-  if (newMenu.children) {
-    newMenu.children = newMenu.children.map((item) => transformMenu(item))
-  }
-  let menuText = menu.label as string
-  const internationalReg = /^\$t\(['"]([^']+)['"]\)$/
-  if (internationalReg.test(menuText)) {
-    const key = menuText.match(internationalReg)![1]
-    menuText = t(key)
-  }
-  newMenu.label = menuText
-  return newMenu
-}
-
 const transformMenuList = computed(() => {
   const menuOptions = useDeepClone(vadmireTabMenu.value) as MenuOption[]
-  const i18nMenu = menuOptions.map((menu) => transformMenu(menu))
+  const i18nMenu = menuOptions.map((menu) => transformMenu(menu, t))
   return i18nMenu
 })
 

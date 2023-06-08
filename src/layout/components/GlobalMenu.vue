@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MenuOption } from 'naive-ui'
 import { useDeepClone } from '@flypeng/tool/browser'
+import { transformMenu } from '~/utils'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -18,25 +19,9 @@ const props = withDefaults(defineProps<GlobalMenuProps>(), {
   menuOptions: () => [],
 })
 
-// TODO: 国际化文本代码抽离优化
-const transformMenu = (menu: MenuOption) => {
-  const newMenu = useDeepClone(menu) as MenuOption
-  if (newMenu.children) {
-    newMenu.children = newMenu.children.map((item) => transformMenu(item))
-  }
-  let menuText = menu.label as string
-  const internationalReg = /^\$t\(['"]([^']+)['"]\)$/
-  if (internationalReg.test(menuText)) {
-    const key = menuText.match(internationalReg)![1]
-    menuText = t(key)
-  }
-  newMenu.label = menuText
-  return newMenu
-}
-
 const transformMenuList = computed(() => {
   const menuOptions = useDeepClone(props.menuOptions) as MenuOption[]
-  const i18nMenu = menuOptions.map((menu) => transformMenu(menu))
+  const i18nMenu = menuOptions.map((menu) => transformMenu(menu, t))
   return i18nMenu
 })
 
