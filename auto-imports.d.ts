@@ -43,6 +43,7 @@ declare global {
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
+  const internationalReg: typeof import('./src/utils/i18n')['internationalReg']
   const isDarkColor: typeof import('./src/utils/colord')['isDarkColor']
   const isDefined: typeof import('@vueuse/core')['isDefined']
   const isLightColor: typeof import('./src/utils/colord')['isLightColor']
@@ -114,6 +115,7 @@ declare global {
   const toReduceSaturate: typeof import('./src/utils/colord')['toReduceSaturate']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
+  const transformMenu: typeof import('./src/utils/i18n')['transformMenu']
   const triggerRef: typeof import('vue')['triggerRef']
   const tryOnBeforeMount: typeof import('@vueuse/core')['tryOnBeforeMount']
   const tryOnBeforeUnmount: typeof import('@vueuse/core')['tryOnBeforeUnmount']
@@ -355,6 +357,7 @@ declare module 'vue' {
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly internationalReg: UnwrapRef<typeof import('./src/utils/i18n')['internationalReg']>
     readonly isDarkColor: UnwrapRef<typeof import('./src/utils/colord')['isDarkColor']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
     readonly isLightColor: UnwrapRef<typeof import('./src/utils/colord')['isLightColor']>
@@ -426,6 +429,7 @@ declare module 'vue' {
     readonly toReduceSaturate: UnwrapRef<typeof import('./src/utils/colord')['toReduceSaturate']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
+    readonly transformMenu: UnwrapRef<typeof import('./src/utils/i18n')['transformMenu']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryOnBeforeMount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeMount']>
     readonly tryOnBeforeUnmount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeUnmount']>

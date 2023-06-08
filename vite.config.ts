@@ -1,4 +1,4 @@
-import { ConfigEnv, UserConfigExport } from 'vite'
+import { ConfigEnv, UserConfigExport, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
@@ -115,21 +115,32 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
           var: 'Vditor',
           path: 'https://cdn.jsdelivr.net/npm/vditor/dist/index.min.js',
         },
+        {
+          name: '@wangeditor/editor',
+          var: 'wangEditor',
+          path: 'https://cdn.jsdelivr.net/npm/@wangeditor/editor@5.1.23/dist/index.min.js',
+        },
       ],
     }),
+    // 将 node_modules 中的模块打包到自定义 vendor chunk 中，利用浏览器缓存机制，加快页面加载速度
+    // Vite >= 2.9.0+ automatically splits vendor chunks when using the build command.
+    // Reference: https://cn.vitejs.dev/guide/build.html#chunking-strategy
+    splitVendorChunkPlugin(),
   ],
   // Build config
   build: {
     rollupOptions: {
-      output: {
-        // https://www.rollupjs.com/guide/big-list-of-options#outputmanualchunks
-        // 将 node_modules 中的模块打包到自定义 vendor chunk 中，利用浏览器缓存机制，加快页面加载速度
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            return 'vendor'
-          }
-        },
-      },
+      // Vite < 2.9.0 does not automatically split vendor chunks when using the build command.
+      // Reference: https://cn.vitejs.dev/guide/build.html#chunking-strategy
+      // output: {
+      //   // https://www.rollupjs.com/guide/big-list-of-options#outputmanualchunks
+      //   // 将 node_modules 中的模块打包到自定义 vendor chunk 中，利用浏览器缓存机制，加快页面加载速度
+      //   manualChunks: (id) => {
+      //     if (id.includes('node_modules')) {
+      //       return 'vendor'
+      //     }
+      //   },
+      // },
     },
   },
 })
