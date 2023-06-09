@@ -6,6 +6,7 @@ import BaseSwitchLocale from '~/layout/components/layout/BaseSwitchLocale.vue'
 import GlobalBreadCrumbMenu from '~/layout/components/GlobalBreadCrumbMenu.vue'
 import BasePersonalCenter from '~/layout/components/layout/BasePersonalCenter.vue'
 import BaseCollapsedSiderbar from '~/layout/components/layout/BaseCollapsedSiderbar.vue'
+import BaseSearchMenu from '~/layout/components/layout/BaseSearchMenu.vue'
 
 </script>
 
@@ -16,6 +17,7 @@ import BaseCollapsedSiderbar from '~/layout/components/layout/BaseCollapsedSider
       <GlobalBreadCrumbMenu />
     </div>
     <div class="h-full flex items-center">
+      <BaseSearchMenu />
       <BaseGithubIcon />
       <BaseFullScreen />
       <BaseSwitchLocale />

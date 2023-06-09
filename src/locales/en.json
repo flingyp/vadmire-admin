@@ -38,5 +38,8 @@
     "transitionSwitch": "Transition Switch",
     "copySystemConfig": "Copy System Config",
     "resetSystemConfig": "Reset System Config"
+  },
+  "header": {
+    "searchPlaceholder": "Search for keywords"
   }
 }

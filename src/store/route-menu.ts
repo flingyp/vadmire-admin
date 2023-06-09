@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { MenuOption } from 'naive-ui'
+import { VAdmireMenuOption } from 'naive-ui'
 import { RouteRecordRaw } from 'vue-router'
 import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
 
@@ -14,10 +14,10 @@ export interface RouteMenuStore {
   isReloadView: boolean
   vadmireConstantRoutes: VAdmireRoute[]
   vadmireAsyncRoutes: VAdmireRoute[]
-  vadmireMenu: MenuOption[]
+  vadmireMenu: VAdmireMenuOption[]
   vrouterConstantRoutes: RouteRecordRaw[]
   vrouterAsyncRoutes: RouteRecordRaw[]
-  breadCrumbMenus: MenuOption[]
+  breadCrumbMenus: VAdmireMenuOption[]
   tabMenuKeys: string[]
 }
 
@@ -45,8 +45,8 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
   getters: {
     vadmireMenuByFlat(state) {
       const { vadmireMenu } = state
-      const vadmireMenuByFlat: MenuOption[] = []
-      const flat = (menu: MenuOption[]) => {
+      const vadmireMenuByFlat: VAdmireMenuOption[] = []
+      const flat = (menu: VAdmireMenuOption[]) => {
         menu.forEach((item) => {
           vadmireMenuByFlat.push(item)
           if (item.children) flat(item.children)
@@ -56,16 +56,28 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
       flat(vadmireMenu)
       return vadmireMenuByFlat
     },
+    // The menu is flattened and does not contain the parent menu
+    vadmireChildrenMenuByFlat(state) {
+      const { vadmireMenu } = state
+      const vadmireChildrenMenuByFlat: VAdmireMenuOption[] = []
+      const flat = (menu: VAdmireMenuOption[]) => {
+        menu.forEach((item) => {
+          if (!item.children) vadmireChildrenMenuByFlat.push(item)
+          else flat(item.children)
+        })
+      }
+      flat(vadmireMenu)
+      return vadmireChildrenMenuByFlat
+    },
     vadmireTabMenu(state) {
       const { tabMenuKeys } = state
       const menuByFlat = this.vadmireMenuByFlat
-      const menuList: MenuOption[] = []
+      const menuList: VAdmireMenuOption[] = []
       // eslint-disable-next-line no-restricted-syntax
       for (const item of tabMenuKeys) {
         const tabMenu = menuByFlat.find((menu) => menu.key === item)
         if (tabMenu) menuList.push(tabMenu)
       }
-
       return menuList
     },
   },

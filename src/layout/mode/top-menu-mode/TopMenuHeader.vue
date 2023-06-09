@@ -8,6 +8,7 @@ import BaseGithubIcon from '~/layout/components/layout/BaseGithubIcon.vue'
 import BaseSettingIcon from '~/layout/components/layout/BaseSettingIcon.vue'
 import BaseSwitchLocale from '~/layout/components/layout/BaseSwitchLocale.vue'
 import BasePersonalCenter from '~/layout/components/layout/BasePersonalCenter.vue'
+import BaseSearchMenu from '~/layout/components/layout/BaseSearchMenu.vue'
 
 const routeMenuStore = useRouteMenuStore()
 </script>
@@ -24,6 +25,7 @@ const routeMenuStore = useRouteMenuStore()
       />
     </div>
     <div class="h-full flex items-center">
+      <BaseSearchMenu />
       <BaseGithubIcon />
       <BaseFullScreen />
       <BaseSwitchLocale />

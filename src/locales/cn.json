@@ -38,5 +38,8 @@
     "transitionSwitch": "过渡切换",
     "copySystemConfig": "拷贝系统配置",
     "resetSystemConfig": "重置系统配置"
+  },
+  "header": {
+    "searchPlaceholder": "搜索关键字"
   }
 }

@@ -1,5 +1,5 @@
 import { useDeepClone } from '@flypeng/tool/browser'
-import type { MenuOption } from 'naive-ui'
+import type { VAdmireMenuOption } from 'naive-ui'
 import { ComposerTranslation } from 'vue-i18n'
 
 export const internationalReg = /^\$t\(['"]([^']+)['"]\)$/
@@ -10,8 +10,8 @@ export const internationalReg = /^\$t\(['"]([^']+)['"]\)$/
  * @param t: const { t } = useI18n()
  * @returns
  */
-export const transformMenu = (menu: MenuOption, t: ComposerTranslation) => {
-  const newMenu = useDeepClone(menu) as MenuOption
+export const transformMenu = (menu: VAdmireMenuOption, t: ComposerTranslation) => {
+  const newMenu = useDeepClone(menu) as VAdmireMenuOption
   if (newMenu.children) {
     newMenu.children = newMenu.children.map((item) => transformMenu(item, t))
   }

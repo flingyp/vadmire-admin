@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Icon } from '@iconify/vue'
 import { useDeepClone } from '@flypeng/tool/browser'
-import { MenuOption } from 'naive-ui'
+import { VAdmireMenuOption } from 'naive-ui'
 import { transformMenu } from '~/utils'
 import 'swiper/css'
 
@@ -13,7 +13,7 @@ const routeMenuStore = useRouteMenuStore()
 const { tabMenuKeys, vadmireTabMenu } = storeToRefs(routeMenuStore)
 
 const transformMenuList = computed(() => {
-  const menuOptions = useDeepClone(vadmireTabMenu.value) as MenuOption[]
+  const menuOptions = useDeepClone(vadmireTabMenu.value) as VAdmireMenuOption[]
   const i18nMenu = menuOptions.map((menu) => transformMenu(menu, t))
   return i18nMenu
 })

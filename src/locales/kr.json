@@ -38,5 +38,8 @@
     "transitionSwitch": "전환 효과",
     "copySystemConfig": "시스템 설정을 복사합니다",
     "resetSystemConfig": "시스템 설정을 재설정합니다"
+  },
+  "header": {
+    "searchPlaceholder": "검색 키워드"
   }
 }

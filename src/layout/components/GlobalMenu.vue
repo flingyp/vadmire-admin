@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MenuOption } from 'naive-ui'
+import { VAdmireMenuOption } from 'naive-ui'
 import { useDeepClone } from '@flypeng/tool/browser'
 import { transformMenu } from '~/utils'
 
@@ -11,7 +11,7 @@ const { breadCrumbMenus, vadmireMenu } = storeToRefs(routeMenuStore)
 
 interface GlobalMenuProps {
   mode?: 'vertical' | 'horizontal'
-  menuOptions: MenuOption[]
+  menuOptions: VAdmireMenuOption[]
 }
 
 const props = withDefaults(defineProps<GlobalMenuProps>(), {
@@ -20,23 +20,23 @@ const props = withDefaults(defineProps<GlobalMenuProps>(), {
 })
 
 const transformMenuList = computed(() => {
-  const menuOptions = useDeepClone(props.menuOptions) as MenuOption[]
+  const menuOptions = useDeepClone(props.menuOptions) as VAdmireMenuOption[]
   const i18nMenu = menuOptions.map((menu) => transformMenu(menu, t))
   return i18nMenu
 })
 
 // route key whether include from menu
-const isIncludeMenuByKey = (key: string, menu: MenuOption): boolean => {
+const isIncludeMenuByKey = (key: string, menu: VAdmireMenuOption): boolean => {
   if (key === menu.key) return true
   if (menu.children) return menu.children.some((item) => isIncludeMenuByKey(key, item))
   return false
 }
 
 // get breadcrumb menu
-const getBreadCrumbMenu = (key: string, menu: MenuOption) => {
-  const breadCrumbMenu: MenuOption[] = []
+const getBreadCrumbMenu = (key: string, menu: VAdmireMenuOption) => {
+  const breadCrumbMenu: VAdmireMenuOption[] = []
   breadCrumbMenu.push(menu)
-  const getMenuByKey = (item: MenuOption) => {
+  const getMenuByKey = (item: VAdmireMenuOption) => {
     if (item.children) {
       item.children.forEach((child) => {
         if (isIncludeMenuByKey(key, child)) {
@@ -51,8 +51,8 @@ const getBreadCrumbMenu = (key: string, menu: MenuOption) => {
 }
 
 // generate breadcrumb menu
-const createBreadCrumbMenu = (key: string, menus: MenuOption[]) => {
-  let parentMenu: MenuOption = {}
+const createBreadCrumbMenu = (key: string, menus: VAdmireMenuOption[]) => {
+  let parentMenu: VAdmireMenuOption = {}
   for (let i = 0; i < menus.length; i++) {
     const isIncludeRouteKey = isIncludeMenuByKey(key, menus[i])
     if (isIncludeRouteKey) parentMenu = menus[i]
@@ -71,7 +71,7 @@ watchEffect(() => {
 })
 
 // click menu
-const clickMenu = (key: string, menu: MenuOption) => {
+const clickMenu = (key: string, menu: VAdmireMenuOption) => {
   if (menu.link === 'EXTERNAL_LINK' && menu.url) {
     window.open(menu.url as string)
   } else {

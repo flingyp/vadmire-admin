@@ -1,5 +1,5 @@
 import { useCommonType, useDeepClone } from '@flypeng/tool/browser'
-import { MenuOption } from 'naive-ui'
+import { VAdmireMenuOption } from 'naive-ui'
 import { VAdmireRoute } from '../types'
 
 /**
@@ -7,15 +7,15 @@ import { VAdmireRoute } from '../types'
  * @param routes
  * @returns
  */
-export const generateSystemMenu = (routes: VAdmireRoute[]): MenuOption[] => {
-  const menus: MenuOption[] = []
+export const generateSystemMenu = (routes: VAdmireRoute[]): VAdmireMenuOption[] => {
+  const menus: VAdmireMenuOption[] = []
 
   for (let i = 0; i < routes.length; i++) {
     const route = routes[i]
     const { meta } = route
 
     if (useCommonType.isUndefined(meta?.isShow) || meta?.isShow === true) {
-      const menu: MenuOption = {}
+      const menu: VAdmireMenuOption = {}
       let handleRoute = useDeepClone(route) as VAdmireRoute
 
       if (handleRoute.children && handleRoute.children.length > 0) {
@@ -50,8 +50,8 @@ export const generateSystemMenu = (routes: VAdmireRoute[]): MenuOption[] => {
  * @param menus
  * @returns
  */
-export const sortSystemMenu = (menus: MenuOption[]): MenuOption[] => {
-  const sortMenus = useDeepClone(menus) as MenuOption[]
+export const sortSystemMenu = (menus: VAdmireMenuOption[]): VAdmireMenuOption[] => {
+  const sortMenus = useDeepClone(menus) as VAdmireMenuOption[]
   sortMenus.forEach((menu) => {
     if (menu.children && menu.children.length > 0) {
       menu.children = sortSystemMenu(menu.children)

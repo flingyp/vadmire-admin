@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDeepClone } from '@flypeng/tool/browser'
-import { MenuOption } from 'naive-ui'
+import { VAdmireMenuOption } from 'naive-ui'
 import { transformMenu } from '~/utils'
 
 const { t } = useI18n()
@@ -9,7 +9,7 @@ const routeMenuStore = useRouteMenuStore()
 const { breadCrumbMenus } = storeToRefs(routeMenuStore)
 
 const transformMenuList = computed(() => {
-  const menuOptions = useDeepClone(breadCrumbMenus.value) as MenuOption[]
+  const menuOptions = useDeepClone(breadCrumbMenus.value) as VAdmireMenuOption[]
   const i18nMenu = menuOptions.map((menu) => transformMenu(menu, t))
   return i18nMenu
 })
