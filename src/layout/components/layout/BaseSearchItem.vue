@@ -8,10 +8,13 @@ interface BaseSearchItemProps {
 const props = defineProps<BaseSearchItemProps>()
 const emit = defineEmits(['close'])
 
+const routeKey = props.menu.key as string
 const router = useRouter()
+const routeMenuStore = useRouteMenuStore()
 
 const navigatorTo = () => {
-  router.push({ name: (props.menu.key as string) })
+  routeMenuStore.createTabMenuKey(routeKey)
+  router.push({ name: routeKey })
   emit('close')
 }
 </script>

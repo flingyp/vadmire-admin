@@ -23,12 +23,8 @@ const showSearchMenu = () => {
   isShowSearchMenu.value = true
 }
 const closeSearchMenu = (type: 'CLICK' | 'BLUR') => {
-  if (type === 'CLICK') {
-    isShowSearchMenu.value = false
-    searchKeyWord.value = ''
-  } else if (type === 'BLUR') {
-    isShowSearchMenu.value = false
-  }
+  isShowSearchMenu.value = false
+  if (type === 'CLICK') searchKeyWord.value = ''
 }
 
 const inputKeywordRef = ref<HTMLInputElement>()
@@ -55,7 +51,7 @@ watch(defaultLocales, () => {
 }, { immediate: true })
 
 const inputKeyword = useDebounce(() => {
-  // 去除字符串里的空格
+  // remove all Spaces in the string
   searchKeyWord.value = searchKeyWord.value.replace(/\s*/g, '')
   const searchResult = fuse.search(searchKeyWord.value)
   // @ts-ignore
@@ -63,6 +59,7 @@ const inputKeyword = useDebounce(() => {
 }, 200)
 
 </script>
+
 <template>
   <div class="flex items-center">
     <NInput
