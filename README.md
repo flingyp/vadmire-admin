@@ -11,36 +11,36 @@
     </div>
 </div>
 
-**English** | [简体中文](https://github.com/flingyp/vadmire-admin/blob/main/README.zh-CN.md)
+[English](https://github.com/flingyp/vadmire-admin/blob/main/README.md) | **简体中文**
 
 ## ⛷️ Introduction
 
-**VAmire Admin** 是一款通用性后台管理系统模板。基于一套相对较新技术栈 `Vite +  Vue3 + TailwindCSS + TypeScript`。 能够帮助开发者们快速开启业务开发，并且系统内部集成了许多业务开发用到的常用功能。同时也是学习Vue3相关生态的参考项目之一。
+**VAmire Admin** is a universal backend management system template. It is based on a relatively new technology stack `Vite + Vue3 + TailwindCSS + TypeScript`. It helps developers to start business development quickly and integrates many common features used in business development inside the system. It is also one of the reference projects for learning Vue3 related ecology.
 
 ## ⚙️ Features
 
-- 💪 **最新技术栈**: Vite + Vue + TailwindCSS + TypeScript
-- 🚀 **开发体验**: 极致开发体验
-- 🌛 **暗黑模式**: 内置暗黑模式
-- 🌿 **系统主题**: 动态配置系统主题色
-- 🏄‍♂️ **权限控制**: 支持前后端两种方式权限控制解决方案
-- ♻️ **功能组件**: 内置多个功能组件与可组合式函数
-- 🎇 **组合式开发**: 提倡让你的代码更简洁易读
+- 💪 **Latest Technology Stack**: Vite + Vue + TailwindCSS + TypeScript
+- 🚀 **Development Experience**: The ultimate development experience
+- 🌛 **Dark Mode**: Built-in Dark Mode
+- 🌿 **System Theme**: Dynamically configure system theme color
+- 🏄‍♂️ **Permission Control**: Support both front and back end permission control solutions
+- ♻️ **Functional components**: Built-in multiple functional components and combinable functions
+- 🎇 **Composable Development**: advocate for making your code more concise and easy to read
 
 ## 👣 Getting started
 
 ```sh
-# 克隆项目
+# Git clone
 git clone https://github.com/flingyp/vadmire-admin.git
 
-# 安装依赖
+# Installation dependencies
 cd vadmire-admin
 pnpm install
 
-# 启动
+# Run
 pnpm run dev
 
-# 构建
+# Build
 pnpm run build 
 pnpm run build:mock # mock mode
 ```
