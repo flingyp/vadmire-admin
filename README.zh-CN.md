@@ -11,7 +11,7 @@
     </div>
 </div>
 
-**English** | [简体中文](https://github.com/flingyp/vadmire-admin/blob/main/README.zh-CN.md)
+[English](https://github.com/flingyp/vadmire-admin/blob/main/README.md) | **简体中文**
 
 ## ⛷️ Introduction
 

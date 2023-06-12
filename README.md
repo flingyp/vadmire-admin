@@ -11,11 +11,13 @@
     </div>
 </div>
 
-[English](https://github.com/flingyp/vadmire-admin/blob/main/README.md) | **简体中文**
+**English** | [简体中文](https://github.com/flingyp/vadmire-admin/blob/main/README.zh-CN.md)
 
 ## ⛷️ Introduction
 
-**VAmire Admin** is a universal backend management system template. It is based on a relatively new technology stack `Vite + Vue3 + TailwindCSS + TypeScript`. It helps developers to start business development quickly and integrates many common features used in business development inside the system. It is also one of the reference projects for learning Vue3 related ecology.
+**VAmire Admin** is a universal backend management system template. It is based on a relatively new technology stack `Vite + Vue3 + TailwindCSS + TypeScript`. 
+
+It helps developers to start business development quickly and integrates many common features used in business development inside the system. It is also one of the reference projects for learning Vue3 related ecology.
 
 ## ⚙️ Features
 
