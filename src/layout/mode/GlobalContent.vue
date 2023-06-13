@@ -11,7 +11,7 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
 <template>
   <GlobalTabBar
     v-if="vadmireConfigStore.isVisibleTabBar"
-    :class="[vadmireConfigStore.fixedTabBar ? 'sticky z-50 top-0 bg-vPageBgColor dark:bg-vPageBgDarkColor': 'static']"
+    :class="[vadmireConfigStore.fixedTabBar ? 'sticky z-10 top-0 bg-vPageBgColor dark:bg-vPageBgDarkColor': 'static']"
   />
   <div v-if="!isReloadContent">
     <RouterView v-slot="{Component, route}">
