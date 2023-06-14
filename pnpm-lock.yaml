@@ -1,8 +1,4 @@
-lockfileVersion: '6.1'
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
+lockfileVersion: '6.0'
 
 dependencies:
   '@flypeng/tool':
@@ -50,6 +46,9 @@ dependencies:
   swiper:
     specifier: ^9.3.2
     version: 9.3.2
+  v-clipboard:
+    specifier: 3.0.0-next.1
+    version: 3.0.0-next.1
   vditor:
     specifier: ^3.9.3
     version: 3.9.3
@@ -2312,7 +2311,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /chownr@2.0.0:
@@ -4095,6 +4094,14 @@ packages:
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
+
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /function-bind@1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
@@ -6238,7 +6245,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /rollup@3.24.0:
@@ -6246,7 +6253,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /run-async@2.4.1:
@@ -7138,6 +7145,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: true
 
+  /v-clipboard@3.0.0-next.1:
+    resolution: {integrity: sha512-UvCnzetQMlVfk9yoiyew8ldGiCzeER5aYdmXXtZp8LC6rt2QXQS0AayEDn1K7rlXpd3M8d+JeYNUV+ZNgtaS4A==}
+    dependencies:
+      vue: 3.3.4
+    dev: false
+
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
@@ -7238,7 +7251,7 @@ packages:
       rollup: 3.24.0
       sass: 1.63.2
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents@2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /vooks@0.2.12(vue@3.3.4):
@@ -7565,13 +7578,3 @@ packages:
     engines: {node: '>=0.8'}
     hasBin: true
     dev: false
-
-  r2.cnpmjs.org/fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true

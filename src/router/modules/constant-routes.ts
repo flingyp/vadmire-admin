@@ -156,6 +156,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'clipboard',
+        name: 'Feature_Clipboard',
+        component: '~/views/features/Clipboard.vue',
+        meta: {
+          text: '$t("route.commonClipboard")',
+          icon: 'mdi:clipboard-text',
+        },
+      },
+      {
         path: '',
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',
