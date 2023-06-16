@@ -31,6 +31,8 @@ const clickSwitchLocale = (key: Locales) => {
   locale.value = key
   vadmireConfigStore.defaultLocales = key
 
+  changeDayjsLocales(key)
+
   localVAdmireConfig.defaultLocales = key
   useSetLocalKey(LOCAL_SYSTEM_KEY, JSON.stringify(localVAdmireConfig))
 }

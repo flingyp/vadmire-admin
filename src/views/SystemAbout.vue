@@ -34,7 +34,6 @@ Object.keys(devDependencies).forEach((key) => {
   devDependenciesItem.version = devDependencies[key]
   devDependenciesList.push(devDependenciesItem)
 })
-
 </script>
 
 <template>

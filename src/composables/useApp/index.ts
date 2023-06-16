@@ -1,5 +1,5 @@
 import { useGetLocalKey } from '@flypeng/tool/browser'
-import { internationalReg } from '~/utils'
+import { internationalReg, changeDayjsLocales } from '~/utils'
 import { THEME_MODE_KEY } from '~/vadmire.config'
 
 // To do things when init application
@@ -35,4 +35,7 @@ export function useApp() {
   }
   watch(defaultLocales, setHtmlTitle)
   watch(() => route.name, setHtmlTitle)
+
+  // init dayjs locales
+  changeDayjsLocales(defaultLocales.value)
 }
