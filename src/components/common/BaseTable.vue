@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { DataTableColumn, PaginationProps } from 'naive-ui'
 import { RowData } from 'naive-ui/es/data-table/src/interface'
+import BaseTableHandle from './BaseTableHandle.vue'
 
 type TableSize = 'small' | 'medium' | 'large'
+
+defineOptions({ name: 'BaseTable' })
 
 interface BaseTableProps {
   headers: Array<DataTableColumn>
@@ -16,11 +19,10 @@ interface BaseTableProps {
   loading?: boolean // 表格加载状态
   pagination?: PaginationProps // 表格分页
   rowKey?: string // 表格行选中所绑定的Key
+  searchValue?: string
 }
 
-defineOptions({ name: 'BaseTable' })
-
-withDefaults(defineProps<BaseTableProps>(), {
+const props = withDefaults(defineProps<BaseTableProps>(), {
   border: true,
   singleColumn: false,
   singleLine: false,
@@ -30,15 +32,30 @@ withDefaults(defineProps<BaseTableProps>(), {
   loading: false,
   pagination: undefined,
   rowKey: 'id',
+  searchValue: '',
 })
 
-defineEmits(['checkedRowKeys'])
+const emit = defineEmits(['checkedRowKeys', 'update:searchValue', 'addData', 'exportExcel', 'search'])
 
 const selectedRowKeys = (row: RowData) => row.id
+
+const tableSearchValue = ref(props.searchValue)
+watch(tableSearchValue, (value) => emit('update:searchValue', value))
+const baseTableHandleAddData = () => emit('addData')
+const baseTableHandleExportFile = () => emit('exportExcel')
+const baseTableHandleSearch = () => emit('search')
 </script>
 
 <template>
   <div>
+    <div class="mb-4 flex items-center justify-end space-x-1">
+      <BaseTableHandle
+        v-model:value="tableSearchValue"
+        @add="baseTableHandleAddData"
+        @export="baseTableHandleExportFile"
+        @search="baseTableHandleSearch"
+      />
+    </div>
     <NDataTable
       :columns="headers"
       :data="data"

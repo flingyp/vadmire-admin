@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { DataTableColumn, NButton } from 'naive-ui'
-import { RowData } from 'naive-ui/es/data-table/src/interface'
 import BaseTable from '~/components/common/BaseTable.vue'
-import BaseTableHandle from '~/components/common/BaseTableHandle.vue'
 import { getBaseTableData } from '~/requests'
 
 interface PersonInfo {
@@ -16,11 +14,10 @@ interface PersonInfo {
 const { success, error, info } = useNaiveMessage()
 
 // search input bind value
-const searchValue = ref('')
+const searchValue = ref('你好')
 
 const {
-  isLoading, tableData, pagination,
-  getTableData, exportExcel,
+  isLoading, tableData, pagination, getTableData, exportExcel,
 } = useTable<PersonInfo>()
 
 // basic table columns list
@@ -116,7 +113,7 @@ pagination.value.onUpdatePageSize = async (pageSize: number) => {
 }
 
 // export table data to excel file
-const exportFile = () => {
+const exportExcelFile = () => {
   // need to filter the data to be exported
   const sourceData = tableData.value?.map((item) => ({
     name: item.name,
@@ -125,18 +122,17 @@ const exportFile = () => {
     postalCode: item.postalCode,
     sex: item.sex,
   }))
-
   exportExcel('Sheet1', '基础表格文件', ['名称', '出生日期', '家庭住址', '邮政编码', '性别'], sourceData)
 }
 
-// add table data
-const addTableData = () => {
-  info('点击新增')
-}
+// search table data
+const searchData = () => info('搜索数据')
 
-const checkedRowKeys = (id: string) => {
-  console.log('选中行所绑定的ID值->>>', id)
-}
+// add table data
+const addTableData = () => info('点击新增')
+
+// checked row keys
+const checkedRowKeys = (id: string) => console.log('选中行所绑定的ID值->>>', id)
 
 onMounted(async () => {
   const { total } = await getData()
@@ -146,20 +142,17 @@ onMounted(async () => {
 
 <template>
   <div>
-    <div class="mb-4 flex items-center space-x-1">
-      <BaseTableHandle
-        v-model:search-value="searchValue"
-        @add="addTableData"
-        @export="exportFile"
-      />
-    </div>
     <BaseTable
+      v-model:search-value="searchValue"
       size="small"
       :loading="isLoading"
       :headers="baseTableColumns"
       :data="tableData"
       :pagination="pagination"
+      @search="searchData"
       @checked-row-keys="checkedRowKeys"
+      @add-data="addTableData"
+      @export-excel="exportExcelFile"
     />
   </div>
 </template>
