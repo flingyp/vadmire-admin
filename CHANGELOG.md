@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/flingyp/vadmire-admin/compare/v1.2.0...v1.3.0) (2023-06-16)
+
+
+### Features
+
+* add BaseLayoutItem component to switch layout mode ([082d53b](https://github.com/flingyp/vadmire-admin/commit/082d53b2e6495b6ee6af7188bb32ea1b12c145c2))
+* add BaseSearchMenu component to search global menu ([3604786](https://github.com/flingyp/vadmire-admin/commit/36047861b577542e1691101f74a82773c3d1c426))
+* add the v-clipboard directive ([42477a8](https://github.com/flingyp/vadmire-admin/commit/42477a811d421846fcd1adc6aabcb5bb472edc95))
+* extract the vite.config.ts configuration content ([915db72](https://github.com/flingyp/vadmire-admin/commit/915db72400373d08add70a9af493f45c8337b96d))
+* optimize building chunks ([5c7a468](https://github.com/flingyp/vadmire-admin/commit/5c7a4689594ffbbd10baec27c939c9f75b99fb3f))
+
+
+### Bug Fixes
+
+* add tab menu when user search menu ([999850c](https://github.com/flingyp/vadmire-admin/commit/999850c940e78d0c72d8a98903d2403af65df5df))
+* handle GlobalTabBar hierarchy issue ([514b2b4](https://github.com/flingyp/vadmire-admin/commit/514b2b4a35f3d3103795b106c8b3360469a209cd))
+
 ## [1.2.0](https://github.com/flingyp/vadmire-admin/compare/v1.1.0...v1.2.0) (2023-06-08)
 
 
