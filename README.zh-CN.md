@@ -8,6 +8,7 @@
     <h1>VAdmire Admin</h1>
     <div align="center">
         <img src="https://img.shields.io/github/license/flingyp/vadmire-admin" alt="License" />
+        <img src="https://img.shields.io/badge/VAdmire%20Admin-Template-green" alt="Backend Management System Template" />
     </div>
 </div>
 
@@ -15,7 +16,9 @@
 
 ## ⛷️ Introduction
 
-**VAmire Admin** 是一款通用性后台管理系统模板。基于一套相对较新技术栈 `Vite +  Vue3 + TailwindCSS + TypeScript`。 能够帮助开发者们快速开启业务开发，并且系统内部集成了许多业务开发用到的常用功能。同时也是学习Vue3相关生态的参考项目之一。
+**VAmire Admin** 是一款通用性后台管理系统模板。基于一套相对较新技术栈 `Vite +  Vue3 + TailwindCSS + TypeScript`。 
+
+能够帮助开发者们快速开启业务开发，并且系统内部集成了许多业务开发用到的常用功能。同时也是学习Vue3相关生态的参考项目之一。
 
 ## ⚙️ Features
 

@@ -8,6 +8,7 @@
     <h1>VAdmire Admin</h1>
     <div align="center">
         <img src="https://img.shields.io/github/license/flingyp/vadmire-admin" alt="License" />
+        <img src="https://img.shields.io/badge/VAdmire%20Admin-Template-green" alt="Backend Management System Template" />
     </div>
 </div>
 
