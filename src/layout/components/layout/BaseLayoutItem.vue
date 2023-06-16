@@ -14,11 +14,11 @@ const { layoutMode } = storeToRefs(useVAdmireConfigStore())
 <template>
   <div
     class="
-      p-1 h-16 border rounded transition duration-500
+      p-1.5 h-16 border rounded transition duration-300
       hover:border-primaryHover dark:hover:border-primaryHover
     "
     :class="{
-      'border-primarySuppl dark:border-primarySuppl': mode === layoutMode,
+      'border-primary dark:border-primary': mode === layoutMode,
       'border-vBorderLight dark:border-vBorderDark': mode !== layoutMode
     }"
   >

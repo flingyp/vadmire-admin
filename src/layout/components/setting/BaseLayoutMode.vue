@@ -10,7 +10,7 @@ const updateLayoutMode = (mode: LayoutMode) => {
 </script>
 
 <template>
-  <div class="w-full grid grid-cols-3 gap-x-2">
+  <div class="w-full grid grid-cols-3 gap-x-4">
     <BaseLayoutItem
       mode="SIDER_MENU"
       @update-layout-mode="updateLayoutMode"
