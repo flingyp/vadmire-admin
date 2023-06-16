@@ -1,0 +1,1 @@
+import{a8 as t,bd as r}from"./vendor-49e58c46.js";const u=()=>{const a=t(!1),e=async s=>{a.value=s},n=async s=>{if(a.value)return;a.value=!0;const o=await s();return a.value=!1,o};return{isLoading:r(a),setLoading:e,withLoading:n}};export{u};
