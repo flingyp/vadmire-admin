@@ -8,7 +8,7 @@ import BaseSearchItem from './BaseSearchItem.vue'
 
 const { t } = useI18n()
 const { defaultLocales } = storeToRefs(useVAdmireConfigStore())
-const { vadmireChildrenMenuByFlat } = storeToRefs(useRouteMenuStore())
+const { vadmireMenu } = storeToRefs(useRouteMenuStore())
 
 const placeholder = computed(() => t('header.searchPlaceholder'))
 
@@ -27,26 +27,27 @@ const closeSearchMenu = (type: 'CLICK' | 'BLUR') => {
   if (type === 'CLICK') searchKeyWord.value = ''
 }
 
-const inputKeywordRef = ref<HTMLInputElement>()
-onClickOutside(inputKeywordRef, () => {
+const baseSearchMenuRef = ref<HTMLInputElement>()
+onClickOutside(baseSearchMenuRef, () => {
   if (!isShowSearchMenu.value) return
   isShowSearchMenu.value = false
 })
 
 const searchMenuList = ref<VAdmireMenuOption[]>([])
-const transformVadmireChildrenMenuByFlat = computed(() => vadmireChildrenMenuByFlat.value.map((item) => {
+const transformVadmireMenu = computed(() => vadmireMenu.value.map((item) => {
   const newMenu = transformMenu(item, t)
   return newMenu
 }))
 
-const options = {
-  keys: ['label'],
+const options: Fuse.IFuseOptions<VAdmireMenuOption> = {
+  keys: ['label', 'children.label'],
   threshold: 0.3,
+  includeScore: true,
 }
 let fuse: Fuse<VAdmireMenuOption>
 watch(defaultLocales, () => {
   nextTick(() => {
-    fuse = new Fuse(transformVadmireChildrenMenuByFlat.value, options)
+    fuse = new Fuse(transformVadmireMenu.value, options)
   })
 }, { immediate: true })
 
@@ -54,6 +55,7 @@ const inputKeyword = useDebounce(() => {
   // remove all Spaces in the string
   searchKeyWord.value = searchKeyWord.value.replace(/\s*/g, '')
   const searchResult = fuse.search(searchKeyWord.value)
+  console.log('searchResult->>', searchResult)
   // @ts-ignore
   searchMenuList.value = searchResult.map((data) => data.item)
 }, 200)
@@ -61,14 +63,15 @@ const inputKeyword = useDebounce(() => {
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div
+    ref="baseSearchMenuRef"
+    class="flex items-center"
+  >
     <NInput
-      ref="inputKeywordRef"
       v-model:value="searchKeyWord"
       :placeholder="placeholder"
       @input="inputKeyword"
       @focus="showSearchMenu"
-      @blur="closeSearchMenu('BLUR')"
     >
       <template #prefix>
         <RenderIconify icon="carbon:search" />
