@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { DataTableColumn, PaginationProps } from 'naive-ui'
+import { DataTableColumn, PaginationProps, VAdmireTableSize } from 'naive-ui'
 import { RowData } from 'naive-ui/es/data-table/src/interface'
 import BaseTableHandle from './BaseTableHandle.vue'
-
-type TableSize = 'small' | 'medium' | 'large'
 
 defineOptions({ name: 'BaseTable' })
 
@@ -13,13 +11,16 @@ interface BaseTableProps {
   border?: boolean // 表格有无边框
   singleColumn?: boolean // 表格有无行分割线
   singleLine?: boolean // 表格有无列分割线
-  size?: TableSize // 表格尺寸大小
+  size?: VAdmireTableSize // 表格尺寸大小
   striped?: boolean // 表格条纹渲染
   maxHeight?: number // 表格最大高度
+  minHeight?: number // 表格最小高度
   loading?: boolean // 表格加载状态
   pagination?: PaginationProps // 表格分页
   rowKey?: string // 表格行选中所绑定的Key
-  searchValue?: string
+  searchValue?: string // 搜索框关键词
+  scrollX?: number // 表格横向宽度
+  isEnableVirtualScroll?: boolean // 是否开启虚拟滚动
 }
 
 const props = withDefaults(defineProps<BaseTableProps>(), {
@@ -29,10 +30,18 @@ const props = withDefaults(defineProps<BaseTableProps>(), {
   size: 'medium',
   striped: true,
   maxHeight: undefined,
+  minHeight: undefined,
   loading: false,
   pagination: undefined,
   rowKey: 'id',
   searchValue: '',
+  scrollX: undefined,
+  isEnableVirtualScroll: false,
+})
+
+const virtualScroll = computed(() => {
+  if (props.isEnableVirtualScroll && props.maxHeight) return true
+  return false
 })
 
 const emit = defineEmits(['checkedRowKeys', 'update:searchValue', 'addData', 'exportExcel', 'search'])
@@ -65,11 +74,14 @@ const baseTableHandleSearch = () => emit('search')
       :size="size"
       :striped="striped"
       :max-height="maxHeight"
+      :min-height="minHeight"
       :loading="loading"
       :pagination="pagination"
       :remote="true"
       :paginate-single-page="true"
       :row-key="selectedRowKeys"
+      :scroll-x="scrollX"
+      :virtual-scroll="virtualScroll"
       @update-checked-row-keys="$emit('checkedRowKeys', $event)"
     />
   </div>

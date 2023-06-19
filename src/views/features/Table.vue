@@ -14,7 +14,7 @@ interface PersonInfo {
 const { success, error, info } = useNaiveMessage()
 
 // search input bind value
-const searchValue = ref('你好')
+const searchValue = ref('')
 
 const {
   isLoading, tableData, pagination, getTableData, exportExcel,
