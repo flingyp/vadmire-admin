@@ -70,6 +70,7 @@ pnpm run build:mock # mock mode
    ├─router  
    ├─store
    ├─styles
+   ├─types
    ├─utils
    └─views
 ├─.editorconfig

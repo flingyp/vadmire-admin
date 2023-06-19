@@ -1,9 +1,8 @@
 import { defineStore } from 'pinia'
 import { VAdmireMenuOption } from 'naive-ui'
-import { RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw, VAdmireRoute } from 'vue-router'
 import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
 
-import { VAdmireRoute } from '~/router'
 import { SystemAccountInfo } from '~/requests'
 import { TAB_MENU_KEY } from '~/vadmire.config'
 

@@ -1,8 +1,9 @@
 import { Store } from 'pinia'
-import { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
+import {
+  NavigationGuardNext, RouteLocationNormalized, Router, VAdmireRoute,
+} from 'vue-router'
 import { useCommonType, useDeepClone } from '@flypeng/tool/browser'
 
-import { VAdmireRoute } from './types'
 import { RouteMenuStore, useRouteMenuStore } from '~/store'
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules'
 import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests'

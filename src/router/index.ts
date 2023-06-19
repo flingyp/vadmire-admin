@@ -24,5 +24,4 @@ router.afterEach(async () => {
   nprogress.done()
 })
 
-export * from './types'
 export { router }

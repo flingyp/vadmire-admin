@@ -12,5 +12,14 @@ declare module 'vue-router' {
     single?: boolean // single route
     sort?: number // menu sort
   }
+
+  interface VAdmireRoute {
+    path: string
+    name: string
+    component?: string
+    redirect?: string
+    meta?: RouteMeta
+    children?: VAdmireRoute[]
+  }
 }
 

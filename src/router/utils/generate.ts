@@ -1,6 +1,6 @@
 import { useCommonType, useDeepClone } from '@flypeng/tool/browser'
 import { VAdmireMenuOption } from 'naive-ui'
-import { VAdmireRoute } from '../types'
+import { VAdmireRoute } from 'vue-router'
 
 /**
  * Generate system menu

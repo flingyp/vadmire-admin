@@ -1,4 +1,4 @@
-import { VAdmireRoute } from '../types'
+import { VAdmireRoute } from 'vue-router'
 
 const filter = (routes: VAdmireRoute[], permissions: string[]) => {
   const newRoutes: VAdmireRoute[] = []
