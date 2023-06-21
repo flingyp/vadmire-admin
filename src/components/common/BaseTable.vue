@@ -7,7 +7,7 @@ defineOptions({ name: 'BaseTable' })
 
 interface BaseTableProps {
   headers: Array<DataTableColumn>
-  data: any
+  data: RowData[]
   border?: boolean // 表格有无边框
   singleColumn?: boolean // 表格有无行分割线
   singleLine?: boolean // 表格有无列分割线
