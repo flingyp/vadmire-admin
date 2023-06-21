@@ -4,7 +4,7 @@ import RenderIconify from '~/components/common/RenderIconify.vue'
 
 interface BaseSearchItemProps {
   menu: VAdmireMenuOption
-  level: number
+  level?: number
 }
 const props = withDefaults(defineProps<BaseSearchItemProps>(), {
   level: 0,

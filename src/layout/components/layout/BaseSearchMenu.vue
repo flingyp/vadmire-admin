@@ -55,8 +55,6 @@ const inputKeyword = useDebounce(() => {
   // remove all Spaces in the string
   searchKeyWord.value = searchKeyWord.value.replace(/\s*/g, '')
   const searchResult = fuse.search(searchKeyWord.value)
-  console.log('searchResult->>', searchResult)
-  // @ts-ignore
   searchMenuList.value = searchResult.map((data) => data.item)
 }, 200)
 
