@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/flingyp/vadmire-admin/compare/v1.3.0...v1.4.0) (2023-06-25)
+
+
+### Features
+
+* BaseSearchMenu support depth fuzzy search ([475716f](https://github.com/flingyp/vadmire-admin/commit/475716f9bfec3e95038b0b4a0122cb829661b6d0))
+* integrate dayjs ([3c7e14d](https://github.com/flingyp/vadmire-admin/commit/3c7e14dd321312a8b9acf1153851aef5d4b00edd))
+* perfect BaseTable props ([93dd57c](https://github.com/flingyp/vadmire-admin/commit/93dd57c2c6d06e8edbb4bec5a38f28db22fff847))
+
+
+### Bug Fixes
+
+* handle search box console warning ([7d6cfe7](https://github.com/flingyp/vadmire-admin/commit/7d6cfe7b4c16e7d5461e7a3f3301a0b04eb77342))
+
 ## [1.3.0](https://github.com/flingyp/vadmire-admin/compare/v1.2.0...v1.3.0) (2023-06-16)
 
 
