@@ -132,7 +132,7 @@ const searchData = () => info('搜索数据')
 const addTableData = () => info('点击新增')
 
 // checked row keys
-const checkedRowKeys = (id: string) => console.log('选中行所绑定的ID值->>>', id)
+const checkedRowKeys = (id: string) => (success(`选中行所绑定的ID值：${id}`))
 
 onMounted(async () => {
   const { total } = await getData()
@@ -147,7 +147,7 @@ onMounted(async () => {
       size="small"
       :loading="isLoading"
       :headers="baseTableColumns"
-      :data="tableData"
+      :data="tableData || []"
       :pagination="pagination"
       @search="searchData"
       @checked-row-keys="checkedRowKeys"
