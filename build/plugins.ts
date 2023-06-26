@@ -103,12 +103,12 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
       {
         name: 'vditor',
         var: 'Vditor',
-        path: 'https://cdn.jsdelivr.net/npm/vditor/dist/index.min.js',
+        path: 'https://unpkg.com/vditor@3.9.3/dist/index.min.js',
       },
       {
         name: '@wangeditor/editor',
         var: 'wangEditor',
-        path: 'https://cdn.jsdelivr.net/npm/@wangeditor/editor@5.1.23/dist/index.min.js',
+        path: 'https://unpkg.com/@wangeditor/editor@5.1.23/dist/index.js',
       },
     ],
   }),
