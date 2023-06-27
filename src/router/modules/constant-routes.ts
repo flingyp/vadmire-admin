@@ -165,6 +165,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'draggable',
+        name: 'Feature_Draggable',
+        component: '~/views/features/Draggable.vue',
+        meta: {
+          text: '$t("route.commonDraggable")',
+          icon: 'mdi:drag-variant',
+        },
+      },
+      {
         path: '',
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',
