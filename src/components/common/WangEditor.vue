@@ -2,10 +2,7 @@
 import { IDomEditor } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import '@wangeditor/editor/dist/css/style.css'
-
-interface WangEditorProps {
-  content: string
-}
+import { WangEditorProps } from '~/types'
 
 defineOptions({
   name: 'WangEditor',
