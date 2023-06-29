@@ -1,37 +1,21 @@
 <script setup lang="ts">
-import RenderIconify from '~/components/common/RenderIconify.vue'
-
-interface BaseTableHandleProps {
-  value: string
-}
+import { BaseTableHandleProps } from '~/types'
 
 withDefaults(defineProps<BaseTableHandleProps>(), {
   value: '',
 })
 
-defineEmits(['add', 'export', 'search', 'update:value'])
+defineEmits(['add', 'export'])
 </script>
 
 <template>
-  <NInput
-    placeholder="搜索框"
-    autosize
-    size="small"
-    class="w-48"
-    :value="value"
-    @update:value="$emit('update:value', $event)"
-  >
-    <template #prefix>
-      <RenderIconify icon="uil:comment-alt-search" />
-    </template>
-  </NInput>
   <NButton
     type="primary"
     size="small"
     class="px-4"
-    @click="$emit('search')"
+    @click="$emit('add')"
   >
-    搜索
+    新增
   </NButton>
   <NButton
     type="info"
@@ -41,12 +25,5 @@ defineEmits(['add', 'export', 'search', 'update:value'])
     @click="$emit('export')"
   >
     导出
-  </NButton>
-  <NButton
-    size="small"
-    class="px-4"
-    @click="$emit('add')"
-  >
-    新增
   </NButton>
 </template>

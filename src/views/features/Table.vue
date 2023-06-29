@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { DataTableColumn, NButton } from 'naive-ui'
 import BaseTable from '~/components/common/BaseTable.vue'
+import BaseTableHandle from '~/components/common/BaseTableHandle.vue'
+import BaseTableSearch from '~/components/common/BaseTableSearch.vue'
 import { getBaseTableData } from '~/requests'
+import { RecordSearchItem } from '~/types'
 
 interface PersonInfo {
   name: string
@@ -111,6 +114,8 @@ pagination.value.onUpdatePageSize = async (pageSize: number) => {
   pagination.value.pageSize = pageSize
   await getData()
 }
+// add table data
+const addTableData = () => info('点击新增')
 
 // export table data to excel file
 const exportExcelFile = () => {
@@ -125,14 +130,65 @@ const exportExcelFile = () => {
   exportExcel('Sheet1', '基础表格文件', ['名称', '出生日期', '家庭住址', '邮政编码', '性别'], sourceData)
 }
 
-// search table data
-const searchData = () => info('搜索数据')
-
-// add table data
-const addTableData = () => info('点击新增')
-
 // checked row keys
 const checkedRowKeys = (id: string) => (success(`选中行所绑定的ID值：${id}`))
+
+// config search from list
+const searchFormList = ref<RecordSearchItem[]>([
+  {
+    label: '序号',
+    key: 'id',
+    type: 'input',
+    placeholder: '请输入序号',
+    value: '',
+  },
+  {
+    label: '名称',
+    key: 'name',
+    type: 'input',
+    placeholder: '请输入名称',
+    value: '',
+  },
+  {
+    label: '性别',
+    key: 'sex',
+    type: 'select',
+    placeholder: '请选择性别',
+    value: undefined,
+    options: [
+      {
+        label: '男',
+        value: 1,
+      },
+      {
+        label: '女',
+        value: 2,
+      },
+    ],
+  },
+  {
+    label: '出生日期',
+    key: 'birthday',
+    type: 'date',
+    placeholder: '请输入出生日期',
+    value: undefined,
+  },
+  {
+    label: '家庭住址',
+    key: 'address',
+    type: 'input',
+    placeholder: '请输入家庭住址',
+    value: '',
+  },
+  {
+    label: '邮政编码',
+    key: 'postalCode',
+    type: 'input',
+    placeholder: '请输入邮政编码',
+    value: '',
+  },
+])
+const clickSearch = () => (info('点击搜索'))
 
 onMounted(async () => {
   const { total } = await getData()
@@ -143,16 +199,32 @@ onMounted(async () => {
 <template>
   <div>
     <BaseTable
-      v-model:search-value="searchValue"
       size="small"
       :loading="isLoading"
       :headers="baseTableColumns"
       :data="tableData || []"
       :pagination="pagination"
-      @search="searchData"
       @checked-row-keys="checkedRowKeys"
       @add-data="addTableData"
-      @export-excel="exportExcelFile"
-    />
+    >
+      <template #search>
+        <div class="border border-vBorderLight dark:border-vBorderDark rounded p-4 mb-2">
+          <BaseTableSearch
+            v-model:search-form-list="searchFormList"
+            class="grid grid-cols-4 gap-x-4"
+            @search="clickSearch"
+          />
+        </div>
+      </template>
+      <template #handle>
+        <div class="mb-2 flex items-center justify-end space-x-1">
+          <BaseTableHandle
+            v-model:value="searchValue"
+            @add="addTableData"
+            @export="exportExcelFile"
+          />
+        </div>
+      </template>
+    </BaseTable>
   </div>
 </template>
