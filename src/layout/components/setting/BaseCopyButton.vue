@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCopyContent, useDeepClone } from '@flypeng/tool/browser'
-import { defaultVAdmireConfig, VAdmireConfig } from '~/vadmire.config'
+import { defaultVAdmireConfig } from '~/vadmire.config'
+import { VAdmireConfig } from '~/types'
 
 const { success } = useNaiveMessage()
 const { toggleDark } = useTheme()

@@ -10,7 +10,7 @@ import 'dayjs/locale/zh-cn'
 import 'dayjs/locale/en'
 import 'dayjs/locale/ko'
 
-import type { Locales } from '~/vadmire.config'
+import type { Locales } from '~/types'
 
 dayjs.extend(isSameOrAfter)
 dayjs.extend(isSameOrBefore)

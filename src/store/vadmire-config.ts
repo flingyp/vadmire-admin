@@ -4,9 +4,10 @@ import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser'
 
 import { getDifSceneColor } from '~/utils'
 import {
-  VAdmireConfig, defaultVAdmireConfig, AUTH_TOKEN,
+  defaultVAdmireConfig, AUTH_TOKEN,
   THEME_MODE_KEY, sceneColorMap, PRIMARY_COLOR_KEY, LOCAL_SYSTEM_KEY, DRIVER_CONFIG_KEY,
 } from '~/vadmire.config'
+import { VAdmireConfig } from '~/types'
 
 const localVAdmireConfig = { ...defaultVAdmireConfig(), ...JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}') }
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LayoutMode } from '~/vadmire.config'
+import { LayoutMode } from '~/types'
 
 interface BaseLayoutItemProps {
   mode: LayoutMode
