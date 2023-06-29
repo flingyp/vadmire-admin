@@ -14,3 +14,19 @@
 html.dark #driver-highlighted-element-stage {
   background: #000 !important;
 }
+
+div.PhotoSlider__Wrapper .PhotoSlider__BannerWrap {
+  bottom: 0;
+  left: Initial;
+  top: Initial;
+}
+
+div.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {
+  flex: 1;
+}
+
+div.PhotoSlider__Wrapper .PhotoSlider__FooterWrap {
+  top: 0;
+  left: Initial;
+  bottom: Initial;
+}
