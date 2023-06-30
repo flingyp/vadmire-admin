@@ -2,8 +2,8 @@
  * Can configure the loading property of the BaseSpin component or the Button component to implement the Loading effect
  * @returns
  */
-export const useLoading = () => {
-  const isLoading = ref(false)
+export const useLoading = (defaultValue = false) => {
+  const isLoading = ref(defaultValue)
 
   const setLoading = async (value: boolean) => {
     isLoading.value = value

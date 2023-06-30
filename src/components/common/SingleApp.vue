@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { darkTheme, zhCN, dateZhCN } from 'naive-ui'
 import { useVAdmireConfigStore } from '~/store'
+import BaseSpin from '~/components/common/BaseSpin.vue'
 
 defineOptions({
   name: 'SingleApp',
@@ -8,6 +9,7 @@ defineOptions({
 
 const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
 
+const { isLoading, loadingText } = inject('loading') as { isLoading: boolean, loadingText: string }
 </script>
 
 <template>
@@ -22,7 +24,12 @@ const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
       <NNotificationProvider placement="bottom-right">
         <NDialogProvider>
           <NMessageProvider>
-            <slot />
+            <BaseSpin
+              :is-loading="isLoading"
+              :loading-text="loadingText"
+            >
+              <slot />
+            </BaseSpin>
           </NMessageProvider>
         </NDialogProvider>
       </NNotificationProvider>
