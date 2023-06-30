@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BaseSpin: typeof import('./src/components/common/BaseSpin.vue')['default']
     BaseTable: typeof import('./src/components/common/BaseTable.vue')['default']
     BaseTableHandle: typeof import('./src/components/common/BaseTableHandle.vue')['default']
     BaseTableSearch: typeof import('./src/components/common/BaseTableSearch.vue')['default']
