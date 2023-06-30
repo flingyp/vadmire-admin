@@ -3,7 +3,7 @@ import SystemLogin from './components/SystemLogin.vue'
 import SystemRegister from './components/SystemRegister.vue'
 import SystemTip from './components/Tip.vue'
 
-const isAuthLoin = ref(false)
+const isAuthLoin = ref(true)
 const rotateYComputed = computed(() => {
   if (isAuthLoin.value) {
     return {
