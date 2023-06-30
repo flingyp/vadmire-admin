@@ -12,7 +12,7 @@ defineEmits(['add', 'export'])
   <NButton
     type="primary"
     size="small"
-    class="px-4"
+    class="px-6 py-2"
     @click="$emit('add')"
   >
     新增
@@ -21,7 +21,7 @@ defineEmits(['add', 'export'])
     type="info"
     size="small"
     ghost
-    class="px-4"
+    class="px-6 py-2"
     @click="$emit('export')"
   >
     导出
