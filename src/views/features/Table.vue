@@ -20,7 +20,7 @@ const { success, error, info } = useNaiveMessage()
 const searchValue = ref('')
 
 const {
-  isLoading, tableData, pagination, getTableData, exportExcel,
+  isLoading, tableData, pagination, getTableData,
 } = useTable<PersonInfo>()
 
 // basic table columns list
@@ -189,6 +189,10 @@ const searchFormList = ref<RecordSearchItem[]>([
   },
 ])
 const clickSearch = () => (info('点击搜索'))
+const clickReset = () => (info('点击重置'))
+
+const clickExport = () => (info('点击导出'))
+const clickInto = () => (info('点击导入'))
 
 onMounted(async () => {
   const { total } = await getData()
@@ -213,6 +217,7 @@ onMounted(async () => {
             v-model:search-form-list="searchFormList"
             class="grid grid-cols-4 gap-x-4"
             @search="clickSearch"
+            @reset="clickReset"
           />
         </div>
       </template>
@@ -221,7 +226,8 @@ onMounted(async () => {
           <BaseTableHandle
             v-model:value="searchValue"
             @add="addTableData"
-            @export="exportExcelFile"
+            @export="clickExport"
+            @into="clickInto"
           />
         </div>
       </template>

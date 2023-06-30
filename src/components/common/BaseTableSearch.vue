@@ -7,7 +7,7 @@ const props = defineProps({
     default: () => [],
   },
 })
-const emit = defineEmits(['update:searchFormList', 'search'])
+const emit = defineEmits(['update:searchFormList', 'search', 'reset'])
 
 const searchForm = ref(props.searchFormList)
 
@@ -46,13 +46,23 @@ watch(searchForm, (newValue) => {
       />
     </NFormItem>
     <NFormItem>
-      <NButton
-        type="primary"
-        class="px-6"
-        @click="$emit('search')"
-      >
-        搜索
-      </NButton>
+      <div class="space-x-2">
+        <NButton
+          type="primary"
+          class="px-6"
+          @click="$emit('search')"
+        >
+          搜索
+        </NButton>
+        <NButton
+          type="primary"
+          class="px-6"
+          ghost
+          @click="$emit('reset')"
+        >
+          重置
+        </NButton>
+      </div>
     </NFormItem>
   </NForm>
 </template>
