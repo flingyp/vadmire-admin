@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/flingyp/vadmire-admin/compare/v1.4.0...v1.5.0) (2023-07-03)
+
+
+### Features
+
+* add BaseTableSearch component ([7470c8c](https://github.com/flingyp/vadmire-admin/commit/7470c8c7bae82a901168718f91c052c6bb2db2ac))
+* add common BaseSpin component ([3b9013e](https://github.com/flingyp/vadmire-admin/commit/3b9013e39474715bb32067d396e675ecbb86e56f))
+* change vditor and @wangeditor/editor cdn source ([ee2e0f1](https://github.com/flingyp/vadmire-admin/commit/ee2e0f19bd10fba5db7f1f30a6c58646666a9b0d))
+* config global loading and useLoading default value is false ([5bfd2d3](https://github.com/flingyp/vadmire-admin/commit/5bfd2d3ed016d1d00b0c44ff7439fee3e536cced))
+* integrate vuedraggable ([f048730](https://github.com/flingyp/vadmire-admin/commit/f048730373b250c7c6f61f067fbf785bc257c6d5))
+
+
+### Bug Fixes
+
+* Table page checkedRowKeys undefined when build:mock mode ([b500550](https://github.com/flingyp/vadmire-admin/commit/b500550f11a351ca85ddc386f7f2bb5f2e71c48c))
+
 ### [1.4.1](https://github.com/flingyp/vadmire-admin/compare/v1.4.0...v1.4.1) (2023-06-26)
 
 
