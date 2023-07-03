@@ -1,0 +1,1 @@
+import{_ as e}from"./index-af001a19.js";import{F as r,a6 as c}from"./vendor-4a8d1cde.js";const o={};function t(n,a){return r(),c("div",null,"Level-1")}const l=e(o,[["render",t]]);export{l as default};
