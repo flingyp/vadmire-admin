@@ -15,11 +15,8 @@ export function useApp() {
 
   // listener window size change
   useMonitorWindow(([width]: [number, number]) => {
-    if (width <= 768) {
-      isCollapsedSider.value = true
-    } else {
-      isCollapsedSider.value = false
-    }
+    if (width <= 768) isCollapsedSider.value = true
+    else isCollapsedSider.value = false
   })
 
   // set title tag content
