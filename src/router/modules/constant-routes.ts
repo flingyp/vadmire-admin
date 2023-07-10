@@ -174,6 +174,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'html2canvas',
+        name: 'Feature_Html2Image',
+        component: '~/views/features/Html2Image.vue',
+        meta: {
+          text: '$t("route.commonHtml2Image")',
+          icon: 'mdi:file-image',
+        },
+      },
+      {
         path: '',
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',

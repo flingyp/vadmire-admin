@@ -27,6 +27,7 @@
     "fuse.js": "^6.6.2",
     "mitt": "^3.0.0",
     "mockjs": "^1.1.0",
+    "modern-screenshot": "^4.4.26",
     "naive-ui": "^2.34.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.4",
