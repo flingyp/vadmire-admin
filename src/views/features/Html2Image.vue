@@ -5,11 +5,6 @@ const pageScreenshot = () => {
   body && useHtml2Image(body, '页面截图')
 }
 
-const menuScreenshot = () => {
-  const menu = document.querySelector('.n-layout-content')
-  menu && useHtml2Image(menu, '菜单截图')
-}
-
 </script>
 
 <template>
@@ -19,13 +14,6 @@ const menuScreenshot = () => {
       @click="pageScreenshot"
     >
       页面截图
-    </NButton>
-
-    <NButton
-      type="info"
-      @click="menuScreenshot"
-    >
-      菜单截图
     </NButton>
   </div>
 </template>
