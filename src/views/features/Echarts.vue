@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ECOption } from '~/utils'
 import Echarts from '~/components/common/Echarts.vue'
 
-const chartOne: ECOption = {
+const { option: chartOne } = useEcharts({
   title: {
     text: '柱状图',
   },
@@ -82,9 +81,9 @@ const chartOne: ECOption = {
       data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
     },
   ],
-}
+})
 
-const chartTwo: ECOption = {
+const { option: chartTwo } = useEcharts({
   title: {
     text: '南丁格尔图',
   },
@@ -110,9 +109,9 @@ const chartTwo: ECOption = {
       ],
     },
   ],
-}
+})
 
-const chartThree: ECOption = {
+const { option: chartThree } = useEcharts({
   title: {
     text: '折线图',
   },
@@ -165,7 +164,7 @@ const chartThree: ECOption = {
       data: [820, 932, 901, 934, 1290, 1330, 1320],
     },
   ],
-}
+})
 
 const chartFiveData = [
   [
@@ -212,7 +211,7 @@ const chartFiveData = [
   ],
 ]
 
-const chartFive: ECOption = {
+const { option: chartFive } = useEcharts({
   backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [
     {
       offset: 0,
@@ -320,7 +319,7 @@ const chartFive: ECOption = {
       },
     },
   ],
-}
+})
 
 </script>
 
