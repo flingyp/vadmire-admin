@@ -1,4 +1,4 @@
-import { PluginOption, splitVendorChunkPlugin } from 'vite'
+import { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
 import { spaLoading } from 'vite-plugin-spa-loading'
@@ -115,5 +115,5 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
   // 将 node_modules 中的模块打包到自定义 vendor chunk 中，利用浏览器缓存机制，加快页面加载速度
   // Vite >= 2.9.0+ automatically splits vendor chunks when using the build command.
   // Reference: https://cn.vitejs.dev/guide/build.html#chunking-strategy
-  splitVendorChunkPlugin(),
+  // splitVendorChunkPlugin(),
 ]
