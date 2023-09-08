@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/flingyp/vadmire-admin/compare/v1.5.0...v1.6.0) (2023-09-08)
+
+
+### Features
+
+* add useEcharts composable ([d3e295c](https://github.com/flingyp/vadmire-admin/commit/d3e295c491bfdb81e370180d9b6daa9af0e7d1f0))
+* add usePermission composable ([20be43a](https://github.com/flingyp/vadmire-admin/commit/20be43a70debc32902d03e8c9b5c15f76c626ed2))
+* integrate useHtml2Image composable ([b105aeb](https://github.com/flingyp/vadmire-admin/commit/b105aeb4902cf6360ec23fbb8f78788691cf0d18))
+
 ## [1.5.0](https://github.com/flingyp/vadmire-admin/compare/v1.4.0...v1.5.0) (2023-07-03)
 
 
