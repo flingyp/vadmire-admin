@@ -3,10 +3,7 @@ import XGPlayer from 'xgplayer'
 import { useRandomString } from '@flypeng/tool/browser'
 import { XGPlayerProps } from '~/types'
 
-defineOptions({
-  name: 'XGPlayer',
-})
-
+defineOptions({ name: 'XGPlayer' })
 const props = withDefaults(defineProps<XGPlayerProps>(), {
   volume: 0.6,
   autoplay: false,

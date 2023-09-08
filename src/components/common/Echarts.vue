@@ -6,10 +6,7 @@ interface EchartsProps {
   options: ECOption
 }
 
-defineOptions({
-  name: 'Echarts',
-})
-
+defineOptions({ name: 'Echarts' })
 const props = defineProps<EchartsProps>()
 
 const { isDark } = useTheme()

@@ -3,9 +3,7 @@ import { darkTheme, zhCN, dateZhCN } from 'naive-ui'
 import { useVAdmireConfigStore } from '~/store'
 import BaseSpin from '~/components/common/BaseSpin.vue'
 
-defineOptions({
-  name: 'SingleApp',
-})
+defineOptions({ name: 'SingleApp' })
 
 const { naiveThemeOverrides, themeMode } = storeToRefs(useVAdmireConfigStore())
 

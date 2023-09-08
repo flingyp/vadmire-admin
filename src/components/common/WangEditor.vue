@@ -4,10 +4,7 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import '@wangeditor/editor/dist/css/style.css'
 import { WangEditorProps } from '~/types'
 
-defineOptions({
-  name: 'WangEditor',
-})
-
+defineOptions({ name: 'WangEditor' })
 const props = defineProps<WangEditorProps>()
 const emit = defineEmits(['update:content'])
 
@@ -15,7 +12,8 @@ const {
   editorInstance, toolBarConfig, editorConfig, setEditor,
 } = useWangEditor()
 
-const editorContent = ref(props.content)
+const { content } = toRefs(props)
+const editorContent = ref(content.value)
 
 // init editor config
 editorConfig.value.placeholder = '上传图片、上传视频没有做配置, 请参考wangEditor进行配置'

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-defineOptions({
-  name: 'SingleIframe',
-})
+defineOptions({ name: 'SingleIframe' })
 
 const route = useRoute()
 const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())

@@ -3,16 +3,12 @@ import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 import { VditorProps } from '~/types'
 
-defineOptions({
-  name: 'Vditor',
-})
-
+defineOptions({ name: 'Vditor' })
 const props = withDefaults(defineProps<VditorProps>(), {
   contentTheme: 'ant-design',
   codeTheme: 'github',
   content: '',
 })
-
 const emit = defineEmits(['update:content'])
 
 const { isDark } = useTheme()

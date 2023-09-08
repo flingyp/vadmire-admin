@@ -117,21 +117,8 @@ pagination.value.onUpdatePageSize = async (pageSize: number) => {
 // add table data
 const addTableData = () => info('点击新增')
 
-// export table data to excel file
-const exportExcelFile = () => {
-  // need to filter the data to be exported
-  const sourceData = tableData.value?.map((item) => ({
-    name: item.name,
-    birthday: item.birthday,
-    address: item.address,
-    postalCode: item.postalCode,
-    sex: item.sex,
-  }))
-  exportExcel('Sheet1', '基础表格文件', ['名称', '出生日期', '家庭住址', '邮政编码', '性别'], sourceData)
-}
-
 // checked row keys
-const checkedRowKeys = (id: string) => (success(`选中行所绑定的ID值：${id}`))
+const checkedRowKeys = (id: string) => (success(`选中行所绑定的ID值: ${id}`))
 
 // config search from list
 const searchFormList = ref<RecordSearchItem[]>([

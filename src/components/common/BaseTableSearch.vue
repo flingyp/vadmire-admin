@@ -9,7 +9,8 @@ const props = defineProps({
 })
 const emit = defineEmits(['update:searchFormList', 'search', 'reset'])
 
-const searchForm = ref(props.searchFormList)
+const { searchFormList } = toRefs(props)
+const searchForm = ref(searchFormList.value)
 
 watch(searchForm, (newValue) => {
   emit('update:searchFormList', newValue)
