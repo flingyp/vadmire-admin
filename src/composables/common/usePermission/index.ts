@@ -6,5 +6,7 @@ export const usePermission = (permissionKeys: string[]) => {
     if (accountPermissionList.includes(permission)) return true
     return false
   })
-  return isHavePermission
+  return {
+    isHavePermission,
+  }
 }
