@@ -9,6 +9,7 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import viteCDNPlugin from 'vite-plugin-cdn-import'
+import { VitePWA } from 'vite-plugin-pwa'
 
 import { name, version } from '../package.json'
 
@@ -116,4 +117,71 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
   // Vite >= 2.9.0+ automatically splits vendor chunks when using the build command.
   // Reference: https://cn.vitejs.dev/guide/build.html#chunking-strategy
   // splitVendorChunkPlugin(),
+  VitePWA({
+    registerType: 'autoUpdate',
+    includeAssets: ['favicon.ico', 'logo.svg', '/pwa/180.png'],
+    devOptions: {
+      enabled: true,
+    },
+    manifest: {
+      name: 'VAdmire Admin',
+      short_name: 'VAdmire',
+      description: 'VAdmire Admin 是一款基于 Vue3 + TypeScript + NaiveUI 等技术栈搭建的后台系统',
+      theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'pwa/128.png',
+          sizes: '128x128',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/144.png',
+          sizes: '144x144',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/152.png',
+          sizes: '152x152',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/167.png',
+          sizes: '167x167',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/180.png',
+          sizes: '180x180',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/256.png',
+          sizes: '256x256',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa/512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any',
+        },
+        {
+          src: 'pwa/512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'maskable',
+        },
+      ],
+    },
+  }),
 ]
