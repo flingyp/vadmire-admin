@@ -37,7 +37,8 @@ interface ResponseOptions<K = unknown> {
   data: K
 }
 
-export const useRequest = async <T = unknown> (options: RequestOptions): Promise<ResponseOptions<T>> => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const useRequest = async <T = any> (options: RequestOptions): Promise<ResponseOptions<T>> => {
   const {
     url, method, params, data, responseType, headers,
   } = options
