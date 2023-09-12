@@ -37,7 +37,7 @@ interface ResponseOptions<K = unknown> {
   data: K
 }
 
-export const useRequest = async <T = unknown> (options: RequestOptions) => {
+export const useRequest = async <T = unknown> (options: RequestOptions): Promise<ResponseOptions<T>> => {
   const {
     url, method, params, data, responseType, headers,
   } = options
