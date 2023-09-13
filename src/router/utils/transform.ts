@@ -5,7 +5,7 @@ import NotFound from '~/views/common/NotFound.vue'
 import ContainerLayout from '~/layout/basic/ContainerLayout.vue'
 import SingleIframe from '~/components/common/SingleIframe.vue'
 
-const systemViews = import.meta.glob('../../views/**/*.vue')
+const systemViews = import.meta.glob('../../**/*.vue')
 
 /**
  * Judge whether slash start
