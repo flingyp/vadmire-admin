@@ -94,7 +94,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "lint-staged": {
-    "src/*": "pnpm run lint:fix"
+    "*": "pnpm run lint:fix"
   },
   "config": {
     "commitizen": {
