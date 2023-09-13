@@ -1,3 +1,4 @@
 {
-    "extends": "@flypeng"
+    "extends": "@flypeng",
+    "ignorePatterns": ["dev-dist/*"]
 }

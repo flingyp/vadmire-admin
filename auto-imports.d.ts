@@ -221,6 +221,7 @@ declare global {
   const useMousePressed: typeof import('@vueuse/core')['useMousePressed']
   const useMutationObserver: typeof import('@vueuse/core')['useMutationObserver']
   const useNaiveMessage: typeof import('./src/composables/common/useNaiveMessage/index')['useNaiveMessage']
+  const useNaiveNotification: typeof import('./src/composables/common/useNaiveNotification/index')['useNaiveNotification']
   const useNavigatorLanguage: typeof import('@vueuse/core')['useNavigatorLanguage']
   const useNetwork: typeof import('@vueuse/core')['useNetwork']
   const useNow: typeof import('@vueuse/core')['useNow']
@@ -540,6 +541,7 @@ declare module 'vue' {
     readonly useMousePressed: UnwrapRef<typeof import('@vueuse/core')['useMousePressed']>
     readonly useMutationObserver: UnwrapRef<typeof import('@vueuse/core')['useMutationObserver']>
     readonly useNaiveMessage: UnwrapRef<typeof import('./src/composables/common/useNaiveMessage/index')['useNaiveMessage']>
+    readonly useNaiveNotification: UnwrapRef<typeof import('./src/composables/common/useNaiveNotification/index')['useNaiveNotification']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
