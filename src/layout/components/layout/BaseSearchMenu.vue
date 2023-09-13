@@ -76,13 +76,17 @@ const inputKeyword = useDebounce(() => {
       </template>
     </NInput>
 
-    <Transition name="fade-scale">
+    <Transition
+      :duration="{ enter: 500, leave: 300 } "
+      enter-active-class="animate__animated animate__lightSpeedInRight"
+      leave-active-class="animate__animated animate__lightSpeedOutRight"
+    >
       <div
         v-show="isShowSearchMenu && searchMenuList.length"
         class="
           absolute w-64 z-50 p-2 top-[6%] rounded space-y-1
           border border-vBorderLight dark:border-vBorderDark bg-vPageBgColor dark:bg-vPageBgDarkColor
-      "
+        "
       >
         <template
           v-for="item in searchMenuList"

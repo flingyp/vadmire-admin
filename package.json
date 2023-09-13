@@ -19,6 +19,7 @@
     "@vueuse/core": "^9.13.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
+    "animate.css": "^4.1.1",
     "axios": "^1.5.0",
     "colord": "^2.9.3",
     "dayjs": "^1.11.9",
@@ -94,7 +95,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "lint-staged": {
-    "*": "pnpm run lint:fix"
+    "src/*": "pnpm run lint:fix"
   },
   "config": {
     "commitizen": {
