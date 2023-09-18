@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RecordSearchItem } from '~/types'
 
+defineOptions({ name: 'BaseTableSearch' })
 const props = defineProps({
   searchFormList: {
     type: Array<RecordSearchItem>,

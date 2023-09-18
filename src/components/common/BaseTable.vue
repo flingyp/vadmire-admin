@@ -3,7 +3,6 @@ import { RowData } from 'naive-ui/es/data-table/src/interface'
 import { BaseTableProps } from '~/types'
 
 defineOptions({ name: 'BaseTable' })
-
 const props = withDefaults(defineProps<BaseTableProps>(), {
   border: true,
   singleColumn: false,

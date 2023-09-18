@@ -1,17 +1,11 @@
 <script setup lang="ts">
-defineProps({
-  size: {
-    type: String as PropType<number | 'small' | 'medium' | 'large'>,
-    default: 'medium',
-  },
-  isLoading: {
-    type: Boolean,
-    default: false,
-  },
-  loadingText: {
-    type: String,
-    default: '',
-  },
+import { BaseSpinProps } from '~/types'
+
+defineOptions({ name: 'BaseSpin' })
+withDefaults(defineProps<BaseSpinProps>(), {
+  size: 'medium',
+  isLoading: false,
+  loadingText: '',
 })
 </script>
 

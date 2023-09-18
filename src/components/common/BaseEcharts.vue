@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import type { ECOption } from '~/utils'
 import { echarts } from '~/utils'
-
-interface EchartsProps {
-  options: ECOption
-}
+import { BaseEchartsProps } from '~/types'
 
 defineOptions({ name: 'Echarts' })
-const props = defineProps<EchartsProps>()
+const props = defineProps<BaseEchartsProps>()
 
 const { isDark } = useTheme()
 const chartRef = ref<HTMLElement>()

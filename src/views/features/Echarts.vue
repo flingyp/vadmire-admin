@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Echarts from '~/components/common/Echarts.vue'
+import BaseEcharts from '~/components/common/BaseEcharts.vue'
 
 const { option: chartOne } = useEcharts({
   title: {
@@ -325,19 +325,19 @@ const { option: chartFive } = useEcharts({
 
 <template>
   <div class="grid-cols-1 grid md:grid-cols-2 gap-4 content-center justify-center">
-    <Echarts
+    <BaseEcharts
       :options="chartOne"
       class="w-full h-96"
     />
-    <Echarts
+    <BaseEcharts
       :options="chartTwo"
       class="w-full h-96"
     />
-    <Echarts
+    <BaseEcharts
       :options="chartThree"
       class="w-full h-96"
     />
-    <Echarts
+    <BaseEcharts
       :options="chartFive"
       class="w-full h-96"
     />

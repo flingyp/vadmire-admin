@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { BaseTableHandleProps } from '~/types'
 
+defineOptions({ name: 'BaseTableHandle' })
 withDefaults(defineProps<BaseTableHandleProps>(), {
   value: '',
 })
-
 defineEmits(['add', 'into', 'export'])
 </script>
 
