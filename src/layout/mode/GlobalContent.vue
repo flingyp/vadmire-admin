@@ -47,4 +47,10 @@ provide(IS_RELOAD_CONTENT, isReloadContent)
       </template>
     </NSpin>
   </div>
+
+  <NBackTop :right="40">
+    <div class="text-xl">
+      <icon-ph:rocket-bold />
+    </div>
+  </NBackTop>
 </template>

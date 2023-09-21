@@ -129,6 +129,9 @@ devDependencies:
   '@iconify-json/openmoji':
     specifier: ^1.1.30
     version: 1.1.30
+  '@iconify-json/ph':
+    specifier: ^1.1.6
+    version: 1.1.6
   '@iconify-json/ri':
     specifier: ^1.1.12
     version: 1.1.12
@@ -2064,6 +2067,12 @@ packages:
 
   /@iconify-json/openmoji@1.1.30:
     resolution: {integrity: sha512-hkx1D69P8YrfsDOGaL0lEoEnJwujlVeB2UUYBPiMS4ACskcpg7wVDkxlXWHykIyU5rZkIXGF34GUPtaC/U0vuA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ph@1.1.6:
+    resolution: {integrity: sha512-dexzEndlXQX/sbQhnEpA94Pby6JCGV2tZToSGcPPQpbilDGyk5VMd0ymusYoocRAn6+qLpGRvMoz5XFKGqP+VA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
