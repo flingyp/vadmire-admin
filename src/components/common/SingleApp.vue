@@ -22,12 +22,15 @@ const { isLoading, loadingText } = inject('loading') as { isLoading: boolean, lo
       <NNotificationProvider placement="bottom-right">
         <NDialogProvider>
           <NMessageProvider>
+            <slot v-if="!isLoading" />
+
             <BaseSpin
+              v-else
+              class="w-screen h-screen overflow-hidden"
+              size="medium"
               :is-loading="isLoading"
               :loading-text="loadingText"
-            >
-              <slot />
-            </BaseSpin>
+            />
           </NMessageProvider>
         </NDialogProvider>
       </NNotificationProvider>

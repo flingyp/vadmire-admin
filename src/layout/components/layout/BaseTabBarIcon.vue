@@ -2,6 +2,7 @@
 import { IS_RELOAD_CONTENT } from '~/vadmire.config'
 
 const isReloadContent = inject<Ref<boolean>>(IS_RELOAD_CONTENT)
+const { setLoading: setGlobalLoading } = inject('loading') as { setLoading: (value: boolean) => void }
 
 const route = useRoute()
 const router = useRouter()
@@ -18,6 +19,10 @@ const tabBarSettingOption = computed(() => [
     key: 'RELOAD',
   },
   {
+    label: '重新加载系统',
+    key: 'RELOAD_SYSTEM',
+  },
+  {
     label: '关闭当前标签',
     key: 'CLOSE_CURRENT_TABMENU',
     disabled: isDisabled.value,
@@ -29,13 +34,18 @@ const tabBarSettingOption = computed(() => [
   },
 ])
 
-type TabBarSettingKey = 'RELOAD' | 'CLOSE_CURRENT_TABMENU' | 'CLOSE_OTHER_TABMENU'
+type TabBarSettingKey = 'RELOAD' | 'RELOAD_SYSTEM'| 'CLOSE_CURRENT_TABMENU' | 'CLOSE_OTHER_TABMENU'
 const clickTabBarSetting = (key: TabBarSettingKey) => {
   const routerName = route.name as string
   if (key === 'RELOAD') {
     isReloadContent!.value = true
     setTimeout(() => {
       isReloadContent!.value = false
+    }, 1000)
+  } else if (key === 'RELOAD_SYSTEM') {
+    setGlobalLoading(true)
+    setTimeout(() => {
+      setGlobalLoading(false)
     }, 1000)
   } else if (key === 'CLOSE_CURRENT_TABMENU') {
     // click to delete tab menu
