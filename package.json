@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@flypeng/tool": "^5.3.2",
+    "@logicflow/core": "^1.2.15",
+    "@logicflow/extension": "^1.2.16",
     "@vueuse/core": "^9.13.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",

@@ -183,6 +183,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'logicFlow',
+        name: 'Feature_LogicFlow',
+        component: '~/views/features/LogicFlow.vue',
+        meta: {
+          text: '$t("route.commonLogicFlow")',
+          icon: 'carbon:flow',
+        },
+      },
+      {
         path: '',
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',

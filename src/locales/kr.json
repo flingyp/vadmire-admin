@@ -22,7 +22,8 @@
     "commonAuthorityManagement": "권한 관리",
     "commonSuperAdministrator": "슈퍼 관리자",
     "commonGeneralAdministrator": "일반 관리자",
-    "commonButtonPermissionManagement": "버튼 권한 관리"
+    "commonButtonPermissionManagement": "버튼 권한 관리",
+    "commonLogicFlow": "논리 흐름"
   },
   "setting": {
     "systemSetting": "시스템 설정",

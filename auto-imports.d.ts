@@ -207,6 +207,7 @@ declare global {
   const useLink: typeof import('vue-router')['useLink']
   const useLoading: typeof import('./src/composables/common/useLoading/index')['useLoading']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
+  const useLogicFlow: typeof import('./src/composables/common/useLogicFlow/index')['useLogicFlow']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
@@ -527,6 +528,7 @@ declare module 'vue' {
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLoading: UnwrapRef<typeof import('./src/composables/common/useLoading/index')['useLoading']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
+    readonly useLogicFlow: UnwrapRef<typeof import('./src/composables/common/useLogicFlow/index')['useLogicFlow']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>

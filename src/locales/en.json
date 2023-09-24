@@ -22,7 +22,8 @@
     "commonAuthorityManagement": "Authority Management",
     "commonSuperAdministrator": "Super Administrator",
     "commonGeneralAdministrator": "General Administrator",
-    "commonButtonPermissionManagement": "Button Permission Management"
+    "commonButtonPermissionManagement": "Button Permission Management",
+    "commonLogicFlow": "LogicFlow"
   },
   "setting": {
     "systemSetting": "System Setting",
