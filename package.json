@@ -8,8 +8,8 @@
     "build:mock": "vite build --mode development",
     "build": "vite build --mode production",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && stylelint \"**/*.{css,scss,less}\"",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,scss,less}\" --fix",
     "release": "standard-version",
     "prepare": "husky install",
     "commit": "git-cz"
@@ -48,7 +48,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@flypeng/eslint-config": "^0.0.13",
+    "@flypeng/eslint-config": "^0.0.16",
+    "@flypeng/stylelint-config": "^0.0.16",
     "@iconify-json/ant-design": "^1.1.10",
     "@iconify-json/carbon": "^1.1.21",
     "@iconify-json/ep": "^1.1.12",
@@ -81,6 +82,7 @@
     "rollup-plugin-external-globals": "^0.8.0",
     "sass": "^1.66.1",
     "standard-version": "^9.5.0",
+    "stylelint": "^15.10.3",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.14.4",

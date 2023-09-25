@@ -1,21 +1,25 @@
 .loading-text {
   display: none;
 }
+
 .loading {
   user-select: none;
-  font-family:arial;
+  font-family: Arial, sans-serif;
   font-size:7px;
   animation:blink .9s ease-in-out infinite;
 }
+
 .spa-loading-svg {
   stroke-dasharray:17;
   animation:dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
 }
+
 @keyframes dash {
   to{
     stroke-dashoffset:136;
   }
 }
+
 @keyframes blink {
   50%{
     opacity:0;

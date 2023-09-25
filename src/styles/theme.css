@@ -1,10 +1,10 @@
 html {
-  background: #ffffff;
-  color: #000000;
+  background: #fff;
+  color: #000;
 }
 
 html.dark {
   background: #2c2c2c;
-  color: #ffffff;
+  color: #fff;
 }
 
