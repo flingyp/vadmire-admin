@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/flingyp/vadmire-admin/compare/v1.6.0...v1.7.0) (2023-09-26)
+
+
+### Features
+
+* add Authorized common component ([9f4dea8](https://github.com/flingyp/vadmire-admin/commit/9f4dea83f8f7ea9ec6d1972f8384e48bf4812534))
+* add NBackTop component ([88136e7](https://github.com/flingyp/vadmire-admin/commit/88136e7015dba20e3afd0d0078357e4dc8bd9024))
+* add network online checking ([549cb3d](https://github.com/flingyp/vadmire-admin/commit/549cb3d2fedbc9b52434ebe259a9e970e12e52ab))
+* add tabBar item to reload system ([ab580c9](https://github.com/flingyp/vadmire-admin/commit/ab580c9bf59a9d52cff5135860b30f6bd1f6ee06))
+* add useConvert composable to convert data structure from api ([cf33e1f](https://github.com/flingyp/vadmire-admin/commit/cf33e1fcfe5cc2a37c30ee3485875107d6aae382))
+* BaseSearchMenu transition effect ([7d0f734](https://github.com/flingyp/vadmire-admin/commit/7d0f734540b9b380de737a1e16a0b77def9158c1))
+* integrate @flypeng/stylelint-config to check style ([51b1876](https://github.com/flingyp/vadmire-admin/commit/51b1876598956165da7e0b9f5cad450b7fc0794e))
+* integrate LogicFlow plugin ([5954aec](https://github.com/flingyp/vadmire-admin/commit/5954aec84ddf88a4a33abd61ca118e3ea08ef27a))
+* integrate vite-plugin-pwa plugin ([dd74d6b](https://github.com/flingyp/vadmire-admin/commit/dd74d6bc01fa052e4617a8ba16b09276a29db51d))
+
+
+### Bug Fixes
+
+* match sfc files ([1394ee2](https://github.com/flingyp/vadmire-admin/commit/1394ee2882589d72b9cde825dcf487967d7139c1))
+
 ## [1.6.0](https://github.com/flingyp/vadmire-admin/compare/v1.5.0...v1.6.0) (2023-09-08)
 
 
