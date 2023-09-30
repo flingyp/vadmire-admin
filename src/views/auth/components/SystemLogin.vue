@@ -41,6 +41,15 @@ const getSignInAuth = async () => {
     setLoading(false)
   }, 1000)
 }
+const keyboardLoginEvent = async (event: KeyboardEvent) => {
+  if (event.key === 'Enter') await getSignInAuth()
+}
+onMounted(() => {
+  window.addEventListener('keydown', keyboardLoginEvent)
+})
+onUnmounted(() => {
+  window.removeEventListener('keydown', keyboardLoginEvent)
+})
 
 // eslint-disable-next-line no-unused-vars
 const switchSign = inject('switchSign') as (value: boolean) => void
@@ -93,7 +102,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
               block
               type="primary"
               :loading="isSignInLoading"
-              @click="getSignInAuth"
+              @click.enter="getSignInAuth"
             >
               <template #icon>
                 <icon-mdi:shield-lock-outline />
