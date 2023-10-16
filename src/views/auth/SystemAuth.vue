@@ -3,6 +3,9 @@ import SystemLogin from './components/SystemLogin.vue'
 import SystemRegister from './components/SystemRegister.vue'
 import SystemTip from './components/Tip.vue'
 
+const { toggleDark } = useTheme()
+const { themeMode } = storeToRefs(useVAdmireConfigStore())
+
 const isAuthLoin = ref(true)
 const rotateYComputed = computed(() => {
   if (isAuthLoin.value) {
@@ -39,6 +42,17 @@ provide('switchSign', switchSign)
     </div>
 
     <SystemTip />
+  </div>
+
+  <div class="absolute text-2xl cursor-pointer top-10 right-10">
+    <icon-line-md:sunny-outline-to-moon-alt-loop-transition
+      v-if="themeMode === 'LIGHT'"
+      @click="toggleDark(true)"
+    />
+    <icon-line-md:sunny-outline-loop
+      v-else
+      @click="toggleDark(false)"
+    />
   </div>
 </template>
 
