@@ -1,2 +1,5 @@
 node_modules
+public
 dist
+dev-dist
+*.d.ts

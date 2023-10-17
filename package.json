@@ -9,7 +9,9 @@
     "build": "vite build --mode production",
     "preview": "vite preview",
     "lint": "eslint . && stylelint \"**/*.{css,scss,less}\"",
-    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,scss,less}\" --fix",
+    "lint:eslint": "eslint . --fix",
+    "lint:style": "stylelint \"**/*.{css,scss,less}\" --fix",
+    "lint:fix": "pnpm run lint:eslint && pnpm run lint:style",
     "release": "standard-version",
     "prepare": "husky install",
     "commit": "git-cz"
@@ -100,7 +102,8 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "lint-staged": {
-    "src/*": "pnpm run lint:fix"
+    "*.!{css,scss,less}": "pnpm run lint:eslint",
+    "*.{css,scss,less}": "pnpm run lint:style"
   },
   "config": {
     "commitizen": {

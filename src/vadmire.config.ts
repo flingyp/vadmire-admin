@@ -22,7 +22,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     headerHeight: 64,
     footerHeight: 64,
     siderWidth: 272,
-    tabBarHeight: 45,
+    tabBarHeight: 40,
     isCollapsedSiderWidth: 60,
     pageTransition: 'fade',
     fixedTabBar: false,
