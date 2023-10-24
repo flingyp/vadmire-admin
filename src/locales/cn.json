@@ -23,7 +23,8 @@
     "commonSuperAdministrator": "超级管理员",
     "commonGeneralAdministrator": "普通管理员",
     "commonButtonPermissionManagement": "按钮权限管理",
-    "commonLogicFlow": "流程图"
+    "commonLogicFlow": "流程图",
+    "commonWatermark": "水印"
   },
   "setting": {
     "systemSetting": "系统设置",

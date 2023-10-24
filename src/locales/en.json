@@ -23,7 +23,8 @@
     "commonSuperAdministrator": "Super Administrator",
     "commonGeneralAdministrator": "General Administrator",
     "commonButtonPermissionManagement": "Button Permission Management",
-    "commonLogicFlow": "LogicFlow"
+    "commonLogicFlow": "LogicFlow",
+    "commonWatermark": "Watermark"
   },
   "setting": {
     "systemSetting": "System Setting",

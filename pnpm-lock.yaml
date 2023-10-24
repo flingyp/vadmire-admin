@@ -10,6 +10,9 @@ dependencies:
   '@logicflow/extension':
     specifier: ^1.2.16
     version: 1.2.16(ts-node@10.9.1)
+  '@pansy/vue-watermark':
+    specifier: ^1.2.0
+    version: 1.2.0(vue@3.3.4)
   '@vueuse/core':
     specifier: ^9.13.0
     version: 9.13.0(vue@3.3.4)
@@ -2545,6 +2548,24 @@ packages:
   /@nuxt/ui-templates@1.3.1:
     resolution: {integrity: sha512-5gc02Pu1HycOVUWJ8aYsWeeXcSTPe8iX8+KIrhyEtEoOSkY0eMBuo0ssljB8wALuEmepv31DlYe5gpiRwkjESA==}
     dev: true
+
+  /@pansy/vue-watermark@1.2.0(vue@3.3.4):
+    resolution: {integrity: sha512-FZPSRMUHKq6cTGEsI7WNDoQarON3ufhvFX+pLfVlRluXNYNIueARjV7Uar8JN+sm2HqI0kolPmMdla+enrjfQA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.14 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@pansy/watermark': 2.3.0
+      vue: 3.3.4
+      vue-demi: 0.14.6(vue@3.3.4)
+    dev: false
+
+  /@pansy/watermark@2.3.0:
+    resolution: {integrity: sha512-eVq5XD0BGkAkp0I36WgupRJOnEf+d3mJzy4HJUOUx4XzpZAk6fCRu1OKodTx+64FegEhfAMr7QpbUMTmdXrDPQ==}
+    dev: false
 
   /@rollup/plugin-babel@5.3.1(@babel/core@7.23.2)(rollup@2.79.1):
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}

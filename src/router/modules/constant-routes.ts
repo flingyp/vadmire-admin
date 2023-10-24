@@ -192,6 +192,15 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
         },
       },
       {
+        path: 'watermark',
+        name: 'Feature_Watermark',
+        component: '~/views/features/Watermark.vue',
+        meta: {
+          text: '$t("route.commonWatermark")',
+          icon: 'material-symbols:branding-watermark-outline',
+        },
+      },
+      {
         path: '',
         name: 'GuideIndex',
         component: '~/views/features/Guide.vue',
