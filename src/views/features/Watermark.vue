@@ -6,6 +6,7 @@ const { contentContainerHeight, themeMode } = storeToRefs(useVAdmireConfigStore(
 const watermarkOptions = ref({
   text: 'VAdmire Admin',
   fontColor: '#000',
+  zIndex: 1,
 })
 
 watch(() => themeMode.value, (newVal) => {
@@ -14,7 +15,7 @@ watch(() => themeMode.value, (newVal) => {
   } else {
     watermarkOptions.value.fontColor = '#fff'
   }
-})
+}, { immediate: true })
 
 </script>
 
