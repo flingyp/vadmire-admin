@@ -1,10 +1,19 @@
 <script setup lang="ts">
 import { Watermark } from '@pansy/vue-watermark'
 
-const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())
+const { contentContainerHeight, themeMode } = storeToRefs(useVAdmireConfigStore())
 
 const watermarkOptions = ref({
   text: 'VAdmire Admin',
+  fontColor: '#000',
+})
+
+watch(() => themeMode.value, (newVal) => {
+  if (newVal === 'LIGHT') {
+    watermarkOptions.value.fontColor = '#000'
+  } else {
+    watermarkOptions.value.fontColor = '#fff'
+  }
 })
 
 </script>
