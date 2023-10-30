@@ -56,7 +56,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
 </script>
 
 <template>
-  <div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="flex items-center justify-center shadow rounded py-12 px-4 sm:px-6 lg:px-12">
     <div class="max-w-md w-full space-y-4">
       <div>
         <img
@@ -72,7 +72,7 @@ const switchSign = inject('switchSign') as (value: boolean) => void
         </p>
       </div>
 
-      <div class="shadow px-8 py-6 rounded-md">
+      <div class="px-8 py-6 rounded-md">
         <NForm
           ref="signInRef"
           size="medium"
