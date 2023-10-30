@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/flingyp/vadmire-admin/compare/v1.7.0...v1.8.0) (2023-10-30)
+
+
+### Features
+
+* add watermark plugin ([352a4d2](https://github.com/flingyp/vadmire-admin/commit/352a4d269893b6a894ea598ee4635b74dc0c40e8))
+* login add keyboard event ([3eab077](https://github.com/flingyp/vadmire-admin/commit/3eab0776ba565dcee60bab0a3b7b385789743df4))
+* Naive UI language config when switch language ([b087f10](https://github.com/flingyp/vadmire-admin/commit/b087f10fbeef33fcb375bc7efa1e2e30b9dc8c48))
+* SystemAuth page add theme switch icons ([8d7fc1f](https://github.com/flingyp/vadmire-admin/commit/8d7fc1fa06d79daaeb7e6a6cedf2976c810eb627))
+* Watermark text color adapt system dark mode ([61cc00d](https://github.com/flingyp/vadmire-admin/commit/61cc00dc20db195a652a860ecbd132730088e6ea))
+
+
+### Bug Fixes
+
+* adapt watermark zIndex value ([13a3d7d](https://github.com/flingyp/vadmire-admin/commit/13a3d7d274be44e8c8e1ed8a48726f85c4be934f))
+* adjust contentContainerHeight variable content height ([172331e](https://github.com/flingyp/vadmire-admin/commit/172331e8f63de5f283eee7520742b1a986b31ba7))
+
 ## [1.7.0](https://github.com/flingyp/vadmire-admin/compare/v1.6.0...v1.7.0) (2023-09-26)
 
 
