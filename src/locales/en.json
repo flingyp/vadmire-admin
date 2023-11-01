@@ -24,7 +24,8 @@
     "commonGeneralAdministrator": "General Administrator",
     "commonButtonPermissionManagement": "Button Permission Management",
     "commonLogicFlow": "LogicFlow",
-    "commonWatermark": "Watermark"
+    "commonWatermark": "Watermark",
+    "commonNaiveUIComponent": "Commo Components"
   },
   "setting": {
     "systemSetting": "System Setting",

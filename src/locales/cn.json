@@ -24,7 +24,8 @@
     "commonGeneralAdministrator": "普通管理员",
     "commonButtonPermissionManagement": "按钮权限管理",
     "commonLogicFlow": "流程图",
-    "commonWatermark": "水印"
+    "commonWatermark": "水印",
+    "commonNaiveUIComponent": "常见组件"
   },
   "setting": {
     "systemSetting": "系统设置",
