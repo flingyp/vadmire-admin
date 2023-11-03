@@ -1,4 +1,4 @@
 {
-    "extends": "@flypeng",
+    "extends": "@flypeng/eslint-config",
     "ignorePatterns": ["dev-dist/*"]
 }
