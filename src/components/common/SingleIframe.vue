@@ -1,15 +1,15 @@
 <script setup lang="ts">
-defineOptions({ name: 'SingleIframe' })
+defineOptions({ name: 'SingleIframe' });
 
-const route = useRoute()
-const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())
-const iframeLink = ref(route.meta.url || '')
+const route = useRoute();
+const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore());
+const iframeLink = ref(route.meta.url || '');
 </script>
 
 <template>
   <iframe
     class="!p-0"
-    :style="{height: contentContainerHeight}"
+    :style="{ height: contentContainerHeight }"
     :src="iframeLink"
     allowpaymentrequest
     allowfullscreen

@@ -1,7 +1,7 @@
-import { useWindowSize } from '@vueuse/core'
-import { useThrottle } from '@flypeng/tool/browser'
+import { useWindowSize } from '@vueuse/core';
+import { useThrottle } from '@flypeng/tool/browser';
 
-const { width, height } = useWindowSize()
+const { width, height } = useWindowSize();
 
 /**
  * SM: 640
@@ -11,5 +11,5 @@ const { width, height } = useWindowSize()
  * 2XL: 1536
  */
 export function useMonitorWindow(callback: Function) {
-  watch([width, height], useThrottle(callback, 200))
+  watch([width, height], useThrottle(callback, 200));
 }

@@ -1,4 +1,4 @@
-import { ECOption } from '~/utils'
+import { ECOption } from '~/utils';
 
 /**
  * Used to initialize chart options composable
@@ -6,8 +6,8 @@ import { ECOption } from '~/utils'
  * @returns
  */
 export const useEcharts = (defaultOption: ECOption) => {
-  const option: ECOption = defaultOption
+  const option: ECOption = defaultOption;
   return {
     option,
-  }
-}
+  };
+};

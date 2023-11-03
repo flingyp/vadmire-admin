@@ -1,6 +1,6 @@
-import { App } from 'vue'
+import { App } from 'vue';
 
-const { isLoading, setLoading } = useLoading(false)
+const { isLoading, setLoading } = useLoading(false);
 
 /**
  * Config app provide global property
@@ -11,5 +11,5 @@ export const useAppProvide = (app: App) => {
     isLoading,
     setLoading,
     loadingText: '加载中...',
-  })
-}
+  });
+};

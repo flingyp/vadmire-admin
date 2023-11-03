@@ -1,27 +1,25 @@
 <script setup lang="ts">
-import { DataTableColumn, NButton } from 'naive-ui'
-import BaseTable from '~/components/common/BaseTable.vue'
-import BaseTableHandle from '~/components/common/BaseTableHandle.vue'
-import BaseTableSearch from '~/components/common/BaseTableSearch.vue'
-import { getBaseTableData } from '~/requests'
-import { RecordSearchItem } from '~/types'
+import { DataTableColumn, NButton } from 'naive-ui';
+import BaseTable from '~/components/common/BaseTable.vue';
+import BaseTableHandle from '~/components/common/BaseTableHandle.vue';
+import BaseTableSearch from '~/components/common/BaseTableSearch.vue';
+import { getBaseTableData } from '~/requests';
+import { RecordSearchItem } from '~/types';
 
 interface PersonInfo {
-  name: string
-  birthday: string
-  address: string
-  postalCode: string
-  sex: string
+  name: string;
+  birthday: string;
+  address: string;
+  postalCode: string;
+  sex: string;
 }
 
-const { success, error, info } = useNaiveMessage()
+const { success, error, info } = useNaiveMessage();
 
 // search input bind value
-const searchValue = ref('')
+const searchValue = ref('');
 
-const {
-  isLoading, tableData, pagination, getTableData,
-} = useTable<PersonInfo>()
+const { isLoading, tableData, pagination, getTableData } = useTable<PersonInfo>();
 
 // basic table columns list
 const baseTableColumns: Array<DataTableColumn> = [
@@ -71,7 +69,7 @@ const baseTableColumns: Array<DataTableColumn> = [
               marginRight: '8px',
             },
             onClick: () => {
-              success(`点击更新： ${row.name}`)
+              success(`点击更新： ${row.name}`);
             },
           },
           {
@@ -85,40 +83,43 @@ const baseTableColumns: Array<DataTableColumn> = [
             tertiary: true,
             size: 'small',
             onClick: () => {
-              error(`点击删除： ${row.name}`)
+              error(`点击删除： ${row.name}`);
             },
           },
           {
             default: () => '删除',
           },
         ),
-      ]
+      ];
     },
   },
-]
+];
 
 // get table data
-const getData = async () => getTableData(() => getBaseTableData({
-  page: pagination.value.page ?? 1,
-  size: pagination.value.pageSize ?? 15,
-}))
+const getData = async () =>
+  getTableData(() =>
+    getBaseTableData({
+      page: pagination.value.page ?? 1,
+      size: pagination.value.pageSize ?? 15,
+    }),
+  );
 
 // onChange method
 pagination.value.onChange = async (page: number) => {
-  pagination.value.page = page
-  await getData()
-}
+  pagination.value.page = page;
+  await getData();
+};
 
 // onUpdatePageSize method
 pagination.value.onUpdatePageSize = async (pageSize: number) => {
-  pagination.value.pageSize = pageSize
-  await getData()
-}
+  pagination.value.pageSize = pageSize;
+  await getData();
+};
 // add table data
-const addTableData = () => info('点击新增')
+const addTableData = () => info('点击新增');
 
 // checked row keys
-const checkedRowKeys = (id: string) => (success(`选中行所绑定的ID值: ${id}`))
+const checkedRowKeys = (id: string) => success(`选中行所绑定的ID值: ${id}`);
 
 // config search from list
 const searchFormList = ref<RecordSearchItem[]>([
@@ -174,17 +175,17 @@ const searchFormList = ref<RecordSearchItem[]>([
     placeholder: '请输入邮政编码',
     value: '',
   },
-])
-const clickSearch = () => (info('点击搜索'))
-const clickReset = () => (info('点击重置'))
+]);
+const clickSearch = () => info('点击搜索');
+const clickReset = () => info('点击重置');
 
-const clickExport = () => (info('点击导出'))
-const clickInto = () => (info('点击导入'))
+const clickExport = () => info('点击导出');
+const clickInto = () => info('点击导入');
 
 onMounted(async () => {
-  const { total } = await getData()
-  pagination.value.pageCount = total
-})
+  const { total } = await getData();
+  pagination.value.pageCount = total;
+});
 </script>
 
 <template>
@@ -210,12 +211,7 @@ onMounted(async () => {
       </template>
       <template #handle>
         <div class="mb-2 flex items-center justify-end space-x-1">
-          <BaseTableHandle
-            v-model:value="searchValue"
-            @add="addTableData"
-            @export="clickExport"
-            @into="clickInto"
-          />
+          <BaseTableHandle v-model:value="searchValue" @add="addTableData" @export="clickExport" @into="clickInto" />
         </div>
       </template>
     </BaseTable>

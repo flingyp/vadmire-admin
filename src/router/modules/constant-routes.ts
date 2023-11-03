@@ -1,5 +1,5 @@
-import { VAdmireRoute } from 'vue-router'
-import { LOGIN_ROUTE_NAME, NOT_FOUND_404_ROUTE_NAME } from '~/vadmire.config'
+import { VAdmireRoute } from 'vue-router';
+import { LOGIN_ROUTE_NAME, NOT_FOUND_404_ROUTE_NAME } from '~/vadmire.config';
 
 export const CONSTANT_ROUTES: VAdmireRoute[] = [
   {
@@ -326,7 +326,7 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
       },
     ],
   },
-]
+];
 
 export const MATCH_404_ROUTES: VAdmireRoute = {
   path: '/:catchAll(.*)',
@@ -335,4 +335,4 @@ export const MATCH_404_ROUTES: VAdmireRoute = {
   meta: {
     isShow: false,
   },
-}
+};

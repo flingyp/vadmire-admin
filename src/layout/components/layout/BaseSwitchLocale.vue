@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser'
-import { LOCAL_SYSTEM_KEY } from '~/vadmire.config'
-import { Locales } from '~/types'
-import BaseHeaderItem from './BaseHeaderItem.vue'
+import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser';
+import { LOCAL_SYSTEM_KEY } from '~/vadmire.config';
+import { Locales } from '~/types';
+import BaseHeaderItem from './BaseHeaderItem.vue';
 
-const { locale } = useI18n()
-const vadmireConfigStore = useVAdmireConfigStore()
+const { locale } = useI18n();
+const vadmireConfigStore = useVAdmireConfigStore();
 
 const localeOption = computed(() => [
   {
@@ -20,31 +20,27 @@ const localeOption = computed(() => [
     label: '한국어',
     key: 'ko_KR',
   },
-])
+]);
 
 /**
  * Switch Language
  * @param key
  */
 const clickSwitchLocale = (key: Locales) => {
-  const localVAdmireConfig = JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}')
+  const localVAdmireConfig = JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}');
 
-  locale.value = key
-  vadmireConfigStore.defaultLocales = key
+  locale.value = key;
+  vadmireConfigStore.defaultLocales = key;
 
-  changeDayjsLocales(key)
+  changeDayjsLocales(key);
 
-  localVAdmireConfig.defaultLocales = key
-  useSetLocalKey(LOCAL_SYSTEM_KEY, JSON.stringify(localVAdmireConfig))
-}
+  localVAdmireConfig.defaultLocales = key;
+  useSetLocalKey(LOCAL_SYSTEM_KEY, JSON.stringify(localVAdmireConfig));
+};
 </script>
 
 <template>
-  <NDropdown
-    trigger="hover"
-    :options="localeOption"
-    @select="clickSwitchLocale"
-  >
+  <NDropdown trigger="hover" :options="localeOption" @select="clickSwitchLocale">
     <BaseHeaderItem>
       <icon-carbon:ibm-watson-language-translator class="cursor-pointer" />
     </BaseHeaderItem>

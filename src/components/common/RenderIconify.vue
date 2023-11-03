@@ -9,9 +9,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const icon = toRef(props, 'icon')
+    const icon = toRef(props, 'icon');
     // return render function
-    return useRenderIcon(icon.value)
+    return useRenderIcon(icon.value);
   },
-})
+});
 </script>

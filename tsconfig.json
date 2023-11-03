@@ -16,10 +16,7 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "types": [
-      "unplugin-icons/types/vue",
-      "naive-ui/volar"
-    ]
+    "types": ["unplugin-icons/types/vue", "naive-ui/volar"]
   },
   "include": ["src/**/*", "mock/**/*", "auto-imports.d.ts", "components.d.ts"],
   "exclude": ["dist", "node_modules"],

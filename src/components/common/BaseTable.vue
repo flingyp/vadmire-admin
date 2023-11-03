@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RowData } from 'naive-ui/es/data-table/src/interface'
-import { BaseTableProps } from '~/types'
+import { RowData } from 'naive-ui/es/data-table/src/interface';
+import { BaseTableProps } from '~/types';
 
-defineOptions({ name: 'BaseTable' })
+defineOptions({ name: 'BaseTable' });
 const props = withDefaults(defineProps<BaseTableProps>(), {
   border: true,
   singleColumn: false,
@@ -17,15 +17,15 @@ const props = withDefaults(defineProps<BaseTableProps>(), {
   searchValue: '',
   scrollX: undefined,
   isEnableVirtualScroll: false,
-})
-defineEmits(['checkedRowKeys'])
+});
+defineEmits(['checkedRowKeys']);
 
 const virtualScroll = computed(() => {
-  if (props.isEnableVirtualScroll && props.maxHeight) return true
-  return false
-})
+  if (props.isEnableVirtualScroll && props.maxHeight) return true;
+  return false;
+});
 
-const selectedRowKeys = (row: RowData) => row.id
+const selectedRowKeys = (row: RowData) => row.id;
 </script>
 
 <template>

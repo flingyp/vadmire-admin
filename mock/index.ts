@@ -1,5 +1,5 @@
 export interface MockResponse<K = unknown> {
-  statusCode: number
-  statusText: string
-  data: K
+  statusCode: number;
+  statusText: string;
+  data: K;
 }

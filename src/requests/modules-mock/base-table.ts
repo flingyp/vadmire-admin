@@ -1,12 +1,12 @@
-import { AUTH_TOKEN } from '~/vadmire.config'
+import { AUTH_TOKEN } from '~/vadmire.config';
 
 interface TableParams {
-  page: number
-  size: number
+  page: number;
+  size: number;
 }
 
 export const getBaseTableData = async (params: TableParams) => {
-  const { page, size } = params
+  const { page, size } = params;
   return useRequest({
     url: '/feature/table',
     method: 'post',
@@ -15,5 +15,5 @@ export const getBaseTableData = async (params: TableParams) => {
       size,
     },
     headers: { Authorization: sessionStorage.getItem(AUTH_TOKEN) },
-  })
-}
+  });
+};

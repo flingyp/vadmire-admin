@@ -6,4 +6,4 @@
  *    const resResult = useConvert<number>(() => 1)
  * @returns
  */
-export const useConvert = <T> (callback: () => T): T => callback()
+export const useConvert = <T>(callback: () => T): T => callback();

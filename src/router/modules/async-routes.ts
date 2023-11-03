@@ -1,4 +1,4 @@
-import { VAdmireRoute } from 'vue-router'
+import { VAdmireRoute } from 'vue-router';
 
 export const ASYNC_ROUTES: VAdmireRoute[] = [
   {
@@ -41,4 +41,4 @@ export const ASYNC_ROUTES: VAdmireRoute[] = [
       },
     ],
   },
-]
+];

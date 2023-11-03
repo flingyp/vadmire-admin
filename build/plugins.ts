@@ -1,17 +1,17 @@
-import { PluginOption } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { viteMockServe as ViteMockServe } from 'vite-plugin-mock'
-import { spaLoading } from 'vite-plugin-spa-loading'
-import clearConsole from 'vite-plugin-clear-console'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import viteCDNPlugin from 'vite-plugin-cdn-import'
-import { VitePWA } from 'vite-plugin-pwa'
+import { PluginOption } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { viteMockServe as ViteMockServe } from 'vite-plugin-mock';
+import { spaLoading } from 'vite-plugin-spa-loading';
+import clearConsole from 'vite-plugin-clear-console';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import viteCDNPlugin from 'vite-plugin-cdn-import';
+import { VitePWA } from 'vite-plugin-pwa';
 
-import { name, version } from '../package.json'
+import { name, version } from '../package.json';
 
 /**
  * Vite config plugins
@@ -35,19 +35,9 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
   }),
   // Auto import api
   AutoImport({
-    imports: [
-      'vue',
-      'vue-router',
-      'vue-i18n',
-      'pinia',
-      '@vueuse/core',
-    ],
+    imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
     dts: 'auto-imports.d.ts',
-    dirs: [
-      'src/utils/**',
-      'src/store/**',
-      'src/composables/**',
-    ],
+    dirs: ['src/utils/**', 'src/store/**', 'src/composables/**'],
     vueTemplate: true,
   }),
   // Auto import component
@@ -56,10 +46,12 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
     dts: 'components.d.ts',
-    types: [{
-      from: 'vue-router',
-      names: ['RouterLink', 'RouterView'],
-    }],
+    types: [
+      {
+        from: 'vue-router',
+        names: ['RouterLink', 'RouterView'],
+      },
+    ],
     resolvers: [
       IconsResolver({
         prefix: 'icon',
@@ -90,7 +82,7 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
           'padding: 2px 5px; border-radius: 3px 0 0 3px; color: #fff; background: #606060; font-weight: bold;',
           'padding: 2px 5px; border-radius: 0 3px 3px 0; color: #fff; background: #42c02e; font-weight: bold;')
         `,
-        'console.log(\'%cGithub repository: https://github.com/flingyp/vadmire-admin\', \'color: #1c6ce3;\')',
+        "console.log('%cGithub repository: https://github.com/flingyp/vadmire-admin', 'color: #1c6ce3;')",
       ],
     },
   }),
@@ -184,4 +176,4 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
       ],
     },
   }),
-]
+];

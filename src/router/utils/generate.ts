@@ -1,6 +1,6 @@
-import { useCommonType, useDeepClone } from '@flypeng/tool/browser'
-import { VAdmireMenuOption } from 'naive-ui'
-import { VAdmireRoute } from 'vue-router'
+import { useCommonType, useDeepClone } from '@flypeng/tool/browser';
+import { VAdmireMenuOption } from 'naive-ui';
+import { VAdmireRoute } from 'vue-router';
 
 /**
  * Generate system menu
@@ -8,42 +8,43 @@ import { VAdmireRoute } from 'vue-router'
  * @returns
  */
 export const generateSystemMenu = (routes: VAdmireRoute[]): VAdmireMenuOption[] => {
-  const menus: VAdmireMenuOption[] = []
+  const menus: VAdmireMenuOption[] = [];
 
   for (let i = 0; i < routes.length; i++) {
-    const route = routes[i]
-    const { meta } = route
+    const route = routes[i];
+    const { meta } = route;
 
     if (useCommonType.isUndefined(meta?.isShow) || meta?.isShow === true) {
-      const menu: VAdmireMenuOption = {}
-      let handleRoute = useDeepClone(route) as VAdmireRoute
+      const menu: VAdmireMenuOption = {};
+      let handleRoute = useDeepClone(route) as VAdmireRoute;
 
       if (handleRoute.children && handleRoute.children.length > 0) {
-        if (handleRoute.children.length === 1 && handleRoute.children[0].meta?.single) { // single route
+        if (handleRoute.children.length === 1 && handleRoute.children[0].meta?.single) {
+          // single route
           // eslint-disable-next-line prefer-destructuring
-          handleRoute = handleRoute.children[0]
+          handleRoute = handleRoute.children[0];
         } else {
-          menu.children = generateSystemMenu(handleRoute.children)
+          menu.children = generateSystemMenu(handleRoute.children);
         }
       }
-      menu.label = handleRoute.meta?.text || '默认标题'
-      menu.sort = handleRoute.meta?.sort || 0
-      menu.key = handleRoute.name
+      menu.label = handleRoute.meta?.text || '默认标题';
+      menu.sort = handleRoute.meta?.sort || 0;
+      menu.key = handleRoute.name;
       if (handleRoute.meta?.icon) {
-        menu.iconLabel = handleRoute.meta.icon
-        menu.icon = useRenderIcon(handleRoute.meta.icon)
+        menu.iconLabel = handleRoute.meta.icon;
+        menu.icon = useRenderIcon(handleRoute.meta.icon);
       }
 
       if (handleRoute.meta?.link === 'EXTERNAL_LINK' && handleRoute.meta.url) {
-        menu.link = handleRoute.meta.link
-        menu.url = handleRoute.meta.url
+        menu.link = handleRoute.meta.link;
+        menu.url = handleRoute.meta.url;
       }
 
-      menus.push(menu)
+      menus.push(menu);
     }
   }
-  return menus
-}
+  return menus;
+};
 
 /**
  * Sort system menu
@@ -51,11 +52,11 @@ export const generateSystemMenu = (routes: VAdmireRoute[]): VAdmireMenuOption[] 
  * @returns
  */
 export const sortSystemMenu = (menus: VAdmireMenuOption[]): VAdmireMenuOption[] => {
-  const sortMenus = useDeepClone(menus) as VAdmireMenuOption[]
+  const sortMenus = useDeepClone(menus) as VAdmireMenuOption[];
   sortMenus.forEach((menu) => {
     if (menu.children && menu.children.length > 0) {
-      menu.children = sortSystemMenu(menu.children)
+      menu.children = sortSystemMenu(menu.children);
     }
-  })
-  return sortMenus.sort((a, b) => ((a.sort as number) - (b.sort as number)))
-}
+  });
+  return sortMenus.sort((a, b) => (a.sort as number) - (b.sort as number));
+};

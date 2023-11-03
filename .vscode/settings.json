@@ -28,11 +28,7 @@
   "stylelint.enable": true,
   "stylelint.validate": ["css", "less", "scss", "sass", "vue", "postcss"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "i18n-ally.localesPaths": [
-    "src/locales",
-    "src/i18n",
-    "src/languages"
-  ],
+  "i18n-ally.localesPaths": ["src/locales", "src/i18n", "src/languages"],
   "i18n-ally.enabledParsers": ["ts", "json"],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.displayLanguage": "en",

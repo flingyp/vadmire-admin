@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import XGPlayer from 'xgplayer'
-import { useRandomString } from '@flypeng/tool/browser'
-import { XGPlayerProps } from '~/types'
+import XGPlayer from 'xgplayer';
+import { useRandomString } from '@flypeng/tool/browser';
+import { XGPlayerProps } from '~/types';
 
-defineOptions({ name: 'XGPlayer' })
+defineOptions({ name: 'XGPlayer' });
 const props = withDefaults(defineProps<XGPlayerProps>(), {
   volume: 0.6,
   autoplay: false,
   videoInit: false,
   poster: undefined,
   pip: true,
-})
+});
 
-const player = ref<XGPlayer>()
-const randomId = ref(`${useRandomString(6)}_XGPlayer_${useRandomString(6)}`)
+const player = ref<XGPlayer>();
+const randomId = ref(`${useRandomString(6)}_XGPlayer_${useRandomString(6)}`);
 
 onMounted(() => {
   player.value = new XGPlayer({
@@ -28,9 +28,8 @@ onMounted(() => {
     defaultPlaybackRate: 1,
     download: true,
     pip: props.pip,
-  })
-})
-
+  });
+});
 </script>
 
 <template>

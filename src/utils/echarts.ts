@@ -1,4 +1,4 @@
-import * as echarts from 'echarts/core'
+import * as echarts from 'echarts/core';
 
 // 系列类型的定义后缀都为 SeriesOption
 import {
@@ -14,7 +14,7 @@ import {
   ScatterSeriesOption,
   RadarChart,
   RadarSeriesOption,
-} from 'echarts/charts'
+} from 'echarts/charts';
 
 // 组件类型的定义后缀都为 ComponentOption
 import {
@@ -31,12 +31,12 @@ import {
   DatasetComponent,
   LegendComponent,
   TransformComponent,
-} from 'echarts/components'
+} from 'echarts/components';
 
-import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { LabelLayout, UniversalTransition } from 'echarts/features';
 
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
-import { CanvasRenderer } from 'echarts/renderers'
+import { CanvasRenderer } from 'echarts/renderers';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
 export type ECOption = echarts.ComposeOption<
@@ -52,7 +52,7 @@ export type ECOption = echarts.ComposeOption<
   | PictorialBarSeriesOption
   | ScatterSeriesOption
   | RadarSeriesOption
->
+>;
 
 // 注册必须的组件
 echarts.use([
@@ -72,8 +72,6 @@ echarts.use([
   PictorialBarChart,
   ScatterChart,
   RadarChart,
-])
+]);
 
-export {
-  echarts,
-}
+export { echarts };

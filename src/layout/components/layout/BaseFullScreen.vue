@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useFullscreen } from '@vueuse/core'
-import BaseHeaderItem from './BaseHeaderItem.vue'
+import { useFullscreen } from '@vueuse/core';
+import BaseHeaderItem from './BaseHeaderItem.vue';
 
-const { isFullscreen, toggle } = useFullscreen()
+const { isFullscreen, toggle } = useFullscreen();
 </script>
 
 <template>

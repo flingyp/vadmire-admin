@@ -1,2 +1,2 @@
-export * from './constant-routes'
-export * from './async-routes'
+export * from './constant-routes';
+export * from './async-routes';

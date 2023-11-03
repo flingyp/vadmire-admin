@@ -1,5 +1,5 @@
-import type { ECOption } from '~/utils'
+import type { ECOption } from '~/utils';
 
 export interface BaseEchartsProps {
-  options: ECOption
+  options: ECOption;
 }

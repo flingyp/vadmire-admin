@@ -1,3 +1,7 @@
 {
-  "extends": "@flypeng/stylelint-config"
+    "extends": "@flypeng/stylelint-config",
+    "rules": {
+        "custom-property-pattern": null,
+        "selector-class-pattern": null
+    }
 }

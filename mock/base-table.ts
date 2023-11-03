@@ -1,11 +1,11 @@
-import { useRandomString } from '@flypeng/tool/browser'
-import Mock from 'mockjs'
-import { MockMethod } from 'vite-plugin-mock'
+import { useRandomString } from '@flypeng/tool/browser';
+import Mock from 'mockjs';
+import { MockMethod } from 'vite-plugin-mock';
 
-const random = Mock.Random
+const random = Mock.Random;
 
 const generateBaseTableData = (page: number, size: number) => {
-  const baseTableList = []
+  const baseTableList = [];
   for (let i = 0; i < size; i++) {
     const item = {
       id: `${page}_${useRandomString(8)}`,
@@ -14,12 +14,12 @@ const generateBaseTableData = (page: number, size: number) => {
       address: random.county(true),
       postalCode: random.zip(),
       sex: random.boolean() ? '男' : '女',
-    }
-    baseTableList.push(item)
+    };
+    baseTableList.push(item);
   }
 
-  return baseTableList
-}
+  return baseTableList;
+};
 
 function getBaseTableData(page: number, size: number) {
   return {
@@ -29,16 +29,16 @@ function getBaseTableData(page: number, size: number) {
       total: 20,
       list: generateBaseTableData(page, size),
     },
-  }
+  };
 }
 
 export default [
   {
     url: '/api/feature/table',
     method: 'post',
-    response: ({ body }: {body: any}) => {
-      const { page, size } = body
-      return getBaseTableData(page, size)
+    response: ({ body }: { body: any }) => {
+      const { page, size } = body;
+      return getBaseTableData(page, size);
     },
   },
-] as MockMethod[]
+] as MockMethod[];

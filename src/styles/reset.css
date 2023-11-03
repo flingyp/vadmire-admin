@@ -16,9 +16,9 @@ html.dark #driver-highlighted-element-stage {
 }
 
 div.PhotoSlider__Wrapper .PhotoSlider__BannerWrap {
+  top: initial;
   bottom: 0;
   left: initial;
-  top: initial;
 }
 
 div.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {
@@ -27,6 +27,6 @@ div.PhotoSlider__Wrapper .PhotoSlider__BannerWrap .PhotoSlider__BannerRight {
 
 div.PhotoSlider__Wrapper .PhotoSlider__FooterWrap {
   top: 0;
-  left: initial;
   bottom: initial;
+  left: initial;
 }

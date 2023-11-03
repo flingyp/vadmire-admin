@@ -1,2 +1,2 @@
-export * from './system-auth'
-export * from './base-table'
+export * from './system-auth';
+export * from './base-table';

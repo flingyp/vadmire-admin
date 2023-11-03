@@ -1,4 +1,4 @@
-import { ServerOptions } from 'vite'
+import { ServerOptions } from 'vite';
 
 export const serverOptions: ServerOptions = {
   host: true,
@@ -6,4 +6,4 @@ export const serverOptions: ServerOptions = {
   https: false,
   open: false,
   cors: true,
-}
+};

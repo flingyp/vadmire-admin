@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import Vditor from 'vditor'
-import 'vditor/dist/index.css'
-import { VditorProps } from '~/types'
+import Vditor from 'vditor';
+import 'vditor/dist/index.css';
+import { VditorProps } from '~/types';
 
-defineOptions({ name: 'Vditor' })
+defineOptions({ name: 'Vditor' });
 const props = withDefaults(defineProps<VditorProps>(), {
   contentTheme: 'ant-design',
   codeTheme: 'github',
   content: '',
-})
-const emit = defineEmits(['update:content'])
+});
+const emit = defineEmits(['update:content']);
 
-const { isDark } = useTheme()
-const vditorInstance = ref<Vditor | null>(null)
+const { isDark } = useTheme();
+const vditorInstance = ref<Vditor | null>(null);
 
 const vditorTheme = computed(() => {
-  if (isDark.value) return 'dark'
-  return 'classic'
-})
+  if (isDark.value) return 'dark';
+  return 'classic';
+});
 
 watch(isDark, () => {
-  vditorInstance.value?.setTheme(vditorTheme.value, props.contentTheme, props.codeTheme)
-})
+  vditorInstance.value?.setTheme(vditorTheme.value, props.contentTheme, props.codeTheme);
+});
 
 onMounted(() => {
   vditorInstance.value = new Vditor('vditor', {
@@ -35,13 +35,13 @@ onMounted(() => {
       position: 'left',
     },
     input: (value: string) => {
-      emit('update:content', value)
+      emit('update:content', value);
     },
     after: () => {
-      vditorInstance.value?.setValue(props.content)
+      vditorInstance.value?.setValue(props.content);
     },
-  })
-})
+  });
+});
 </script>
 
 <template>

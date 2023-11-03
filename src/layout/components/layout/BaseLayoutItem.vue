@@ -1,42 +1,31 @@
 <script setup lang="ts">
-import { LayoutMode } from '~/types'
+import { LayoutMode } from '~/types';
 
 interface BaseLayoutItemProps {
-  mode: LayoutMode
+  mode: LayoutMode;
 }
 
-defineProps<BaseLayoutItemProps>()
-defineEmits(['updateLayoutMode'])
+defineProps<BaseLayoutItemProps>();
+defineEmits(['updateLayoutMode']);
 
-const { layoutMode } = storeToRefs(useVAdmireConfigStore())
+const { layoutMode } = storeToRefs(useVAdmireConfigStore());
 </script>
 
 <template>
   <div
-    class="
-      p-1.5 h-16 border rounded transition duration-300
-      hover:border-primaryHover dark:hover:border-primaryHover
-    "
+    class="p-1.5 h-16 border rounded transition duration-300 hover:border-primaryHover dark:hover:border-primaryHover"
     :class="{
       'border-primary dark:border-primary': mode === layoutMode,
-      'border-vBorderLight dark:border-vBorderDark': mode !== layoutMode
+      'border-vBorderLight dark:border-vBorderDark': mode !== layoutMode,
     }"
   >
-    <div
-      v-if="mode === 'SIDER_MENU'"
-      class="relative h-full cursor-pointer"
-      @click="$emit('updateLayoutMode', mode)"
-    >
+    <div v-if="mode === 'SIDER_MENU'" class="relative h-full cursor-pointer" @click="$emit('updateLayoutMode', mode)">
       <div class="absolute w-2.5 h-full left-0 bg-primary rounded-sm opacity-80" />
       <div class="absolute w-5/6 right-0 h-2 bg-primary rounded-sm opacity-60" />
       <div class="absolute w-5/6 h-[calc(100%-8px)] top-2.5 right-0 bg-primary rounded-sm opacity-30" />
     </div>
 
-    <div
-      v-if="mode === 'TOP_MENU'"
-      class="relative h-full cursor-pointer"
-      @click="$emit('updateLayoutMode', mode)"
-    >
+    <div v-if="mode === 'TOP_MENU'" class="relative h-full cursor-pointer" @click="$emit('updateLayoutMode', mode)">
       <div class="absolute w-full h-2 bg-primary rounded-sm opacity-60" />
       <div class="absolute w-full h-[calc(100%-8px)] top-2.5 right-0 bg-primary rounded-sm opacity-30" />
     </div>

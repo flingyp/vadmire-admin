@@ -1,10 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
-  ],
+  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     fill: {
       current: 'currentColor',
@@ -48,4 +45,4 @@ module.exports = {
     },
   },
   plugins: ['@tailwindcss/typography'],
-}
+};

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import RenderIconify from '~/components/common/RenderIconify.vue'
+import { Icon } from '@iconify/vue';
+import RenderIconify from '~/components/common/RenderIconify.vue';
 
 const dynamicIconList = ref<string[]>([
   'flat-color-icons:about',
@@ -23,15 +23,13 @@ const dynamicIconList = ref<string[]>([
   'flat-color-icons:butting-in',
   'flat-color-icons:camcorder-pro',
   'flat-color-icons:camera',
-])
+]);
 </script>
 
 <template>
   <div class="space-y-2">
     <div class="border border-vBorderLight dark:border-vBorderDark p-2 rounded-sm">
-      <p class="mb-4">
-        第一种方式：基于 unplugin-icons 使用静态图标
-      </p>
+      <p class="mb-4">第一种方式：基于 unplugin-icons 使用静态图标</p>
       <div class="grid grid-cols-4 md:grid-cols-5 justify-center text-xl justify-items-center items-center gap-4">
         <icon-openmoji:apple />
         <icon-openmoji:1st-place-medal />
@@ -47,16 +45,9 @@ const dynamicIconList = ref<string[]>([
     </div>
 
     <div class="border border-vBorderLight dark:border-vBorderDark p-2 rounded-sm">
-      <p class="mb-4">
-        第二种方式：基于 @iconify/vue 使用动态图标
-      </p>
+      <p class="mb-4">第二种方式：基于 @iconify/vue 使用动态图标</p>
       <div class="grid grid-cols-4 md:grid-cols-5 justify-center text-xl justify-items-center items-center gap-4">
-        <Icon
-          v-for="item in dynamicIconList"
-          :key="item"
-          :icon="item"
-          class="text-2xl"
-        />
+        <Icon v-for="item in dynamicIconList" :key="item" :icon="item" class="text-2xl" />
       </div>
       <p class="mt-8 text-xs text-gray-400">
         注：VAdmire Admin 提供了 useRenderIcon, 使用Vue提供的渲染函数 h() 来渲染图标
@@ -64,20 +55,11 @@ const dynamicIconList = ref<string[]>([
     </div>
 
     <div class="border border-vBorderLight dark:border-vBorderDark p-2 rounded-sm">
-      <p class="mb-4">
-        第三种方式：基于自定义组件 RenderIconify 使用动态图标
-      </p>
+      <p class="mb-4">第三种方式：基于自定义组件 RenderIconify 使用动态图标</p>
       <div class="grid grid-cols-4 md:grid-cols-5 justify-center text-xl justify-items-center items-center gap-4">
-        <RenderIconify
-          v-for="item in dynamicIconList"
-          :key="item"
-          :icon="item"
-          class="text-2xl"
-        />
+        <RenderIconify v-for="item in dynamicIconList" :key="item" :icon="item" class="text-2xl" />
       </div>
-      <p class="mt-8 text-xs text-gray-400">
-        注：VAdmire Admin 提供了 RenderIconify 组件来动态渲染图标
-      </p>
+      <p class="mt-8 text-xs text-gray-400">注：VAdmire Admin 提供了 RenderIconify 组件来动态渲染图标</p>
     </div>
   </div>
 </template>

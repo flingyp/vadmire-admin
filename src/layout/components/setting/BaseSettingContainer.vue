@@ -1,10 +1,10 @@
 <script setup lang="ts">
 interface BasicContainerBox {
-  title: string
+  title: string;
 }
 withDefaults(defineProps<BasicContainerBox>(), {
   title: '默认标题',
-})
+});
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/vue'
+import { Icon } from '@iconify/vue';
 
 /**
  * unplugin-icons not support async components so to use Icon component
@@ -6,5 +6,5 @@ import { Icon } from '@iconify/vue'
  * issue: https://github.com/antfu/unplugin-icons/issues/5
  */
 export function useRenderIcon(icon: string, width?: number, height?: number) {
-  return () => h(Icon, { icon, width, height })
+  return () => h(Icon, { icon, width, height });
 }

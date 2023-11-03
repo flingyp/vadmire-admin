@@ -1,38 +1,31 @@
 <script setup lang="ts">
-import { RecordSearchItem } from '~/types'
+import { RecordSearchItem } from '~/types';
 
-defineOptions({ name: 'BaseTableSearch' })
+defineOptions({ name: 'BaseTableSearch' });
 const props = defineProps({
   searchFormList: {
     type: Array<RecordSearchItem>,
     default: () => [],
   },
-})
-const emit = defineEmits(['update:searchFormList', 'search', 'reset'])
+});
+const emit = defineEmits(['update:searchFormList', 'search', 'reset']);
 
-const { searchFormList } = toRefs(props)
-const searchForm = ref(searchFormList.value)
+const { searchFormList } = toRefs(props);
+const searchForm = ref(searchFormList.value);
 
-watch(searchForm, (newValue) => {
-  emit('update:searchFormList', newValue)
-}, { deep: true })
+watch(
+  searchForm,
+  (newValue) => {
+    emit('update:searchFormList', newValue);
+  },
+  { deep: true },
+);
 </script>
 
 <template>
-  <NForm
-    label-placement="left"
-    label-width="auto"
-  >
-    <NFormItem
-      v-for="search in searchForm"
-      :key="search.key"
-      :label="search.label"
-    >
-      <NInput
-        v-if="search.type === 'input'"
-        v-model:value="search.value"
-        :placeholder="search.placeholder"
-      />
+  <NForm label-placement="left" label-width="auto">
+    <NFormItem v-for="search in searchForm" :key="search.key" :label="search.label">
+      <NInput v-if="search.type === 'input'" v-model:value="search.value" :placeholder="search.placeholder" />
       <NSelect
         v-else-if="search.type === 'select'"
         v-model:value="search.value"
@@ -49,21 +42,8 @@ watch(searchForm, (newValue) => {
     </NFormItem>
     <NFormItem>
       <div class="space-x-2">
-        <NButton
-          type="primary"
-          class="px-6"
-          @click="$emit('search')"
-        >
-          搜索
-        </NButton>
-        <NButton
-          type="primary"
-          class="px-6"
-          ghost
-          @click="$emit('reset')"
-        >
-          重置
-        </NButton>
+        <NButton type="primary" class="px-6" @click="$emit('search')"> 搜索 </NButton>
+        <NButton type="primary" class="px-6" ghost @click="$emit('reset')"> 重置 </NButton>
       </div>
     </NFormItem>
   </NForm>

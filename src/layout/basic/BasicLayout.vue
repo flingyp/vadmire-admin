@@ -1,38 +1,32 @@
 <script setup lang="ts">
-import { useVAdmireConfigStore } from '~/store'
+import { useVAdmireConfigStore } from '~/store';
 
-const {
-  layoutMode, isVisibleFooter, headerHeight, footerHeight, siderWidth, isCollapsedSider, isCollapsedSiderWidth,
-} = storeToRefs(useVAdmireConfigStore())
+const { layoutMode, isVisibleFooter, headerHeight, footerHeight, siderWidth, isCollapsedSider, isCollapsedSiderWidth } =
+  storeToRefs(useVAdmireConfigStore());
 
 // different layout mode
-const isTopMenuMode = computed(() => layoutMode.value === 'TOP_MENU')
-const isSiderMenuMode = computed(() => layoutMode.value === 'SIDER_MENU')
-const isSiderMixMenuMode = computed(() => layoutMode.value === 'SIDER_MIX_MENU')
+const isTopMenuMode = computed(() => layoutMode.value === 'TOP_MENU');
+const isSiderMenuMode = computed(() => layoutMode.value === 'SIDER_MENU');
+const isSiderMixMenuMode = computed(() => layoutMode.value === 'SIDER_MIX_MENU');
 
 const siderHeight = computed(() => {
   if (isSiderMixMenuMode.value) {
-    if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
-    return `calc(100vh - ${headerHeight.value}px`
+    if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`;
+    return `calc(100vh - ${headerHeight.value}px`;
   }
-  if (isSiderMenuMode.value) return '100vh'
-  return '0px'
-})
+  if (isSiderMenuMode.value) return '100vh';
+  return '0px';
+});
 const contentHeight = computed(() => {
-  if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`
-  return `calc(100vh - ${headerHeight.value}px`
-})
+  if (isVisibleFooter.value) return `calc(100vh - ${headerHeight.value}px - ${footerHeight.value}px)`;
+  return `calc(100vh - ${headerHeight.value}px`;
+});
 </script>
 
 <template>
   <NLayout :has-sider="isSiderMenuMode">
-    <NLayoutHeader
-      v-if="isTopMenuMode || isSiderMixMenuMode"
-      bordered
-    >
-      <slot name="header">
-        Default header
-      </slot>
+    <NLayoutHeader v-if="isTopMenuMode || isSiderMixMenuMode" bordered>
+      <slot name="header"> Default header </slot>
     </NLayoutHeader>
 
     <NLayoutSider
@@ -43,32 +37,16 @@ const contentHeight = computed(() => {
       :native-scrollbar="false"
       :collapsed="isCollapsedSider"
     >
-      <slot name="sider">
-        Default sider
-      </slot>
+      <slot name="sider"> Default sider </slot>
     </NLayoutSider>
 
-    <NLayoutContent
-      v-if="isTopMenuMode"
-      bordered
-      :native-scrollbar="false"
-    >
-      <slot name="content">
-        Default content
-      </slot>
+    <NLayoutContent v-if="isTopMenuMode" bordered :native-scrollbar="false">
+      <slot name="content"> Default content </slot>
     </NLayoutContent>
 
-    <NLayout
-      v-if="!isTopMenuMode"
-      :has-sider="isSiderMixMenuMode"
-    >
-      <NLayoutHeader
-        v-if="isSiderMenuMode"
-        bordered
-      >
-        <slot name="header">
-          Default header
-        </slot>
+    <NLayout v-if="!isTopMenuMode" :has-sider="isSiderMixMenuMode">
+      <NLayoutHeader v-if="isSiderMenuMode" bordered>
+        <slot name="header"> Default header </slot>
       </NLayoutHeader>
 
       <NLayoutSider
@@ -79,58 +57,39 @@ const contentHeight = computed(() => {
         :native-scrollbar="false"
         :collapsed="isCollapsedSider"
       >
-        <slot name="sider">
-          Default sider
-        </slot>
+        <slot name="sider"> Default sider </slot>
       </NLayoutSider>
 
-      <NLayoutContent
-        v-if="isSiderMenuMode || isSiderMixMenuMode"
-        bordered
-        :native-scrollbar="false"
-      >
-        <slot name="content">
-          Default content
-        </slot>
+      <NLayoutContent v-if="isSiderMenuMode || isSiderMixMenuMode" bordered :native-scrollbar="false">
+        <slot name="content"> Default content </slot>
       </NLayoutContent>
 
-      <NLayoutFooter
-        v-if="isVisibleFooter && isSiderMenuMode"
-        bordered
-      >
-        <slot name="footer">
-          Default footer
-        </slot>
+      <NLayoutFooter v-if="isVisibleFooter && isSiderMenuMode" bordered>
+        <slot name="footer"> Default footer </slot>
       </NLayoutFooter>
     </NLayout>
 
-    <NLayoutFooter
-      v-if="isVisibleFooter && (isTopMenuMode || isSiderMixMenuMode)"
-      bordered
-    >
-      <slot name="footer">
-        Default footer
-      </slot>
+    <NLayoutFooter v-if="isVisibleFooter && (isTopMenuMode || isSiderMixMenuMode)" bordered>
+      <slot name="footer"> Default footer </slot>
     </NLayoutFooter>
   </NLayout>
 </template>
 
 <style scoped>
-
 .n-layout-header {
-  height: v-bind(headerHeight + 'px');
+  height: v-bind(headerheight + 'px');
 }
 
 .n-layout-footer {
-  height: v-bind(footerHeight + 'px');
+  height: v-bind(footerheight + 'px');
 }
 
 .n-layout-sider {
-  width: v-bind(siderWidth + 'px') !important;
-  height: v-bind(siderHeight);
+  width: v-bind(siderwidth + 'px') !important;
+  height: v-bind(siderheight);
 }
 
 .n-layout-content {
-  height: v-bind(contentHeight);
+  height: v-bind(contentheight);
 }
 </style>

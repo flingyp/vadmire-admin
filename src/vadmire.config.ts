@@ -1,5 +1,5 @@
-import type { HandleRouteForm, VAdmireConfig } from './types'
-import type { ColorType } from './utils'
+import type { HandleRouteForm, VAdmireConfig } from './types';
+import type { ColorType } from './utils';
 
 // different scene color
 export const sceneColorMap: Record<ColorType, string> = {
@@ -8,7 +8,7 @@ export const sceneColorMap: Record<ColorType, string> = {
   success: '#61D132',
   warning: '#FFA500',
   error: '#FF4838',
-}
+};
 
 // default vadmireConfigStore initial config
 export function defaultVAdmireConfig(): VAdmireConfig {
@@ -29,41 +29,41 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     isVisibleTabBar: true,
     isVisibleFooter: true,
     defaultLocales: 'zh_CN',
-  }
+  };
 }
 
 // system login route name
-export const LOGIN_ROUTE_NAME = 'SystemAuth'
+export const LOGIN_ROUTE_NAME = 'SystemAuth';
 
 // not found 404 route name
-export const NOT_FOUND_404_ROUTE_NAME = 'SystemNotFound'
+export const NOT_FOUND_404_ROUTE_NAME = 'SystemNotFound';
 
 // system home route name
-export const SYSTEM_HOME_ROUTE_NAME = 'SystemAboutIndex'
+export const SYSTEM_HOME_ROUTE_NAME = 'SystemAboutIndex';
 
 // system white routes list
-export const WHITE_ROUTE_LIST: string[] = [LOGIN_ROUTE_NAME]
+export const WHITE_ROUTE_LIST: string[] = [LOGIN_ROUTE_NAME];
 
 // system handle route form
-export const HANDLE_ROUTE_FORM: HandleRouteForm = 'SERVER'
+export const HANDLE_ROUTE_FORM: HandleRouteForm = 'SERVER';
 
 // session storage auth token key
-export const AUTH_TOKEN = 'AUTH_TOKEN'
+export const AUTH_TOKEN = 'AUTH_TOKEN';
 
 // local storage tab menu key
-export const TAB_MENU_KEY = 'TAB_MENU_KEY'
+export const TAB_MENU_KEY = 'TAB_MENU_KEY';
 
 // local theme mode key
-export const THEME_MODE_KEY = 'vueuse-color-scheme'
+export const THEME_MODE_KEY = 'vueuse-color-scheme';
 
 // local primary color key
-export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY'
+export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY';
 
 // local system config key
-export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY'
+export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY';
 
 // local reload content key
-export const IS_RELOAD_CONTENT = 'IS_RELOAD_CONTENT'
+export const IS_RELOAD_CONTENT = 'IS_RELOAD_CONTENT';
 
 // driver.js plugin config key
-export const DRIVER_CONFIG_KEY = 'IS_DRIVER_CONFIG'
+export const DRIVER_CONFIG_KEY = 'IS_DRIVER_CONFIG';

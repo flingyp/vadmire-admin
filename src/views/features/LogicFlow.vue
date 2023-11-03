@@ -1,19 +1,20 @@
 <!-- eslint-disable max-len -->
 <script setup lang="ts">
-import LogicFlow from '@logicflow/core'
-import { DndPanel, SelectionSelect } from '@logicflow/extension'
+import LogicFlow from '@logicflow/core';
+import { DndPanel, SelectionSelect } from '@logicflow/extension';
 
 // LogicFlow 官网：https://site.logic-flow.cn/docs/#/zh/guide/start
 
-LogicFlow.use(DndPanel)
-LogicFlow.use(SelectionSelect)
+LogicFlow.use(DndPanel);
+LogicFlow.use(SelectionSelect);
 
-const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore())
+const { contentContainerHeight } = storeToRefs(useVAdmireConfigStore());
 
-const logicFlowContainer = ref<HTMLElement>()
+const logicFlowContainer = ref<HTMLElement>();
 const {
   instance: logicFlowInstance,
-  init: initLogicFlow, watchTheme: watchLogicFlowTheme,
+  init: initLogicFlow,
+  watchTheme: watchLogicFlowTheme,
 } = useLogicFlow(logicFlowContainer, {
   grid: true,
   keyboard: {
@@ -22,15 +23,15 @@ const {
       {
         keys: ['backspace'],
         callback: () => {
-          const elements = logicFlowInstance.value?.getSelectElements(true)
-          logicFlowInstance.value?.clearSelectElements()
-          elements?.edges.forEach((edge) => logicFlowInstance.value?.deleteEdge(edge.id || ''))
-          elements?.nodes.forEach((node) => logicFlowInstance.value?.deleteNode(node.id || ''))
+          const elements = logicFlowInstance.value?.getSelectElements(true);
+          logicFlowInstance.value?.clearSelectElements();
+          elements?.edges.forEach((edge) => logicFlowInstance.value?.deleteEdge(edge.id || ''));
+          elements?.nodes.forEach((node) => logicFlowInstance.value?.deleteNode(node.id || ''));
         },
       },
     ],
   },
-})
+});
 
 const flowRender = () => {
   logicFlowInstance.value?.render({
@@ -58,24 +59,24 @@ const flowRender = () => {
         text: 'Line',
       },
     ],
-  })
-}
+  });
+};
 
 onMounted(() => {
-  initLogicFlow()
-  flowRender()
+  initLogicFlow();
+  flowRender();
 
-  watchLogicFlowTheme(flowRender)
+  watchLogicFlowTheme(flowRender);
 
   logicFlowInstance.value?.extension.dndPanel.setPatternItems([
     {
       label: '选区',
       icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAABGdBTUEAALGPC/xhBQAAAOVJREFUOBGtVMENwzAIjKP++2026ETdpv10iy7WFbqFyyW6GBywLCv5gI+Dw2Bluj1znuSjhb99Gkn6QILDY2imo60p8nsnc9bEo3+QJ+AKHfMdZHnl78wyTnyHZD53Zzx73MRSgYvnqgCUHj6gwdck7Zsp1VOrz0Uz8NbKunzAW+Gu4fYW28bUYutYlzSa7B84Fh7d1kjLwhcSdYAYrdkMQVpsBr5XgDGuXwQfQr0y9zwLda+DUYXLaGKdd2ZTtvbolaO87pdo24hP7ov16N0zArH1ur3iwJpXxm+v7oAJNR4JEP8DoAuSFEkYH7cAAAAASUVORK5CYII=',
       callback: () => {
-        logicFlowInstance.value?.extension.selectionSelect.openSelectionSelect()
+        logicFlowInstance.value?.extension.selectionSelect.openSelectionSelect();
         logicFlowInstance.value?.once('selection:selected', () => {
-          logicFlowInstance.value?.extension.selectionSelect.closeSelectionSelect()
-        })
+          logicFlowInstance.value?.extension.selectionSelect.closeSelectionSelect();
+        });
       },
     },
     {
@@ -107,15 +108,10 @@ onMounted(() => {
       label: '结束节点',
       icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAABGdBTUEAALGPC/xhBQAAA1BJREFUOBFtVE1IVUEYPXOf+tq40Y3vPcmFIdSjIorWoRG0ERWUgnb5FwVhYQSl72oUoZAboxKNFtWiwKRN0M+jpfSzqJAQclHo001tKkjl3emc8V69igP3znzfnO/M9zcDcKT67azmjYWTwl9Vn7Vumeqzj1DVb6cleQY4oAVnIOPb+mKAGxQmKI5CWNJ2aLPatxWa3aB9K7/fB+/Z0jUF6TmMlFLQqrkECWQzOZxYGjTlOl8eeKaIY5yHnFn486xBustDjWT6dG7pmjHOJd+33t0iitTPkK6tEvjxq4h2MozQ6WFSX/LkDUGfFwfhEZj1Auz/U4pyAi5Sznd7uKzznXeVHlI/Aywmk6j7fsUsEuCGADrWARXXwjxWQsUbIupDHJI7kF5dRktg0eN81IbiZXiTESic50iwS+t1oJgL83jAiBupLDCQqwziaWSoAFSeIR3P5Xv5az00wyIn35QRYTwdSYbz8pH8fxUUAtxnFvYmEmgI0wYXUXcCCSpeEVpXlsRhBnCEATxWylL9+EKCAYhe1NGstUa6356kS9NVvt3DU2fd+Wtbm/+lSbylJqsqkSm9CRhvoJVlvKPvF1RKY/FcPn5j4UfIMLn8D4UYb54BNsilTDXKnF4CfTobA0FpoW/LSp306wkXM+XaOJhZaFkcNM82ASNAWMrhrUbRfmyeI1FvRBTpN06WKxa9BK0o2E4Pd3zfBBEwPsv9sQBnmLVbLEIZ/Xe9LYwJu/Er17W6HYVBc7vmuk0xUQ+pqxdom5Fnp55SiytXLPYoMXNM4u4SNSCFWnrVIzKG3EGyMXo6n/BQOe+bX3FClY4PwydVhthOZ9NnS+ntiLh0fxtlUJHAuGaFoVmttpVMeum0p3WEXbcll94l1wM/gZ0Ccczop77VvN2I7TlsZCsuXf1WHvWEhjO8DPtyOVg2/mvK9QqboEth+7pD6NUQC1HN/TwvydGBARi9MZSzLE4b8Ru3XhX2PBxf8E1er2A6516o0w4sIA+lwURhAON82Kwe2iDAC1Watq4XHaGQ7skLcFOtI5lDxuM2gZe6WFIotPAhbaeYlU4to5cuarF1QrcZ/lwrLaCJl66JBocYZnrNlvm2+MBCTmUymPrYZVbjdlr/BxlMjmNmNI3SAAAAAElFTkSuQmCC',
     },
-  ])
-})
-
+  ]);
+});
 </script>
 
 <template>
-  <div
-    ref="logicFlowContainer"
-    :style="{ height: contentContainerHeight }"
-    class="w-full"
-  />
+  <div ref="logicFlowContainer" :style="{ height: contentContainerHeight }" class="w-full" />
 </template>

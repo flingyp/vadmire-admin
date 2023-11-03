@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useRouteMenuStore } from '~/store'
+import { useRouteMenuStore } from '~/store';
 
-import GlobalMenu from '~/layout/components/GlobalMenu.vue'
-import BaseLogoTitle from '~/layout/components/layout/BaseLogoTitle.vue'
+import GlobalMenu from '~/layout/components/GlobalMenu.vue';
+import BaseLogoTitle from '~/layout/components/layout/BaseLogoTitle.vue';
 
-const routeMenuStore = useRouteMenuStore()
+const routeMenuStore = useRouteMenuStore();
 </script>
 
 <template>

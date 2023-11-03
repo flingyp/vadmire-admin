@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import SingleApp from '~/components/common/SingleApp.vue'
-import RouterContent from './RouterContent.vue'
+import SingleApp from '~/components/common/SingleApp.vue';
+import RouterContent from './RouterContent.vue';
 
-useApp()
+useApp();
 </script>
 
 <template>

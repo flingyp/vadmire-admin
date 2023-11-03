@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Draggable from 'vuedraggable'
+import Draggable from 'vuedraggable';
 
-const drag = ref(false)
+const drag = ref(false);
 const draggableList = ref([
   {
     id: 1,
@@ -31,26 +31,20 @@ const draggableList = ref([
     id: 7,
     label: 'Item 7',
   },
-])
+]);
 const dragStart = () => {
-  drag.value = true
-}
+  drag.value = true;
+};
 const dragEnd = () => {
-  drag.value = false
-  console.log('New draggableList->>>', draggableList.value)
-}
+  drag.value = false;
+  console.log('New draggableList->>>', draggableList.value);
+};
 </script>
 
 <template>
   <div>
-    <Draggable
-      v-model="draggableList"
-      item-key="id"
-      group="people"
-      @start="dragStart"
-      @end="dragEnd"
-    >
-      <template #item="{element}">
+    <Draggable v-model="draggableList" item-key="id" group="people" @start="dragStart" @end="dragEnd">
+      <template #item="{ element }">
         <div class="p-4 mb-4 last:mb-0 cursor-grab rounded border border-vBorderLight dark:border-vBorderDark">
           {{ element.id }} - {{ element.label }}
         </div>

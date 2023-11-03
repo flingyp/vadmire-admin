@@ -16,19 +16,19 @@
 
 ## ⛷️ Introduction
 
-**VAmire Admin** is a universal backend management system template. It is based on a relatively new technology stack `Vite + Vue3 + TailwindCSS + TypeScript`. 
+**VAmire Admin** is a universal backend management system template. It is based on a relatively new technology stack `Vite + Vue3 + TailwindCSS + TypeScript`.
 
 It helps developers to start business development quickly and integrates many common features used in business development inside the system. It is also one of the reference projects for learning Vue3 related ecology.
 
 ## ⚙️ Features
 
-- 💪 **Latest Technology Stack**: Vite + Vue + TailwindCSS + TypeScript
-- 🚀 **Development Experience**: The ultimate development experience
-- 🌛 **Dark Mode**: Built-in Dark Mode
-- 🌿 **System Theme**: Dynamically configure system theme color
-- 🏄‍♂️ **Permission Control**: Support both front and back end permission control solutions
-- ♻️ **Functional components**: Built-in multiple functional components and combinable functions
-- 🎇 **Composable Development**: advocate for making your code more concise and easy to read
+-   💪 **Latest Technology Stack**: Vite + Vue + TailwindCSS + TypeScript
+-   🚀 **Development Experience**: The ultimate development experience
+-   🌛 **Dark Mode**: Built-in Dark Mode
+-   🌿 **System Theme**: Dynamically configure system theme color
+-   🏄‍♂️ **Permission Control**: Support both front and back end permission control solutions
+-   ♻️ **Functional components**: Built-in multiple functional components and combinable functions
+-   🎇 **Composable Development**: advocate for making your code more concise and easy to read
 
 ## 👣 Getting started
 
@@ -44,7 +44,7 @@ pnpm install
 pnpm run dev
 
 # Build
-pnpm run build 
+pnpm run build
 pnpm run build:mock # mock mode
 ```
 
@@ -67,7 +67,7 @@ pnpm run build:mock # mock mode
    ├─layout
    ├─modules
    ├─requests
-   ├─router  
+   ├─router
    ├─store
    ├─styles
    ├─types
@@ -84,7 +84,7 @@ pnpm run build:mock # mock mode
 
 ## 💕 Contributing
 
-Welcome to use this backend template! 
+Welcome to use this backend template!
 
 If you find any errors or have good ideas, please feel free to contact me to submit Issues or PRs.
 

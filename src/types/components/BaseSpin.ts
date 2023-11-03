@@ -1,5 +1,5 @@
 export interface BaseSpinProps {
-  size: 'small' | 'medium' | 'large',
-  isLoading: boolean,
-  loadingText: string,
+  size: 'small' | 'medium' | 'large';
+  isLoading: boolean;
+  loadingText: string;
 }

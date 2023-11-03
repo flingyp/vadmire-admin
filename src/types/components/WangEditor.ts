@@ -1,3 +1,3 @@
 export interface WangEditorProps {
-  content: string
+  content: string;
 }

@@ -1,3 +1,3 @@
 export interface AuthorizedProps {
-  permission: string[]
+  permission: string[];
 }

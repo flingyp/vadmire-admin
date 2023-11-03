@@ -1,8 +1,8 @@
 {
-	"Print to SFC template": {
-		"scope": "vue",
-		"prefix": "sfc",
-		"body": [
+    "Print to SFC template": {
+        "scope": "vue",
+        "prefix": "sfc",
+        "body": [
             "<script setup lang=\"ts\"></script>",
             "",
             "<template>",
@@ -11,7 +11,7 @@
             "",
             "<style scoped></style>",
             ""
-          ],
-		"description": "Output a sfc code block"
-	}
+        ],
+        "description": "Output a sfc code block"
+    }
 }

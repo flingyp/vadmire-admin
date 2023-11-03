@@ -1,3 +1,3 @@
 export interface BaseTableHandleProps {
-  value: string
+  value: string;
 }

@@ -1,21 +1,23 @@
+/* stylelint-disable at-rule-no-unknown */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   h1 {
-    font-size: 2em;
     font-weight: bold;
+    font-size: 2em;
   }
 
   h2 {
-    font-size: 1.5em;
     font-weight: bold;
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 0.875em;
     font-weight: bold;
+    font-size: 0.875em;
   }
 
   h4 {
@@ -23,7 +25,7 @@
   }
 
   h5 {
-    font-size: 0.83em;
     font-weight: bold;
+    font-size: 0.83em;
   }
 }

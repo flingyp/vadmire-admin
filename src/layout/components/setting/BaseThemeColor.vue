@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useSetLocalKey } from '@flypeng/tool/browser'
-import { PRIMARY_COLOR_KEY } from '~/vadmire.config'
+import { useSetLocalKey } from '@flypeng/tool/browser';
+import { PRIMARY_COLOR_KEY } from '~/vadmire.config';
 
-const { primaryColor } = storeToRefs(useVAdmireConfigStore())
+const { primaryColor } = storeToRefs(useVAdmireConfigStore());
 
 // primary color list
 const primaryColorList = [
@@ -25,11 +25,11 @@ const primaryColorList = [
   '#795548',
   '#9e9e9e',
   '#607d8b',
-]
+];
 const updateSystemPrimaryColor = (color: string) => {
-  primaryColor.value = color
-  useSetLocalKey(PRIMARY_COLOR_KEY, color)
-}
+  primaryColor.value = color;
+  useSetLocalKey(PRIMARY_COLOR_KEY, color);
+};
 </script>
 
 <template>
@@ -39,17 +39,12 @@ const updateSystemPrimaryColor = (color: string) => {
         v-for="item in primaryColorList"
         :key="item"
         class="w-6 h-6 rounded-sm cursor-pointer"
-        :class="[primaryColor === item ? 'primary-item-active' : '' ]"
-        :style="{backgroundColor: item}"
+        :class="[primaryColor === item ? 'primary-item-active' : '']"
+        :style="{ backgroundColor: item }"
         @click="updateSystemPrimaryColor(item)"
       />
     </div>
-    <NColorPicker
-      class="mt-4"
-      :value="primaryColor"
-      size="small"
-      @update:value="updateSystemPrimaryColor"
-    />
+    <NColorPicker class="mt-4" :value="primaryColor" size="small" @update:value="updateSystemPrimaryColor" />
   </div>
 </template>
 
@@ -58,12 +53,12 @@ const updateSystemPrimaryColor = (color: string) => {
   position: relative;
 
   &::after {
-    content: '✓';
     position: absolute;
     top: 50%;
     left: 50%;
+    color: #fff;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    content: '✓';
   }
 }
 </style>

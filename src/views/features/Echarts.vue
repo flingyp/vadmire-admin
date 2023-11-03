@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseEcharts from '~/components/common/BaseEcharts.vue'
+import BaseEcharts from '~/components/common/BaseEcharts.vue';
 
 const { option: chartOne } = useEcharts({
   title: {
@@ -54,7 +54,7 @@ const { option: chartOne } = useEcharts({
       type: 'bar',
       tooltip: {
         valueFormatter(value: any) {
-          return `${value} ml`
+          return `${value} ml`;
         },
       },
       data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
@@ -64,7 +64,7 @@ const { option: chartOne } = useEcharts({
       type: 'bar',
       tooltip: {
         valueFormatter(value: any) {
-          return `${value} ml`
+          return `${value} ml`;
         },
       },
       data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
@@ -75,13 +75,13 @@ const { option: chartOne } = useEcharts({
       yAxisIndex: 1,
       tooltip: {
         valueFormatter(value: any) {
-          return `${value} °C`
+          return `${value} °C`;
         },
       },
       data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
     },
   ],
-})
+});
 
 const { option: chartTwo } = useEcharts({
   title: {
@@ -109,7 +109,7 @@ const { option: chartTwo } = useEcharts({
       ],
     },
   ],
-})
+});
 
 const { option: chartThree } = useEcharts({
   title: {
@@ -164,7 +164,7 @@ const { option: chartThree } = useEcharts({
       data: [820, 932, 901, 934, 1290, 1330, 1320],
     },
   ],
-})
+});
 
 const chartFiveData = [
   [
@@ -209,7 +209,7 @@ const chartFiveData = [
     [38225, 81.4, 64715810, 'United Kingdom', 2015],
     [53354, 79.1, 321773631, 'United States', 2015],
   ],
-]
+];
 
 const { option: chartFive } = useEcharts({
   backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [
@@ -257,14 +257,14 @@ const { option: chartFive } = useEcharts({
       data: chartFiveData[0],
       type: 'scatter',
       symbolSize(data) {
-        return Math.sqrt(data[2]) / 5e2
+        return Math.sqrt(data[2]) / 5e2;
       },
       emphasis: {
         focus: 'series',
         label: {
           show: true,
           formatter(param: any) {
-            return param.data[3]
+            return param.data[3];
           },
           position: 'top',
         },
@@ -290,14 +290,14 @@ const { option: chartFive } = useEcharts({
       data: chartFiveData[1],
       type: 'scatter',
       symbolSize(data) {
-        return Math.sqrt(data[2]) / 5e2
+        return Math.sqrt(data[2]) / 5e2;
       },
       emphasis: {
         focus: 'series',
         label: {
           show: true,
           formatter(param: any) {
-            return param.data[3]
+            return param.data[3];
           },
           position: 'top',
         },
@@ -319,27 +319,14 @@ const { option: chartFive } = useEcharts({
       },
     },
   ],
-})
-
+});
 </script>
 
 <template>
   <div class="grid-cols-1 grid md:grid-cols-2 gap-4 content-center justify-center">
-    <BaseEcharts
-      :options="chartOne"
-      class="w-full h-96"
-    />
-    <BaseEcharts
-      :options="chartTwo"
-      class="w-full h-96"
-    />
-    <BaseEcharts
-      :options="chartThree"
-      class="w-full h-96"
-    />
-    <BaseEcharts
-      :options="chartFive"
-      class="w-full h-96"
-    />
+    <BaseEcharts :options="chartOne" class="w-full h-96" />
+    <BaseEcharts :options="chartTwo" class="w-full h-96" />
+    <BaseEcharts :options="chartThree" class="w-full h-96" />
+    <BaseEcharts :options="chartFive" class="w-full h-96" />
   </div>
 </template>

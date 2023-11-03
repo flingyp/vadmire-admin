@@ -8,8 +8,8 @@
     "build:mock": "vite build --mode development",
     "build": "vite build --mode production",
     "preview": "vite preview",
-    "lint": "prettier . --write && eslint . && stylelint \"**/*.{css,scss,vue}\"",
-    "lint:fix": "prettier . --write && eslint . --fix && stylelint . --fix \"**/*.{css,scss,vue}\"",
+    "lint": "prettier . --write && eslint . && stylelint \"**/*.{css,scss,sass,vue}\"",
+    "lint:fix": "prettier . --write && eslint . --fix && stylelint --fix \"**/*.{css,scss,sass,vue}\"",
     "release": "standard-version",
     "prepare": "husky install",
     "commit": "git-cz"
@@ -102,8 +102,14 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
   },
   "lint-staged": {
-    "*.!{css,scss,less}": "npx eslint . --fix",
-    "*.{css,scss,less}": "npx stylelint . --fix \"**/*.{css,scss,vue}\""
+    "*.!{css,scss,sass,vue}": [
+      "prettier . --write",
+      "eslint . --fix"
+    ],
+    "*.{css,scss,sass,vue}": [
+      "prettier . --write",
+      "stylelint --fix \"**/*.{css,scss,sass,vue}\""
+    ]
   },
   "config": {
     "commitizen": {
