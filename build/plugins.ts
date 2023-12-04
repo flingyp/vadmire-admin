@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
-import viteCDNPlugin from 'vite-plugin-cdn-import';
+import { Plugin as viteCDNPlugin } from 'vite-plugin-cdn-import';
 import { VitePWA } from 'vite-plugin-pwa';
 
 import { name, version } from '../package.json';

@@ -77,19 +77,19 @@ const contentHeight = computed(() => {
 
 <style scoped>
 .n-layout-header {
-  height: v-bind(headerheight + 'px');
+  height: v-bind(headerHeight + 'px');
 }
 
 .n-layout-footer {
-  height: v-bind(footerheight + 'px');
+  height: v-bind(footerHeight + 'px');
 }
 
 .n-layout-sider {
-  width: v-bind(siderwidth + 'px') !important;
-  height: v-bind(siderheight);
+  width: v-bind(siderWidth + 'px') !important;
+  height: v-bind(siderHeight);
 }
 
 .n-layout-content {
-  height: v-bind(contentheight);
+  height: v-bind(contentHeight);
 }
 </style>

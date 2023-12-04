@@ -2,6 +2,7 @@
     "extends": "@flypeng/stylelint-config",
     "rules": {
         "custom-property-pattern": null,
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "value-keyword-case": null
     }
 }
