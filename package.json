@@ -1,7 +1,8 @@
 {
   "name": "vadmire-admin",
-  "version": "1.8.0",
   "private": true,
+  "type": "module",
+  "version": "1.8.0",
   "description": "VAdmire Admin 是一款基于 Vue3 + TypeScript + NaiveUI 等技术栈搭建的后台系统",
   "scripts": {
     "dev": "vite --mode development",
@@ -49,7 +50,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
     "@commitlint/config-conventional": "^17.8.0",
-    "@flypeng/eslint-config": "^1.0.0",
+    "@flypeng/eslint-config": "^2.0.0-beta.2",
     "@flypeng/stylelint-config": "^1.0.1",
     "@iconify-json/ant-design": "^1.1.10",
     "@iconify-json/carbon": "^1.1.21",

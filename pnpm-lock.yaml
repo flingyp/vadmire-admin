@@ -100,8 +100,8 @@ devDependencies:
     specifier: ^17.8.0
     version: 17.8.0
   '@flypeng/eslint-config':
-    specifier: ^1.0.0
-    version: 1.0.0(eslint-plugin-import@2.28.1)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
+    specifier: ^2.0.0-beta.2
+    version: 2.0.0-beta.2(eslint-plugin-import@2.28.1)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
   '@flypeng/stylelint-config':
     specifier: ^1.0.1
     version: 1.0.1(postcss-html@1.5.0)(postcss@8.4.31)(prettier@3.0.3)(stylelint@15.10.3)
@@ -1901,34 +1901,61 @@ packages:
       - supports-color
     dev: true
 
+  /@eslint/eslintrc@2.1.4:
+    resolution: {integrity: sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      ajv: 6.12.6
+      debug: 4.3.4
+      espree: 9.6.1
+      globals: 13.23.0
+      ignore: 5.2.4
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      minimatch: 3.1.2
+      strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@eslint/js@8.51.0:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@flypeng/eslint-config-basic@1.0.0(eslint@8.51.0):
-    resolution: {integrity: sha512-JfTsdjyy6pTGm8/k95IQn52UV+95pKe+3M7zjAwwg63zB0SYk8tbq1f76FxfbUpRRPu81cRyTazOhXfNhsEjnw==}
-    peerDependencies:
-      eslint: '>=8.0.0'
-    dependencies:
-      eslint: 8.51.0
+  /@eslint/js@8.55.0:
+    resolution: {integrity: sha512-qQfo2mxH5yVom1kacMtZZJFVdW+E70mqHMJvVg6WTLo+VBuQJ4TojZlfWBjK0ve5BdEeNAVxOsl/nvNMpJOaJA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@flypeng/eslint-config-javascript@1.0.0(eslint-plugin-import@2.28.1)(eslint@8.51.0):
-    resolution: {integrity: sha512-hSin4K+nbom6CeL7KEpqrRO8a1p6Rs6Rs/N5paDCnBl5kwJB/hcHit1P9WQsVwr16THC6UdHde79hdv23edcoQ==}
+  /@flypeng/eslint-config-basic@2.0.0-beta.2(eslint@8.51.0):
+    resolution: {integrity: sha512-3hOfRBrONkaAwb0mP9bcg+8cSMuLDYdkHtcD3lE1zALIVI927zo8qnx0rAoXTZBnYLS5GPLHNL5C7dqXlzDW/A==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
     dependencies:
+      '@eslint/js': 8.55.0
+      eslint: 8.51.0
+      globals: 13.23.0
+      local-pkg: 0.5.0
+    dev: true
+
+  /@flypeng/eslint-config-javascript@2.0.0-beta.1(eslint-plugin-import@2.28.1)(eslint@8.51.0):
+    resolution: {integrity: sha512-nqeMXLaotra3ZoY9TZc49E2LG+9azUMsTmFcfKjAdVYHA3qwwRdIhWociUJR+mu0XjROzu1lkXAFVtMTFFWJBg==}
+    peerDependencies:
+      eslint: '>=8.23.0'
+    dependencies:
+      '@eslint/eslintrc': 2.1.4
       eslint: 8.51.0
       eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.28.1)(eslint@8.51.0)
     transitivePeerDependencies:
       - eslint-plugin-import
+      - supports-color
     dev: true
 
-  /@flypeng/eslint-config-other@1.0.0(eslint@8.51.0):
-    resolution: {integrity: sha512-XWVv4bHzYuZ+L6dIxnWQFls4h2JomzC3ez79P0q6sYYBc9OX8OzGB6pYBfiDJv0qQB5IvLuih/pO3cPNueH+yQ==}
+  /@flypeng/eslint-config-other@2.0.0-beta.0(eslint@8.51.0):
+    resolution: {integrity: sha512-SqL6NW9tJy5CSbUs9na6MeEZ9QSwRGfkwyExaukgPapus3CkX08/+fB7cw+JJtaO7jrP40lICUyNCcN73HtCOw==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
     dependencies:
       eslint: 8.51.0
       eslint-plugin-jsonc: 2.10.0(eslint@8.51.0)
@@ -1938,52 +1965,60 @@ packages:
       - supports-color
     dev: true
 
-  /@flypeng/eslint-config-react@1.0.0(eslint@8.51.0):
-    resolution: {integrity: sha512-ks9votfUdK/OLisGQPC1VOeHOZpHL8ECN4y3sX31sGQo5qbTl3E+xLZO9o+ZIYKyxaREOg7bjvoCBOKaRtl90Q==}
+  /@flypeng/eslint-config-react@2.0.0-beta.1(eslint@8.51.0):
+    resolution: {integrity: sha512-ahgqbslixaDQGH9vhO7Frekyibg3I9VSC5RPpL7T75Jknr4NPM67tvGKAcptz49NThKT+SJEFVjpNwAvGJoBwg==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
     dependencies:
+      '@eslint/eslintrc': 2.1.4
       eslint: 8.51.0
       eslint-plugin-react: 7.33.2(eslint@8.51.0)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
-  /@flypeng/eslint-config-typescript@1.0.0(eslint@8.51.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-MzXZRYSzeNxf1IvnY9B7CS7o0ZLweQnW+cZyOgemZdReu3SRQ8RnaG0JdDvRAy+VVyJbLWnp4v8GJEmBYHdV+Q==}
+  /@flypeng/eslint-config-typescript@2.0.0-beta.1(eslint@8.51.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-/hh3KIGXuQXqpKrn3+U9+M94h9+lit6qIjUR7LkP8KJVn1JiamwTglu8l5Cj4dNH7LpRhrox9WeJ2DyqE2ppmg==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
+      typescript: '>=4.0.0'
     dependencies:
+      '@eslint/eslintrc': 2.1.4
       '@typescript-eslint/eslint-plugin': 6.9.1(@typescript-eslint/parser@6.9.1)(eslint@8.51.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 6.9.1(eslint@8.51.0)(typescript@5.2.2)
       eslint: 8.51.0
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
-      - typescript
     dev: true
 
-  /@flypeng/eslint-config-vue@1.0.0(eslint@8.51.0):
-    resolution: {integrity: sha512-doardGKJr/R0VOm5qMQAx1GIB29Y24nqsIa8kKAgnVkiziNxG7EHR6A05RC/iXKlJOvL8IvSavekJee0QzvLig==}
+  /@flypeng/eslint-config-vue@2.0.0-beta.1(eslint@8.51.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-VkWyMT/yu+a/pqU8p5+/u3rcoSXgBDLPQpR2QPxkIUWlLbbAZO2CgvaHPKrU97cu0vm9Y3yAib1wsA4DUuRXgg==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
     dependencies:
+      '@eslint/eslintrc': 2.1.4
+      '@typescript-eslint/parser': 6.9.1(eslint@8.51.0)(typescript@5.2.2)
       eslint: 8.51.0
       eslint-plugin-vue: 9.17.0(eslint@8.51.0)
       vue-eslint-parser: 9.3.2(eslint@8.51.0)
     transitivePeerDependencies:
       - supports-color
+      - typescript
     dev: true
 
-  /@flypeng/eslint-config@1.0.0(eslint-plugin-import@2.28.1)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2):
-    resolution: {integrity: sha512-4qAliN3to3Rw8jf5su7oN5hCNXNEPdNK+8TTQ+sHy+2dL75CXAcMVxTrAS+MvQN2ZuXsnZI4V2txJnDaq5sFtQ==}
+  /@flypeng/eslint-config@2.0.0-beta.2(eslint-plugin-import@2.28.1)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-eQaUuq/kHROMbB9ej5BxDpYPGrQRB2EVFdFPyp/We2ykkeIrkafh7DtWmxmIvKkBTQhXotB2fRSeHDJPVT38rg==}
     peerDependencies:
-      eslint: '>=8.0.0'
+      eslint: '>=8.23.0'
       prettier: '>=3.0.0'
     dependencies:
-      '@flypeng/eslint-config-basic': 1.0.0(eslint@8.51.0)
-      '@flypeng/eslint-config-javascript': 1.0.0(eslint-plugin-import@2.28.1)(eslint@8.51.0)
-      '@flypeng/eslint-config-other': 1.0.0(eslint@8.51.0)
-      '@flypeng/eslint-config-react': 1.0.0(eslint@8.51.0)
-      '@flypeng/eslint-config-typescript': 1.0.0(eslint@8.51.0)(typescript@5.2.2)
-      '@flypeng/eslint-config-vue': 1.0.0(eslint@8.51.0)
+      '@flypeng/eslint-config-basic': 2.0.0-beta.2(eslint@8.51.0)
+      '@flypeng/eslint-config-javascript': 2.0.0-beta.1(eslint-plugin-import@2.28.1)(eslint@8.51.0)
+      '@flypeng/eslint-config-other': 2.0.0-beta.0(eslint@8.51.0)
+      '@flypeng/eslint-config-react': 2.0.0-beta.1(eslint@8.51.0)
+      '@flypeng/eslint-config-typescript': 2.0.0-beta.1(eslint@8.51.0)(typescript@5.2.2)
+      '@flypeng/eslint-config-vue': 2.0.0-beta.1(eslint@8.51.0)(typescript@5.2.2)
       eslint: 8.51.0
       eslint-config-prettier: 9.0.0(eslint@8.51.0)
       local-pkg: 0.5.0

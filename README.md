@@ -22,13 +22,13 @@ It helps developers to start business development quickly and integrates many co
 
 ## ⚙️ Features
 
--   💪 **Latest Technology Stack**: Vite + Vue + TailwindCSS + TypeScript
--   🚀 **Development Experience**: The ultimate development experience
--   🌛 **Dark Mode**: Built-in Dark Mode
--   🌿 **System Theme**: Dynamically configure system theme color
--   🏄‍♂️ **Permission Control**: Support both front and back end permission control solutions
--   ♻️ **Functional components**: Built-in multiple functional components and combinable functions
--   🎇 **Composable Development**: advocate for making your code more concise and easy to read
+- 💪 **Latest Technology Stack**: Vite + Vue + TailwindCSS + TypeScript
+- 🚀 **Development Experience**: The ultimate development experience
+- 🌛 **Dark Mode**: Built-in Dark Mode
+- 🌿 **System Theme**: Dynamically configure system theme color
+- 🏄‍♂️ **Permission Control**: Support both front and back end permission control solutions
+- ♻️ **Functional components**: Built-in multiple functional components and combinable functions
+- 🎇 **Composable Development**: advocate for making your code more concise and easy to read
 
 ## 👣 Getting started
 
