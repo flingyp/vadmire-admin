@@ -1,0 +1,1 @@
+import{N as e}from"./index-3d5ffabd.js";import{F as t,ac as r}from"./vendor_1702345230301-610ab986.js";const s={},c={class:"w-full h-40 bg-primary rounded-sm flex items-center justify-center text-base text-white"};function n(o,i){return t(),r("div",c," 超级管理员可见页面 ")}const f=e(s,[["render",n]]);export{f as default};
