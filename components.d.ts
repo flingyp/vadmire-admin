@@ -5,16 +5,16 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {};
+export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Authorized: (typeof import('./src/components/common/Authorized.vue'))['default'];
-    BaseEcharts: (typeof import('./src/components/common/BaseEcharts.vue'))['default'];
-    BaseSpin: (typeof import('./src/components/common/BaseSpin.vue'))['default'];
-    BaseTable: (typeof import('./src/components/common/BaseTable.vue'))['default'];
-    BaseTableHandle: (typeof import('./src/components/common/BaseTableHandle.vue'))['default'];
-    BaseTableSearch: (typeof import('./src/components/common/BaseTableSearch.vue'))['default'];
+    Authorized: typeof import('./src/components/common/Authorized.vue')['default']
+    BaseEcharts: typeof import('./src/components/common/BaseEcharts.vue')['default']
+    BaseSpin: typeof import('./src/components/common/BaseSpin.vue')['default']
+    BaseTable: typeof import('./src/components/common/BaseTable.vue')['default']
+    BaseTableHandle: typeof import('./src/components/common/BaseTableHandle.vue')['default']
+    BaseTableSearch: typeof import('./src/components/common/BaseTableSearch.vue')['default']
     'IconAntDesign:fullscreenExitOutlined': typeof import('~icons/ant-design/fullscreen-exit-outlined')['default']
     'IconAntDesign:fullscreenOutlined': typeof import('~icons/ant-design/fullscreen-outlined')['default']
     'IconAntDesign:githubFilled': typeof import('~icons/ant-design/github-filled')['default']
@@ -50,12 +50,12 @@ declare module '@vue/runtime-core' {
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
-    NConfigProvider: (typeof import('naive-ui'))['NConfigProvider'];
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDataTable: typeof import('naive-ui')['NDataTable']
     NDatePicker: typeof import('naive-ui')['NDatePicker']
     NDescriptions: typeof import('naive-ui')['NDescriptions']
     NDescriptionsItem: typeof import('naive-ui')['NDescriptionsItem']
-    NDialogProvider: (typeof import('naive-ui'))['NDialogProvider'];
+    NDialogProvider: typeof import('naive-ui')['NDialogProvider']
     NDivider: typeof import('naive-ui')['NDivider']
     NDrawer: typeof import('naive-ui')['NDrawer']
     NDrawerContent: typeof import('naive-ui')['NDrawerContent']
@@ -71,20 +71,20 @@ declare module '@vue/runtime-core' {
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
     NMenu: typeof import('naive-ui')['NMenu']
-    NMessageProvider: (typeof import('naive-ui'))['NMessageProvider'];
-    NNotificationProvider: (typeof import('naive-ui'))['NNotificationProvider'];
+    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
+    NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     NPopover: typeof import('naive-ui')['NPopover']
     NSelect: typeof import('naive-ui')['NSelect']
-    NSpin: (typeof import('naive-ui'))['NSpin'];
+    NSpin: typeof import('naive-ui')['NSpin']
     NSwitch: typeof import('naive-ui')['NSwitch']
     NTag: typeof import('naive-ui')['NTag']
-    RenderIconify: (typeof import('./src/components/common/RenderIconify.vue'))['default'];
-    RouterLink: (typeof import('vue-router'))['RouterLink'];
-    RouterView: (typeof import('vue-router'))['RouterView'];
-    SingleApp: (typeof import('./src/components/common/SingleApp.vue'))['default'];
-    SingleIframe: (typeof import('./src/components/common/SingleIframe.vue'))['default'];
-    Vditor: (typeof import('./src/components/common/Vditor.vue'))['default'];
-    WangEditor: (typeof import('./src/components/common/WangEditor.vue'))['default'];
-    XGPlayer: (typeof import('./src/components/common/XGPlayer.vue'))['default'];
+    RenderIconify: typeof import('./src/components/common/RenderIconify.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    SingleApp: typeof import('./src/components/common/SingleApp.vue')['default']
+    SingleIframe: typeof import('./src/components/common/SingleIframe.vue')['default']
+    Vditor: typeof import('./src/components/common/Vditor.vue')['default']
+    WangEditor: typeof import('./src/components/common/WangEditor.vue')['default']
+    XGPlayer: typeof import('./src/components/common/XGPlayer.vue')['default']
   }
 }

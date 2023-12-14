@@ -7,7 +7,7 @@ useApp();
 
 <template>
   <SingleApp>
-    <div class="font-sans text-sm font-medium overflow-hidden w-screen box-border scroll-smooth transition">
+    <div class="font-sans font-medium overflow-hidden w-screen box-border scroll-smooth transition">
       <RouterContent />
     </div>
   </SingleApp>

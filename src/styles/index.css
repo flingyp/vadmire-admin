@@ -8,3 +8,4 @@
 @import url('animate.css');
 @import url('@logicflow/core/dist/style/index.css');
 @import url('@logicflow/extension/lib/style/index.css');
+@import url('./global.css');
