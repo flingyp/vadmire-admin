@@ -62,5 +62,5 @@
     "wangeditor",
     "xgplayer"
   ],
-  "tailwindCSS.rootFontSize": 14
+  "tailwindCSS.rootFontSize": 12
 }
