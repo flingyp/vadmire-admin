@@ -13,7 +13,7 @@ const { layoutMode } = storeToRefs(useVAdmireConfigStore());
 
 <template>
   <div
-    class="p-1.5 h-16 border rounded transition duration-300 hover:border-primaryHover dark:hover:border-primaryHover"
+    class="p-1.5 h-20 border rounded transition duration-300 hover:border-primaryHover dark:hover:border-primaryHover"
     :class="{
       'border-primary dark:border-primary': mode === layoutMode,
       'border-vBorderLight dark:border-vBorderDark': mode !== layoutMode,
@@ -37,7 +37,7 @@ const { layoutMode } = storeToRefs(useVAdmireConfigStore());
     >
       <div class="absolute w-2.5 h-[calc(100%-8px)] top-2.5 left-0 bg-primary rounded-sm opacity-80" />
       <div class="absolute w-full h-2 bg-primary rounded-sm opacity-60" />
-      <div class="absolute w-[calc(100%-12px)] h-[calc(100%-8px)] top-2.5 left-3 bg-primary rounded-sm opacity-30" />
+      <div class="absolute w-[calc(100%-10px)] h-[calc(100%-8px)] top-2.5 left-3 bg-primary rounded-sm opacity-30" />
     </div>
   </div>
 </template>

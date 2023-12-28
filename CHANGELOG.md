@@ -4,15 +4,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.8.1](https://github.com/flingyp/vadmire-admin/compare/v1.8.0...v1.8.1) (2023-12-12)
 
-
 ### Features
 
-* add NaiveUIComponent page ([5e21fa2](https://github.com/flingyp/vadmire-admin/commit/5e21fa227c3d82174e837538f51b027bf2a147b7))
-
+- add NaiveUIComponent page ([5e21fa2](https://github.com/flingyp/vadmire-admin/commit/5e21fa227c3d82174e837538f51b027bf2a147b7))
 
 ### Bug Fixes
 
-* dealing with code formatter caused error ([3d0d60b](https://github.com/flingyp/vadmire-admin/commit/3d0d60b59f56c43030dbcf4ab68f74c1fbab7d4b))
+- dealing with code formatter caused error ([3d0d60b](https://github.com/flingyp/vadmire-admin/commit/3d0d60b59f56c43030dbcf4ab68f74c1fbab7d4b))
 
 ## [1.8.0](https://github.com/flingyp/vadmire-admin/compare/v1.7.0...v1.8.0) (2023-10-30)
 

@@ -34,11 +34,11 @@ const updateSystemPrimaryColor = (color: string) => {
 
 <template>
   <div class="w-full">
-    <div class="w-full grid grid-cols-8 gap-2">
+    <div class="w-full grid grid-cols-8 gap-4">
       <div
         v-for="item in primaryColorList"
         :key="item"
-        class="w-6 h-6 rounded-sm cursor-pointer"
+        class="w-7 h-7 rounded-sm cursor-pointer"
         :class="[primaryColor === item ? 'primary-item-active' : '']"
         :style="{ backgroundColor: item }"
         @click="updateSystemPrimaryColor(item)"

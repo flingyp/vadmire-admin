@@ -8,7 +8,9 @@ import BaseSearchItem from './BaseSearchItem.vue';
 
 const { t } = useI18n();
 const { defaultLocales } = storeToRefs(useVAdmireConfigStore());
-const { vadmireMenu } = storeToRefs(useRouteMenuStore());
+
+// @ts-expect-error
+const { vadmireMenu }: { vadmireMenu: Ref<VAdmireMenuOption[]> } = storeToRefs(useRouteMenuStore());
 
 const placeholder = computed(() => t('header.searchPlaceholder'));
 
@@ -33,7 +35,7 @@ onClickOutside(baseSearchMenuRef, () => {
   isShowSearchMenu.value = false;
 });
 
-const searchMenuList = ref<VAdmireMenuOption[]>([]);
+const searchMenuList: Ref<VAdmireMenuOption[]> = ref([]);
 const transformVadmireMenu = computed(() =>
   vadmireMenu.value.map((item) => {
     const newMenu = transformMenu(item, t);
@@ -67,7 +69,13 @@ const inputKeyword = useDebounce(() => {
 
 <template>
   <div ref="baseSearchMenuRef" class="flex items-center">
-    <NInput v-model:value="searchKeyWord" :placeholder="placeholder" @input="inputKeyword" @focus="showSearchMenu">
+    <NInput
+      v-model:value="searchKeyWord"
+      :placeholder="placeholder"
+      size="small"
+      @input="inputKeyword"
+      @focus="showSearchMenu"
+    >
       <template #prefix>
         <RenderIconify icon="carbon:search" />
       </template>

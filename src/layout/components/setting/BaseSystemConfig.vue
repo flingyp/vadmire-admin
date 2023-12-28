@@ -59,7 +59,7 @@ const updateVisibilityFooter = (value: boolean) => {
 </script>
 
 <template>
-  <div class="w-full grid grid-cols-1 gap-y-2">
+  <div class="w-full grid grid-cols-1 gap-y-4">
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">{{ $t('setting.fixedTabBar') }}</span>
       <NSwitch v-model:value="fixedTabBar" @update:value="updateFixedTabBar" />

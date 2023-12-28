@@ -15,7 +15,7 @@ import BaseSearchMenu from '~/layout/components/layout/BaseSearchMenu.vue';
       <BaseCollapsedSiderbar />
       <GlobalBreadCrumbMenu />
     </div>
-    <div class="h-full flex items-center">
+    <div class="h-full flex items-center space-x-2">
       <BaseSearchMenu />
       <BaseGithubIcon />
       <BaseFullScreen />

@@ -104,11 +104,9 @@
   },
   "lint-staged": {
     "*.!{css,scss,sass,vue}": [
-      "prettier . --write",
       "eslint . --fix"
     ],
     "*.{css,scss,sass,vue}": [
-      "prettier . --write",
       "stylelint --fix \"**/*.{css,scss,sass,vue}\""
     ]
   },

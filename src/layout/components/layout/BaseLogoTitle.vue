@@ -28,7 +28,7 @@ const isShowTitle = computed(() => {
 
 <template>
   <div class="flex items-center justify-center" :style="{ ...baseLogoTitleHeight, ...baseLogoTitleWidth }">
-    <img :src="Logo" alt="Logo" class="h-ful w-6 h-6 mr-1" />
+    <img :src="Logo" alt="Logo" class="h-ful w-8 h-8 mr-2" />
     <span
       v-show="isShowTitle"
       style="-webkit-text-fill-color: transparent"
