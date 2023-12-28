@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useDeepClone } from '@flypeng/tool/browser';
 import { VAdmireMenuOption } from 'naive-ui';
+import RenderIconify from '~/components/common/RenderIconify.vue';
 import { transformMenu } from '~/utils';
 
 const { t } = useI18n();
@@ -28,7 +29,10 @@ const clickBreadCrumbItem = (key: string) => {
     <NBreadcrumb>
       <NBreadcrumbItem v-for="item in transformMenuList" :key="item.key">
         <NDropdown :options="item.children" @select="clickBreadCrumbItem">
-          <span>{{ item.label }}</span>
+          <div class="flex items-center space-x-1">
+            <RenderIconify :icon="item.iconLabel" />
+            <span>{{ item.label }}</span>
+          </div>
         </NDropdown>
       </NBreadcrumbItem>
     </NBreadcrumb>
