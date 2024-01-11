@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "noEmit": true,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@flypeng/tool/browser": ["node_modules/@flypeng/tool/dist/browser/index.d.ts"],
+      "@flypeng/tool/node": ["node_modules/@flypeng/tool/dist/node/index.d.ts"]
     },
     "types": ["unplugin-icons/types/vue", "naive-ui/volar"]
   },
