@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { darkTheme, zhCN, dateZhCN, enUS, dateEnUS, koKR, dateKoKR } from 'naive-ui';
 import { useVAdmireConfigStore } from '~/store';
+
 import BaseSpin from '~/components/common/BaseSpin.vue';
 
 defineOptions({ name: 'SingleApp' });

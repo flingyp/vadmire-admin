@@ -12,6 +12,9 @@ import { Plugin as viteCDNPlugin } from 'vite-plugin-cdn-import';
 import { VitePWA } from 'vite-plugin-pwa';
 import VueDevTools from 'vite-plugin-vue-devtools';
 
+import { useGetCurrentPath } from '@flypeng/tool/node';
+import { writeFileSync } from 'fs';
+
 import { name, version } from '../package.json';
 
 /**
@@ -20,8 +23,8 @@ import { name, version } from '../package.json';
  * @param mode
  * @returns
  */
-export const generatePlugins = (command: string, mode: string): PluginOption[] => {
-  const pluginList = [
+export const generatePlugins = (command: string, mode: string, buildTimestamp: number): PluginOption[] => {
+  const pluginList: PluginOption[] = [
     vue(),
     // Mock Api
     ViteMockServe({
@@ -88,6 +91,7 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
         ],
       },
     }),
+    // Packages CDN Links
     viteCDNPlugin({
       modules: [
         {
@@ -178,6 +182,21 @@ export const generatePlugins = (command: string, mode: string): PluginOption[] =
         ],
       },
     }),
+
+    // Build End Plugin
+    {
+      name: 'vite-plugin-vadmire-buildEnding',
+      buildStart: () => {
+        console.log('构建开始', buildTimestamp, useGetCurrentPath());
+        writeFileSync(
+          `${useGetCurrentPath()}/public/config.json`,
+          `{
+  "buildTime": ${buildTimestamp}
+}`,
+          { encoding: 'utf-8' },
+        );
+      },
+    },
   ];
 
   if (mode === 'development') {

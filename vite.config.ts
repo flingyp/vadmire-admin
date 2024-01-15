@@ -16,7 +16,7 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => ({
     },
   },
   // Plugins config
-  plugins: generatePlugins(command, mode),
+  plugins: generatePlugins(command, mode, currentTimestamp),
   // Build config
   build: {
     rollupOptions: {

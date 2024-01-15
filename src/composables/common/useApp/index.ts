@@ -5,6 +5,7 @@ import { THEME_MODE_KEY } from '~/vadmire.config';
 // To do things when init application
 export function useApp() {
   const { t } = useI18n();
+
   const route = useRoute();
   const { toggleDark } = useTheme();
   const vadmireConfigStore = useVAdmireConfigStore();
