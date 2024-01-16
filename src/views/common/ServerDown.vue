@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ServerDownIcon from '~/assets/svg/server-down.svg';
-import { SYSTEM_HOME_ROUTE_NAME } from '~/vadmire.config';
+import { SYSTEM_HOME_ROUTE_NAME } from '~/common';
 
 const router = useRouter();
 const vadmireConfigStore = useVAdmireConfigStore();

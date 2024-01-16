@@ -4,7 +4,7 @@ import { RouteRecordRaw, VAdmireRoute } from 'vue-router';
 import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser';
 
 import { SystemAccountInfo } from '~/requests';
-import { TAB_MENU_KEY } from '~/vadmire.config';
+import { TAB_MENU_KEY } from '~/common';
 
 export interface RouteMenuStore {
   account: SystemAccountInfo;

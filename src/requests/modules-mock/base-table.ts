@@ -1,4 +1,4 @@
-import { AUTH_TOKEN } from '~/vadmire.config';
+import { AUTH_TOKEN } from '~/common';
 
 interface TableParams {
   page: number;

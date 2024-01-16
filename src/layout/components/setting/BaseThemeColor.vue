@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSetLocalKey } from '@flypeng/tool/browser';
-import { PRIMARY_COLOR_KEY } from '~/vadmire.config';
+import { PRIMARY_COLOR_KEY } from '~/common';
 
 const { primaryColor } = storeToRefs(useVAdmireConfigStore());
 

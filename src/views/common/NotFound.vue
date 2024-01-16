@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NotFoundIcon from '~/assets/svg/not-found.svg';
-import { SYSTEM_HOME_ROUTE_NAME } from '~/vadmire.config';
+import { SYSTEM_HOME_ROUTE_NAME } from '~/common';
 
 const router = useRouter();
 const vadmireConfigStore = useVAdmireConfigStore();

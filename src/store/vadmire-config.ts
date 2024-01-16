@@ -1,17 +1,9 @@
 import { defineStore } from 'pinia';
 import { GlobalThemeOverrides } from 'naive-ui';
 import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser';
-
 import { getDifSceneColor } from '~/utils';
-import {
-  defaultVAdmireConfig,
-  AUTH_TOKEN,
-  THEME_MODE_KEY,
-  sceneColorMap,
-  PRIMARY_COLOR_KEY,
-  LOCAL_SYSTEM_KEY,
-  DRIVER_CONFIG_KEY,
-} from '~/vadmire.config';
+import { defaultVAdmireConfig, sceneColorMap } from '~/vadmire.config';
+import { AUTH_TOKEN, THEME_MODE_KEY, PRIMARY_COLOR_KEY, LOCAL_SYSTEM_KEY, DRIVER_CONFIG_KEY } from '~/common';
 import { VAdmireConfig } from '~/types';
 
 const localVAdmireConfig = { ...defaultVAdmireConfig(), ...JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}') };

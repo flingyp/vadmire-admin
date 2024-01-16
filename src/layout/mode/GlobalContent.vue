@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IS_RELOAD_CONTENT } from '~/vadmire.config';
+import { IS_RELOAD_CONTENT } from '~/common';
 import GlobalTabBar from '~/layout/components/GlobalTabBar.vue';
 
 const vadmireConfigStore = useVAdmireConfigStore();

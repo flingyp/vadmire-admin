@@ -1,6 +1,6 @@
 import { useSetLocalKey } from '@flypeng/tool/browser';
 import Driver, { Step } from 'driver.js';
-import { DRIVER_CONFIG_KEY } from '~/vadmire.config';
+import { DRIVER_CONFIG_KEY } from '~/common';
 
 // More details reference https://github.com/kamranahmedse/driver.js
 const driver = new Driver({

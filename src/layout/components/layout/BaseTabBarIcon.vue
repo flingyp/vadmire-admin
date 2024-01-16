@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IS_RELOAD_CONTENT } from '~/vadmire.config';
+import { IS_RELOAD_CONTENT } from '~/common';
 
 const isReloadContent = inject<Ref<boolean>>(IS_RELOAD_CONTENT);
 const { setLoading: setGlobalLoading } = inject('loading') as { setLoading: (value: boolean) => void };

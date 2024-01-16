@@ -2,7 +2,8 @@ import { App } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { useGetLocalKey } from '@flypeng/tool/browser';
 import { CN, EN, KR } from '~/locales';
-import { defaultVAdmireConfig, LOCAL_SYSTEM_KEY } from '~/vadmire.config';
+import { defaultVAdmireConfig } from '~/vadmire.config';
+import { LOCAL_SYSTEM_KEY } from '~/common';
 
 const { defaultLocales } = defaultVAdmireConfig();
 

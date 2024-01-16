@@ -5,13 +5,7 @@ import { useCommonType, useDeepClone } from '@flypeng/tool/browser';
 import { RouteMenuStore, useRouteMenuStore } from '~/store';
 import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules';
 import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests';
-import {
-  AUTH_TOKEN,
-  WHITE_ROUTE_LIST,
-  HANDLE_ROUTE_FORM,
-  LOGIN_ROUTE_NAME,
-  SYSTEM_HOME_ROUTE_NAME,
-} from '~/vadmire.config';
+import { AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME, SYSTEM_HOME_ROUTE_NAME } from '~/common';
 import {
   filterRoutes,
   vadmireRouteToRouteRecordRaw,

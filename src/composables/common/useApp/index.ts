@@ -1,6 +1,6 @@
 import { useGetLocalKey } from '@flypeng/tool/browser';
 import { internationalReg, changeDayjsLocales } from '~/utils';
-import { THEME_MODE_KEY } from '~/vadmire.config';
+import { THEME_MODE_KEY } from '~/common';
 
 // To do things when init application
 export function useApp() {

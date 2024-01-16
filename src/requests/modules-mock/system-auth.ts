@@ -1,5 +1,5 @@
 import { VAdmireRoute } from 'vue-router';
-import { AUTH_TOKEN } from '~/vadmire.config';
+import { AUTH_TOKEN } from '~/common';
 
 /**
  * System auth login

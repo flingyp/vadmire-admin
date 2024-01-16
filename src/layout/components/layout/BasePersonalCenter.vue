@@ -2,7 +2,7 @@
 import { DropdownOption } from 'naive-ui';
 import AvatarLogo from '~/assets/img/avatar-logo.png';
 import BaseHeaderItem from './BaseHeaderItem.vue';
-import { LOGIN_ROUTE_NAME } from '~/vadmire.config';
+import { LOGIN_ROUTE_NAME } from '~/common';
 
 const router = useRouter();
 const routeMenuStore = useRouteMenuStore();

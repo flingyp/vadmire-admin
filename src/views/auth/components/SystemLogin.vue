@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SystemPlatformAuth from './SystemPlatformAuth.vue';
 import { useVAdmireConfigStore } from '~/store';
-import { AUTH_TOKEN, SYSTEM_HOME_ROUTE_NAME } from '~/vadmire.config';
+import { AUTH_TOKEN, SYSTEM_HOME_ROUTE_NAME } from '~/common';
 import { SignInModelData, getSignInAuthToken } from '~/requests';
 import Logo from '~/assets/svg/admire-logo.svg';
 import { routeGenerateMenuProcess } from '~/router/global-route-guard';

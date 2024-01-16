@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useGetLocalKey, useSetLocalKey } from '@flypeng/tool/browser';
-import { LOCAL_SYSTEM_KEY } from '~/vadmire.config';
+import { LOCAL_SYSTEM_KEY } from '~/common';
 import { Locales } from '~/types';
 import BaseHeaderItem from './BaseHeaderItem.vue';
 
