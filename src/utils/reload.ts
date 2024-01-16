@@ -28,6 +28,10 @@ export class DeployReload {
 
   constructor(options: DeployReloadOptions) {
     this.fetchUrl = options.fetchUrl;
+    if (!this.fetchUrl) {
+      console.error('fetchUrl is required in DeployReload');
+    }
+
     this.fetchKey = options.fetchKey;
     this.isListening = options.isListening || true;
     this.checkTimeout = options.checkTimeout || 5;
@@ -65,7 +69,7 @@ export class DeployReload {
   }
 
   private async checkBuildTime() {
-    if (this.isListening) {
+    if (this.isListening && this.fetchUrl) {
       const currentBuildTime = await this.getBuildTimeValue();
       if (currentBuildTime > this.stashBuildTime) {
         this.reloadCallback();
