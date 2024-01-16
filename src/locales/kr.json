@@ -43,7 +43,8 @@
     "footerHeight": "아래 표시줄 높이",
     "transitionSwitch": "전환 효과",
     "copySystemConfig": "시스템 설정을 복사합니다",
-    "resetSystemConfig": "시스템 설정을 재설정합니다"
+    "resetSystemConfig": "시스템 설정을 재설정합니다",
+    "openDeployReload": "배포 새로 고침 사용"
   },
   "header": {
     "searchPlaceholder": "검색 키워드"

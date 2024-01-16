@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { t } from '@wangeditor/editor';
 import { useDialog } from 'naive-ui';
 import { DeployReload } from '~/utils';
 
@@ -20,18 +21,20 @@ watch(
 // listening system whether updated
 const dialog = useDialog();
 const isOpenDialog = ref(true);
+const { isOpenDeployReload } = storeToRefs(useVAdmireConfigStore());
 
-new DeployReload({
-  fetchUrl: 'http://localhost:8080/config.json',
+const deployReload = new DeployReload({
+  fetchUrl: 'http://localhost:4173/config.json',
   fetchKey: 'buildTime',
+  isListening: false,
   checkTimeout: 60 * 5,
   execute: true,
   reloadCallback() {
     if (isOpenDialog.value) {
       isOpenDialog.value = false;
       dialog.warning({
-        title: '提示',
-        content: '检测到系统已更新最新版本，请重新加载页面',
+        title: '温馨提示',
+        content: '检测到系统发生更新，请重新加载页面',
         positiveText: '更新',
         negativeText: '不更新',
         closable: false,
@@ -48,6 +51,18 @@ new DeployReload({
     }
   },
 });
+
+watch(
+  () => isOpenDeployReload.value,
+  (newVal) => {
+    if (newVal) {
+      deployReload.open();
+    } else {
+      deployReload.close();
+    }
+  },
+  { immediate: true },
+);
 </script>
 
 <template>

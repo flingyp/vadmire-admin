@@ -19,5 +19,6 @@ export interface VAdmireConfig {
   fixedTabBar: boolean;
   isVisibleTabBar: boolean;
   isVisibleFooter: boolean;
+  isOpenDeployReload: boolean;
   defaultLocales: Locales;
 }

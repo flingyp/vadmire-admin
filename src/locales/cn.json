@@ -43,7 +43,8 @@
     "footerHeight": "底部栏高度",
     "transitionSwitch": "过渡切换",
     "copySystemConfig": "拷贝系统配置",
-    "resetSystemConfig": "重置系统配置"
+    "resetSystemConfig": "重置系统配置",
+    "openDeployReload": "开启部署刷新"
   },
   "header": {
     "searchPlaceholder": "搜索关键字"

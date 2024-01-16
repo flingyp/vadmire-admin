@@ -43,7 +43,8 @@
     "footerHeight": "Footer Height",
     "transitionSwitch": "Transition Switch",
     "copySystemConfig": "Copy System Config",
-    "resetSystemConfig": "Reset System Config"
+    "resetSystemConfig": "Reset System Config",
+    "openDeployReload": "Enable deploy refresh"
   },
   "header": {
     "searchPlaceholder": "Search for keywords"

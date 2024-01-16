@@ -1,6 +1,7 @@
 /**
  * fetchUrl: 请求的地址
  * fetchKey: 获取的字段
+ * isListening: 是否监听
  * checkTimeout: 多久检查一次
  * execute: 是否立即执行
  * reloadCallback: 更新执行回调
@@ -8,6 +9,7 @@
 interface DeployReloadOptions {
   fetchUrl: string;
   fetchKey: string;
+  isListening?: boolean;
   checkTimeout?: number;
   execute?: boolean;
   reloadCallback?: () => void;
@@ -16,6 +18,7 @@ interface DeployReloadOptions {
 export class DeployReload {
   private fetchUrl: string;
   private fetchKey: string;
+  private isListening: boolean;
   private stashBuildTime: number = 0;
   private checkTimeout: number; // Second
   private execute: boolean = false;
@@ -26,6 +29,7 @@ export class DeployReload {
   constructor(options: DeployReloadOptions) {
     this.fetchUrl = options.fetchUrl;
     this.fetchKey = options.fetchKey;
+    this.isListening = options.isListening || true;
     this.checkTimeout = options.checkTimeout || 5;
     this.execute = options.execute || false;
 
@@ -46,9 +50,7 @@ export class DeployReload {
 
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
-        console.log('22222');
         this.execute && callback();
-
         this.intervalInstance = setInterval(callback, timeoutValue);
       } else {
         clearInterval(this.intervalInstance);
@@ -63,13 +65,19 @@ export class DeployReload {
   }
 
   private async checkBuildTime() {
-    const currentBuildTime = await this.getBuildTimeValue();
-    if (currentBuildTime > this.stashBuildTime) {
-      this.reload();
+    if (this.isListening) {
+      const currentBuildTime = await this.getBuildTimeValue();
+      if (currentBuildTime > this.stashBuildTime) {
+        this.reloadCallback();
+      }
     }
   }
 
-  private reload() {
-    this.reloadCallback();
+  public open() {
+    this.isListening = true;
+  }
+
+  public close() {
+    this.isListening = false;
   }
 }

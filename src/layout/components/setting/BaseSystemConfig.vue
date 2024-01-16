@@ -3,6 +3,7 @@ const {
   fixedTabBar,
   isVisibleTabBar,
   isVisibleFooter,
+  isOpenDeployReload,
   headerHeight,
   siderWidth,
   footerHeight,
@@ -56,6 +57,11 @@ const updateVisibilityTabBar = (value: boolean) => {
 const updateVisibilityFooter = (value: boolean) => {
   isVisibleFooter.value = value;
 };
+
+// whether to enable deployment refresh
+const updateOpenDeployReload = (value: boolean) => {
+  isOpenDeployReload.value = value;
+};
 </script>
 
 <template>
@@ -71,6 +77,10 @@ const updateVisibilityFooter = (value: boolean) => {
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">{{ $t('setting.showFooter') }}</span>
       <NSwitch v-model:value="isVisibleFooter" @update:value="updateVisibilityFooter" />
+    </div>
+    <div class="w-full flex justify-between items-center">
+      <span class="w-44 text-start mr-1 truncate">{{ $t('setting.openDeployReload') }}</span>
+      <NSwitch v-model:value="isOpenDeployReload" @update:value="updateOpenDeployReload" />
     </div>
     <div class="w-full flex justify-between items-center">
       <span class="w-32 text-start mr-1 truncate">{{ $t('setting.headerHeight') }}</span>

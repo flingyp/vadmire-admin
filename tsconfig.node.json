@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@flypeng/tool/browser": ["node_modules/@flypeng/tool/dist/browser/index.d.ts"],
+      "@flypeng/tool/node": ["node_modules/@flypeng/tool/dist/node/index.d.ts"]
+    }
   },
   "include": ["vite.config.ts", "package.json", "./build/**/*.ts"]
 }

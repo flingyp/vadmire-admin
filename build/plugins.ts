@@ -12,6 +12,7 @@ import { Plugin as viteCDNPlugin } from 'vite-plugin-cdn-import';
 import { VitePWA } from 'vite-plugin-pwa';
 import VueDevTools from 'vite-plugin-vue-devtools';
 
+import { useFormatDate } from '@flypeng/tool/browser';
 import { useGetCurrentPath } from '@flypeng/tool/node';
 import { writeFileSync } from 'fs';
 
@@ -183,11 +184,11 @@ export const generatePlugins = (command: string, mode: string, buildTimestamp: n
       },
     }),
 
-    // Build End Plugin
+    // Build Start Plugin
     {
-      name: 'vite-plugin-vadmire-buildEnding',
+      name: 'vite-plugin-vadmire-build-start',
       buildStart: () => {
-        console.log('构建开始', buildTimestamp, useGetCurrentPath());
+        console.log('vite-plugin-vadmire-build-start:', useFormatDate('yyyy-MM-dd hh:mm:ss', buildTimestamp));
         writeFileSync(
           `${useGetCurrentPath()}/public/config.json`,
           `{

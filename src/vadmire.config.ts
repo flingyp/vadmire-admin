@@ -28,6 +28,7 @@ export function defaultVAdmireConfig(): VAdmireConfig {
     fixedTabBar: false,
     isVisibleTabBar: true,
     isVisibleFooter: true,
+    isOpenDeployReload: true,
     defaultLocales: 'zh_CN',
   };
 }
