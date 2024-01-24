@@ -91,7 +91,7 @@
     "unplugin-auto-import": "^0.14.4",
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
-    "vite": "^4.5.2",
+    "vite": "^5.0.12",
     "vite-plugin-cdn-import": "^0.3.5",
     "vite-plugin-clear-console": "^0.2.3",
     "vite-plugin-mock": "^2.9.8",
