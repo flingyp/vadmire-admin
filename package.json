@@ -16,7 +16,7 @@
     "commit": "git-cz"
   },
   "dependencies": {
-    "@flypeng/tool": "^5.5.0",
+    "@flypeng/tool": "^5.5.2",
     "@logicflow/core": "^1.2.18",
     "@logicflow/extension": "^1.2.19",
     "@pansy/vue-watermark": "^1.2.0",

@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@flypeng/tool':
-    specifier: ^5.5.0
-    version: 5.5.0
+    specifier: ^5.5.2
+    version: 5.5.2
   '@logicflow/core':
     specifier: ^1.2.18
     version: 1.2.18
@@ -2146,8 +2146,8 @@ packages:
       - supports-color
     dev: true
 
-  /@flypeng/tool@5.5.0:
-    resolution: {integrity: sha512-bEnUL/tJh766Fwu1opYhyyA53AS1Sf33IBEEUQ9C9V5nlcQHcOeKRVrTXTXc/xyGR3/0TcT+FmjBdm7Q7nagIA==}
+  /@flypeng/tool@5.5.2:
+    resolution: {integrity: sha512-xd2QgJKiahTvTeQF10Ge8ONng9v4aa117BVFZcn83apzvj/LLNBYD3o2bEbDl40idBopjhPZ69cAPGgC53bMcg==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
