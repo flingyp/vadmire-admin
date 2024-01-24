@@ -118,7 +118,7 @@ export const generatePlugins = (command: string, mode: string, buildTimestamp: n
     // splitVendorChunkPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'logo.svg', '/pwa/180.png'],
+      includeAssets: ['favicon.ico', 'logo.svg', '/pwa/180.png', 'config.json'],
       devOptions: {
         enabled: true,
       },

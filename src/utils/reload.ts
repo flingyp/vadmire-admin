@@ -7,8 +7,8 @@
  * reloadCallback: 更新执行回调
  */
 interface DeployReloadOptions {
-  fetchUrl: string;
-  fetchKey: string;
+  fetchUrl?: string;
+  fetchKey?: string;
   isListening?: boolean;
   checkTimeout?: number;
   execute?: boolean;
@@ -27,12 +27,13 @@ export class DeployReload {
   private reloadCallback: () => void;
 
   constructor(options: DeployReloadOptions) {
-    this.fetchUrl = options.fetchUrl;
+    const defaultFetchUrl = `${window.location.origin}/config.json`;
+    this.fetchUrl = options.fetchUrl || defaultFetchUrl;
     if (!this.fetchUrl) {
       console.error('fetchUrl is required in DeployReload');
     }
 
-    this.fetchKey = options.fetchKey;
+    this.fetchKey = options.fetchKey || 'buildTime';
     this.isListening = options.isListening || true;
     this.checkTimeout = options.checkTimeout || 5;
     this.execute = options.execute || false;

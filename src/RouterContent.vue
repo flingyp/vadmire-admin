@@ -24,9 +24,6 @@ const isOpenDialog = ref(true);
 const { isOpenDeployReload } = storeToRefs(useVAdmireConfigStore());
 
 const deployReload = new DeployReload({
-  // TIP: Config interface url to get 'fetchKey' value
-  fetchUrl: '',
-  fetchKey: 'buildTime',
   isListening: false,
   checkTimeout: 60 * 5,
   execute: true,
