@@ -20,7 +20,7 @@ const handleClickOption = async (key: OptionKeys) => {
   if (key === 'EXIT_SYSTEM') {
     // layout system custom logic
     await vadmireConfigStore.handleExitSystem();
-    router.push({ name: LOGIN_ROUTE_NAME });
+    router.replace({ name: LOGIN_ROUTE_NAME });
   }
 };
 </script>

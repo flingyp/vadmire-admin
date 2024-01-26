@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useSetLocalKey } from '@flypeng/tool/browser';
-import { PRIMARY_COLOR_KEY } from '~/common';
+import { useSetLocalKey, useGetLocalKey } from '@flypeng/tool/browser';
+import { LOCAL_SYSTEM_KEY } from '~/common';
 
 const { primaryColor } = storeToRefs(useVAdmireConfigStore());
 
@@ -28,7 +28,9 @@ const primaryColorList = [
 ];
 const updateSystemPrimaryColor = (color: string) => {
   primaryColor.value = color;
-  useSetLocalKey(PRIMARY_COLOR_KEY, color);
+  const systemConfig = JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY)!);
+  systemConfig.primaryColor = color;
+  useSetLocalKey(LOCAL_SYSTEM_KEY, JSON.stringify(systemConfig));
 };
 </script>
 

@@ -1,16 +1,16 @@
 import { defineStore } from 'pinia';
 import { GlobalThemeOverrides } from 'naive-ui';
-import { useGetLocalKey, useRemoveLocalKey } from '@flypeng/tool/browser';
+import { useGetLocalKey, useRemoveLocalKey, useSetLocalKey } from '@flypeng/tool/browser';
 import { getDifSceneColor } from '~/utils';
 import { defaultVAdmireConfig, sceneColorMap } from '~/vadmire.config';
-import { AUTH_TOKEN, THEME_MODE_KEY, PRIMARY_COLOR_KEY, LOCAL_SYSTEM_KEY, DRIVER_CONFIG_KEY } from '~/common';
+import { AUTH_TOKEN, THEME_MODE_KEY, LOCAL_SYSTEM_KEY, DRIVER_CONFIG_KEY } from '~/common';
 import { VAdmireConfig } from '~/types';
 
 const localVAdmireConfig = { ...defaultVAdmireConfig(), ...JSON.parse(useGetLocalKey(LOCAL_SYSTEM_KEY) || '{}') };
 
 export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
   state: (): VAdmireConfig => {
-    localVAdmireConfig.primaryColor = useGetLocalKey(PRIMARY_COLOR_KEY) || sceneColorMap.primary;
+    localVAdmireConfig.primaryColor = localVAdmireConfig?.primaryColor || sceneColorMap.primary;
     if (useGetLocalKey(THEME_MODE_KEY) !== 'dark') {
       localVAdmireConfig.themeMode = 'LIGHT';
     } else {
@@ -59,7 +59,9 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
       // reset variants of handling to get route and to generate route logic
       routeMenuStore.isMountedRoute = false;
       routeMenuStore.isMountedNotFoundRoute = false;
-      useRemoveLocalKey(LOCAL_SYSTEM_KEY);
+      const defaultConfig = defaultVAdmireConfig();
+      this.$state = defaultConfig;
+      useSetLocalKey(LOCAL_SYSTEM_KEY, JSON.stringify(defaultConfig));
       useRemoveLocalKey(DRIVER_CONFIG_KEY);
       sessionStorage.removeItem(AUTH_TOKEN);
     },

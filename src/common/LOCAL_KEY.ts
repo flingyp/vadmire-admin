@@ -24,9 +24,6 @@ export const TAB_MENU_KEY = 'TAB_MENU_KEY';
 // local theme mode key
 export const THEME_MODE_KEY = 'vueuse-color-scheme';
 
-// local primary color key
-export const PRIMARY_COLOR_KEY = 'PRIMARY_COLOR_KEY';
-
 // local system config key
 export const LOCAL_SYSTEM_KEY = 'LOCAL_SYSTEM_KEY';
 
