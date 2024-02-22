@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/flingyp/vadmire-admin/compare/v1.9.0...v1.10.0) (2024-02-22)
+
+
+### Features
+
+* modify fetchUrl and fetchKey to optional params of DeployReloadOptions ([9bceef4](https://github.com/flingyp/vadmire-admin/commit/9bceef4c463747d90419f9c6dbd3b0904564e41f))
+
 ## [1.9.0](https://github.com/flingyp/vadmire-admin/compare/v1.8.0...v1.9.0) (2024-01-24)
 
 
